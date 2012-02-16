@@ -1,0 +1,9 @@
+{
+    identifier: 'value',
+    label: 'name',
+    items: [
+        { value: "de", name: "German" },
+        { value: "en", name: "English" }
+    ]
+    
+}

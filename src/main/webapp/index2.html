@@ -1,0 +1,336 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>InGrid Map Client</title>
+        <script type="text/javascript" src="js/dojo-1.7.1/dojo/dojo.js" data-dojo-config="parseOnLoad: true"></script>
+        <link rel="stylesheet" href="js/dojo-1.7.1/dojo/resources/dojo.css">
+        <link rel="stylesheet" href="js/dojo-1.7.1/dijit/themes/claro/claro.css">
+        <link rel="stylesheet"
+        href="js/dojo-1.7.1/dojox/grid/resources/Grid.css">
+        <link rel="stylesheet"
+        href="js/dojo-1.7.1/dojox/grid/resources/claroGrid.css">
+        <!-- <link rel="stylesheet" type="text/css" href="../lib/extjs/resources/css/ext-all.css" /> -->
+        
+        <style type="text/css" media="screen">
+            body, html { width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
+            #content{ width:100%; height:100% }
+            h1 {margin:0; padding:10px;text-decoration: underline;}
+        </style>
+        
+        <script type="text/javascript">
+            var myGrid = {};
+            var thereAreChanges = false;
+            var currentCodelist = -1;
+            
+            require([
+                "dojo/store/JsonRest",
+                "dojox/grid/DataGrid",
+                "dojo/data/ObjectStore",
+                "dojo/data/ItemFileReadStore",
+                "dojo/data/ItemFileWriteStore",
+                "dijit/form/ValidationTextBox",
+                "dijit/form/Button",
+                "dijit/form/FilteringSelect",
+                "dijit/layout/BorderContainer",
+                "dijit/layout/ContentPane",
+                "dojox/widget/Standby",
+                "dojo/ready"], function(JsonRest, DataGrid, ObjectStore) {
+                    
+            });
+            
+            /*typemap = {
+                'Date' : {
+                    deserialize: function (value) {
+                        
+                    }
+                }
+            };*/
+            
+            dojo.ready(function() {
+                dojo.connect(clSelect,       "onChange",   showCodeList);
+                dojo.connect(entriesGrid,    "onRowClick", showEntry);
+                dojo.connect(entryIdTextbox, "onBlur",     updateEntryId);
+                
+                entryIdTextbox.validator = function(val) {if (idExists(val)) return false; else return true;};
+                entryIdTextbox.invalidMessage = "ID already exists!"
+                
+            });
+            
+            myGrid.getEnglishEntry = function(rowIndex, currentItem){
+                console.debug("get English entry");
+                
+                if (currentItem != null)
+                    var item = currentItem;
+                else    
+                    var item = clSelect.item.entries[rowIndex];
+                
+                if (item.localisations.length === 0)
+                    return "undefined";
+                
+                var result = item.localisations[0][1];
+                dojo.forEach(item.localisations, function(item2) {
+                    if (item2[0] == "en") result = item2[1];
+                });
+                return result;
+            };
+            
+            function showCodeList(event) {
+                // any changes made?
+                console.debug(event);
+                if (thereAreChanges) {
+                    // show info
+                    // TODO: info
+                    
+                    // select previous codelist
+                    clSelect.attr('value', currentCodelist, false);
+                    
+                    return;
+                }
+                
+                currentCodelist = clSelect.item.id;
+                
+                showCodelistDiv();
+                resetEntryDiv();
+                
+                // get chosen code list object
+                var activeCodelist = clSelect.item;
+                //console.debug(activeCodelist);
+                
+                // fill components with code list data
+                listIdTextbox.set("value", activeCodelist.id);
+                
+                var newStore = new dojo.data.ItemFileWriteStore(
+                    {data: {items:activeCodelist.entries}}
+                );
+                 
+                entriesGrid.setStore(newStore);
+                watchStoresAndFields();
+            }
+            
+            function showEntry(event) {
+                console.debug(event);
+                
+                showEntryDiv();
+                
+                var item = entriesGrid.getItem(event.rowIndex);
+                entryIdTextbox.set("value", item.id);
+                
+                var newStore = new dojo.data.ItemFileWriteStore(
+                    {data: {items:item.localisations}}
+                );
+                entryLocalisationGrid.setStore(newStore);
+                watchStoresAndFields();
+                
+            }
+            
+            function showCodelistDiv() {
+                dojo.style("noCodelistSelected", "display", "none");
+                dojo.style("entriesContent",     "display", "block");
+            }
+            
+            function showEntryDiv() {
+                dojo.style("noEntrySelected", "display", "none");
+                dojo.style("entryContent",    "display", "block");
+            }
+            
+            function resetEntryDiv() {
+                dojo.style("noEntrySelected", "display", "block");
+                dojo.style("entryContent",    "display", "none");
+                entriesGrid.selection.clear();
+            }
+            
+            function getNiceLabel(item, store) {
+                return item.name + " ("+item.id+")";
+            }
+            
+            function updateEntryId(value) {
+                console.debug("update entry: ");
+                // check if id already exists ... or better use validation text box!!! 
+                entriesGrid.getItem(entriesGrid.selection.selectedIndex).id = entryIdTextbox.get("value");
+            }
+            
+            function addEntry() {
+                var myNewItem = {id:"", localisations:[]};
+                /* Insert the new item into the store:*/
+                var newStoreItem = entriesGrid.store.newItem(myNewItem);
+                var row = entriesGrid.getItemIndex(newStoreItem)
+                entriesGrid.selection.clickSelect(row);
+                showEntry({rowIndex: row});
+            }
+            
+            function removeEntry() {
+                var selItem = entriesGrid.getItem(entriesGrid.selection.selectedIndex);
+                entriesGrid.store.deleteItem(selItem);
+            }
+            
+            function addLocalisedEntry() {
+                var myNewItem = {"0":"?", "1":"?"};
+                /* Insert the new item into the store:*/
+                entryLocalisationGrid.store.newItem(myNewItem);
+            }
+            
+            function cancelEdit() {
+                clSelect.store.query();
+                showCodeList();
+            }
+            
+            function saveChanges() {
+                var newEntries = [];
+                entriesGrid.store.fetch({
+                    onItem: function(item) {
+                        var entry = {id: entriesGrid.store.getValues(item, 'id')};
+                        
+                        var localisations = [];
+                        dojo.forEach(entriesGrid.store.getValues(item, 'localisations'), function(locale) {
+                            localisations.push([locale[0]+"", locale[1]+""]);
+                        });
+                        entry.localisations = localisations;
+                        newEntries.push(entry);
+                    }
+                });
+                
+                var selectedCodeList = clSelect.item;
+                selectedCodeList.entries = newEntries;
+                
+                //var data = [selectedCodeList, {oldId: clSelect.item.id}]
+                
+                clSelect.store.put(selectedCodeList, {id: listIdTextbox.get('value')});
+                showCodeList();
+                
+            }
+            
+            /* EVENT NOTIFIERS */
+            function watchStoresAndFields() {
+                dojo.connect(entryLocalisationGrid, "onSet", setDirtyFlag);
+                dojo.connect(entryLocalisationGrid, "onNew", setDirtyFlag);
+                dojo.connect(entryLocalisationGrid, "onDelete", setDirtyFlag);
+                
+                dojo.connect(entriesGrid.store, "onSet", setDirtyFlag);
+                dojo.connect(entriesGrid.store, "onNew", setDirtyFlag);
+                dojo.connect(entriesGrid.store, "onDelete", setDirtyFlag);
+                
+                dojo.connect(entryIdTextbox, "onChange", setDirtyFlag);
+                dojo.connect(listIdTextbox, "onChange", setDirtyFlag);
+                
+                setTimeout(resetDirtyFlag, 100);
+            }
+            
+            function updateStore(store) {
+                
+                
+                
+            }
+            
+            function setDirtyFlag() {
+                thereAreChanges = true;
+                btnSave.set("disabled", false);
+            }
+            
+            function resetDirtyFlag() {
+                thereAreChanges = false;
+                btnSave.set("disabled", true);
+            }
+            
+            /* VALIDATORS */
+            function idExists(newId) {
+                var invalid = false;
+                
+                // id not empty!
+                if (newId == "")
+                    invalid = true;
+                
+                // get old id from selected entry
+                var selItem = entriesGrid.getItem(entriesGrid.selection.selectedIndex);
+                entriesGrid.store.fetch({
+                    onItem: function(item) {
+                        if (item != selItem) {
+                            if (item.id == newId) {
+                                invalid = true;
+                            }
+                        }
+                    }
+                });
+               
+                if (invalid) {
+                    entriesGridStandby.show();
+                    codelistsStandby.show();
+                } else {
+                    entriesGridStandby.hide();
+                    codelistsStandby.hide();
+                }
+               
+                return invalid;
+            }
+           
+           /*function checkInput() {
+                // check if entry id was changed and there's a conflict!!!
+                if (!entryIdTextbox.validate()) {
+                    console.debug("invalid");
+                    entriesGridStandby.show();
+                } else {
+                    entriesGridStandby.hide();
+                }
+           }*/
+
+        </script>
+    </head>
+    <body class="claro">
+        <div id="content" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:true, liveSplitters:true">
+            <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'top'" style="height: 70px;">
+                <h1 style="text-align: center;">Codelist Administration</h1>
+                <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'/rest/getCodelists/'"></div>
+                Codelists: <div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:myStore, searchAttr:'name', labelFunc:getNiceLabel" style="align:center;"></div>
+            </div>
+            <div id="codeListContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 250px;">
+                <div id="entriesContent" style="display:none;">
+                    <span>List-ID: </span>
+                    <div id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.TextBox"></div>
+                    <div>All Entries:</div>
+                    <table id="entries" jsId="entriesGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true, autoWidth:true, selectionMode:'single'" style="height: 100%; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th field="id" width="40px">ID</th>
+                                <th get="myGrid.getEnglishEntry" width="200px">Entry Name</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <span data-dojo-type="dijit.form.Button" onclick="removeEntry()">Remove Entry</span>
+                    <span data-dojo-type="dijit.form.Button" onclick="addEntry()">Add Entry</span>
+                </div>
+                <div id="noCodelistSelected">
+                    No Codelist has been selected!
+                </div>
+            </div>
+            <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'" style="width: 100px;">
+                <h2>Edit Entries</h2>
+                <div id="entryContent" style="display:none;">
+                    <span>Entry-ID: </span>
+                    <input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="required:true">
+                    
+                    <div>Localisations:</div>
+                    <table jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" style="height: 150px;">
+                        <thead>
+                            <tr>
+                                <th field="0" width="100px" editable="true" cellType="dojox.grid.cells.Select">Locale</th>
+                                <th field="1" width="200px" editable="true">Value</th>
+                                <th field="2" width="50px" editable="true" cellType="dojox.grid.cells.Bool">Value</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <span data-dojo-type="dijit.form.Button" onclick="addLocalisedEntry()">Add Locale</span>
+                </div>
+                <div id="noEntrySelected">
+                    No entry has been selected!
+                </div>
+            </div>
+            <div id="actionContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'" style="height: 30px;">
+                <span data-dojo-type="dijit.form.Button" onclick="cancelEdit()">Cancel</span>
+                <span data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" onclick="saveChanges()">Save</span>
+            </div>
+        </div>
+        <div data-dojo-id="codelistsStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'topContent', color:'#EFEFEF', image:''">
+        <div data-dojo-id="entriesGridStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'codeListContent', color:'#EFEFEF', image:''">
+    </body>
+</html>

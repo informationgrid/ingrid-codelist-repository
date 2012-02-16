@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo: Dijit Select</title>
+		<link rel="stylesheet" href="js/dojo-1.7.1/dijit/themes/claro/claro.css">
+		<script src="js/dojo-1.7.1/dojo/dojo.js" data-dojo-config="parseOnLoad: true"></script>
+		
+		
+        <script type="text/javascript">
+			require(['dijit/form/FilteringSelect', 'dojo/data/ItemFileReadStore', 'dojo/store/JsonRest']);
+        	var jsonData;
+	     	// Dojo 1.7 (AMD)
+	        require(['dojo/_base/xhr'], function(xhr){
+	          /*xhr.get({
+	            url:"/rest/getCodelists", handleAs:"json",
+	            load: function(data){
+	              // data is a JavaScript object. The content of foo.php
+	              // was passed through dojo.fromJson
+		          console.debug(data);
+		          jsonData = data;
+		          clSelect.store = new dojo.store.Memory({data:jsonData});
+	            }
+	          });*/
+	        });
+
+	     	function getNiceLabel(item, store) {
+				return item.name + " ("+item.id+")";
+			}
+	    </script>
+        
+	</head>
+	<body class="claro">
+			<div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'/rest/getCodelists'"></div>
+			<div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:myStore, value:'id', searchAttr:'name', labelFunc:getNiceLabel"></div>
+	</body>
+</html>
+	
