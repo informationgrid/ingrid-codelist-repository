@@ -10,14 +10,27 @@ import java.util.List;
  *
  */
 public class CodeList {
+    // the id of the codelist
     private String  id;
+    
+    // the name of the codelist
     private String  name;
+    
+    // a description of the codelist
     private String  description;
+    
+    // the entry that should be selected as default
+    private String  defaultEntry;
+    
+    // several entries of a codelist, which can be localised
     private List<CodeListEntry> entries;
+    
+    // the date the codelist has been modified the last time
     private long lastModified;
     
     public CodeList() {
         this.entries = new ArrayList<CodeListEntry>();
+        defaultEntry = "";
     }
     
     public void setId(String id) {
@@ -38,6 +51,15 @@ public class CodeList {
     public String getDescription() {
         return description;
     }
+    
+    public void setDefaultEntry(String defaultEntry) {
+        this.defaultEntry = defaultEntry;
+    }
+
+    public String getDefaultEntry() {
+        return defaultEntry;
+    }
+    
     public void setEntries(List<CodeListEntry> entries) {
         this.entries = entries;
     }

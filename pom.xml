@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <!-- <parent>
+  <parent>
     <groupId>de.ingrid</groupId>
     <artifactId>ingrid-base-pom</artifactId>
     <version>3.1.0</version>
-  </parent>-->
+  </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ingrid</groupId>
   <artifactId>ingrid-codelist-repo</artifactId>
   <version>3.2.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>InGrid CodeList Repository</name>
-  <!-- <scm>
-    <connection>scm:svn:https://harrison.its-technidata.de/svn/ingrid</connection>
-    <developerConnection>scm:svn:https://harrison.its-technidata.de/svn/ingrid</developerConnection>
-  </scm>-->
+  <scm>
+    <connection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repo</connection>
+    <developerConnection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repo</developerConnection>
+  </scm>
   <build>
     <finalName>${project.artifactId}</finalName>
     <plugins>
@@ -46,48 +46,10 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
-                <source>1.5</source>
-                <target>1.5</target>
+                <source>1.6</source>
+                <target>1.6</target>
             </configuration>
-        </plugin>
-        <!-- <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>wagon-maven-plugin</artifactId>
-        <version>1.0-beta-1</version>
-        <executions>
-          <execution>
-            <id>download-dojo</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>download-single</goal>
-            </goals>
-            <configuration>
-              <serverId>dojotoolkit</serverId>
-              <url>http://download.dojotoolkit.org/release-1.7.1</url>
-              <fromFile>dojo-release-1.7.1.tar.gz</fromFile>
-              <toDir>${project.build.directory}</toDir>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>unpack</id>
-            <configuration>
-              <tasks>      
-                <untar compression="gzip" src="${project.build.directory}/dojo-release-1.7.1.tar.gz" dest="${project.build.directory}" />
-              </tasks>
-            </configuration>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>-->
       <plugin>
          <groupId>org.apache.maven.plugins</groupId>
          <artifactId>maven-dependency-plugin</artifactId>
@@ -108,16 +70,8 @@
                    <type>war</type>
                    <overWrite>false</overWrite>
                    <outputDirectory>${project.build.directory}/js/dojo</outputDirectory>
-                   <!-- <destFileName>optional-new-name.jar</destFileName>
-                   <includes>**/*.class,**/*.xml</includes>
-                   <excludes>**/*test.class</excludes>-->
                  </artifactItem>
                </artifactItems>
-               <!-- <includes>**/*.java</includes>
-               <excludes>**/*.properties</excludes>
-                     <outputDirectory>${project.build.directory}/wars</outputDirectory>
-               <overWriteReleases>false</overWriteReleases>
-               <overWriteSnapshots>true</overWriteSnapshots> -->
              </configuration>
            </execution>
          </executions>
@@ -142,7 +96,6 @@
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
-      <version>2.4</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -182,18 +135,15 @@
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-      <version>1.2.16</version>
     </dependency>
     <!-- The two following dependencies are needed for Jetty -->
     <dependency>
       <groupId>org.mortbay.jetty</groupId>
       <artifactId>jetty</artifactId>
-      <version>6.1.14</version>
     </dependency>
     <dependency>
       <groupId>org.mortbay.jetty</groupId>
       <artifactId>jsp-2.1</artifactId>
-      <version>6.1.14</version>
     </dependency>
     <!-- End of Jetty - Dependencies -->
     <!-- DOJO Sourcen -->
@@ -219,13 +169,5 @@
       <url>http://harrison.its-technidata.de/archiva/repository/ingrid-all</url>
     </repository>
   </repositories>
-  
-  <pluginRepositories>
-    <!-- <pluginRepository>
-      <name>oss.sonatype.org</name>
-      <id>oss.sonatype.org</id>
-      <url>http://oss.sonatype.org/content/groups/public</url>
-    </pluginRepository>-->
-  </pluginRepositories>  
 </project>
     

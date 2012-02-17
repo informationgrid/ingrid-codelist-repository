@@ -13,12 +13,10 @@ import org.mortbay.log.Log;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
-import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
 
 import de.ingrid.codelistHandler.model.CodeList;
-import de.ingrid.codelistHandler.model.CodeListEntry;
 import de.ingrid.codelistHandler.util.CodeListUtils;
 import de.ingrid.codelistHandler.util.XmlCodeListUtils;
 
@@ -53,11 +51,8 @@ public class CodeListManager {
     }
     
     public boolean updateCodeList(String id, String data) {
-        String classData = XmlCodeListUtils.addClassInformation(data);
-        XStream xstream = new XStream(new JettisonMappedXmlDriver());
-        xstream.alias("codelist", CodeList.class);
-        xstream.alias("clEntry", CodeListEntry.class);
-        CodeList cl = (CodeList)xstream.fromXML(classData);
+        
+        CodeList cl = XmlCodeListUtils.getCodeListFromJsonGeneric(data);
         
         // add modification date
         cl.setLastModified(System.currentTimeMillis());
@@ -95,6 +90,7 @@ public class CodeListManager {
         return readCodeListsFromFile(null);
     }
     
+    @SuppressWarnings("unchecked")
     public List<CodeList> readCodeListsFromFile(String path) {
         XStream xStream = new XStream();
         String finalPath = path;

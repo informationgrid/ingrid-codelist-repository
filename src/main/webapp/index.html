@@ -118,6 +118,9 @@
                      
                     entriesGrid.setStore(newStore);
                     
+                    // special handling for checkboxes
+                    checkboxHandling(newStore);
+                    
                     watchStore(entriesGrid.store);
                     
                     setTimeout(resetDirtyFlag, 100);
@@ -225,6 +228,7 @@
             }
             
             function saveChanges() {
+                var selectedCodeList = clSelect.item;
                 
                 updateListEntryData();
                 
@@ -232,15 +236,19 @@
                 entriesGrid.store.fetch({
                     onItem: function(item) {
                         var entry = {
-                            id: item.data[0].id, 
-                            defaultLocale: item.data[0].defaultLocale,
+                            id: item.data[0].id+"", 
                             localisations: item.data[0].localisations
                         };
+                        
+                        // set the default localisation
+                        if (item.default == "true")
+                            selectedCodeList.defaultEntry = item.data[0].id+"";
+                        
                         newEntries.push(entry);
                     }
                 });
                 
-                var selectedCodeList = clSelect.item;
+                
                 selectedCodeList.name = listNameTextbox.get("value");
                 selectedCodeList.description = listDescrTextbox.get("value");
                 selectedCodeList.entries = newEntries;
@@ -267,6 +275,7 @@
                 dojo.forEach(cl.entries, function(item) {
                     var entry = {id: item.id};
                     entry.localisedName = getLocalisedEntryName(item.localisations);
+                    entry.default = (cl.defaultEntry == item.id) ? true : false
                     entry.data = item;
                     data.push(entry);
                 });
@@ -276,7 +285,7 @@
             function prepareCodelistEntryLocalisation(entry) {
                 var data = [];
                 dojo.forEach(entry.localisations, function(local) {
-                    var locEntry = {lang: local[0], value: local[1], 'default': (entry.defaultLocale == local[0]) ? true : false};
+                    var locEntry = {lang: local[0], value: local[1]};
                     data.push(locEntry);
                 });
                 return data;
@@ -329,9 +338,6 @@
                 entryLocalisationGrid.store.fetch({
                     onItem: function(item) {
                         data.localisations.push([item.lang+"", item.value+""]);
-                        if (item['default'] == "true") {
-                            data.defaultLocale = item.lang;
-                        }
                     }
                 });
             }
@@ -376,6 +382,23 @@
                
                 return invalid;
             }
+            
+            function checkboxHandling(store) {
+                dojo.connect(store, "onSet", function(item, attribute, oldValue, newValue) {
+                    if (attribute == "default" && newValue == true && oldValue == false) {
+                        // make sure no other checkboxes are selected!
+                        entriesGrid.store.fetch({
+                            onItem: function(otherItem) {
+                                if (item != otherItem && (otherItem.default == "true")) {
+                                    entriesGrid.store.setValue(otherItem, "default", false);
+                                }
+                            }
+                        });
+                        // update grid
+                        entriesGrid.render();
+                    }
+                });
+            }
            
             /* FORMATTERS */
             function showLanguage(value, rowIndex, widget) {
@@ -391,14 +414,14 @@
     </head>
     <body class="claro">
         <div id="content" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:true, liveSplitters:true">
-            <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'top'" style="height: 70px;background-color: lightgray;">
+            <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="height: 70px;background-color: lightgray;">
                 <h1 style="text-align: center;">Codelist Administration</h1>
                 <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'/rest/getCodelists/'"></div>
                 Codelists: <div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:myStore, searchAttr:'name', labelFunc:getNiceLabel" style="align:center;"></div>
                 <span data-dojo-type="dijit.form.Button" onclick="addCodelist()">Add</span>
                 <span data-dojo-type="dijit.form.Button" onclick="removeCodelist()">Remove</span>
             </div>
-            <div id="codeListContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 250px;">
+            <div id="codeListContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 300px;">
                 <h2>Codelist Overview</h2>
                 <div id="entriesContent" style="display:none;">
                     <table style="width:100%;">
@@ -412,6 +435,7 @@
                             <tr>
                                 <th field="id" width="auto">ID</th>
                                 <th field="localisedName" width="auto">Entry Name</th>
+                                <th field="default" name="Default" width="55px" editable="true" cellType="dojox.grid.cells.Bool">Value</th>
                             </tr>
                         </thead>
                     </table>
@@ -424,7 +448,7 @@
                     No Codelist has been selected!
                 </div>
             </div>
-            <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'" style="width: 100px;">
+            <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'">
                 <h2>Edit Entries</h2>
                 <div id="entryContent" style="display:none;">
                     <span>Entry-ID: </span>
@@ -436,7 +460,6 @@
                             <tr>
                                 <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.FilteringSelect" widgetProps="{ store:languageStore}" formatter="showLanguage">Locale</th>
                                 <th field="value" width="auto" editable="true">Value</th>
-                                <th field="default" name="Default" width="55px" editable="true" cellType="dojox.grid.cells.Bool">Value</th>
                             </tr>
                         </thead>
                     </table>

@@ -12,11 +12,9 @@ import java.util.Map;
 public class CodeListEntry {
     private String              id;
     private Map<String, String> localisations;
-    private String              defaultLocale;
     
     public CodeListEntry() {
         localisations = new HashMap<String, String>();
-        defaultLocale = "";
     }
     
     public void setId(String id) {
@@ -35,13 +33,11 @@ public class CodeListEntry {
         return this.localisations.get(lang);
     }
 
-    
-    public void setDefaultLocale(String defaultLocale) {
-        this.defaultLocale = defaultLocale;
-    }
-
-    public String getDefaultLocale() {
-        return defaultLocale;
+    public Map<String, String> getLocalisations() {
+        return this.localisations;
     }
     
+    public void setLocalisations(Map<String, String> map) {
+        this.localisations = map;
+    }
 }

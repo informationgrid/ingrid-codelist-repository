@@ -1,40 +1,42 @@
 package de.ingrid.codelistHandler;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.io.Writer;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
-import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
-import com.thoughtworks.xstream.io.json.JsonWriter;
-
-import de.ingrid.codelistHandler.CodeListManager;
 import de.ingrid.codelistHandler.model.CodeList;
 import de.ingrid.codelistHandler.model.CodeListEntry;
 
 public class CodeListManagerTest {
+    private String dataFile = "data/CodeListsDataTest.xml";
 
     @Before
     public void setUp() throws Exception {
         removeExisitingTestFile();
-        fillData();
         
     }
-
+    
     @Test
-    public final void testGetCodeLists() {
-        CodeListManager.getInstance().readCodeListsFromFile();
-        fail("Not yet implemented"); // TODO
+    public final void testGetCodeLists_empty() {
+        List<CodeList> cls = CodeListManager.getInstance().readCodeListsFromFile(dataFile);
+        assertTrue(cls.isEmpty());
     }
     
+    @Test
+    public final void testGetCodeLists_filled() {
+        fillData();
+        List<CodeList> cls = CodeListManager.getInstance().readCodeListsFromFile(dataFile);
+        assertTrue(cls.size() == 2);
+    }
+
+    
+    
     private void removeExisitingTestFile() {
-        File f = new File("data/CodeListsData.xml");
+        File f = new File(dataFile);
         if (f.exists() && f.isFile()) {
             f.delete();
         }
@@ -75,7 +77,6 @@ public class CodeListManagerTest {
         allCl.add(cl1);
         allCl.add(cl2);
         
-        CodeListManager.getInstance().writeCodeListsToFile();
+        CodeListManager.getInstance().writeCodeListsToFile(dataFile);
     }
-
 }
