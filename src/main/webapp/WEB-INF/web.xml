@@ -17,7 +17,8 @@
     <servlet>
         <display-name>JAX-RS REST Servlet</display-name>
         <servlet-name>REST-Servlet</servlet-name>
-        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+<!--         <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class> -->
+        <servlet-class>com.sun.jersey.spi.spring.container.servlet.SpringServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>REST-Servlet</servlet-name>
@@ -38,4 +39,14 @@
         <auth-method>BASIC</auth-method>
         <realm-name>UserRealm</realm-name>
     </login-config>
+    
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/application-context.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
 </web-app>

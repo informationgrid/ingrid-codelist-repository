@@ -12,11 +12,17 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import de.ingrid.codelistHandler.CodeListManager;
-import de.ingrid.codelistHandler.util.CodeListUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import de.ingrid.codelistHandler.CodeListManager;
+import de.ingrid.codelists.util.CodeListUtils;
+
+@Component
 @Path("/getCodelists/")
 public class CodeListAccessResource {
+    @Autowired
+    private CodeListManager manager;
 
     // and implement the following GET method 
     @GET
@@ -24,9 +30,9 @@ public class CodeListAccessResource {
     public Response getCodeLists( @QueryParam("lastModifiedDate") String lastModifiedDate, @QueryParam("name") String name ) {
 
         if (name == null || "".equals(name) || "*".equals(name)) {
-            return Response.ok(CodeListManager.getInstance().getCodeListsAsJson("id", CodeListUtils.SORT_INCREMENT)).build();
+            return Response.ok(manager.getCodeListsAsJson("id", lastModifiedDate, CodeListUtils.SORT_INCREMENT)).build();
         } else {
-            return Response.ok(CodeListManager.getInstance().getFilteredCodeListsAsJson(name)).build();
+            return Response.ok(manager.getFilteredCodeListsAsJson(name)).build();
         }
     }
     
@@ -35,7 +41,7 @@ public class CodeListAccessResource {
     @Consumes(MediaType.APPLICATION_JSON) 
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateCodelists(@PathParam("id") String id, String body) {
-        boolean success = CodeListManager.getInstance().updateCodeList(id, body);
+        boolean success = manager.updateCodeList(id, body);
         
         if (success)
             return Response.ok().build();
@@ -48,17 +54,25 @@ public class CodeListAccessResource {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCodelist(@PathParam("id") String id) {
-        return Response.ok(CodeListManager.getInstance().getCodeListAsJson(id)).build();
+        return Response.ok(manager.getCodeListAsJson(id)).build();
     }
     
     @DELETE
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response removeCodelist(@PathParam("id") String id) {
-        if (CodeListManager.getInstance().removeCodeList(id)) {
+        if (manager.removeCodeList(id)) {
             return Response.ok().build();
         } else {
             return Response.status(123).build();
         }
+    }
+
+    public void setManager(CodeListManager manager) {
+        this.manager = manager;
+    }
+
+    public CodeListManager getManager() {
+        return manager;
     }
 }
