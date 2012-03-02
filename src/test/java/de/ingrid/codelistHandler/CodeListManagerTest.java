@@ -1,18 +1,27 @@
 package de.ingrid.codelistHandler;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.io.File;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import de.ingrid.codelistHandler.model.CodeList;
-import de.ingrid.codelistHandler.model.CodeListEntry;
+import de.ingrid.codelists.model.CodeList;
+import de.ingrid.codelists.model.CodeListEntry;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"/application-context.xml"})
 public class CodeListManagerTest {
     private String dataFile = "data/CodeListsDataTest.xml";
+    
+    @Autowired
+    private CodeListManager manager;
 
     @Before
     public void setUp() throws Exception {
@@ -21,15 +30,15 @@ public class CodeListManagerTest {
     }
     
     @Test
-    public final void testGetCodeLists_empty() {
-        List<CodeList> cls = CodeListManager.getInstance().readCodeListsFromFile(dataFile);
+    public void testGetCodeLists_empty() {
+        List<CodeList> cls = manager.getCodeLists();//readCodeListsFromFile(dataFile);
         assertTrue(cls.isEmpty());
     }
     
     @Test
-    public final void testGetCodeLists_filled() {
+    public void testGetCodeLists_filled() {
         fillData();
-        List<CodeList> cls = CodeListManager.getInstance().readCodeListsFromFile(dataFile);
+        List<CodeList> cls = manager.getCodeLists();
         assertTrue(cls.size() == 2);
     }
 
@@ -73,10 +82,18 @@ public class CodeListManagerTest {
         
         cl2.addEntry(entry_2_1);
         
-        List<CodeList> allCl = CodeListManager.getInstance().getCodeLists();
+        List<CodeList> allCl = manager.getCodeLists();
         allCl.add(cl1);
         allCl.add(cl2);
         
-        CodeListManager.getInstance().writeCodeListsToFile(dataFile);
+        manager.writeCodeListsToFile();
+    }
+
+    public void setManager(CodeListManager manager) {
+        this.manager = manager;
+    }
+
+    public CodeListManager getManager() {
+        return manager;
     }
 }

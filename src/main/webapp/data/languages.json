@@ -3,7 +3,8 @@
     label: 'name',
     items: [
         { value: "de", name: "German" },
-        { value: "en", name: "English" }
+        { value: "en", name: "English" },
+        { value: "es", name: "Spanish" }
     ]
     
 }

@@ -137,6 +137,7 @@
                 
                 var item = entriesGrid.getItem(currentEntryClicked).data[0];
                 entryIdTextbox.attr("value", item.id, false);
+                entryDescrTextbox.attr("value", item.description ? item.description+"" : "", false);
                 
                 var newStore = new dojo.data.ItemFileWriteStore(
                     {data: {items: prepareCodelistEntryLocalisation(item)}}
@@ -229,6 +230,8 @@
             
             function saveChanges() {
                 var selectedCodeList = clSelect.item;
+                // initially set default entry to -1
+                selectedCodeList.defaultEntry = "-1";
                 
                 updateListEntryData();
                 
@@ -236,7 +239,8 @@
                 entriesGrid.store.fetch({
                     onItem: function(item) {
                         var entry = {
-                            id: item.data[0].id+"", 
+                            id: item.data[0].id+"",
+                            description: item.data[0].description ? item.data[0].description+"" : "", 
                             localisations: item.data[0].localisations
                         };
                         
@@ -249,9 +253,9 @@
                 });
                 
                 
-                selectedCodeList.name = listNameTextbox.get("value");
-                selectedCodeList.description = listDescrTextbox.get("value");
-                selectedCodeList.entries = newEntries;
+                selectedCodeList.name           = listNameTextbox.get("value");
+                selectedCodeList.description    = listDescrTextbox.get("value");
+                selectedCodeList.entries        = newEntries;
                 
                 var def = clSelect.store.put(selectedCodeList, {id: listIdTextbox.get('value'), name:"hallo"});
                 def.then(
@@ -316,6 +320,7 @@
                 dojo.connect(listIdTextbox,    "onChange", setDirtyFlag);
                 dojo.connect(listNameTextbox,  "onChange", setDirtyFlag);
                 dojo.connect(listDescrTextbox, "onChange", setDirtyFlag);
+                dojo.connect(entryDescrTextbox, "onChange", setDirtyFlag);
             }
            
             function watchStore(store) {
@@ -334,6 +339,7 @@
                 var origItem = entriesGrid.getItem(currentEntryClicked);
                 var data = origItem.data[0];
                 data.id = entryIdTextbox.get('value');
+                data.description = entryDescrTextbox.get('value'); 
                 data.localisations = [];
                 entryLocalisationGrid.store.fetch({
                     onItem: function(item) {
@@ -451,9 +457,10 @@
             <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'">
                 <h2>Edit Entries</h2>
                 <div id="entryContent" style="display:none;">
-                    <span>Entry-ID: </span>
-                    <input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="required:true">
-                    
+                    <table>
+	                    <tr><td>Entry-ID::</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="required:true"></td></tr>
+	                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" style="width:100%;"></td></tr>
+                    </table>
                     <div>Localisations:</div>
                     <table jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true">
                         <thead>

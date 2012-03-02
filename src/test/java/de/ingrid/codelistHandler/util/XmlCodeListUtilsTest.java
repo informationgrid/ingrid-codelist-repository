@@ -5,7 +5,8 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.ingrid.codelistHandler.model.CodeList;
+import de.ingrid.codelists.model.CodeList;
+import de.ingrid.codelists.util.CodeListUtils;
 
 public class XmlCodeListUtilsTest {
 
@@ -37,7 +38,7 @@ public class XmlCodeListUtilsTest {
     public final void testGetCodeListFromJsonGeneric() {
         String data = "{\"id\": \"100\",\"name\": \"TestList\",\"description\": \"Dies ist eine Testliste.\",\"entries\": [{\"id\": \"1\",\"localisations\": [[\"de\",\"eins\"],[\"en\",\"one\"]]}],\"lastModified\": 1329414705531}";
         //String data = "{codelist:{\"id\": \"100\",\"name\": \"TestList\",\"description\": \"Dies ist eine Testliste.\",\"entries\": [],\"lastModified\": 1329414705531}}";
-        //CodeList cl = CodeListUtils.getCodeListFromJsonGeneric(data);
-        //assertNotNull(cl);
+        CodeList cl = CodeListUtils.getCodeListFromJsonGeneric(data);
+        assertNotNull(cl);
     }
 }
