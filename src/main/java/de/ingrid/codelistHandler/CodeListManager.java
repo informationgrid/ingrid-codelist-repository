@@ -82,7 +82,7 @@ public class CodeListManager {
         List<CodeList> filteredCLs = new ArrayList<CodeList>();
         
         for (CodeList cl : getCodeLists()) {
-            if (cl.getName().toLowerCase().startsWith(search))
+            if (cl.getName() != null && cl.getName().toLowerCase().startsWith(search))
                 filteredCLs.add(cl);
         }
         return createJSON(filteredCLs);

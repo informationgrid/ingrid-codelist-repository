@@ -26,7 +26,7 @@
         <script type="text/javascript">
             var thereAreChanges     = false;
             var currentCodelist     = -1;
-            var currentEntryClicked = -1;
+            var currentEntryClicked = null;
             
             var languageStore;
             var languageMap         = {};
@@ -131,11 +131,11 @@
                 console.debug("onRowClick");
                 updateListEntryData();
                 
-                currentEntryClicked = event.rowIndex;
+                currentEntryClicked = entriesGrid.selection.getSelected()[0];//event.rowIndex;
                 
                 showEntryDiv();
                 
-                var item = entriesGrid.getItem(currentEntryClicked).data[0];
+                var item = currentEntryClicked.data[0];//entriesGrid.getItem(currentEntryClicked).data[0];
                 entryIdTextbox.attr("value", item.id, false);
                 entryDescrTextbox.attr("value", item.description ? item.description+"" : "", false);
                 
@@ -161,11 +161,12 @@
                 dojo.style("noEntrySelected", "display", "block");
                 dojo.style("entryContent",    "display", "none");
                 entriesGrid.selection.clear();
-                currentEntryClicked = -1;
+                currentEntryClicked = null;
             }
             
             function getNiceLabel(item, store) {
-                return item.name + " ("+item.id+")";
+                if (!item.name) item.name = "Unknown";
+                return item.id+" - " + item.name;
             }
             
             function updateEntryId(value) {
@@ -331,12 +332,12 @@
             
             function updateListEntryData() {
                 // if nothing has been selected before
-                if (currentEntryClicked === -1)
+                if (currentEntryClicked === null)
                     return;
                     
                 console.debug("updateListEntryData");
                     
-                var origItem = entriesGrid.getItem(currentEntryClicked);
+                var origItem = currentEntryClicked;//entriesGrid.getItem(currentEntryClicked);
                 var data = origItem.data[0];
                 data.id = entryIdTextbox.get('value');
                 data.description = entryDescrTextbox.get('value'); 
@@ -423,7 +424,7 @@
             <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="height: 70px;background-color: lightgray;">
                 <h1 style="text-align: center;">Codelist Administration</h1>
                 <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'/rest/getCodelists/'"></div>
-                Codelists: <div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:myStore, searchAttr:'name', labelFunc:getNiceLabel" style="align:center;"></div>
+                Codelists: <div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:myStore, required: false, searchAttr:'name', labelFunc:getNiceLabel" style="align:center;"></div>
                 <span data-dojo-type="dijit.form.Button" onclick="addCodelist()">Add</span>
                 <span data-dojo-type="dijit.form.Button" onclick="removeCodelist()">Remove</span>
             </div>
@@ -436,10 +437,10 @@
                         <tr><td>Description:</td><td><input id="listDescr" jsId="listDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea"></td></tr>
                     </table>
                     <div>All Entries:</div>
-                    <table id="entries" jsId="entriesGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true, selectionMode:'single'" style="height: 100%; width: 100%;">
+                    <table id="entries" jsId="entriesGrid" data-dojo-type="dojox.grid.DataGrid" keepSelection=true data-dojo-props="autoHeight:true, selectionMode:'single'" style="height: 100%; width: 100%;">
                         <thead>
                             <tr>
-                                <th field="id" width="auto">ID</th>
+                                <th field="id" width="50px">ID</th>
                                 <th field="localisedName" width="auto">Entry Name</th>
                                 <th field="default" name="Default" width="55px" editable="true" cellType="dojox.grid.cells.Bool">Value</th>
                             </tr>

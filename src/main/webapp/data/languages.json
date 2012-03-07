@@ -4,7 +4,9 @@
     items: [
         { value: "de", name: "German" },
         { value: "en", name: "English" },
-        { value: "es", name: "Spanish" }
+        { value: "es", name: "Spanish" },
+        { value: "iso", name: "ISO" },
+        { value: "req_value", name: "Request Value (Env. topics)" }
     ]
     
 }
