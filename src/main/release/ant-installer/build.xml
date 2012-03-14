@@ -20,10 +20,6 @@
         <move toDir="${installDir}">
             <fileset dir="${installDir}/${componentName}"/>
         </move>
-        
-        <!-- overwrite is false by default! So no codelists are overwritten here! -->
-        <echo>Codelists initialisieren</echo>
-        <copy file="${installDir}/conf/codelists_initial.xml" tofile="${installDir}/data/codelists.xml" />
     </target>
     
     <target name="clRepo" description="Set configuration correctly for the iBus.">
