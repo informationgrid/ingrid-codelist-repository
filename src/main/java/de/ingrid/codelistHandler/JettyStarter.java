@@ -1,13 +1,11 @@
 package de.ingrid.codelistHandler;
 
+import org.apache.log4j.Logger;
 import org.mortbay.jetty.Server;
 import org.mortbay.jetty.webapp.WebAppContext;
 
-import com.sun.org.apache.commons.logging.Log;
-import com.sun.org.apache.commons.logging.LogFactory;
-
 public class JettyStarter {
-private static final Log log = LogFactory.getLog(JettyStarter.class);
+private static final Logger log = Logger.getLogger(JettyStarter.class);
     
     private static String DEFAULT_WEBAPP_DIR    = "webapp";
     

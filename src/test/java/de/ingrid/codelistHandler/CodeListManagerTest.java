@@ -16,9 +16,9 @@ import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"/application-context.xml"})
+@ContextConfiguration(locations = {"classpath:/application-context-test.xml"})
 public class CodeListManagerTest {
-    private String dataFile = "data/CodeListsDataTest.xml";
+    private String dataFile = "data/codelistsTests.xml";
     
     @Autowired
     private CodeListManager manager;
@@ -26,12 +26,11 @@ public class CodeListManagerTest {
     @Before
     public void setUp() throws Exception {
         removeExisitingTestFile();
-        
     }
     
     @Test
     public void testGetCodeLists_empty() {
-        List<CodeList> cls = manager.getCodeLists();//readCodeListsFromFile(dataFile);
+        List<CodeList> cls = manager.getCodeLists();
         assertTrue(cls.isEmpty());
     }
     

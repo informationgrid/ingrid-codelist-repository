@@ -1,5 +1,6 @@
 var clDialogs = {};
 
+//require(["dijit/Dialog"]);
 dojo.require("dijit.Dialog");
 
 clDialogs.TYPE_OK           = "OK";

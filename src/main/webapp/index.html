@@ -5,14 +5,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>InGrid CodeLists Administration</title>
         
+<!--         <script type="text/javascript" src="js/dojo/dojo-1.7.2/release/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad: true"></script> -->
         <script type="text/javascript" src="js/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad: true"></script>
-        <script type="text/javascript" src="js/dialogs.js"></script>
+<!--         <script type="text/javascript" src="js/dojo.js" data-dojo-config="parseOnLoad: true"></script> -->
+<!--         <script type="text/javascript" src="js/main.js"></script> -->
         
         <link rel="stylesheet" href="js/dojo/dojo/resources/dojo.css">
         <link rel="stylesheet" href="js/dojo/dijit/themes/claro/claro.css">
         <link rel="stylesheet" href="js/dojo/dojox/grid/resources/Grid.css">
         <link rel="stylesheet" href="js/dojo/dojox/grid/resources/claroGrid.css">
-        <!-- <link rel="stylesheet" type="text/css" href="../lib/extjs/resources/css/ext-all.css" /> -->
+        
+        <script type="text/javascript" src="js/dojo_requires.js"></script>
+        <script type="text/javascript" src="js/dialogs.js"></script>
+        
         
         <style type="text/css" media="screen">
             body, html { width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
@@ -31,25 +36,23 @@
             var languageStore;
             var languageMap         = {};
             
-            require([
-                "dojo/store/JsonRest",
-                "dojox/grid/DataGrid",
-                "dojo/data/ObjectStore",
-                "dojo/data/ItemFileReadStore",
-                "dojo/data/ItemFileWriteStore",
-                "dijit/form/ValidationTextBox",
-                "dijit/form/SimpleTextarea",
-                "dijit/form/Button",
-                "dijit/form/FilteringSelect",
-                "dijit/layout/BorderContainer",
-                "dijit/layout/ContentPane",
-                "dojox/widget/Standby",
-                "dojox/grid/cells/dijit",
-                "dojo/ready", "dojo/on"], function(JsonRest, DataGrid, ObjectStore) {
+//             require([
+//                 "dojo/store/JsonRest",
+//                 "dojox/grid/DataGrid",
+//                 "dojo/data/ItemFileWriteStore",
+//                 "dijit/form/ValidationTextBox",
+//                 "dijit/form/SimpleTextarea",
+//                 "dijit/form/Button",
+//                 "dijit/form/FilteringSelect",
+//                 "dijit/layout/BorderContainer",
+//                 "dijit/layout/ContentPane",
+//                 "dojox/widget/Standby",
+//                 "dojox/grid/cells/dijit",
+//                 "dojo/ready"], function(JsonRest, DataGrid) {
                     
-                languageStore = new dojo.data.ItemFileReadStore({url:'data/languages.json'});
-                languageStore.fetch();
-            });
+                 languageStore = new dojo.data.ItemFileReadStore({url:'data/languages.json'});
+                 languageStore.fetch();
+//             });
             
             dojo.ready(function() {
                 dojo.connect(clSelect,       "onChange",        showCodeList);
@@ -214,7 +217,7 @@
             function removeCodelist() {
                 var def = clDialogs.showAskDialog(clDialogs.MSG_DELETE_LIST);
                 def.then(function() {
-                    clSelect.store.remove(currentCodelist);
+                    clSelect.store.objectStore.remove(currentCodelist);
                     clSelect.reset();
                 }, function() {
                     console.debug("Deletion aborted!");
@@ -258,7 +261,7 @@
                 selectedCodeList.description    = listDescrTextbox.get("value");
                 selectedCodeList.entries        = newEntries;
                 
-                var def = clSelect.store.put(selectedCodeList, {id: listIdTextbox.get('value'), name:"hallo"});
+                var def = clSelect.store.objectStore.put(selectedCodeList, {id: listIdTextbox.get('value'), name:"hallo"});
                 def.then(
                     function(result) {
                         clDialogs.showDialog(clDialogs.TYPE_OK, clDialogs.MSG_SAVE_SUCCESS);
@@ -424,9 +427,9 @@
             <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="height: 70px;background-color: lightgray;">
                 <h1 style="text-align: center;">Codelist Administration</h1>
                 <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'/rest/getCodelists/'"></div>
-                Codelists: <div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:myStore, required: false, searchAttr:'name', labelFunc:getNiceLabel" style="align:center;"></div>
-                <span data-dojo-type="dijit.form.Button" onclick="addCodelist()">Add</span>
-                <span data-dojo-type="dijit.form.Button" onclick="removeCodelist()">Remove</span>
+                Codelists: <div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: myStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel" style="align:center;"></div>
+                <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
+                <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist">Remove</span>
             </div>
             <div id="codeListContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 300px;">
                 <h2>Codelist Overview</h2>
@@ -447,8 +450,8 @@
                         </thead>
                     </table>
                     <div class="buttonLayer">
-                        <span data-dojo-type="dijit.form.Button" onclick="removeEntry()">Remove Entry</span>
-                        <span data-dojo-type="dijit.form.Button" onclick="addEntry()">Add Entry</span>
+                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeEntry">Remove Entry</span>
+                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addEntry">Add Entry</span>
                     </div>
                 </div>
                 <div id="noCodelistSelected">
@@ -472,8 +475,8 @@
                         </thead>
                     </table>
                     <div class="buttonLayer">
-                        <span data-dojo-type="dijit.form.Button" onclick="removeLocalisedEntry()">Remove Locale</span>
-                        <span data-dojo-type="dijit.form.Button" onclick="addLocalisedEntry()">Add Locale</span>
+                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>
+                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Locale</span>
                     </div>
                 </div>
                 <div id="noEntrySelected">
@@ -481,8 +484,8 @@
                 </div>
             </div>
             <div id="actionContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'" style="height: 30px;background-color: lightgray;">
-                <span data-dojo-type="dijit.form.Button" onclick="cancelEdit()">Cancel</span>
-                <span data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" onclick="saveChanges()" data-dojo-props="disabled:true">Save</span>
+                <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:cancelEdit">Cancel</span>
+                <span data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:saveChanges" data-dojo-props="disabled:true">Save</span>
             </div>
         </div>
         <div data-dojo-id="codelistsStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'topContent', color:'#EFEFEF', image:''">

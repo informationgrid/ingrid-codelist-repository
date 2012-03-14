@@ -12,7 +12,7 @@
     </bean>
     
     <bean id="xmlPersistency" class="de.ingrid.codelists.persistency.XmlCodeListPersistency">
-        <property name="pathToXml" value="codelists.xml" />
+        <property name="pathToXml" value="data/codelistsTests.xml" />
     </bean>
     <bean id="codeListService" class="de.ingrid.codelists.CodeListService">
         <property name="persistencies">

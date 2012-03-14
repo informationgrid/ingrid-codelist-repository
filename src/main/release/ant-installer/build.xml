@@ -1,0 +1,52 @@
+<project name="PortalU Installation">
+    <description>
+        iBus Installation Script
+    </description>
+	<!-- set global properties for this build -->
+	<property name="componentName" value="${project.artifactId}-${project.version}"/>
+	<property name="start-script" value="${installDir}/start.sh"/>
+	
+	<target name="extract" description="Extract all files to the installation directory.">
+		<unzip src="${antinstaller.jar}" dest="${installDir}">
+			<patternset>
+				<include name="${componentName}/**/*.*"/>
+			</patternset>
+		</unzip>
+		
+		<move toDir="${installDir}">
+			<fileset dir="${installDir}/${componentName}"/>
+		</move>
+        
+        <!-- overwrite is false by default! So no codelists are overwritten here! -->
+        <copy file="${installDir}/conf/codelists_initial.xml" tofile="${installDir}/data/codelists.xml" />
+	</target>
+	
+	<target name="clRepo" description="Set configuration correctly for the iBus.">
+		<echo>Schreibe den Admin-Port in das Startskript</echo>
+		<replace file="${start-script}" token="@SERVER_PORT@" value="${serverPort}"/>
+	</target>
+	
+	<target name="startComponent">
+		<echo>
+=================
+Weiteres Vorgehen
+=================
+
+		</echo>
+		<echo>
+Gehen Sie ins Verzeichnis:
+${installDir}
+und rufen sie von der Kommandozeile folgendes auf
+"sh start.sh start", um das Codelist Repository zu starten.
+
+Die Administration starten Sie im Webbrowser unter
+der folgenden Adresse "http://localhost:${serverPort}".
+Anstelle von localhost koennen Sie auch die IP-Adresse
+des Computers eingeben!
+Den Benutzernamen und das MD5-Passwort wird in der realms.properties
+verwaltet. Dies muss konfiguriert werden, um Zugriff zu der Administrationsseite
+zu erhalten.
+		</echo>
+	</target>
+	
+</project>

@@ -3,21 +3,21 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
         <groupId>de.ingrid</groupId>
-        <artifactId>ingrid-base-pom</artifactId>
+        <artifactId>ingrid-releases-pom</artifactId>
         <version>3.2.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.ingrid</groupId>
     <artifactId>ingrid-codelist-repo</artifactId>
     <version>3.2.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>InGrid CodeList Repository</name>
     <scm>
         <connection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repo</connection>
         <developerConnection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repo</developerConnection>
     </scm>
     <build>
-        <finalName>${project.artifactId}</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
@@ -66,9 +66,10 @@
                                 <artifactItem>
                                     <groupId>org.dojotoolkit</groupId>
                                     <artifactId>dojo-war</artifactId>
-                                    <version>1.7.1</version>
+                                    <version>1.6.1</version>
                                     <type>war</type>
                                     <overWrite>false</overWrite>
+<!--                                     <excludes>**/dojo/tests/,**dijit/demos/,**/dijit/bench/</excludes> -->
                                     <outputDirectory>${project.build.directory}/js/dojo</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
@@ -76,6 +77,39 @@
                     </execution>
                 </executions>
             </plugin>
+<!--             <plugin> -->
+<!--                 <groupId>org.codehaus.mojo</groupId> -->
+<!--                 <artifactId>exec-maven-plugin</artifactId> -->
+<!--                 <version>1.1</version> -->
+<!--                 <executions> -->
+<!--                     <execution> -->
+<!--                         <phase>test</phase> -->
+<!--                         <goals> -->
+<!--                             <goal>exec</goal> -->
+<!--                         </goals> -->
+<!--                     </execution> -->
+<!--                 </executions> -->
+<!--                 <configuration> -->
+<!--                     <executable>java</executable> -->
+<!--                     <classpathScope>runtime</classpathScope> -->
+<!--                     <arguments> -->
+<!--                         <argument>-classpath</argument> -->
+<!--                         <argument>../shrinksafe/js.jar;../closureCompiler/compiler.jar;../shrinksafe/shrinksafe.jar</argument> -->
+<!--                         <argument>org.mozilla.javascript.tools.shell.Main</argument> -->
+<!--                         <argument>../../dojo/dojo.js</argument> -->
+<!--                         <argument>baseUrl=../../dojo</argument> -->
+<!--                         <argument>load=build</argument> -->
+<!--                         <argument>-p</argument> -->
+<!--                         <argument>../../../../../../src/main/release/dojoProfile/codelist-repo</argument> -->
+<!--                         <argument>-r</argument> -->
+<!--                         <argument>cssOptimize=comments.keepLines</argument> -->
+<!--                         <argument>optimize=shrinkSafe</argument> -->
+<!--                         <argument>version=1.7.1</argument> -->
+<!--                     </arguments> -->
+<!--                     optional -->
+<!--                     <workingDirectory>target/js/dojo/util/buildscripts</workingDirectory> -->
+<!--                 </configuration> -->
+<!--             </plugin> -->
         </plugins>
     </build>
 
@@ -159,19 +193,11 @@
             <groupId>org.mortbay.jetty</groupId>
             <artifactId>jetty</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-2.1</artifactId>
-        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>org.mortbay.jetty</groupId> -->
+<!--             <artifactId>jsp-2.1</artifactId> -->
+<!--         </dependency> -->
         <!-- End of Jetty - Dependencies -->
-        <!-- DOJO Sourcen -->
-        <dependency>
-            <groupId>org.dojotoolkit</groupId>
-            <artifactId>dojo-war</artifactId>
-            <version>1.7.1</version>
-            <type>war</type>
-        </dependency>
-        <!-- End of - DOJO Sourcen -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
