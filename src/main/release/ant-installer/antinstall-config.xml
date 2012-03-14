@@ -30,6 +30,8 @@
             target		="clRepo">
             
             <text property="serverPort" displayText="Repository Admin-Port:" defaultValue="8190"/>
+            <text property="serverPassword" displayText="Repository Admin-Passwort:" defaultValue=""/>
+            <comment displayText="" explanatoryText="Der Benutzername zu diesem Passwort ist 'admin'. Weitere Benutzer können über die Datei 'conf/realm.properties' hinzugefügt werden." />
     </page>
 
     <!--  type="input" shows a list of editable options for the installer -->

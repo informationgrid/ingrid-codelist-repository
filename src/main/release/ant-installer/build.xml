@@ -2,38 +2,49 @@
     <description>
         iBus Installation Script
     </description>
-	<!-- set global properties for this build -->
-	<property name="componentName" value="${project.artifactId}-${project.version}"/>
-	<property name="start-script" value="${installDir}/start.sh"/>
-	
-	<target name="extract" description="Extract all files to the installation directory.">
-		<unzip src="${antinstaller.jar}" dest="${installDir}">
-			<patternset>
-				<include name="${componentName}/**/*.*"/>
-			</patternset>
-		</unzip>
-		
-		<move toDir="${installDir}">
-			<fileset dir="${installDir}/${componentName}"/>
-		</move>
+    <!-- set global properties for this build -->
+    <property name="componentName" value="${project.build.finalName}"/>
+    <property name="start-script" value="${installDir}/start.sh"/>
+    <property name="password-file" value="${installDir}/conf/passwordSource.txt"/>
+    <property name="realm-file" value="${installDir}/conf/realm.properties"/>
+    
+    <target name="extract" description="Extract all files to the installation directory.">
+        <echo>Entpacken</echo>
+        <unzip src="${antinstaller.jar}" dest="${installDir}">
+            <patternset>
+                <include name="${componentName}/**/*.*"/>
+            </patternset>
+        </unzip>
+        
+        <echo>Verschieben</echo>
+        <move toDir="${installDir}">
+            <fileset dir="${installDir}/${componentName}"/>
+        </move>
         
         <!-- overwrite is false by default! So no codelists are overwritten here! -->
+        <echo>Codelists initialisieren</echo>
         <copy file="${installDir}/conf/codelists_initial.xml" tofile="${installDir}/data/codelists.xml" />
-	</target>
-	
-	<target name="clRepo" description="Set configuration correctly for the iBus.">
-		<echo>Schreibe den Admin-Port in das Startskript</echo>
-		<replace file="${start-script}" token="@SERVER_PORT@" value="${serverPort}"/>
-	</target>
-	
-	<target name="startComponent">
-		<echo>
+    </target>
+    
+    <target name="clRepo" description="Set configuration correctly for the iBus.">
+        <echo>Schreibe den Admin-Port in das Startskript</echo>
+        <replace file="${start-script}" token="@SERVER_PORT@" value="${serverPort}"/>
+        
+        <echo>Schreibe Admin-Passwort</echo>
+        <replace file="${password-file}" token="@PASSWORD@" value="${serverPassword}"/>
+        <checksum file="${password-file}" property="passwordMD5"/>
+        <replace file="${realm-file}" token="@PASSWORD@" value="${passwordMD5}"/>
+        <delete file="${password-file}"/>
+    </target>
+    
+    <target name="startComponent">
+        <echo>
 =================
 Weiteres Vorgehen
 =================
 
-		</echo>
-		<echo>
+        </echo>
+        <echo>
 Gehen Sie ins Verzeichnis:
 ${installDir}
 und rufen sie von der Kommandozeile folgendes auf
@@ -46,7 +57,7 @@ des Computers eingeben!
 Den Benutzernamen und das MD5-Passwort wird in der realms.properties
 verwaltet. Dies muss konfiguriert werden, um Zugriff zu der Administrationsseite
 zu erhalten.
-		</echo>
-	</target>
-	
+        </echo>
+    </target>
+    
 </project>
