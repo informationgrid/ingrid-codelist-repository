@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="js/dojo/dojox/grid/resources/Grid.css">
         <link rel="stylesheet" href="js/dojo/dojox/grid/resources/claroGrid.css">
         
-        <script type="text/javascript" src="js/dojo_requires.js"></script>
+        <script type="text/javascript" src="js/dojo/custom/layer.js"></script>
         <script type="text/javascript" src="js/dialogs.js"></script>
         
         
@@ -418,7 +418,7 @@
         <div id="content" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:true, liveSplitters:true">
             <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
                 <h1 class="whiteFont" style="text-align: center;">Codelist Administration</h1>
-                <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'/rest/getCodelists/'"></div>
+                <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'rest/getCodelists/'"></div>
                 <span class="whiteFont">Codelists: </span><div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: myStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
                 <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
                 <span data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
