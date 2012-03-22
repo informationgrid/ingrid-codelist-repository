@@ -31,6 +31,7 @@ public class CodeListManager {
     public boolean updateCodeList(String id, String data) {
         
         codeListService.setCodelist(id, data);
+        writeCodeListsToFile();
         
         return true;
     }
