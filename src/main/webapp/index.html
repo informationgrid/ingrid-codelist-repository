@@ -6,7 +6,7 @@
         <title>InGrid CodeLists Administration</title>
         
 <!--         <script type="text/javascript" src="js/dojo/dojo-1.7.2/release/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad: true"></script> -->
-        <script type="text/javascript" src="js/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad: true"></script>
+        <script type="text/javascript" src="js/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad: true, locale: 'en'"></script>
 <!--         <script type="text/javascript" src="js/dojo.js" data-dojo-config="parseOnLoad: true"></script> -->
 <!--         <script type="text/javascript" src="js/main.js"></script> -->
         
@@ -33,6 +33,7 @@
             .claro .dojoxGridSortNode { padding: 1px 6px; color: white; background-color: #68A5D2; }
             .dojoxGridRowTable td { padding-left: 6px !important; }
             body .dijitAlignLeft { overflow: auto; }
+            .standby img { display: none !important; }
         </style>
         
         <script type="text/javascript">
@@ -51,7 +52,7 @@
                 dojo.connect(entryIdTextbox, "onBlur",          updateEntryId);
                 
                 entryIdTextbox.validator = function(val) {if (idExists(val)) return false; else return true;};
-                entryIdTextbox.invalidMessage = "ID already exists!"
+                entryIdTextbox.invalidMessage = "ID already exists or is not a number!"
                 
                 initialObserver();
                 
@@ -204,6 +205,9 @@
                 var newItem = {id:"", name:"", entries:[], description:""};
                 clSelect.item = newItem;
                 showCodeList();
+                // remove initial validation error
+                listIdTextbox.reset();
+                headerStandby.show();
             }
             
             function removeCodelist() {
@@ -217,14 +221,18 @@
             }
             
             function cancelEdit() {
-                //clSelect.store.query();
                 //clSelect.reset();
-                showCodeList();
+                clSelect.setValue("");
                 entriesGridStandby.hide();
                 codelistsStandby.hide();
+                headerStandby.hide();
             }
             
             function saveChanges() {
+                if (!isValid()) {
+                    clDialogs.showDialog(clDialogs.TYPE_ERROR, clDialogs.MSG_SAVE_ERROR);
+                    return;
+                }
                 var selectedCodeList = clSelect.item;
                 // initially set default entry to -1
                 selectedCodeList.defaultEntry = "-1";
@@ -257,7 +265,9 @@
                 def.then(
                     function(result) {
                         clDialogs.showDialog(clDialogs.TYPE_OK, clDialogs.MSG_SAVE_SUCCESS);
-                        showCodeList();
+                        // id in select box needs to be updated manually here!
+                        resetDirtyFlag();
+                        clSelect.setValue(listIdTextbox.get('value'));
                     },
                     function(err) {
                         console.debug("Error while saving!");
@@ -401,6 +411,11 @@
                     }
                 });
             }
+            
+
+            function isValid() {
+                return listIdTextbox.validate();
+            }
            
             /* FORMATTERS */
             function showLanguage(value, rowIndex, widget) {
@@ -412,6 +427,7 @@
                 });
                 return res;
             }
+            
         </script>
     </head>
     <body class="claro">
@@ -427,7 +443,7 @@
                 <h2>Codelist Overview</h2>
                 <div id="entriesContent" style="display:none;">
                     <table style="width:100%;">
-                        <tr><td>List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="intermediateChanges:true" styles="width:100%;"></td></tr>
+                        <tr><td>List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="intermediateChanges:true, required:true, constraints:{places:0, pattern:'#'}" styles="width:100%;"></td></tr>
                         <tr><td>List-Name:</td><td><input id="listName" jsId="listNameTextbox" data-dojo-type="dijit.form.TextBox"></td></tr>
                         <tr><td>Description:</td><td><input id="listDescr" jsId="listDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea"></td></tr>
                     </table>
@@ -454,7 +470,7 @@
                 <h2>Edit Entries</h2>
                 <div id="entryContent" style="display:none;">
                     <table>
-	                    <tr><td>Entry-ID::</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="required:true"></td></tr>
+	                    <tr><td>Entry-ID::</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, constraints:{places:0, pattern:'#'}"></td></tr>
 	                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" style="width:100%;"></td></tr>
                     </table>
                     <div>Localisations:</div>
@@ -480,7 +496,8 @@
                 <span data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:saveChanges, disabled:true">Save</span>
             </div>
         </div>
-        <div data-dojo-id="codelistsStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'topContent', color:'#EFEFEF', image:''">
-        <div data-dojo-id="entriesGridStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'codeListContent', color:'#EFEFEF', image:''">
+        <div data-dojo-id="headerStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'topContent', color:'#EFEFEF', image:'', class:'standby'">
+        <div data-dojo-id="codelistsStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'topContent', color:'#EFEFEF', image:'', class:'standby'">
+        <div data-dojo-id="entriesGridStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'codeListContent', color:'#EFEFEF', image:'', class:'standby'">
     </body>
 </html>
