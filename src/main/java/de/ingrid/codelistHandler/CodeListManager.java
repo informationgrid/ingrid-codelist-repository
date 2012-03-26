@@ -4,6 +4,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.mortbay.log.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -76,6 +77,15 @@ public class CodeListManager {
         return createJSON(CodeListUtils.sortCodeList(cls, sortField, sortMethod));
     }
     
+    public Object getCodeListAsShortJson(String sortField, String sortMethod) {
+        String json = "[";
+        for (CodeList codelist : CodeListUtils.sortCodeList(getCodeLists(), sortField, sortMethod)) {
+            json += "{id:\""+codelist.getId()+"\",name:\""+codelist.getName()+"\"},";
+        }
+        json = json.substring(0, json.length()-1) + "]";
+        return json;
+    }
+    
 
     public Object getFilteredCodeListsAsJson(String name) {
         String search = name.substring(0, name.length()-1).toLowerCase();
@@ -87,6 +97,18 @@ public class CodeListManager {
                 filteredCLs.add(cl);
         }
         return createJSON(filteredCLs);
+    }
+    
+    public Object getFilteredCodeListsAsShortJson(String name) {
+        String search = name.substring(0, name.length()-1).toLowerCase();
+        String json = "[";
+        
+        for (CodeList codelist : getCodeLists()) {
+            if (codelist.getName() != null && codelist.getName().toLowerCase().startsWith(search))
+                json += "{id:\""+codelist.getId()+"\",name:\""+codelist.getName()+"\"},";
+        }
+        json = json.substring(0, json.length()-1) + "]";
+        return json;
     }
     
     private Object createJSON(Object obj) {

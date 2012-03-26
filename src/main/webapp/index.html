@@ -20,6 +20,11 @@
         
         
         <style type="text/css" media="screen">
+            .dijitTextBox, .dijitSelect {
+			    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+			    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+			    box-sizing: border-box;         /* Opera/IE 8+ */
+			}
             body, html { width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
             #content{ width:100%; height:100% }
             #topContent, #actionContent { height: 70px; background-color:#68A5D2; }
@@ -34,6 +39,8 @@
             .dojoxGridRowTable td { padding-left: 6px !important; }
             body .dijitAlignLeft { overflow: auto; }
             .standby img { display: none !important; }
+/*             #entries .dojoxGridCell {text-align: center; vertical-align: middle;} */
+            .shadowBox {box-shadow: 1px 1px 10px #666;padding: 6px;margin-bottom: 1px;}
         </style>
         
         <script type="text/javascript">
@@ -45,6 +52,11 @@
                   
             var languageStore = new dojo.data.ItemFileReadStore({url:'data/languages.json'});
             languageStore.fetch();
+            
+            // this store is used to get all information about a codelist
+            // the select box only fetches ids and names of the codelists, otherwise
+            // the requests will take too long and the box will open too slow
+            var restStoreDetail = new dojo.store.JsonRest({target:"rest/getCodelists/"});
             
             dojo.ready(function() {
                 dojo.connect(clSelect,       "onChange",        showCodeList);
@@ -92,16 +104,12 @@
                 btnRemoveCodelist.set("disabled", false);
                 var def = checkChanges();
                 
-                def.then(function() {
+                dojo.when(fetchCodelistData(), function(activeCodelist) {
                     console.debug("show selected codelist");
                     currentCodelist = clSelect.item.id;
                     
                     showCodelistDiv();
                     resetEntryDiv();
-                    
-                    // get chosen code list object
-                    var activeCodelist = clSelect.item;
-                    //console.debug(activeCodelist);
                     
                     // fill components with code list data
                     listIdTextbox.set("value", activeCodelist.id);
@@ -121,6 +129,10 @@
                     
                     setTimeout(resetDirtyFlag, 100);
                 });
+            }
+            
+            function fetchCodelistData() {
+                return restStoreDetail.get(clSelect.item.id);
             }
             
             function showEntry(event) {
@@ -213,7 +225,7 @@
             function removeCodelist() {
                 var def = clDialogs.showAskDialog(clDialogs.MSG_DELETE_LIST);
                 def.then(function() {
-                    clSelect.store.objectStore.remove(currentCodelist);
+                    restStoreDetail.remove(currentCodelist);
                     clSelect.reset();
                 }, function() {
                     console.debug("Deletion aborted!");
@@ -261,13 +273,12 @@
                 selectedCodeList.description    = listDescrTextbox.get("value");
                 selectedCodeList.entries        = newEntries;
                 
-                var def = clSelect.store.objectStore.put(selectedCodeList, {id: listIdTextbox.get('value'), name:"hallo"});
+                var def = restStoreDetail.put(selectedCodeList, {id: listIdTextbox.get('value'), name:"hallo"});
                 def.then(
                     function(result) {
                         clDialogs.showDialog(clDialogs.TYPE_OK, clDialogs.MSG_SAVE_SUCCESS);
                         // id in select box needs to be updated manually here!
                         resetDirtyFlag();
-                        clSelect.setValue(listIdTextbox.get('value'));
                     },
                     function(err) {
                         console.debug("Error while saving!");
@@ -431,36 +442,39 @@
         </script>
     </head>
     <body class="claro">
-        <div id="content" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:true, liveSplitters:true">
+        <div id="content" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:false, liveSplitters:true">
             <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
                 <h1 class="whiteFont" style="text-align: center;">Codelist Administration</h1>
-                <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'rest/getCodelists/'"></div>
-                <span class="whiteFont">Codelists: </span><div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: myStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
+                <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short/'"></div>
+                <span class="whiteFont">Codelists: </span><div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
                 <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
                 <span data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
             </div>
             <div id="codeListContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 300px;">
                 <h2>Codelist Overview</h2>
                 <div id="entriesContent" style="display:none;">
-                    <table style="width:100%;">
-                        <tr><td>List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="intermediateChanges:true, required:true, constraints:{places:0, pattern:'#'}" styles="width:100%;"></td></tr>
-                        <tr><td>List-Name:</td><td><input id="listName" jsId="listNameTextbox" data-dojo-type="dijit.form.TextBox"></td></tr>
-                        <tr><td>Description:</td><td><input id="listDescr" jsId="listDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea"></td></tr>
-                    </table>
-                    <div>All Entries:</div>
-                    <table id="entries" jsId="entriesGrid" data-dojo-type="dojox.grid.DataGrid" keepSelection=true data-dojo-props="autoHeight:true, selectionMode:'single'" style="height: 100%; width: 100%;">
-                        <thead>
-                            <tr>
-                                <th field="id" width="50px">ID</th>
-                                <th field="localisedName" width="auto">Entry Name</th>
-                                <th field="default" name="Default" width="55px" editable="true" cellType="dojox.grid.cells.Bool">Value</th>
-                            </tr>
-                        </thead>
-                    </table>
-                    <div class="buttonLayer">
-                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeEntry">Remove Entry</span>
-                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addEntry">Add Entry</span>
-                    </div>
+                    <div class="shadowBox">
+	                    <table style="width:100%;">
+	                        <tr><td width="30px;">List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="intermediateChanges:true, required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
+	                        <tr><td>List-Name:</td><td><input id="listName" jsId="listNameTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:100%;'"></td></tr>
+	                        <tr><td>Description:</td><td><input id="listDescr" jsId="listDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="style:'width:100%;'"></td></tr>
+	                    </table>
+                        <br />
+	                    <div>All Entries:</div>
+	                    <table id="entries" jsId="entriesGrid" data-dojo-type="dojox.grid.DataGrid" keepSelection=true data-dojo-props="autoHeight:true, selectionMode:'single'" style="height: 100%; width: 100%;">
+	                        <thead>
+	                            <tr>
+	                                <th field="id" width="50px">ID</th>
+	                                <th field="localisedName" width="auto">Entry Name</th>
+	                                <th field="default" name="Default" width="55px" editable="true" cellType="dojox.grid.cells.Bool">Value</th>
+	                            </tr>
+	                        </thead>
+	                    </table>
+	                    <div class="buttonLayer">
+	                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeEntry">Remove Entry</span>
+	                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addEntry">Add Entry</span>
+	                    </div>
+	                </div>
                 </div>
                 <div id="noCodelistSelected">
                     No Codelist has been selected!
@@ -469,23 +483,26 @@
             <div id="codeListEntryContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'">
                 <h2>Edit Entries</h2>
                 <div id="entryContent" style="display:none;">
-                    <table>
-	                    <tr><td>Entry-ID::</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, constraints:{places:0, pattern:'#'}"></td></tr>
-	                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" style="width:100%;"></td></tr>
-                    </table>
-                    <div>Localisations:</div>
-                    <table jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true">
-                        <thead>
-                            <tr>
-                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.FilteringSelect" widgetProps="{ store:languageStore}" formatter="showLanguage">Locale</th>
-                                <th field="value" width="auto" editable="true">Value</th>
-                            </tr>
-                        </thead>
-                    </table>
-                    <div class="buttonLayer">
-                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>
-                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Locale</span>
-                    </div>
+                    <div class="shadowBox">
+	                    <table>
+		                    <tr><td>Entry-ID::</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, constraints:{places:0, pattern:'#'}"></td></tr>
+		                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" style="width:100%;"></td></tr>
+	                    </table>
+	                    <br />
+	                    <div>Localisations:</div>
+	                    <table jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true">
+	                        <thead>
+	                            <tr>
+	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.FilteringSelect" widgetProps="{ store:languageStore}" formatter="showLanguage">Locale</th>
+	                                <th field="value" width="auto" editable="true">Value</th>
+	                            </tr>
+	                        </thead>
+	                    </table>
+	                    <div class="buttonLayer">
+	                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>
+	                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Locale</span>
+	                    </div>
+	                </div>
                 </div>
                 <div id="noEntrySelected">
                     No entry has been selected!

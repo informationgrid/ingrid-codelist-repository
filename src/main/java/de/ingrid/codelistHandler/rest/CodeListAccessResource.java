@@ -36,6 +36,25 @@ public class CodeListAccessResource {
         }
     }
     
+    // return only data needed for codelist information (selectbox for administration page)
+    @GET
+    @Path("short")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCodeListsShort( @QueryParam("lastModifiedDate") String lastModifiedDate, @QueryParam("name") String name ) {
+        if (name == null || "".equals(name) || "*".equals(name)) {
+            return Response.ok(manager.getCodeListAsShortJson("id", CodeListUtils.SORT_INCREMENT)).build();
+        } else {
+            return Response.ok(manager.getFilteredCodeListsAsShortJson(name)).build();
+        }
+    }
+    
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCodelist(@PathParam("id") String id) {
+        return Response.ok(manager.getCodeListAsJson(id)).build();
+    }
+    
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON) 
@@ -48,13 +67,6 @@ public class CodeListAccessResource {
         
         return Response.status(Status.INTERNAL_SERVER_ERROR).build();
         
-    }
-    
-    @GET
-    @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getCodelist(@PathParam("id") String id) {
-        return Response.ok(manager.getCodeListAsJson(id)).build();
     }
     
     @DELETE
