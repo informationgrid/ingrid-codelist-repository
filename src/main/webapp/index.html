@@ -47,6 +47,7 @@
             var thereAreChanges     = false;
             var currentCodelist     = -1;
             var currentEntryClicked = null;
+            var selectWasResetted   = false;
             
             var languageMap         = {};
                   
@@ -82,7 +83,9 @@
                         }, function() {
                             console.debug("Deletion aborted!");
                             // select previous codelist
-                            clSelect.attr('value', currentCodelist, false);
+//                             clSelect.attr('value', currentCodelist, false);
+                            selectWasResetted = true;
+                            clSelect.setDisplayedValue(listNameTextbox.getValue());
                             def.cancel();
                         });
                     } else {
@@ -98,36 +101,43 @@
             }
             
             function showCodeList(event) {
+                if (selectWasResetted) {
+                    selectWasResetted = false;
+                    return;
+                }
+                
                 // any changes made?
                 console.debug(event);
                 
                 btnRemoveCodelist.set("disabled", false);
                 var def = checkChanges();
                 
-                dojo.when(fetchCodelistData(), function(activeCodelist) {
-                    console.debug("show selected codelist");
-                    currentCodelist = clSelect.item.id;
-                    
-                    showCodelistDiv();
-                    resetEntryDiv();
-                    
-                    // fill components with code list data
-                    listIdTextbox.set("value", activeCodelist.id);
-                    listNameTextbox.set("value", activeCodelist.name);
-                    listDescrTextbox.set("value", activeCodelist.description);
-                    
-                    var newStore = new dojo.data.ItemFileWriteStore(
-                        {data: {items: prepareCodelistEntries(activeCodelist)}}
-                    );
-                     
-                    entriesGrid.setStore(newStore);
-                    
-                    // special handling for checkboxes
-                    checkboxHandling(newStore);
-                    
-                    watchStore(entriesGrid.store);
-                    
-                    setTimeout(resetDirtyFlag, 100);
+                def.addCallback(function() {
+                    dojo.when(fetchCodelistData(), function(activeCodelist) {
+	                    console.debug("show selected codelist");
+	                    currentCodelist = clSelect.item.id;
+	                    
+	                    showCodelistDiv();
+	                    resetEntryDiv();
+	                    
+	                    // fill components with code list data
+	                    listIdTextbox.set("value", activeCodelist.id);
+	                    listNameTextbox.set("value", activeCodelist.name);
+	                    listDescrTextbox.set("value", activeCodelist.description);
+	                    
+	                    var newStore = new dojo.data.ItemFileWriteStore(
+	                        {data: {items: prepareCodelistEntries(activeCodelist)}}
+	                    );
+	                     
+	                    entriesGrid.setStore(newStore);
+	                    
+	                    // special handling for checkboxes
+	                    checkboxHandling(newStore);
+	                    
+	                    watchStore(entriesGrid.store);
+	                    
+	                    setTimeout(resetDirtyFlag, 100);
+	                })
                 });
             }
             
@@ -234,7 +244,7 @@
             
             function cancelEdit() {
                 //clSelect.reset();
-                clSelect.setValue("");
+                //clSelect.setValue("");
                 entriesGridStandby.hide();
                 codelistsStandby.hide();
                 headerStandby.hide();
