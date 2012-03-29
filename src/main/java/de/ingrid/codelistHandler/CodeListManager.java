@@ -4,7 +4,6 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.mortbay.log.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +14,7 @@ import com.thoughtworks.xstream.io.json.JsonWriter;
 
 import de.ingrid.codelists.CodeListService;
 import de.ingrid.codelists.model.CodeList;
+import de.ingrid.codelists.model.CodeListEntry;
 import de.ingrid.codelists.util.CodeListUtils;
 
 @Component
@@ -126,6 +126,22 @@ public class CodeListManager {
 
     public void setCodeListService(CodeListService codeListService) {
         this.codeListService = codeListService;
+    }
+
+    
+    public Object findEntry(String name) {
+        List<String[]> result = new ArrayList<String[]>();
+        for (CodeList cl : getCodeLists()) {
+            for (CodeListEntry entry : cl.getEntries()) {
+                for (String lang : entry.getLocalisations().keySet()) {
+                    if (entry.getLocalisations().get(lang).toLowerCase().contains(name)) {
+                        String[] value = {cl.getId(), entry.getId(), lang};
+                        result.add(value);
+                    }
+                }
+            }
+        }
+        return createJSON(result);
     }
 
 }

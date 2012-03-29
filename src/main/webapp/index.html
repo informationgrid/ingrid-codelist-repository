@@ -17,6 +17,7 @@
         
         <script type="text/javascript" src="js/dojo/custom/layer.js"></script>
         <script type="text/javascript" src="js/dialogs.js"></script>
+        <script type="text/javascript" src="js/validation.js"></script>
         
         
         <style type="text/css" media="screen">
@@ -38,6 +39,7 @@
             .claro .dojoxGridSortNode { padding: 1px 6px; color: white; background-color: #68A5D2; }
             .dojoxGridRowTable td { padding-left: 6px !important; }
             body .dijitAlignLeft { overflow: auto; }
+            .standby div {cursor: not-allowed !important;}
             .standby img { display: none !important; }
 /*             #entries .dojoxGridCell {text-align: center; vertical-align: middle;} */
             .shadowBox {box-shadow: 1px 1px 10px #666;padding: 6px;margin-bottom: 1px; -moz-box-shadow: 1px 1px 5px #666;}
@@ -48,6 +50,10 @@
             var currentCodelist     = -1;
             var currentEntryClicked = null;
             var selectWasResetted   = false;
+            var forceInvalidListIdOnce  = false;
+            var selectedCodeList = null;
+            var searchResults = [];
+            var showCounter = 0;
             
             var languageMap         = {};
                   
@@ -61,11 +67,15 @@
             
             dojo.ready(function() {
                 dojo.connect(clSelect,       "onChange",        showCodeList);
-                dojo.connect(entriesGrid,    "onRowClick",      showEntry);
+                dojo.connect(entriesGrid,    "onSelected",      showEntry);
                 dojo.connect(entryIdTextbox, "onBlur",          updateEntryId);
+                dojo.connect(entriesGrid,    "onHeaderClick",   resetEntryDiv);
+                dojo.connect(searchEntryBox, "onKeyPress",      searchEntry);
                 
                 entryIdTextbox.validator = function(val) {if (idExists(val)) return false; else return true;};
-                entryIdTextbox.invalidMessage = "ID already exists or is not a number!"
+                listIdTextbox.validator = listIdValidator;
+                entryIdTextbox.invalidMessage = "Entry-ID already exists or is not a number!"
+                listIdTextbox.invalidMessage = "List-ID already exists or is not a number!"
                 
                 initialObserver();
                 
@@ -76,7 +86,7 @@
                 
                 if (thereAreChanges) {
                     // show info
-                    if (currentCodelist != clSelect.item.id) {
+                    if (currentCodelist != clSelect.get("value")) {
                         var def = clDialogs.showAskDialog(clDialogs.MSG_CHANGES);
                         def.then(function() {
                             console.debug("Ignore changes!");
@@ -113,9 +123,10 @@
                 var def = checkChanges();
                 
                 def.addCallback(function() {
-                    dojo.when(fetchCodelistData(), function(activeCodelist) {
+                    dojo.when(fetchCodelistData(clSelect.get("value")), function(activeCodelist) {
 	                    console.debug("show selected codelist");
-	                    currentCodelist = clSelect.item.id;
+	                    selectedCodeList = activeCodelist;
+	                    currentCodelist = clSelect.get("value");
 	                    
 	                    showCodelistDiv();
 	                    resetEntryDiv();
@@ -141,8 +152,8 @@
                 });
             }
             
-            function fetchCodelistData() {
-                return restStoreDetail.get(clSelect.item.id);
+            function fetchCodelistData(id) {
+                return restStoreDetail.get(id);
             }
             
             function showEntry(event) {
@@ -224,11 +235,15 @@
             }
             
             function addCodelist() {
-                var newItem = {id:"", name:"", entries:[], description:""};
-                clSelect.item = newItem;
-                showCodeList();
+                showCodelistDiv();
                 // remove initial validation error
                 listIdTextbox.reset();
+                listNameTextbox.reset();
+                listDescrTextbox.reset();
+                var newStore = new dojo.data.ItemFileWriteStore(
+                    {data: {items: []}}
+                );
+                entriesGrid.setStore(newStore);
                 headerStandby.show();
             }
             
@@ -243,60 +258,115 @@
             }
             
             function cancelEdit() {
-                //clSelect.reset();
-                //clSelect.setValue("");
+                var id = clSelect.get("displayedValue");
+                resetDirtyFlag();
+                clSelect.reset();
+                clSelect.setDisplayedValue(id);
                 entriesGridStandby.hide();
                 codelistsStandby.hide();
                 headerStandby.hide();
             }
             
-            function saveChanges() {
-                if (!isValid()) {
-                    clDialogs.showDialog(clDialogs.TYPE_ERROR, clDialogs.MSG_SAVE_ERROR);
-                    return;
+            function searchEntry(event, value) {
+                if (event.keyCode == dojo.keys.ENTER) {
+                    console.debug("search now");
+                    restStoreDetail.get("findEntry/" + searchEntryBox.get("value")).then(function(res) {
+                        searchResults = res;
+                        if (res.length > 0) {
+                            nextEntryButton.set("disabled", false);
+                            nextEntryButton.set("label", "Show 1 of " + searchResults.length);
+                        } else {
+                            nextEntryButton.set("disabled", true);
+                            nextEntryButton.set("label", "not found");
+                        }
+                        showCounter = 0;
+                        
+                    });
                 }
-                var selectedCodeList = clSelect.item;
-                // initially set default entry to -1
-                selectedCodeList.defaultEntry = "-1";
-                
-                updateListEntryData();
-                
-                var newEntries = [];
-                entriesGrid.store.fetch({
-                    onItem: function(item) {
-                        var entry = {
-                            id: item.data[0].id+"",
-                            description: item.data[0].description ? item.data[0].description+"" : "", 
-                            localisations: item.data[0].localisations
-                        };
-                        
-                        // set the default localisation
-                        if (item.default == "true")
-                            selectedCodeList.defaultEntry = item.data[0].id+"";
-                        
-                        newEntries.push(entry);
+            }
+            
+            function showNextFoundEntry() {
+                // get first found entry
+                showCounter = showCounter % searchResults.length;
+                clSelect.set("value", searchResults[showCounter][0]);
+
+                // select row in table with correct entry
+                // after entry has been loaded which can take some time
+                setTimeout(function() {
+                    for (var i=0; i<entriesGrid.rowCount; i++) {
+                        if (entriesGrid.getItem(i).id == searchResults[showCounter][1]) {
+                            entriesGrid.selection.select(i);
+                            break;
+                        }
                     }
+                    for (var i=0; i<entryLocalisationGrid.rowCount; i++) {
+                        if (entryLocalisationGrid.getItem(i).lang == searchResults[showCounter][2]) {
+                            entryLocalisationGrid.selection.select(i);
+                            break;
+                        }
+                    }
+                    showCounter++;
+                }, 300);
+                
+                // entry to the end of the list again
+                nextEntryButton.set("label", "Show "+(showCounter+1)+" of " + searchResults.length);
+            }
+            
+            function saveChanges() {
+                var def = isValid();
+                
+                def.then(function() {
+                    //var selectedCodeList = clSelect.item;
+                    // initially set default entry to -1
+                    selectedCodeList.defaultEntry = "-1";
+                    
+                    updateListEntryData();
+                    
+                    var newEntries = [];
+                    entriesGrid.store.fetch({
+                        onItem: function(item) {
+                            var entry = {
+                                id: item.data[0].id+"",
+                                description: item.data[0].description ? item.data[0].description+"" : "", 
+                                localisations: item.data[0].localisations
+                            };
+                            
+                            // set the default localisation
+                            if (item.default == "true")
+                                selectedCodeList.defaultEntry = item.data[0].id+"";
+                            
+                            newEntries.push(entry);
+                        }
+                    });
+                    
+                    
+                    selectedCodeList.name           = listNameTextbox.get("value");
+                    selectedCodeList.description    = listDescrTextbox.get("value");
+                    selectedCodeList.entries        = newEntries;
+                    
+                    var def = restStoreDetail.put(selectedCodeList, {id: listIdTextbox.get('value')});
+                    def.then(
+                        function(result) {
+                            clDialogs.showDialog(clDialogs.TYPE_OK, clDialogs.MSG_SAVE_SUCCESS);
+                            // id in select box needs to be updated manually here!
+                            resetDirtyFlag();
+                            if (listIdTextbox.get('value') != currentCodelist || listNameTextbox.get('value') != clSelect.get("displayedValue"))
+                                clSelect.set("value", listIdTextbox.get('value'));
+                            else
+                                showCodeList();
+                        },
+                        function(err) {
+                            console.debug("Error while saving!");
+                            clDialogs.showDialog(clDialogs.TYPE_ERROR, clDialogs.MSG_SAVE_ERROR);
+                            console.debug(err);
+                        }
+                    );
+                }, function() {
+                    var message = clDialogs.MSG_SAVE_ERROR;
+                    message += "<ul><li>" + errorMessages.join("</li><li>") + "</li></ul";
+                    clDialogs.showDialog(clDialogs.TYPE_ERROR, message);
+                    return;
                 });
-                
-                
-                selectedCodeList.name           = listNameTextbox.get("value");
-                selectedCodeList.description    = listDescrTextbox.get("value");
-                selectedCodeList.entries        = newEntries;
-                
-                var def = restStoreDetail.put(selectedCodeList, {id: listIdTextbox.get('value'), name:"hallo"});
-                def.then(
-                    function(result) {
-                        clDialogs.showDialog(clDialogs.TYPE_OK, clDialogs.MSG_SAVE_SUCCESS);
-                        // id in select box needs to be updated manually here!
-                        resetDirtyFlag();
-                    },
-                    function(err) {
-                        console.debug("Error while saving!");
-                        clDialogs.showDialog(clDialogs.TYPE_ERROR, clDialogs.MSG_SAVE_ERROR);
-                        console.debug(err);
-                    }
-                );
-                
                 
             }
             
@@ -385,37 +455,6 @@
                 btnSave.set("disabled", true);
             }
             
-            /* VALIDATORS */
-            function idExists(newId) {
-                var invalid = false;
-                
-                // id not empty!
-                if (newId == "")
-                    invalid = true;
-                
-                // get old id from selected entry
-                var selItem = entriesGrid.getItem(entriesGrid.selection.selectedIndex);
-                entriesGrid.store.fetch({
-                    onItem: function(item) {
-                        if (item != selItem) {
-                            if (item.id == newId) {
-                                invalid = true;
-                            }
-                        }
-                    }
-                });
-               
-                if (invalid) {
-                    entriesGridStandby.show();
-                    codelistsStandby.show();
-                } else {
-                    entriesGridStandby.hide();
-                    codelistsStandby.hide();
-                }
-               
-                return invalid;
-            }
-            
             function checkboxHandling(store) {
                 dojo.connect(store, "onSet", function(item, attribute, oldValue, newValue) {
                     if (attribute == "default" && newValue == true && oldValue == false) {
@@ -434,10 +473,6 @@
             }
             
 
-            function isValid() {
-                return listIdTextbox.validate();
-            }
-           
             /* FORMATTERS */
             function showLanguage(value, rowIndex, widget) {
                 var res = "?";
@@ -456,9 +491,10 @@
             <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
                 <h1 class="whiteFont" style="text-align: center;">Codelist Administration</h1>
                 <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short/'"></div>
-                <span class="whiteFont">Codelists: </span><div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
+                <span class="whiteFont">Codelists: </span><div data-dojo-id="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
                 <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
                 <span data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
+                <span style="float:right;"><span class="whiteFont">Search entry: </span><input data-dojo-id="searchEntryBox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:80px;'"><span data-dojo-id="nextEntryButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:showNextFoundEntry, disabled:true">Show</span></span>
             </div>
             <div id="codeListContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 300px;">
                 <h2>Codelist Overview</h2>
@@ -495,7 +531,7 @@
                 <div id="entryContent" style="display:none;">
                     <div class="shadowBox">
 	                    <table>
-		                    <tr><td>Entry-ID::</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, constraints:{places:0, pattern:'#'}"></td></tr>
+		                    <tr><td>Entry-ID:</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, constraints:{places:0, pattern:'#'}"></td></tr>
 		                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" style="width:100%;"></td></tr>
 	                    </table>
 	                    <br />

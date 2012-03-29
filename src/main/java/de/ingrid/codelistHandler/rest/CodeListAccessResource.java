@@ -49,6 +49,13 @@ public class CodeListAccessResource {
     }
     
     @GET
+    @Path("short/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCodeListShort(@PathParam("id") String id) {
+        return Response.ok(manager.getCodeListAsJson(id)).build();
+    }
+    
+    @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCodelist(@PathParam("id") String id) {
@@ -80,6 +87,13 @@ public class CodeListAccessResource {
         }
     }
 
+    @GET
+    @Path("findEntry/{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response findEntry(@PathParam("name") String name) {
+        return Response.ok(manager.findEntry(name.toLowerCase())).build();
+    }
+    
     public void setManager(CodeListManager manager) {
         this.manager = manager;
     }
