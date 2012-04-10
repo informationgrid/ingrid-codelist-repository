@@ -28,11 +28,22 @@
 			}
             body, html { width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
             #content{ width:100%; height:100% }
-            #topContent, #actionContent { height: 70px; background-color:#68A5D2; }
+            #actionContent { background-color:#68A5D2;  }
+            #topContent { padding: 0; }
+            #header {height: 80px; background-color:#68A5D2; margin-bottom: 33px;}
+            #header h1 {
+                position: absolute;
+                top: 22px;
+                left: 197px;
+                color: white;
+                margin: 0 0 18px;
+            }
             #actionContent { height: 30px; }
-            #codeListContent, #codeListEntryContent { background-color: #D1E4F1; }
+            #codeListContent, #codeListEntryContent { background-color: #F5F8EB; padding: 0 0 5px; }
+            #codelistsArea {margin-bottom: 10px; padding-left: 15px;}
+            h2 { height: 28px; background-color: #D1E4F1; padding: 12px 0 0px 19px; margin-top: 0; }
             .whiteFont { color: white; }
-            h1 {margin:0; padding:10px;text-decoration: underline;}
+//            h1 {margin:0; padding:10px;text-decoration: underline;}
             td {vertical-align: top;}
             .buttonLayer {padding-top: 10px;}
             .error .dijitDialogTitleBar {background-color: red;}
@@ -43,6 +54,9 @@
             .standby img { display: none !important; }
 /*             #entries .dojoxGridCell {text-align: center; vertical-align: middle;} */
             .shadowBox {box-shadow: 1px 1px 10px #666;padding: 6px;margin-bottom: 1px; -moz-box-shadow: 1px 1px 5px #666;}
+            .nothing { padding-left: 19px;} 
+            .tableCaption { padding-left: 2px;}
+//            #entriesContent, #entryContent {margin: 0 15px 15px; }
         </style>
         
         <script type="text/javascript">
@@ -489,16 +503,22 @@
     <body class="claro">
         <div id="content" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:false, liveSplitters:true">
             <div id="topContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
-                <h1 class="whiteFont" style="text-align: center;">Codelist Administration</h1>
-                <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short/'"></div>
-                <span class="whiteFont">Codelists: </span><div data-dojo-id="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
-                <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
-                <span data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
-                <span style="float:right;"><span class="whiteFont">Search entry: </span><input data-dojo-id="searchEntryBox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:80px;'"><span data-dojo-id="nextEntryButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:showNextFoundEntry, disabled:true">Show</span></span>
+                <div id ="header">
+                    <img src="images/logo.gif" width="168" height="60" alt="Portal U">
+                    <h1>Codelist Administration</h1>
+                </div>
+                <h2>Codelists Selection</h2>
+                <div id="codelistsArea">
+                    <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short/'"></div>
+                    <div data-dojo-id="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
+                    <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
+                    <span data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
+                    <span style="float:right;"><span class="whiteFont">Search entry: </span><input data-dojo-id="searchEntryBox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:80px;'"><span data-dojo-id="nextEntryButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:showNextFoundEntry, disabled:true">Show</span></span>
+                </div>
             </div>
             <div id="codeListContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 300px;">
                 <h2>Codelist Overview</h2>
-                <div id="entriesContent" style="display:none;">
+                <div id="entriesContent" data-dojo-type="dijit.layout.ContentPane" style="display:none; ">
                     <div class="shadowBox">
 	                    <table style="width:100%;">
 	                        <tr><td width="30px;">List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="intermediateChanges:true, required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
@@ -506,7 +526,7 @@
 	                        <tr><td>Description:</td><td><input id="listDescr" jsId="listDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="style:'width:100%;'"></td></tr>
 	                    </table>
                         <br />
-	                    <div>All Entries:</div>
+	                    <div class="tableCaption">All Entries:</div>
 	                    <table id="entries" jsId="entriesGrid" data-dojo-type="dojox.grid.DataGrid" keepSelection=true data-dojo-props="autoHeight:true, selectionMode:'single'" style="height: 100%; width: 100%;">
 	                        <thead>
 	                            <tr>
@@ -522,20 +542,20 @@
 	                    </div>
 	                </div>
                 </div>
-                <div id="noCodelistSelected">
+                <div id="noCodelistSelected" class="nothing">
                     No Codelist has been selected!
                 </div>
             </div>
             <div id="codeListEntryContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'">
                 <h2>Edit Entries</h2>
-                <div id="entryContent" style="display:none;">
+                <div id="entryContent" data-dojo-type="dijit.layout.ContentPane" style="display:none;">
                     <div class="shadowBox">
-	                    <table>
-		                    <tr><td>Entry-ID:</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, constraints:{places:0, pattern:'#'}"></td></tr>
-		                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" style="width:100%;"></td></tr>
+	                    <table style="width:100%;">
+		                    <tr><td width="30px;">Entry-ID:</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
+		                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="style:'width:100%;'"></td></tr>
 	                    </table>
 	                    <br />
-	                    <div>Localisations:</div>
+	                    <div class="tableCaption">Localisations:</div>
 	                    <table jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true">
 	                        <thead>
 	                            <tr>
@@ -550,7 +570,7 @@
 	                    </div>
 	                </div>
                 </div>
-                <div id="noEntrySelected">
+                <div id="noEntrySelected" class="nothing">
                     No entry has been selected!
                 </div>
             </div>
