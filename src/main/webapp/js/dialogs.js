@@ -8,7 +8,7 @@ clDialogs.TYPE_ERROR        = "ERROR";
 
 clDialogs.MSG_SAVE_ERROR    = "The Codelist could not be saved due to an error!";
 clDialogs.MSG_SAVE_SUCCESS  = "The Codelist has been saved successfully!";
-clDialogs.MSG_DELETE_LIST   = "Do you really want to delete the selected codelist?";
+clDialogs.MSG_DELETE_LIST   = "Do you really want to delete the selected codelist? This cannot be undone!";
 clDialogs.MSG_CHANGES       = "There are changes which need to be saved first! Do you want to discard these changes?";
 
 clDialogs.showDialog = function(type, content) {
