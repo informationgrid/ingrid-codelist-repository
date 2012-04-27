@@ -155,10 +155,8 @@
 	                    
 	                    // fill components with code list data
 	                    listIdTextbox.set("value", activeCodelist.id);
-	                    listNameTextbox.set("value", activeCodelist.name);
-	                    // if empty value then it's sometimes not set!?
-	                    listDescrTextbox.reset();
-	                    listDescrTextbox.set("value", activeCodelist.description);
+	                    listNameTextbox.set("value", activeCodelist.name ? activeCodelist.name : "");
+	                    listDescrTextbox.set("value", activeCodelist.description ? activeCodelist.description : "");
 	                    
 	                    var newStore = new dojo.data.ItemFileWriteStore(
 	                        {data: {items: prepareCodelistEntries(activeCodelist)}}
