@@ -52,10 +52,10 @@ function idExists(newId) {
 
     if (invalid) {
         entriesGridStandby.show();
-        codelistsStandby.show();
+        toggleCodelistSelection(true);
     } else {
         entriesGridStandby.hide();
-        codelistsStandby.hide();
+        toggleCodelistSelection(false);
     }
 
     return invalid;

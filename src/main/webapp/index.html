@@ -226,8 +226,20 @@
                 entriesGrid.getItem(entriesGrid.selection.selectedIndex).id = [entryIdTextbox.get("value")];
             }
             
+            function getNewId() {
+                var nextId = 1;
+                entriesGrid.store.fetch({
+                    onItem: function(item) {
+                        if (item.id >= nextId)
+                            nextId = parseInt(item.id) + 1;
+                    }
+                });
+                return nextId;
+            }
+            
             function addEntry() {
-                var myNewItem = {id:"", localisedName:"undefined", data:[{id:"", localisations:[["",""]]}]};
+                var newId = getNewId();
+                var myNewItem = {id:newId, localisedName:"undefined", data:[{id:newId, localisations:[["",""]]}]};
                 /* Insert the new item into the store:*/
                 var newStoreItem = entriesGrid.store.newItem(myNewItem);
                 var row = entriesGrid.getItemIndex(newStoreItem)
@@ -266,7 +278,7 @@
                     {data: {items: []}}
                 );
                 entriesGrid.setStore(newStore);
-                headerStandby.show();
+                toggleCodelistSelection(true);
             }
             
             function removeCodelist() {
@@ -286,8 +298,8 @@
                 listDescrTextbox.reset();
                 clSelect.setDisplayedValue(id);
                 entriesGridStandby.hide();
-                codelistsStandby.hide();
-                headerStandby.hide();
+//                codelistsStandby.hide();
+                toggleCodelistSelection(false)
             }
             
             function searchEntryEvent(event, value) {
@@ -500,6 +512,25 @@
                 });
             }
             
+            function toggleCodelistSelection(show) {
+                if (show == true) {
+                    clSelect.set("disabled", "true");
+                    btnAddCodelist.set("disabled", "true");
+                    btnRemoveCodelist.set("disabled", "true");
+                    btnSave.set("disabled", "true");
+                    goButton.set("disabled", "true");
+                    nextEntryButton.set("disabled", "true");
+                } else {
+                    clSelect.set("disabled", "");
+                    btnAddCodelist.set("disabled", "");
+                    btnRemoveCodelist.set("disabled", "");
+                    btnSave.set("disabled", "");
+                    goButton.set("disabled", "");
+                    nextEntryButton.set("disabled", "");
+                }
+                    
+            }
+            
 
             /* FORMATTERS */
             function showLanguage(value, rowIndex, widget) {
@@ -525,8 +556,10 @@
                 <div id="codelistsArea">
                     <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short/'"></div>
                     <div data-dojo-id="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
-                    <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
+                    <span data-dojo-id="btnAddCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
                     <span data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
+                    <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:cancelEdit">Cancel</span>
+                    <span data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:saveChanges, disabled:true">Save</span>
                     <span style="float:right;"><span class="whiteFont">Search entry: </span><input data-dojo-id="searchEntryBox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:80px;'">
                         <span data-dojo-id="goButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:searchEntry">Go</span>
                         <span data-dojo-id="nextEntryButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:showNextFoundEntry, disabled:true">Show</span></span>
@@ -572,7 +605,7 @@
 	                    </table>
 	                    <br />
 	                    <div class="tableCaption">Localisations:</div>
-	                    <table jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true">
+	                    <table jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true, singleClickEdit:true, toggleSplitterOpen:true">
 	                        <thead>
 	                            <tr>
 	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.FilteringSelect" widgetProps="{ store:languageStore}" formatter="showLanguage">Locale</th>
@@ -590,13 +623,10 @@
                     No entry has been selected!
                 </div>
             </div>
-            <div id="actionContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'" >
-                <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:cancelEdit">Cancel</span>
-                <span data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:saveChanges, disabled:true">Save</span>
-            </div>
+            <!--<div id="actionContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'" >
+                
+            </div>-->
         </div>
-        <div data-dojo-id="headerStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'topContent', color:'#EFEFEF', image:'', class:'standby'">
-        <div data-dojo-id="codelistsStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'topContent', color:'#EFEFEF', image:'', class:'standby'">
         <div data-dojo-id="entriesGridStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'codeListContent', color:'#EFEFEF', image:'', class:'standby'">
     </body>
 </html>
