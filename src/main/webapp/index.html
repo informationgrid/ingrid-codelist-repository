@@ -48,7 +48,7 @@
             .buttonLayer {padding-top: 10px;}
             .error .dijitDialogTitleBar {background-color: red;}
             .claro .dojoxGridSortNode { padding: 1px 6px; color: white; background-color: #68A5D2; }
-            .dojoxGridRowTable td { padding-left: 6px !important; }
+            /*.dojoxGridRowTable td { padding-left: 6px !important; }*/
             body .dijitAlignLeft { overflow: auto; }
             .standby div {cursor: not-allowed !important;}
             .standby img { display: none !important; }
@@ -57,6 +57,7 @@
             .nothing { padding-left: 19px;} 
             .tableCaption { padding-left: 2px;}
             .attention .dijitButtonNode {background-color: #bd0d00 !important; color: white;}
+            input[type="button"].table {min-width: 0px;padding: 0;}
         </style>
         
         <script type="text/javascript">
@@ -179,7 +180,6 @@
             }
             
             function showEntry(event) {
-                console.debug("onRowClick");
                 updateListEntryData();
                 
                 currentEntryClicked = entriesGrid.selection.getSelected()[0];//event.rowIndex;
@@ -256,14 +256,44 @@
                 }
             }
             
-            function removeLocalisedEntry() {
-                var selItem = entryLocalisationGrid.getItem(entryLocalisationGrid.selection.selectedIndex);
-                if (selItem)
+            function removeLocalisedEntry(id) {
+                var selItem = null;
+                entryLocalisationGrid.store.fetch({
+                    onItem: function(item) {
+                        if (item.id == id) {
+                            selItem = item;
+                        }
+                    }
+                });
+                //var selItem = entryLocalisationGrid.getItem(entryLocalisationGrid.selection.selectedIndex);
+                if (selItem) {
                     entryLocalisationGrid.store.deleteItem(selItem);
+                    //entryLocalisationGrid.resize();
+                    entryLocalisationGrid.render();
+                } else {
+                    console.debug("item could not be found to delete");
+                }
+            }
+            
+            function getNewLocalizedId() {
+                var newId = 0;
+                entryLocalisationGrid.store.fetch({
+                    onItem: function(item) {
+                        if (item.id > newId) {
+                            newId = item.id;
+                        }
+                    }
+                });
+                return newId;
+            }
+            
+            function createButton(id) {
+                return "<div class='dijitButton'><input type='button' class='dijitButtonNode' onclick='removeLocalisedEntry("+id+");' value='delete'></div>";
             }
             
             function addLocalisedEntry() {
-                var myNewItem = {lang:"?", value:"?", 'default': false};
+                var index = getNewLocalizedId();
+                var myNewItem = {id: index, lang:"?", value:"?", 'default': false, btnDelete: createButton(index)};
                 /* Insert the new item into the store:*/
                 entryLocalisationGrid.store.newItem(myNewItem);
             }
@@ -428,8 +458,9 @@
             
             function prepareCodelistEntryLocalisation(entry) {
                 var data = [];
-                dojo.forEach(entry.localisations, function(local) {
-                    var locEntry = {lang: local[0], value: local[1]};
+                dojo.forEach(entry.localisations, function(local, index) {
+                    //var b = new dijit.form.Button({ label: "delete"});
+                    var locEntry = {id: index, lang: local[0], value: local[1], btnDelete: createButton(index)};
                     data.push(locEntry);
                 });
                 return data;
@@ -519,14 +550,14 @@
             
             function toggleCodelistSelection(show) {
                 if (show == true) {
-                    clSelect.set("disabled", "true");
+                    //clSelect.set("disabled", "true");
                     btnAddCodelist.set("disabled", "true");
                     btnRemoveCodelist.set("disabled", "true");
                     btnSave.set("disabled", "true");
                     goButton.set("disabled", "true");
                     nextEntryButton.set("disabled", "true");
                 } else {
-                    clSelect.set("disabled", "");
+                    //clSelect.set("disabled", "");
                     btnAddCodelist.set("disabled", "");
                     btnRemoveCodelist.set("disabled", "");
                     btnSave.set("disabled", "");
@@ -560,7 +591,7 @@
                 <h2>Codelists Selection</h2>
                 <div id="codelistsArea">
                     <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short/'"></div>
-                    <div data-dojo-id="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
+                    <div id="clSelect" data-dojo-id="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
                     <span id="addCodelist" data-dojo-id="btnAddCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
                     <span id="remCodelist" data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
                     <span id="cancel" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:cancelEdit">Cancel</span>
@@ -610,16 +641,17 @@
 	                    </table>
 	                    <br />
 	                    <div class="tableCaption">Localisations:</div>
-	                    <table jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true, singleClickEdit:true, toggleSplitterOpen:true">
+	                    <table id="entryLocalisationGrid" jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true, singleClickEdit:true, toggleSplitterOpen:true, escapeHTMLInData:false ">
 	                        <thead>
 	                            <tr>
 	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.FilteringSelect" widgetProps="{ store:languageStore}" formatter="showLanguage">Locale</th>
 	                                <th field="value" width="auto" editable="true">Value</th>
+	                                <th field="btnDelete">&nbsp;</th>
 	                            </tr>
 	                        </thead>
 	                    </table>
 	                    <div class="buttonLayer">
-	                        <span id="remLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>
+	                        <!--<span id="remLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>-->
 	                        <span id="addLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Locale</span>
 	                    </div>
 	                </div>

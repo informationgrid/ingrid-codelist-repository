@@ -35,7 +35,13 @@ clDialogs.showDialog = function(type, content) {
 clDialogs.showAskDialog = function(content) {
     var def = new dojo.Deferred();
     
-    var myDialog = new dijit.Dialog({
+    var myDialog = dijit.byId("codelistDialogAsk");
+    if (myDialog) {
+        myDialog.destroyDescendants();
+        myDialog.destroy();
+    }
+    myDialog = new dijit.Dialog({
+        id: "codelistDialogAsk",
         // The dialog's title
         title: "Question"
     });
@@ -50,11 +56,13 @@ clDialogs.showAskDialog = function(content) {
     }, myDialog.containerNode);
 
     new dijit.form.Button({
+        id: "btnOk",
         label: "Ok",
         type: "submit",
         onClick: function() {console.debug("ok clicked"); def.callback();} 
     }).placeAt(actionBar);
     new dijit.form.Button({
+        id: "btnCancel",
         label: "Cancel",
         type: "submit",
         onClick: function() {console.debug("cancel clicked");def.cancel();}
