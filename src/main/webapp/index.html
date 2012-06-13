@@ -269,6 +269,7 @@
             }
             
             function addCodelist() {
+                selectedCodeList = null;
                 showCodelistDiv();
                 // remove initial validation error
                 listIdTextbox.reset();
@@ -354,6 +355,9 @@
                 var def = isValid();
                 
                 def.then(function() {
+                    if (selectedCodeList == null) {
+                        selectedCodeList = {id: listIdTextbox.get('value')};
+                    }
                     //var selectedCodeList = clSelect.item;
                     // initially set default entry to -1
                     selectedCodeList.defaultEntry = "-1";
@@ -388,6 +392,7 @@
                             clDialogs.showDialog(clDialogs.TYPE_OK, clDialogs.MSG_SAVE_SUCCESS);
                             // id in select box needs to be updated manually here!
                             resetDirtyFlag();
+                            toggleCodelistSelection(false);
                             if (listIdTextbox.get('value') != currentCodelist || listNameTextbox.get('value') != clSelect.get("displayedValue"))
                                 clSelect.set("value", listIdTextbox.get('value'));
                             else
@@ -556,10 +561,10 @@
                 <div id="codelistsArea">
                     <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short/'"></div>
                     <div data-dojo-id="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
-                    <span data-dojo-id="btnAddCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
-                    <span data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
-                    <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:cancelEdit">Cancel</span>
-                    <span data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:saveChanges, disabled:true">Save</span>
+                    <span id="addCodelist" data-dojo-id="btnAddCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
+                    <span id="remCodelist" data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
+                    <span id="cancel" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:cancelEdit">Cancel</span>
+                    <span id="btnSave" data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:saveChanges, disabled:true">Save</span>
                     <span style="float:right;"><span class="whiteFont">Search entry: </span><input data-dojo-id="searchEntryBox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:80px;'">
                         <span data-dojo-id="goButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:searchEntry">Go</span>
                         <span data-dojo-id="nextEntryButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:showNextFoundEntry, disabled:true">Show</span></span>
@@ -586,8 +591,8 @@
 	                        </thead>
 	                    </table>
 	                    <div class="buttonLayer">
-	                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeEntry">Remove Entry</span>
-	                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addEntry">Add Entry</span>
+	                        <span id="remEntry" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeEntry">Remove Entry</span>
+	                        <span id="addEntry" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addEntry">Add Entry</span>
 	                    </div>
 	                </div>
                 </div>
@@ -614,8 +619,8 @@
 	                        </thead>
 	                    </table>
 	                    <div class="buttonLayer">
-	                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>
-	                        <span data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Locale</span>
+	                        <span id="remLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>
+	                        <span id="addLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Locale</span>
 	                    </div>
 	                </div>
                 </div>

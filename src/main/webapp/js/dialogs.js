@@ -12,13 +12,23 @@ clDialogs.MSG_DELETE_LIST   = "Do you really want to delete the selected codelis
 clDialogs.MSG_CHANGES       = "There are changes which need to be saved first! Do you want to discard these changes?";
 
 clDialogs.showDialog = function(type, content) {
-    var myDialog = new dijit.Dialog({
-	    // The dialog's title
-	    title: type == "ERROR" ? "Error" : "Information",
-	    // The dialog's content
-	    content: content,
-        'class': type == "ERROR" ? "error" : ""
-	});
+    // remove old one first!
+    var myDialog = dijit.byId("codelistDialog");
+    if (myDialog) {
+        myDialog.set("title", type == "ERROR" ? "Error" : "Information");
+        myDialog.set("content", content);
+        myDialog.set("class", type == "ERROR" ? "error" : "");
+    } else {
+        myDialog = new dijit.Dialog({
+            id: "codelistDialog",
+            // The dialog's title
+            title: type == "ERROR" ? "Error" : "Information",
+            // The dialog's content
+            content: content,
+            'class': type == "ERROR" ? "error" : ""
+        });
+    }
+    
     myDialog.show();
 };
 
