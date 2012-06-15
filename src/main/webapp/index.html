@@ -11,9 +11,8 @@
 <!--         <script type="text/javascript" src="js/main.js"></script> -->
         
         <link rel="stylesheet" href="js/dojo/dojo/resources/dojo.css">
-        <link rel="stylesheet" href="js/dojo/dijit/themes/claro/claro.css">
         <link rel="stylesheet" href="js/dojo/dojox/grid/resources/Grid.css">
-        <link rel="stylesheet" href="js/dojo/dojox/grid/resources/claroGrid.css">
+        <link rel="stylesheet" href="js/dojo/dijit/themes/claro/claro.css">
         
         <script type="text/javascript" src="js/dojo/custom/layer.js"></script>
         <script type="text/javascript" src="js/dialogs.js"></script>
@@ -47,7 +46,8 @@
             td {vertical-align: top;}
             .buttonLayer {padding-top: 10px;}
             .error .dijitDialogTitleBar {background-color: red;}
-            .claro .dojoxGridSortNode { padding: 1px 6px; color: white; background-color: #68A5D2; }
+            .claro .dojoxGridHeader .dojoxGridCell { background: none; }
+            .claro .dojoxGridHeader { color: white; background-color: #68A5D2; }
             /*.dojoxGridRowTable td { padding-left: 6px !important; }*/
             body .dijitAlignLeft { overflow: auto; }
             .standby div {cursor: not-allowed !important;}
@@ -164,6 +164,8 @@
 	                    );
 	                     
 	                    entriesGrid.setStore(newStore);
+	                    // refresh layout when data is loaded
+	                    newStore.fetch({onComplete: function() {dijit.byId("codeListContent").resize();}});
 	                    
 	                    // special handling for checkboxes
 	                    checkboxHandling(newStore);
@@ -200,7 +202,11 @@
             
             function showCodelistDiv() {
                 dojo.style("noCodelistSelected", "display", "none");
-                dojo.style("entriesContent",     "display", "block");
+                dojo.style("entriesTop",     "display", "block");
+                dojo.style("entriesContent", "display", "block");
+                dojo.style("entriesBottom",  "display", "block");
+                dijit.byId("codeListContent").resize();
+                //dijit.byId("codeListContent").resize();
             }
             
             function showEntryDiv() {
@@ -309,6 +315,7 @@
                     {data: {items: []}}
                 );
                 entriesGrid.setStore(newStore);
+                dijit.byId("codeListContent").resize();
                 toggleCodelistSelection(true);
             }
             
@@ -564,7 +571,6 @@
                     goButton.set("disabled", "");
                     nextEntryButton.set("disabled", "");
                 }
-                    
             }
             
 
@@ -601,18 +607,20 @@
                         <span data-dojo-id="nextEntryButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:showNextFoundEntry, disabled:true">Show</span></span>
                 </div>
             </div>
-            <div id="codeListContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'leading'" style="width: 300px;">
-                <h2>Codelist Overview</h2>
-                <div id="entriesContent" data-dojo-type="dijit.layout.ContentPane" style="display:none; ">
-                    <div class="shadowBox">
-	                    <table style="width:100%;">
-	                        <tr><td width="30px;">List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="intermediateChanges:true, required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
-	                        <tr><td>List-Name:</td><td><input id="listName" jsId="listNameTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:100%;'"></td></tr>
-	                        <tr><td>Description:</td><td><input id="listDescr" jsId="listDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="style:'width:100%;'"></td></tr>
-	                    </table>
-                        <br />
-	                    <div class="tableCaption">All Entries:</div>
-	                    <table id="entries" jsId="entriesGrid" data-dojo-type="dojox.grid.DataGrid" keepSelection=true data-dojo-props="autoHeight:true, selectionMode:'single'" style="height: 100%; width: 100%;">
+            <div id="codeListContent" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:false, splitter:true, region:'leading'" style="width: 300px;">
+                <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top', style:'padding:0;'">
+                    <h2>Codelist Overview</h2>
+                    <table id="entriesTop" style="width:100%; display:none; padding: 8px 8px 0;">
+                        <tr><td width="30px;">List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="intermediateChanges:true, required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
+                        <tr><td>List-Name:</td><td><input id="listName" jsId="listNameTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:100%;'"></td></tr>
+                        <tr><td>Description:</td><td><input id="listDescr" jsId="listDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="style:'width:100%;'"></td></tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr><td>All Entries:</td></tr>
+                    </table>
+                </div>
+                <div id="entriesContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'" style="display:none; ">
+                    <div class="">
+	                    <table id="entries" cellpadding="5" jsId="entriesGrid" data-dojo-type="dojox.grid.DataGrid" keepSelection=true data-dojo-props="autoHeight:true, selectionMode:'single'" style="height: 100%; width: 100%;">
 	                        <thead>
 	                            <tr>
 	                                <th field="id" width="50px">ID</th>
@@ -621,20 +629,22 @@
 	                            </tr>
 	                        </thead>
 	                    </table>
-	                    <div class="buttonLayer">
-	                        <span id="remEntry" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeEntry">Remove Entry</span>
-	                        <span id="addEntry" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addEntry">Add Entry</span>
-	                    </div>
 	                </div>
                 </div>
-                <div id="noCodelistSelected" class="nothing">
+                <div id="noCodelistSelected" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'center'" class="nothing">
                     No Codelist has been selected!
+                </div>
+                <div id="entriesBottom" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'" style="display:none;">
+                    <div class="buttonLayer">
+                        <span id="remEntry" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeEntry">Remove Entry</span>
+                        <span id="addEntry" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addEntry, style:'float:right;'">Add Entry</span>
+                    </div>
                 </div>
             </div>
             <div id="codeListEntryContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true, region:'center'">
                 <h2>Edit Entries</h2>
                 <div id="entryContent" data-dojo-type="dijit.layout.ContentPane" style="display:none;">
-                    <div class="shadowBox">
+                    <div class="">
 	                    <table style="width:100%;">
 		                    <tr><td width="30px;">Entry-ID:</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
 		                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="style:'width:100%;'"></td></tr>
