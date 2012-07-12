@@ -4,7 +4,7 @@
     <parent>
         <groupId>de.ingrid</groupId>
         <artifactId>ingrid-releases-pom</artifactId>
-        <version>3.2.0-SNAPSHOT</version>
+        <version>3.2.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.ingrid</groupId>
@@ -77,39 +77,6 @@
                     </execution>
                 </executions>
             </plugin>
-<!--             <plugin> -->
-<!--                 <groupId>org.codehaus.mojo</groupId> -->
-<!--                 <artifactId>exec-maven-plugin</artifactId> -->
-<!--                 <version>1.1</version> -->
-<!--                 <executions> -->
-<!--                     <execution> -->
-<!--                         <phase>test</phase> -->
-<!--                         <goals> -->
-<!--                             <goal>exec</goal> -->
-<!--                         </goals> -->
-<!--                     </execution> -->
-<!--                 </executions> -->
-<!--                 <configuration> -->
-<!--                     <executable>java</executable> -->
-<!--                     <classpathScope>runtime</classpathScope> -->
-<!--                     <arguments> -->
-<!--                         <argument>-classpath</argument> -->
-<!--                         <argument>../shrinksafe/js.jar;../closureCompiler/compiler.jar;../shrinksafe/shrinksafe.jar</argument> -->
-<!--                         <argument>org.mozilla.javascript.tools.shell.Main</argument> -->
-<!--                         <argument>../../dojo/dojo.js</argument> -->
-<!--                         <argument>baseUrl=../../dojo</argument> -->
-<!--                         <argument>load=build</argument> -->
-<!--                         <argument>-p</argument> -->
-<!--                         <argument>../../../../../../src/main/release/dojoProfile/codelist-repo</argument> -->
-<!--                         <argument>-r</argument> -->
-<!--                         <argument>cssOptimize=comments.keepLines</argument> -->
-<!--                         <argument>optimize=shrinkSafe</argument> -->
-<!--                         <argument>version=1.7.1</argument> -->
-<!--                     </arguments> -->
-<!--                     optional -->
-<!--                     <workingDirectory>target/js/dojo/util/buildscripts</workingDirectory> -->
-<!--                 </configuration> -->
-<!--             </plugin> -->
         </plugins>
     </build>
 
@@ -131,7 +98,6 @@
         <dependency>
             <groupId>de.ingrid</groupId>
             <artifactId>ingrid-codelist-service</artifactId>
-            <version>3.2.0-SNAPSHOT</version>
             <exclusions>
                 <!-- no quartz jobs needed in this project -->
                 <exclusion>
