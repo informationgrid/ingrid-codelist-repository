@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+    <properties>
+        <title>History Ingrid Codelist Repository</title>
+        <author email="andre.wallat@wemove.com">André Wallat</author>
+    </properties>
+    <body>
+        <release version="3.2.0" date="2012-07-12" description="Release InGrid 3.2">
+            <action type="add" dev="wemove">
+                Initial version of the Codelist Repository. This webapp contains an administration interface for all central
+                managed Codelists. Codelists can be added, deleted and modified. For each Codelist several entries can be added
+                in different languages (also ISO). With a REST-Interface the codelists can be fetched. If called with a timestamp
+                then only updated Codelists are returned. 
+            </action>
+        </release>
+    </body>
+</document>
