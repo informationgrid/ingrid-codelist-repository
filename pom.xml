@@ -8,12 +8,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.ingrid</groupId>
     <artifactId>ingrid-codelist-repository</artifactId>
-    <version>3.2.0</version>
+    <version>3.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>InGrid CodeList Repository</name>
     <scm>
-        <connection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/tags/ingrid-codelist-repository-3.2.0</connection>
-        <developerConnection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/tags/ingrid-codelist-repository-3.2.0</developerConnection>
+        <connection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/trunk</connection>
+        <developerConnection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/trunk</developerConnection>
     </scm>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
