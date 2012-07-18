@@ -20,6 +20,7 @@
         <move toDir="${installDir}">
             <fileset dir="${installDir}/${componentName}"/>
         </move>
+        <chmod dir="${installDir}/conf" perm="700" includes="**/realm.properties"/>
     </target>
     
     <target name="clRepo" description="Set configuration correctly for the iBus.">
