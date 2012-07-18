@@ -20,7 +20,6 @@
         <move toDir="${installDir}">
             <fileset dir="${installDir}/${componentName}"/>
         </move>
-        <chmod dir="${installDir}/conf" perm="700" includes="**/realm.properties"/>
     </target>
     
     <target name="clRepo" description="Set configuration correctly for the iBus.">
@@ -32,6 +31,9 @@
         <checksum file="${password-file}" property="passwordMD5"/>
         <replace file="${realm-file}" token="@PASSWORD@" value="${passwordMD5}"/>
         <delete file="${password-file}"/>
+        
+        <!-- only the owner has access to the security file! -->
+        <chmod dir="${installDir}/conf" perm="600" includes="realm.properties"/>
     </target>
     
     <target name="startComponent">
