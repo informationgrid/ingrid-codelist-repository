@@ -5,6 +5,12 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+        <release version="3.2.?" date="??" description="Bugfix Release for InGrid 3.2">
+            <action type="fix" dev="wemove">
+                Fix Umlaute problem on windows, now UTF-8 encoded when initially read from file.
+            </action>
+        </release>
+
         <release version="3.2.0" date="2012-07-12" description="Release InGrid 3.2">
             <action type="add" dev="wemove">
                 Initial version of the Codelist Repository. This webapp contains an administration interface for all central
