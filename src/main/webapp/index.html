@@ -411,7 +411,7 @@
                             };
                             
                             // set the default localisation
-                            if (item.default == "true")
+                            if (item["default"] == "true")
                                 selectedCodeList.defaultEntry = item.data[0].id+"";
                             
                             newEntries.push(entry);
@@ -456,7 +456,7 @@
                 dojo.forEach(cl.entries, function(item) {
                     var entry = {id: item.id};
                     entry.localisedName = getLocalisedEntryName(item.localisations);
-                    entry.default = (cl.defaultEntry == item.id) ? true : false
+                    entry["default"] = (cl.defaultEntry == item.id) ? true : false
                     entry.data = item;
                     data.push(entry);
                 });
@@ -544,7 +544,7 @@
                         // make sure no other checkboxes are selected!
                         entriesGrid.store.fetch({
                             onItem: function(otherItem) {
-                                if (item != otherItem && (otherItem.default == "true")) {
+                                if (item != otherItem && (otherItem["default"] == "true")) {
                                     entriesGrid.store.setValue(otherItem, "default", false);
                                 }
                             }
@@ -674,6 +674,6 @@
                 
             </div>-->
         </div>
-        <div data-dojo-id="entriesGridStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'codeListContent', color:'#EFEFEF', image:'', class:'standby'">
+        <div data-dojo-id="entriesGridStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'codeListContent', color:'#EFEFEF', image:'', 'class':'standby'">
     </body>
 </html>

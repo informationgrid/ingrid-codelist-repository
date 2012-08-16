@@ -9,6 +9,9 @@
             <action type="fix" dev="wemove">
                 Fix Umlaute problem on windows, now UTF-8 encoded when initially read from file.
             </action>
+            <action type="fix" dev="wemove" issue="INGRID32-169">
+                Fix IE problem when accessing administration page, which prevented the usage completely.
+            </action>
         </release>
 
         <release version="3.2.0" date="2012-07-12" description="Release InGrid 3.2">
