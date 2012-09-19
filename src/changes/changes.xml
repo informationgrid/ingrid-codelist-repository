@@ -7,6 +7,9 @@
     <body>
         <release version="3.2.?" date="??" description="Bugfix Release for InGrid 3.2">
             <action type="fix" dev="wemove">
+                Fix java heap definition in start.sh.
+            </action>
+            <action type="fix" dev="wemove">
                 Fix Umlaute problem on windows, now UTF-8 encoded when initially read from file.
             </action>
             <action type="fix" dev="wemove" issue="INGRID32-169">
