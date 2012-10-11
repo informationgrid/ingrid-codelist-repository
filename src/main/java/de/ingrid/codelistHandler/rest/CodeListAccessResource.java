@@ -26,7 +26,7 @@ public class CodeListAccessResource {
 
     // and implement the following GET method 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     public Response getCodeLists( @QueryParam("lastModifiedDate") String lastModifiedDate, @QueryParam("name") String name ) {
 
         if (name == null || "".equals(name) || "*".equals(name)) {
