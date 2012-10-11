@@ -5,6 +5,11 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+        <release version="3.3.0" date="2013-01-??" description="Release InGrid 3.3">
+            <action type="fix" dev="wemove">
+                Make sure to use UTF-8 encoding when being requested (in browser directly).
+            </action>
+        </release>
         <release version="3.2.1" date="2012-09-26" description="Bugfix Release InGrid 3.2.1">
             <action type="fix" dev="wemove">
                 Fix java heap definition in start.sh.
