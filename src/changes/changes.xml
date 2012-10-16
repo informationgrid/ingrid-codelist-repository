@@ -6,7 +6,10 @@
     </properties>
     <body>
         <release version="3.3.0" date="2013-01-??" description="Release InGrid 3.3">
-            <action type="fix" dev="wemove">
+            <action type="add" dev="wemove" issue="INGRID-2150">
+                Add java parameter "-Dfile.encoding=UTF8" to start script.
+            </action>
+			<action type="fix" dev="wemove">
                 Make sure to use UTF-8 encoding when being requested (in browser directly).
             </action>
         </release>
