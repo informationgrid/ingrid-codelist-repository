@@ -1,0 +1,21 @@
+<list>
+  <de.ingrid.codelists.model.CodeList>
+    <id>2000</id>
+    <entries>
+    <de.ingrid.codelists.model.CodeListEntry>
+        <id>3600</id>
+        <description></description>
+        <localisations>
+          <entry>
+            <string>de</string>
+            <string>Gekoppelte Daten</string>
+          </entry>
+          <entry>
+            <string>en</string>
+            <string>Coupled Data</string>
+          </entry>
+        </localisations>
+      </de.ingrid.codelists.model.CodeListEntry>
+    </entries>
+  </de.ingrid.codelists.model.CodeList>
+</list>

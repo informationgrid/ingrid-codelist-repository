@@ -23,4 +23,8 @@
         <property name="defaultPersistency" value="0" />
     </bean>
     
+    <bean id="updateChecker" class="de.ingrid.codelistHandler.update.UpdateChecker">
+        <property name="codelistService" ref="codeListService" />
+    </bean>
+    
 </beans>
