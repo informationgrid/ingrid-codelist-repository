@@ -5,7 +5,7 @@ import org.mortbay.jetty.Server;
 import org.mortbay.jetty.webapp.WebAppContext;
 
 public class JettyStarter {
-private static final Logger log = Logger.getLogger(JettyStarter.class);
+    private static final Logger log = Logger.getLogger(JettyStarter.class);
     
     private static String DEFAULT_WEBAPP_DIR    = "webapp";
     

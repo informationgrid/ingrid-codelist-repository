@@ -8,6 +8,15 @@
     <property name="password-file" value="${installDir}/conf/passwordSource.txt"/>
     <property name="realm-file" value="${installDir}/conf/realm.properties"/>
     
+    <target name="setUpdateProperty" depends="extractUpdate">
+        <property name="installType" value="update" />
+        <property name="updateProcedure" value="true" />
+    </target>
+    
+    <target name="setInstallProperty" depends="extract">
+        <property name="installProcedure" value="true" />
+    </target>
+    
     <target name="extract" description="Extract all files to the installation directory.">
         <echo>Entpacken</echo>
         <unzip src="${antinstaller.jar}" dest="${installDir}">
@@ -22,6 +31,25 @@
         </move>
     </target>
     
+    <target name="extractUpdate">
+        <unzip src="${antinstaller.jar}" dest="${installDir}">
+            <patternset>
+                <include name="${componentName}/**/*.*"/>
+                <exclude name="${componentName}/conf/passwordSource.txt" />
+                <exclude name="${componentName}/conf/realm.properties" />
+                <exclude name="${componentName}/start.sh" />
+            </patternset>
+        </unzip>
+        
+        <delete dir="${installDir}/lib"/>
+        
+        <move toDir="${installDir}">
+            <fileset dir="${installDir}/${componentName}"/>
+        </move>
+        
+        <mkdir dir="${installDir}/webapp/WEB-INF/work"/>
+    </target>
+    
     <target name="clRepo" description="Set configuration correctly for the iBus.">
         <echo>Schreibe den Admin-Port in das Startskript</echo>
         <replace file="${start-script}" token="@SERVER_PORT@" value="${serverPort}"/>
@@ -30,6 +58,12 @@
         <replace file="${password-file}" token="@PASSWORD@" value="${serverPassword}"/>
         <checksum file="${password-file}" property="passwordMD5"/>
         <replace file="${realm-file}" token="@PASSWORD@" value="${passwordMD5}"/>
+        
+        <echo>Schreibe User-Passwort</echo>
+        <replace file="${password-file}" token="${serverPassword}" value="${clientPassword}"/>
+        <checksum file="${password-file}" property="passwordMD5Client"/>
+        <replace file="${realm-file}" token="@PASSWORD_CLIENT@" value="${passwordMD5Client}"/>
+        
         <delete file="${password-file}"/>
         
         <!-- only the owner has access to the security file! -->
