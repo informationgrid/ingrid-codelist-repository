@@ -2,6 +2,7 @@ package de.ingrid.codelistHandler;
 
 import org.apache.log4j.Logger;
 import org.mortbay.jetty.Server;
+import org.mortbay.jetty.security.HashUserRealm;
 import org.mortbay.jetty.webapp.WebAppContext;
 
 public class JettyStarter {
@@ -24,7 +25,13 @@ public class JettyStarter {
     private static void init() throws Exception {
         WebAppContext webAppContext = new WebAppContext(System.getProperty("jetty.webapp", DEFAULT_WEBAPP_DIR), "/");
 
-        Server server = new Server(Integer.getInteger("jetty.port", DEFAULT_JETTY_PORT));
+        int port = Integer.getInteger("jetty.port", DEFAULT_JETTY_PORT);
+        log.info("Start server at port: " + port);
+        
+        Server server = new Server(port);
+        HashUserRealm userRealm = new HashUserRealm("UserRealm");
+        webAppContext.getSecurityHandler().setUserRealm(userRealm);
+        
         server.setHandler(webAppContext);
         server.start();
     }

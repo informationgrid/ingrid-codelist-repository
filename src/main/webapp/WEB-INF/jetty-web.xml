@@ -13,12 +13,20 @@
       </Arg>
     </New>
   </Set>
-   <Call name="getSecurityHandler">
+   <!-- <Call name="getSecurityHandler">
        <Set name="UserRealm">
 		 <New class="org.mortbay.jetty.security.HashUserRealm">
-            <Set name="name">Test Realm</Set>
-            <Set name="config"><SystemProperty name="jetty.home" default="."/>/target/classes/conf/realm.properties</Set>
+            <Set name="name">default</Set>
+            <Set name="config"><SystemProperty name="jetty.home" default="."/>/src/test/resources/realm.properties</Set>
          </New>
        </Set>
-   </Call>
+   </Call>-->
+   <Get name="securityHandler">
+  		<Set name="UserRealm">
+      		<New class="org.mortbay.jetty.security.HashUserRealm">
+            	<Set name="name">default</Set>
+            	<Set name="config">C:/Users/Public/Development/ingrid/ingrid-codelist-repository/trunk/src/test/resources/realm.properties</Set>
+      		</New>
+    	</Set>
+	</Get> 
 </Configure>
