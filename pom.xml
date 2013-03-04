@@ -3,7 +3,7 @@
     <parent>
         <groupId>de.ingrid</groupId>
         <artifactId>ingrid-releases-pom</artifactId>
-        <version>3.3.0-SNAPSHOT</version>
+        <version>3.3.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.ingrid</groupId>
@@ -101,15 +101,6 @@
 
     <!-- ==================== DEPENDENCY MANAGEMENT ==================== -->
     <!-- ALWAYS USE DEPENDENCY MANAGEMENT WHEN OVERWRITING VERSIONS FROM ingrid-base-pom, SO ASSEMBLY PLUGIN WORKS !!!!!!!! -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.thoughtworks.xstream</groupId>
-                <artifactId>xstream</artifactId>
-                <version>1.3.1</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <!-- ==================== DEPENDENCIES ==================== -->
     <dependencies>
