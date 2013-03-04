@@ -42,7 +42,7 @@ public class CodeListManagerTest {
     public void testGetCodeLists_filled() {
         fillData();
         List<CodeList> cls = manager.getCodeLists();
-        assertTrue(cls.size() == initialSize+2);
+        assertEquals(cls.size(), initialSize+2);
     }
 
     
