@@ -98,3 +98,12 @@ Index: src/main/resources/codelists_initial.xml
        </de.ingrid.codelists.model.CodeListEntry>
        <de.ingrid.codelists.model.CodeListEntry>
          <id>3600</id>
+@@ -3883,7 +3883,7 @@
+         </localisations>
+       </de.ingrid.codelists.model.CodeListEntry>
+     </entries>
+-    <lastModified>0</lastModified>
++    <lastModified>@@CURRENT_TIME@@</lastModified>
+   </de.ingrid.codelists.model.CodeList>
+   <de.ingrid.codelists.model.CodeList>
+     <id>2010</id>

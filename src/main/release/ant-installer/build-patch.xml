@@ -11,6 +11,8 @@
 	        </and>
             <then>
                 <echo>Patching spring.xml file in basedir: </echo>
+                <msec property="TIMESTAMP_MILLIS"/>
+                <replace  file="patches/3.4.0/codelists.xml.patch" token="@@CURRENT_TIME@@"  value="${TIMESTAMP_MILLIS}"/>
                 <patchFile patchFile="patches/3.4.0/codelists.xml.patch" originalFile="${installDir}/data/codelists.xml" />
             </then>
         </if>
