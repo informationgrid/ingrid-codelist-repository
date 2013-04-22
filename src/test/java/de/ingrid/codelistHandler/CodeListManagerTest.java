@@ -23,8 +23,6 @@ public class CodeListManagerTest {
     @Autowired
     private CodeListManager manager;
 
-    private static int initialSize;
-    
     @Before
     public void setUp() throws Exception {
         removeExisitingTestFile();
@@ -34,15 +32,16 @@ public class CodeListManagerTest {
     public void testGetCodeLists_empty() {
         List<CodeList> cls = manager.getCodeLists();
         // initial list should be loaded from CodeListService!
-        initialSize = cls.size();
         assertTrue(!cls.isEmpty());
     }
     
     @Test
     public void testGetCodeLists_filled() {
+    	List<CodeList> cls = manager.getCodeLists();
+    	int size = cls.size();
         fillData();
-        List<CodeList> cls = manager.getCodeLists();
-        assertEquals(cls.size(), initialSize+2);
+        cls = manager.getCodeLists();
+        assertEquals(size+2, cls.size());
     }
 
     

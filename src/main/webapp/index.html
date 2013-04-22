@@ -191,6 +191,7 @@
                 var item = currentEntryClicked.data[0];//entriesGrid.getItem(currentEntryClicked).data[0];
                 entryIdTextbox.attr("value", item.id, false);
                 entryDescrTextbox.attr("value", item.description ? item.description+"" : "", false);
+                entryDataTextbox.attr("value", item.data ? item.data+"" : "", false);
                 
                 var newStore = new dojo.data.ItemFileWriteStore(
                     {data: {items: prepareCodelistEntryLocalisation(item)}}
@@ -406,7 +407,8 @@
                         onItem: function(item) {
                             var entry = {
                                 id: item.data[0].id+"",
-                                description: item.data[0].description ? item.data[0].description+"" : "", 
+                                description: item.data[0].description ? item.data[0].description+"" : "",
+                               	data: item.data[0].data ? item.data[0].data+"" : "",
                                 localisations: item.data[0].localisations
                             };
                             
@@ -419,9 +421,9 @@
                     });
                     
                     
-                    selectedCodeList.name           = listNameTextbox.get("value");
-                    selectedCodeList.description    = listDescrTextbox.get("value");
-                    selectedCodeList.entries        = newEntries;
+                    selectedCodeList.name        = listNameTextbox.get("value");
+                    selectedCodeList.description = listDescrTextbox.get("value");
+                    selectedCodeList.entries     = newEntries;
                     
                     var def = restStoreDetail.put(selectedCodeList, {id: listIdTextbox.get('value')});
                     def.then(
@@ -494,11 +496,12 @@
                 //require(["dojo/on"], function(on) {
                 //    myEvent = on.pausable(listIdTextbox, "change", function() {console.debug("pausable id changed");setDirtyFlag();});
                 //});
-                dojo.connect(entryIdTextbox,   "onChange", setDirtyFlag);
-                dojo.connect(listIdTextbox,    "onChange", setDirtyFlag);
-                dojo.connect(listNameTextbox,  "onChange", setDirtyFlag);
-                dojo.connect(listDescrTextbox, "onChange", setDirtyFlag);
+                dojo.connect(entryIdTextbox,    "onChange", setDirtyFlag);
+                dojo.connect(listIdTextbox,     "onChange", setDirtyFlag);
+                dojo.connect(listNameTextbox,   "onChange", setDirtyFlag);
+                dojo.connect(listDescrTextbox,  "onChange", setDirtyFlag);
                 dojo.connect(entryDescrTextbox, "onChange", setDirtyFlag);
+                dojo.connect(entryDataTextbox,  "onChange", setDirtyFlag);
             }
            
             function watchStore(store) {
@@ -517,7 +520,8 @@
                 var origItem = currentEntryClicked;//entriesGrid.getItem(currentEntryClicked);
                 var data = origItem.data[0];
                 data.id = entryIdTextbox.get('value');
-                data.description = entryDescrTextbox.get('value'); 
+                data.description = entryDescrTextbox.get('value');
+                data.data = entryDataTextbox.get('value');
                 data.localisations = [];
                 entryLocalisationGrid.store.fetch({
                     onItem: function(item) {
@@ -648,6 +652,7 @@
 	                    <table style="width:100%;">
 		                    <tr><td width="30px;">Entry-ID:</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
 		                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="style:'width:100%;'"></td></tr>
+		                    <tr><td>Data:</td><td><input id="entryData" jsId="entryDataTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:100%;'"></td></tr>
 	                    </table>
 	                    <br />
 	                    <div class="tableCaption">Localisations:</div>
