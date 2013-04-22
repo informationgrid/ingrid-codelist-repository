@@ -1,0 +1,100 @@
+Index: src/main/resources/codelists_initial.xml
+===================================================================
+--- src/main/resources/codelists_initial.xml	(revision 22139)
++++ src/main/resources/codelists_initial.xml	(working copy)
+@@ -3712,6 +3712,7 @@
+             <string>Method / Base Data</string>
+           </entry>
+         </localisations>
++        <data>5</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3109</id>
+@@ -3725,6 +3726,7 @@
+             <string>Key Catalog</string>
+           </entry>
+         </localisations>
++        <data>5</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3210</id>
+@@ -3738,6 +3740,7 @@
+             <string>Basic Data</string>
+           </entry>
+         </localisations>
++        <data>3,6</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3345</id>
+@@ -3751,6 +3754,7 @@
+             <string>Basic Data</string>
+           </entry>
+         </localisations>
++        <data>2</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3515</id>
+@@ -3764,6 +3768,7 @@
+             <string>Process of Production</string>
+           </entry>
+         </localisations>
++        <data>1</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3520</id>
+@@ -3777,6 +3782,7 @@
+             <string>Functional Base</string>
+           </entry>
+         </localisations>
++        <data>1</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3535</id>
+@@ -3790,6 +3796,7 @@
+             <string>Key Catalog</string>
+           </entry>
+         </localisations>
++        <data>1</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3555</id>
+@@ -3803,6 +3810,7 @@
+             <string>Icon Catalog</string>
+           </entry>
+         </localisations>
++        <data>1</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3570</id>
+@@ -3816,6 +3824,7 @@
+             <string>Base Data</string>
+           </entry>
+         </localisations>
++        <data>1</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>5066</id>
+@@ -3829,6 +3838,7 @@
+             <string>Link to Service</string>
+           </entry>
+         </localisations>
++        <data>1</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>9990</id>
+@@ -3842,6 +3852,7 @@
+             <string>Download of data</string>
+           </entry>
+         </localisations>
++        <data>0,1,2,3,4,5,6</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>9999</id>
+@@ -3855,6 +3866,7 @@
+             <string>unspecific Link</string>
+           </entry>
+         </localisations>
++        <data>0,1,2,3,4,5,6</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3600</id>

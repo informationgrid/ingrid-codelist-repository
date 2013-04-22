@@ -58,11 +58,12 @@
     </page>
     
     <page
-            ifTarget    ="setUpdateProperty"
-            type        ="input"
-            name        ="properties"
-            displayText ="Benötigte Installationsoptionen"
-            target      ="startComponent">
+            ifTarget            ="setUpdateProperty"
+            type                ="input"
+            name                ="properties"
+            displayText         ="Benötigte Installationsoptionen"
+            target              ="patchFiles"
+            postDisplayTarget   ="antinstaller-determineVersion">
         <directory
             property            ="installDir"
             defaultValue        ="/opt/ingrid/${project.artifactId}-${project.version}"

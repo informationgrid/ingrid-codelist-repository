@@ -5,6 +5,11 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+        <release version="3.4.0" date="2013-06-??" description="Release InGrid 3.4">
+            <action type="add" dev="wemove" issue="INGRID-2251">
+                Added data field to codelist-entry.
+            </action>
+        </release>
         <release version="3.3.0" date="2013-01-??" description="Release InGrid 3.3">
             <action type="add" dev="wemove" issue="INGRID-2150">
                 Add java parameter "-Dfile.encoding=UTF8" to start script.

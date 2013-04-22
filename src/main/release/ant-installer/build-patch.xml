@@ -1,0 +1,22 @@
+<project name="ingrid-codelist-repository Patches">
+
+	<target name="patchFromVersion3.3.0">
+        <compareVersion value1="${oldVersion}" value2="3.3.0" prop="compResult"/>
+        <if>
+        	<and>
+        		<available file="${installDir}/data/codelists.xml" />
+	            <not>
+	                <equals arg1="${compResult}" arg2="1" />
+	            </not>
+	        </and>
+            <then>
+                <echo>Patching spring.xml file in basedir: </echo>
+                <patchFile patchFile="patches/3.4.0/codelists.xml.patch" originalFile="${installDir}/data/codelists.xml" />
+            </then>
+        </if>
+    </target>
+
+	<target name="patchFiles" depends="patchFromVersion3.3.0">
+		<!-- patch order determined through depends-order -->
+	</target>
+</project>
