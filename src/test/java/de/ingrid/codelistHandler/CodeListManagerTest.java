@@ -40,8 +40,32 @@ public class CodeListManagerTest {
     	List<CodeList> cls = manager.getCodeLists();
     	int size = cls.size();
         fillData();
+        
+        // clear list to read codelist from file again!
+        cls.clear();
+        
         cls = manager.getCodeLists();
         assertEquals(size+2, cls.size());
+        
+        CodeList cl = manager.getCodeList("1");
+        assertEquals("INSPIRE-Topics", cl.getName());
+        assertEquals("Abfall", cl.getEntries().get(0).getLocalisedEntry("de"));
+        assertEquals("Trash", cl.getEntries().get(0).getLocalisedEntry("en"));
+        assertEquals("meine daten", cl.getEntries().get(0).getData());
+        assertEquals("1", cl.getEntries().get(0).getId());
+        
+        assertEquals("Geodaten", cl.getEntries().get(1).getLocalisedEntry("de"));
+        assertEquals("Geodata", cl.getEntries().get(1).getLocalisedEntry("en"));
+        assertEquals("meine anderen daten", cl.getEntries().get(1).getData());
+        assertEquals("2", cl.getEntries().get(1).getId());
+        
+        
+        cl = manager.getCodeList("2");
+        assertEquals("Address-Type", cl.getName());
+        assertEquals("Telefon", cl.getEntries().get(0).getLocalisedEntry("de"));
+        assertEquals("Phone", cl.getEntries().get(0).getLocalisedEntry("en"));
+        assertEquals("weitere daten", cl.getEntries().get(0).getData());
+        assertEquals("2", cl.getEntries().get(0).getId());
     }
 
     
@@ -63,11 +87,13 @@ public class CodeListManagerTest {
         entry1.setId("1");
         entry1.setLocalisedEntry("de", "Abfall");
         entry1.setLocalisedEntry("en", "Trash");
+        entry1.setData("meine daten");
         
         CodeListEntry entry2 = new CodeListEntry();
         entry2.setId("2");
         entry2.setLocalisedEntry("de", "Geodaten");
         entry2.setLocalisedEntry("en", "Geodata");
+        entry2.setData("meine anderen daten");
         
         cl1.addEntry(entry1);
         cl1.addEntry(entry2);
@@ -81,6 +107,7 @@ public class CodeListManagerTest {
         entry_2_1.setId("2");
         entry_2_1.setLocalisedEntry("de", "Telefon");
         entry_2_1.setLocalisedEntry("en", "Phone");
+        entry_2_1.setData("weitere daten");
         
         cl2.addEntry(entry_2_1);
         
