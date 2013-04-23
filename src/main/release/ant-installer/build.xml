@@ -41,6 +41,22 @@
         </move>
 
         <mkdir dir="${installDir}/webapp/WEB-INF/work"/>
+    	
+    	<echo>Extrahieren der initialen Codeliste</echo>
+        <unzip dest="${installDir}/data">
+            <fileset dir="${installDir}/lib">
+                <include name="/ingrid-codelist-service*.jar"/>
+            </fileset>
+            <patternset>
+                <include name="/codelists_initial.xml"/>
+            </patternset>
+        </unzip>
+
+        <move file="${installDir}/data/codelists_initial.xml" tofile="${installDir}/data/codelists.xml"/>
+
+    	<echo>Aktualisierung des Zeitstempels</echo>
+        <msec property="TIMESTAMP_MILLIS"/>
+        <replace file="${installDir}/data/codelists.xml" token="&lt;lastModified>0&lt;/lastModified>" value="&lt;lastModified>${TIMESTAMP_MILLIS}&lt;/lastModified>"/>
     </target>
     
     <target name="extractUpdate">
