@@ -45,7 +45,7 @@
     	<echo>Extrahieren der initialen Codeliste</echo>
         <unzip dest="${installDir}/data">
             <fileset dir="${installDir}/lib">
-                <include name="ingrid-codelist-service-3.4.0-SNAPSHOT.jar"/>
+                <include name="ingrid-codelist-service-*.jar"/>
             </fileset>
             <patternset>
                 <include name="codelists_initial.xml"/>
