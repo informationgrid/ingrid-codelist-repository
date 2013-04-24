@@ -45,13 +45,14 @@
     	<echo>Extrahieren der initialen Codeliste</echo>
         <unzip dest="${installDir}/data">
             <fileset dir="${installDir}/lib">
-                <include name="/ingrid-codelist-service*.jar"/>
+                <include name="ingrid-codelist-service-3.4.0-SNAPSHOT.jar"/>
             </fileset>
             <patternset>
-                <include name="/codelists_initial.xml"/>
+                <include name="codelists_initial.xml"/>
             </patternset>
         </unzip>
 
+    	<echo>Verschiebe Codeliste in data-Verzeichnis!</echo>
         <move file="${installDir}/data/codelists_initial.xml" tofile="${installDir}/data/codelists.xml"/>
 
     	<echo>Aktualisierung des Zeitstempels</echo>
