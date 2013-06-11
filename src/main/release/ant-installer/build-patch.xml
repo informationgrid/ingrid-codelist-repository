@@ -1,16 +1,18 @@
 <project name="ingrid-codelist-repository Patches">
 
 	<target name="patchFromVersion3.3.0">
+		<echo>Only executed if file exists: ${installDir}/data/codelists.xml</echo>
         <compareVersion value1="${oldVersion}" value2="3.3.0" prop="compResult"/>
         <if>
         	<and>
         		<available file="${installDir}/data/codelists.xml" />
+        		<length file="${installDir}/data/codelists.xml" when="greater" length="0" />
 	            <not>
 	                <equals arg1="${compResult}" arg2="1" />
 	            </not>
 	        </and>
             <then>
-                <echo>Patching spring.xml file in basedir: </echo>
+                <echo>Patching codelists.xml file in basedir: </echo>
                 <msec property="TIMESTAMP_MILLIS"/>
                 <replace  file="patches/3.4.0/codelists.xml.patch" token="@@CURRENT_TIME@@"  value="${TIMESTAMP_MILLIS}"/>
                 <patchFile patchFile="patches/3.4.0/codelists.xml.patch" originalFile="${installDir}/data/codelists.xml" />
