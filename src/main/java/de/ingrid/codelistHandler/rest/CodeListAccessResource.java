@@ -94,6 +94,25 @@ public class CodeListAccessResource {
         return Response.ok(manager.findEntry(name.toLowerCase())).build();
     }
     
+    @GET
+    @Path("checkChanges")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response checkForChanges() {
+        return Response.ok(manager.checkChangedInitialCodelist()).build();
+    }
+    
+    @PUT
+    @Path("addInitialCodelist/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addInitialCodelist(@PathParam("id") String id) {
+        boolean success = manager.addCodelistFromInitial(id);
+        if (success)
+            return Response.ok().build();
+        else
+            return Response.status(500).build();            
+    }
+    
+    
     public void setManager(CodeListManager manager) {
         this.manager = manager;
     }

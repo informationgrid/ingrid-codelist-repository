@@ -23,7 +23,13 @@ public class CodeListManager {
     @Autowired
     private CodeListService codeListService;
     
-    public CodeListManager() {}
+    private List<CodeList> initialCodelists;
+    
+    @Autowired
+    public CodeListManager(CodeListService cls) {
+        this.codeListService = cls;
+        this.initialCodelists = this.codeListService.getInitialCodelists();
+    }
     
     public CodeList getCodeList(String id) {
         return codeListService.getCodeList(id);
@@ -144,4 +150,34 @@ public class CodeListManager {
         return createJSON(result);
     }
 
+    public Object checkChangedInitialCodelist() {
+        String json = "[{";
+        String missing = "";
+        List<CodeList> codelists = getCodeLists();
+        
+        for (CodeList codelist : this.initialCodelists) {
+            if (!CodeListUtils.codelistExists(codelists, codelist.getId())) {
+                missing += "{id:\""+codelist.getId()+"\",name:\""+codelist.getName()+"\"},";
+            }
+        }
+        if (!missing.equals("")) json += "missing:[" + missing.substring(0, missing.length()-1) + "]";
+        json += "}]";
+        return json;
+    }
+
+    /**
+     * @param id
+     */
+    public boolean addCodelistFromInitial(String id) {
+        boolean success = false;
+        for (CodeList codelist : this.initialCodelists) {
+            if (codelist.getId().equals(id)) {
+                codeListService.setCodelist(id, codelist);
+                writeCodeListsToFile();
+                success = true;
+                break;
+            }
+        }
+        return success;
+    }
 }

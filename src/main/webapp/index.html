@@ -42,21 +42,18 @@
             #codelistsArea {margin-bottom: 10px; padding-left: 15px;}
             h2 { height: 28px; background-color: #D1E4F1; padding: 12px 0 0px 19px; margin-top: 0; }
             .whiteFont { color: white; }
-//            h1 {margin:0; padding:10px;text-decoration: underline;}
             td {vertical-align: top;}
             .buttonLayer {padding-top: 10px;}
             .error .dijitDialogTitleBar {background-color: red;}
             .claro .dojoxGridHeader .dojoxGridCell { background: none; }
             .claro .dojoxGridHeader { color: white; background-color: #68A5D2; }
-            /*.dojoxGridRowTable td { padding-left: 6px !important; }*/
-            /* body .dijitAlignLeft { overflow: auto; } */
             .standby div {cursor: not-allowed !important;}
             .standby img { display: none !important; }
-/*             #entries .dojoxGridCell {text-align: center; vertical-align: middle;} */
             .shadowBox {box-shadow: 1px 1px 10px #666;padding: 6px;margin-bottom: 1px; -moz-box-shadow: 1px 1px 5px #666;}
             .nothing { padding-left: 19px;} 
             .tableCaption { padding-left: 2px;}
             .attention .dijitButtonNode {background-color: #bd0d00 !important; color: white;}
+            .warning .dijitButtonNode {background-color: #eeaD00 !important; color:white;}
             input[type="button"].table {min-width: 0px;padding: 0;}
         </style>
         
@@ -79,6 +76,8 @@
             // the select box only fetches ids and names of the codelists, otherwise
             // the requests will take too long and the box will open too slow
             var restStoreDetail = new dojo.store.JsonRest({target:"rest/getCodelists/"});
+            
+            checkForCodelistSynch();
             
             dojo.ready(function() {
                 dojo.connect(clSelect,       "onChange",        showCodeList);
@@ -103,6 +102,28 @@
                 initialObserver();
                 
             });
+            
+            function checkForCodelistSynch() {
+                dojo.xhrGet({
+                    url: "rest/getCodelists/checkChanges",
+                    load: function(result) {
+                        console.log("Differences are: ", result);
+                        var node = dijit.byId('codelistDifference').domNode;
+                        if (result == "[{}]") {
+                            dojo.removeClass(node, "warning");
+                            dojo.style(node, "display", "none");
+                        } else {
+                            dojo.addClass(node, "warning");
+                            dojo.style(node, "display", "inline");
+                        }
+                        clDifferences = result;
+                    }
+                });
+            }
+            
+            function showDifferences() {
+                clDialogs.showDifferencesDialog(clDifferences);
+            }
             
             function checkChanges() {
                 var def;
@@ -452,6 +473,18 @@
                 
             }
             
+            function addFromInitialCodelist(id, btn) {
+                console.log("Add codelist from initial one: ", id, btn);
+                dojo.attr(btn, "disabled", "disabled");
+                dojo.xhrPut({
+                    url: "rest/getCodelists/addInitialCodelist/"+id,
+                    postData: id,
+                    load: function(data) {
+                        console.log("response:", data);
+                    }
+                });
+            }
+            
             /* DATA PREPARER */
             function prepareCodelistEntries(cl) {
                 var data = [];
@@ -606,7 +639,9 @@
                     <span id="remCodelist" data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
                     <span id="cancel" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:cancelEdit">Cancel</span>
                     <span id="btnSave" data-dojo-id="btnSave" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:saveChanges, disabled:true">Save</span>
-                    <span style="float:right;"><span class="whiteFont">Search entry: </span><input data-dojo-id="searchEntryBox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:80px;'">
+                    <span style="float:right;">
+                        <span id="codelistDifference" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:showDifferences">Codelists differences found!</span>
+                        <span>Search entry: </span><input data-dojo-id="searchEntryBox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:80px;'">
                         <span data-dojo-id="goButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:searchEntry">Go</span>
                         <span data-dojo-id="nextEntryButton" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:showNextFoundEntry, disabled:true">Show</span></span>
                 </div>

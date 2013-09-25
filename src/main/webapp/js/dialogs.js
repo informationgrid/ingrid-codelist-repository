@@ -71,3 +71,28 @@ clDialogs.showAskDialog = function(content) {
     myDialog.show();
     return def;
 };
+
+clDialogs.showDifferencesDialog = function(content) {
+    var def = new dojo.Deferred();
+    var jsonObject = eval(content)[0];
+    
+    var content = "<h2>Missing Codelists:</h2><ul>";
+    dojo.forEach(jsonObject.missing, function(item) {
+        content += "<li><button onclick=\"addFromInitialCodelist("+item.id+", this)\">Add</button>" + item.id + ": " + item.name + "</li>";
+    });
+    
+    
+    var myDialog = dijit.byId("codelistDialogDifference");
+    if (myDialog) {
+        myDialog.destroyDescendants();
+        myDialog.destroy();
+    }
+    myDialog = new dijit.Dialog({
+        id: "codelistDialogDifference",
+        // The dialog's title
+        title: "Differences",
+        content: content
+    });
+    myDialog.show();
+    return def;
+}
