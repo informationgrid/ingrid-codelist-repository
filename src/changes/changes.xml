@@ -5,11 +5,18 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
-        <release version="3.4.0" date="2013-06-??" description="Release InGrid 3.4">
+        <release version="3.3.1" date="2013-10-31" description="Release InGrid 3.3.1">
             <action type="add" dev="wemove" issue="INGRID-2251">
                 Added data field to codelist-entry.
             </action>
+            <action type="update" dev="wemove" issue="INGRID-2270">
+                Change behavior of some codelists to use new data field instead of separated data in entry value.
+            </action>
+            <action type="update" dev="wemove" issue="INGRID-2268">
+                Better look (update styles).
+            </action>
         </release>
+
         <release version="3.3.0" date="2013-01-??" description="Release InGrid 3.3">
             <action type="add" dev="wemove" issue="INGRID-2150">
                 Add java parameter "-Dfile.encoding=UTF8" to start script.
