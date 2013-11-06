@@ -1,5 +1,34 @@
 --- C:/temp/AppData/codelists_initial.xml-rev21182.svn001.tmp.xml	Thu Nov 08 20:15:55 2012
 +++ C:/Users/Public/Development/ingrid/ingrid-codelist-service/trunk/src/main/resources/codelists_initial.xml	Thu May 23 15:00:02 2013
+@@ -1511,6 +1511,20 @@
+         <data>0,1,2,3,4,5,6</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
++        <id>9995</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Nutzungsbedingungen</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Usage Limitations</string>
++          </entry>
++        </localisations>
++        <data>0,1,2,3,4,5,6</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
+         <id>9999</id>
+         <localisations>
+           <entry>
+@@ -1537,6 +1551,7 @@
+             <string>Coupled Data</string>
+           </entry>
+         </localisations>
++        <data></data>
+       </de.ingrid.codelists.model.CodeListEntry>
+     </entries>
+     <lastModified>0</lastModified>
 @@ -3712,6 +3712,7 @@
              <string>Method / Base Data</string>
            </entry>
@@ -318,7 +347,450 @@
    </de.ingrid.codelists.model.CodeList>
    <de.ingrid.codelists.model.CodeList>
      <id>6100</id>
-@@ -8222,6 +8222,120 @@
+@@ -7851,6 +7866,442 @@
+     <lastModified>0</lastModified>
+   </de.ingrid.codelists.model.CodeList>
+   <de.ingrid.codelists.model.CodeList>
++    <id>6400</id>
++    <name>Kategorien (Open Data)</name>
++    <description></description>
++    <defaultEntry>-1</defaultEntry>
++    <entries>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>1</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Bevölkerung</string>
++          </entry>
++        </localisations>
++        <data>bevoelkerung</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>2</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Bildung und Wissenschaft</string>
++          </entry>
++        </localisations>
++        <data>bildung_wissenschaft</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>3</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Geographie, Geologie und Geobasisdaten</string>
++          </entry>
++        </localisations>
++        <data>geo</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>4</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Gesetze und Justiz</string>
++          </entry>
++        </localisations>
++        <data>gesetze_justiz</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>5</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Gesundheit</string>
++          </entry>
++        </localisations>
++        <data>gesundheit</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>6</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Infrastruktur, Bauen und Wohnen</string>
++          </entry>
++        </localisations>
++        <data>infrastruktur_bauen_wohnen</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>7</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Kultur, Freizeit, Sport und Tourismus</string>
++          </entry>
++        </localisations>
++        <data>kultur_freizeit_sport_tourismus</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>8</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Politik und Wahlen</string>
++          </entry>
++        </localisations>
++        <data>politik_wahlen</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>9</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Soziales</string>
++          </entry>
++        </localisations>
++        <data>soziales</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>10</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Transport und Verkehr</string>
++          </entry>
++        </localisations>
++        <data>transport_verkehr</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>11</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Umwelt und Klima</string>
++          </entry>
++        </localisations>
++        <data>umwelt_klima</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>12</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Verbraucherschutz</string>
++          </entry>
++        </localisations>
++        <data>verbraucher</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>13</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Öffentliche Verwaltung, Haushalt und Steuern</string>
++          </entry>
++        </localisations>
++        <data>verwaltung</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>14</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Wirtschaft und Arbeit</string>
++          </entry>
++        </localisations>
++        <data>wirtschaft_arbeit</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++    </entries>
++    <lastModified>0</lastModified>
++  </de.ingrid.codelists.model.CodeList>
++  <de.ingrid.codelists.model.CodeList>
++    <id>6500</id>
++    <name>Lizenzen</name>
++    <description></description>
++    <defaultEntry>-1</defaultEntry>
++    <entries>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>1</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Datenlizenz Deutschland Namensnennung</string>
++          </entry>
++        </localisations>
++        <data>dl-de-by-1.0</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>2</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Amtliches Werk, lizenzfrei nach §5 UrhG</string>
++          </entry>
++        </localisations>
++        <data>official-work</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>3</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes</string>
++          </entry>
++        </localisations>
++        <data>geonutzv-de-2013-03-19</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>4</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Creative Commons Namensnennung (CC-BY)</string>
++          </entry>
++        </localisations>
++        <data>cc-by</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>5</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Creative Commons Zero</string>
++          </entry>
++        </localisations>
++        <data>cc-zero</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>6</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Creative Commons Attribution Weitergabe unter gleichen Bedingungen (CC-BY-SA)</string>
++          </entry>
++        </localisations>
++        <data>cc-by-sa</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>7</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Open Data Commons Open Database License (ODbL)</string>
++          </entry>
++        </localisations>
++        <data>odc-odbl</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>8</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Open Data Commons Namensnennung</string>
++          </entry>
++        </localisations>
++        <data>odc-by</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>9</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Open Data Commons Public Domain Dedication and Licence (PDDL)</string>
++          </entry>
++        </localisations>
++        <data>odc-pddl</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>10</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Andere freie Lizenz</string>
++          </entry>
++        </localisations>
++        <data>other-open</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>11</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Creative Commons Nicht-Kommerziell (CC-NC)</string>
++          </entry>
++        </localisations>
++        <data>cc-nc</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>12</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Creative Commons Keine Bearbeitung (CC-BY-ND)</string>
++          </entry>
++        </localisations>
++        <data>cc-by-nd</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>13</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Datenlizenz Deutschland Namensnennung nicht-kommerziell</string>
++          </entry>
++        </localisations>
++        <data>dl-de-by-nc-1.0</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>14</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Geolizenz Ia Namensnennung</string>
++          </entry>
++        </localisations>
++        <data>geolizenz-i-a</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>15</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>eingeschränkte Geolizenz</string>
++          </entry>
++        </localisations>
++        <data>geolizenz-closed</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>16</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Apache Lizenz</string>
++          </entry>
++        </localisations>
++        <data>apache</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>17</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Andere kommerzielle Lizenz</string>
++          </entry>
++        </localisations>
++        <data>app_commercial</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>18</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Andere kostenfreie Lizenz</string>
++          </entry>
++        </localisations>
++        <data>app_freeware</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>19</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Andere Open Source Lizenz</string>
++          </entry>
++        </localisations>
++        <data>app_opensource</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>20</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>BSD Lizenz</string>
++          </entry>
++        </localisations>
++        <data>bsd-license</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>21</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>GNU Free Documentation License</string>
++          </entry>
++        </localisations>
++        <data>gfdl</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>22</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>GNU General Public License version 3.0 (GPLv3)</string>
++          </entry>
++        </localisations>
++        <data>gpl-3.0</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>23</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Mozilla Public License 1.0 (MPL)</string>
++          </entry>
++        </localisations>
++        <data>mozilla</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>24</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Andere eingeschränkte Lizenz</string>
++          </entry>
++        </localisations>
++        <data>other-closed</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++    </entries>
++    <lastModified>0</lastModified>
++  </de.ingrid.codelists.model.CodeList>
++  <de.ingrid.codelists.model.CodeList>
+     <id>7109</id>
+     <name>Datenqualität - Datenüberschuss - Art der Messung</name>
+     <defaultEntry></defaultEntry>
+@@ -8222,6 +8673,120 @@
      <lastModified>0</lastModified>
    </de.ingrid.codelists.model.CodeList>
    <de.ingrid.codelists.model.CodeList>
