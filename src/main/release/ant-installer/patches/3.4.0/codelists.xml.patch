@@ -1,0 +1,1367 @@
+Index: src/main/resources/codelists_initial.xml
+===================================================================
+--- src/main/resources/codelists_initial.xml	(revision 22875)
++++ src/main/resources/codelists_initial.xml	(revision 23723)
+@@ -1354,10 +1354,16 @@
+   <de.ingrid.codelists.model.CodeList>
+     <id>2000</id>
+     <name>Objekt / Url-Verweis - Typ</name>
+-    <defaultEntry></defaultEntry>
++    <description>Im Datafeld wird angegeben, in welchen Objektklassen der jeweilige Verweistyp angeboten wird. Die Objektklassen werden mit ihrer ID angegeben, jeweils durch ein Koma voneinander getrennt.
++ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.
++
++Bei der Erzeuung der ISO-Metadaten aus den Katalogdaten wird, wenn vorhanden, immer der Eintrag der ISO-Locale verwendet. Andernfalls wird der Wert der English-Locale herangezogen.
++</description>
++    <defaultEntry>-1</defaultEntry>
+     <entries>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3100</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1372,6 +1378,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3109</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1378,6 +1385,10 @@
+             <string>Objektartenkatalog</string>
+           </entry>
+           <entry>
++            <string>iso</string>
++            <string>keyCatalog</string>
++          </entry>
++          <entry>
+             <string>en</string>
+             <string>Key Catalog</string>
+           </entry>
+@@ -1386,6 +1397,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3210</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1400,6 +1412,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3345</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1414,6 +1427,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3515</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1428,6 +1442,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3520</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1442,6 +1457,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3535</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1456,6 +1472,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3555</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1470,6 +1487,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3570</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1484,6 +1502,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>5066</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1490,14 +1509,19 @@
+             <string>Verweis zu Dienst</string>
+           </entry>
+           <entry>
++            <string>iso</string>
++            <string>serviceurl</string>
++          </entry>
++          <entry>
+             <string>en</string>
+             <string>Link to Service</string>
+           </entry>
+         </localisations>
+-        <data>1</data>
++        <data>1,3</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>9990</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1504,6 +1528,10 @@
+             <string>Datendownload</string>
+           </entry>
+           <entry>
++            <string>iso</string>
++            <string>download</string>
++          </entry>
++          <entry>
+             <string>en</string>
+             <string>Download of data</string>
+           </entry>
+@@ -1512,6 +1540,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>9995</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1519,7 +1548,7 @@
+           </entry>
+           <entry>
+             <string>en</string>
+-            <string>Usage Limitations</string>
++            <string>Use Constraints</string>
+           </entry>
+         </localisations>
+         <data>0,1,2,3,4,5,6</data>
+@@ -1526,6 +1555,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>9999</id>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1532,6 +1562,10 @@
+             <string>unspezifischer Verweis</string>
+           </entry>
+           <entry>
++            <string>iso</string>
++            <string>unspecificurl</string>
++          </entry>
++          <entry>
+             <string>en</string>
+             <string>unspecific Link</string>
+           </entry>
+@@ -1540,7 +1574,7 @@
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3600</id>
+-        <description></description>
++        <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen und dürfen NICHT gelöscht werden.</description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -1547,6 +1581,10 @@
+             <string>Gekoppelte Daten</string>
+           </entry>
+           <entry>
++            <string>iso</string>
++            <string>coupledResource</string>
++          </entry>
++          <entry>
+             <string>en</string>
+             <string>Coupled Data</string>
+           </entry>
+@@ -3201,6 +3239,20 @@
+           </entry>
+         </localisations>
+       </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>6</id>
++        <description>Dieser Eintrag ist gedacht für den Zugriff auf einen ATOM-Download-Service</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Get Download Service Metadata</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Get Download Service Metadata</string>
++          </entry>
++        </localisations>
++      </de.ingrid.codelists.model.CodeListEntry>
+     </entries>
+     <lastModified>0</lastModified>
+   </de.ingrid.codelists.model.CodeList>
+@@ -6367,7 +6419,9 @@
+   <de.ingrid.codelists.model.CodeList>
+     <id>6005</id>
+     <name>Konformität - Spezifikation der Konformität</name>
+-    <defaultEntry></defaultEntry>
++    <description>Das Datum der jeweiligen Spezifikation wird aus dem &lt;Data&gt;-Feld ausgelesen, bitte in folgender Form eingeben:
++JJJJ-MM-TT</description>
++    <defaultEntry>12</defaultEntry>
+     <entries>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>1</id>
+@@ -6374,14 +6428,14 @@
+         <localisations>
+           <entry>
+             <string>de</string>
+-            <string>INSPIRE Data Specification on Addresses – Guidelines</string>
++            <string>INSPIRE Data Specification on Addresses - Guidelines</string>
+           </entry>
+           <entry>
+             <string>en</string>
+-            <string>INSPIRE Data Specification on Addresses – Guidelines</string>
++            <string>INSPIRE Data Specification on Addresses - Guidelines</string>
+           </entry>
+         </localisations>
+-        <data>2010-05-03</data>
++        <data>2010-04-26</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>2</id>
+@@ -6388,14 +6442,14 @@
+         <localisations>
+           <entry>
+             <string>de</string>
+-            <string>INSPIRE Data Specification on Administrative units --Guidelines</string>
++            <string>INSPIRE Data Specification on Administrative Units - Guidelines</string>
+           </entry>
+           <entry>
+             <string>en</string>
+-            <string>INSPIRE Data Specification on Administrative units --Guidelines</string>
++            <string>INSPIRE Data Specification on Administrative Units - Guidelines</string>
+           </entry>
+         </localisations>
+-        <data>2010-05-03</data>
++        <data>2010-04-26</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3</id>
+@@ -6402,14 +6456,14 @@
+         <localisations>
+           <entry>
+             <string>de</string>
+-            <string>INSPIRE Data Specification on Cadastral parcels --Guidelines</string>
++            <string>INSPIRE Data Specification on Cadastral Parcels - Guidelines</string>
+           </entry>
+           <entry>
+             <string>en</string>
+-            <string>INSPIRE Data Specification on Cadastral parcels --Guidelines</string>
++            <string>INSPIRE Data Specification on Cadastral Parcels - Guidelines</string>
+           </entry>
+         </localisations>
+-        <data>2010-05-03</data>
++        <data>2010-04-26</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>4</id>
+@@ -6416,14 +6470,14 @@
+         <localisations>
+           <entry>
+             <string>de</string>
+-            <string>INSPIRE Data Specification on Geographical names – Guidelines</string>
++            <string>INSPIRE Data Specification on Geographical names - Guidelines</string>
+           </entry>
+           <entry>
+             <string>en</string>
+-            <string>INSPIRE Data Specification on Geographical names – Guidelines</string>
++            <string>INSPIRE Data Specification on Geographical names - Guidelines</string>
+           </entry>
+         </localisations>
+-        <data>2010-05-03</data>
++        <data>2010-04-26</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>5</id>
+@@ -6430,14 +6484,14 @@
+         <localisations>
+           <entry>
+             <string>de</string>
+-            <string>INSPIRE Data Specification on Hydrography – Guidelines</string>
++            <string>INSPIRE Data Specification on Hydrography - Guidelines</string>
+           </entry>
+           <entry>
+             <string>en</string>
+-            <string>INSPIRE Data Specification on Hydrography – Guidelines</string>
++            <string>INSPIRE Data Specification on Hydrography - Guidelines</string>
+           </entry>
+         </localisations>
+-        <data>2010-05-03</data>
++        <data>2010-04-26</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>6</id>
+@@ -6444,14 +6498,14 @@
+         <localisations>
+           <entry>
+             <string>de</string>
+-            <string>INSPIRE Data Specification on Protected Sites – Guidelines</string>
++            <string>INSPIRE Data Specification on Protected Sites - Guidelines</string>
+           </entry>
+           <entry>
+             <string>en</string>
+-            <string>INSPIRE Data Specification on Protected Sites – Guidelines</string>
++            <string>INSPIRE Data Specification on Protected Sites - Guidelines</string>
+           </entry>
+         </localisations>
+-        <data>2010-05-03</data>
++        <data>2010-04-26</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>7</id>
+@@ -6458,14 +6512,14 @@
+         <localisations>
+           <entry>
+             <string>de</string>
+-            <string>INSPIRE Data Specification on Transport Networks – Guidelines</string>
++            <string>INSPIRE Data Specification on Transport Networks - Guidelines</string>
+           </entry>
+           <entry>
+             <string>en</string>
+-            <string>INSPIRE Data Specification on Transport Networks – Guidelines</string>
++            <string>INSPIRE Data Specification on Transport Networks - Guidelines</string>
+           </entry>
+         </localisations>
+-        <data>2010-05-03</data>
++        <data>2010-04-26</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>8</id>
+@@ -6521,7 +6575,7 @@
+             <string>INSPIRE Durchführungsbestimmung Metadaten</string>
+           </entry>
+         </localisations>
+-        <data>2008-12-03</data>
++        <data>2009-12-15</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>12</id>
+@@ -6531,11 +6585,15 @@
+             <string>INSPIRE Durchführungsbestimmung Interoperabilität von Geodatensätzen und --diensten</string>
+           </entry>
+           <entry>
++            <string>iso</string>
++            <string>VERORDNUNG (EG) Nr. 1089/2010 DER KOMMISSION vom 23. November 2010 zur Durchführung der Richtlinie 2007/2/EG des Europäischen Parlaments und des Rates hinsichtlich der Interoperabilität von Geodatensätzen und -diensten</string>
++          </entry>
++          <entry>
+             <string>en</string>
+             <string>INSPIRE Durchführungsbestimmung Interoperabilität von Geodatensätzen und --diensten</string>
+           </entry>
+         </localisations>
+-        <data>2010-11-21</data>
++        <data>2010-12-08</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>13</id>
+@@ -6551,8 +6609,432 @@
+         </localisations>
+         <data>2007-03-14</data>
+       </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>14</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Elevation – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Elevation – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>15</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Land Cover – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>iso</string>
++            <string>INSPIRE Data Specification on Land Cover – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Land Cover – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>16</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Orthoimagery – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Orthoimagery – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>17</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Geology – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Geology – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>18</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Statistical units – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Statistical units – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>19</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Buildings – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Buildings – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>20</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Soil – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Soil – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>21</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Land Use – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Land Use – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>22</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Human Health and Safety – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Human Health and Safety – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>23</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Utility and Governmental Services – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Utility and Governmental Services – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>24</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Environmental Monitoring Facilities – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Environmental Monitoring Facilities – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>25</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Production and Industrial Facilities – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Production and Industrial Facilities – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>26</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Agricultural and Aquaculture Facilities – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Agricultural and Aquaculture Facilities – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>27</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Population Distribution – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Population Distribution – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>28</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Area Management/Restriction/Regulation Zones and Reporting Units – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Area Management/Restriction/Regulation Zones and Reporting Units – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>29</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Natural Risk Zones – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Natural Risk Zones – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>30</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Atmospheric Conditions and Meteorological Geographical Features – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Atmospheric Conditions and Meteorological Geographical Features – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>31</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Oceanographic geographical features – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Oceanographic geographical features – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>32</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Sea regions – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Sea regions – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>33</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Bio-geographical Regions – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Bio-geographical Regions – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>34</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Habitats and Biotopes – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Habitats and Biotopes – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>35</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Species Distribution – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Species Distribution – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>36</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Energy Resources – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Energy Resources – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>37</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>INSPIRE Data Specification on Mineral Resources – Technical Guidelines</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>INSPIRE Data Specification on Mineral Resources – Technical Guidelines</string>
++          </entry>
++        </localisations>
++        <data>2013-12-10</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>38</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Technical Guidance for the implementation of INSPIRE Discovery Services</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Technical Guidance for the implementation of INSPIRE Discovery Services</string>
++          </entry>
++        </localisations>
++        <data>2011-11-07</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>39</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Technical Guidance for the implementation of INSPIRE View Services</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Technical Guidance for the implementation of INSPIRE View Services</string>
++          </entry>
++        </localisations>
++        <data>2013-04-04</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>40</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Technical Guidance for the implementation of INSPIRE Download Services</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Technical Guidance for the implementation of INSPIRE Download Services</string>
++          </entry>
++        </localisations>
++        <data>2013-08-09</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>41</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Technical Guidance for the INSPIRE Schema Transformation Network Service</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Technical Guidance for the INSPIRE Schema Transformation Network Service</string>
++          </entry>
++        </localisations>
++        <data>2010-12-15</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>42</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Draft Technical Guidance for INSPIRE Coordinate Transformation Services</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Draft Technical Guidance for INSPIRE Coordinate Transformation Services</string>
++          </entry>
++        </localisations>
++        <data>2010-03-15</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>43</id>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Technical Guidance for INSPIRE Spatial Data Services and services allowing spatial data services to be invoked</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Technical Guidance for INSPIRE Spatial Data Services and services allowing spatial data services to be invoked</string>
++          </entry>
++        </localisations>
++        <data>2012-08-02</data>
++      </de.ingrid.codelists.model.CodeListEntry>
+     </entries>
+-    <lastModified>0</lastModified>
++    <lastModified>1391508866903</lastModified>
+   </de.ingrid.codelists.model.CodeList>
+   <de.ingrid.codelists.model.CodeList>
+     <id>6100</id>
+@@ -7626,7 +8108,9 @@
+   <de.ingrid.codelists.model.CodeList>
+     <id>6300</id>
+     <name>INSPIRE-Datenformat</name>
+-    <defaultEntry></defaultEntry>
++    <description>Version und zitierfähiger Titel der Spezifikation werden aus dem &lt;Data&gt;-Feld ausgelesen, bitte in folgender Form eingeben:
++&quot;Version&quot;,&quot;Spezifikation&quot; </description>
++    <defaultEntry>-1</defaultEntry>
+     <entries>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>1</id>
+@@ -7640,6 +8124,7 @@
+             <string>Geographic Markup Language (GML)</string>
+           </entry>
+         </localisations>
++        <data>&quot;GML, version 3.2.1&quot;,&quot;GML Specification&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>2</id>
+@@ -7653,6 +8138,7 @@
+             <string>Hydrography GML application schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0; GML, version 3.2.1&quot;,&quot;D2.8.I.8 INSPIRE Data Specification on Hydrography - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>3</id>
+@@ -7666,6 +8152,7 @@
+             <string>&quot;Hydro ­ base&quot; GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0; GML, version 3.2.1&quot;,&quot;D2.8.I.8 INSPIRE Data Specification on Hydrography - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>4</id>
+@@ -7679,6 +8166,7 @@
+             <string>&quot;Hydro ­ Physical Waters&quot; GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0; GML, version 3.2.1&quot;,&quot;D2.8.I.8 INSPIRE Data Specification on Hydrography - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>5</id>
+@@ -7692,6 +8180,7 @@
+             <string>&quot;Hydro ­ Network&quot; GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0; GML, version 3.2.1&quot;,&quot;D2.8.I.8 INSPIRE Data Specification on Hydrography - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>6</id>
+@@ -7705,6 +8194,7 @@
+             <string>&quot;Hydro ­ Reporting&quot; GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0; GML, version 3.2.1&quot;,&quot;D2.8.I.8 INSPIRE Data Specification on Hydrography - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>7</id>
+@@ -7718,6 +8208,7 @@
+             <string>Common Transport Elements GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0.1; GML, version 3.2.1&quot;,&quot;D2.8.I.7 INSPIRE Data Specification on Transport Networks - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>8</id>
+@@ -7731,6 +8222,7 @@
+             <string>Road Transport Networks GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0.1; GML, version 3.2.1&quot;,&quot;D2.8.I.7 INSPIRE Data Specification on Transport Networks - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>9</id>
+@@ -7744,9 +8236,11 @@
+             <string>Rail Transport Networks GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0.1; GML, version 3.2.1&quot;,&quot;D2.8.I.7 INSPIRE Data Specification on Transport Networks - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>10</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7757,9 +8251,11 @@
+             <string>Cable Transport Networks GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0.1; GML, version 3.2.1&quot;,&quot;D2.8.I.7 INSPIRE Data Specification on Transport Networks - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>11</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7770,9 +8266,11 @@
+             <string>Water Transport Networks GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0.1; GML, version 3.2.1&quot;,&quot;D2.8.I.7 INSPIRE Data Specification on Transport Networks - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>12</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7783,9 +8281,11 @@
+             <string>Air Transport Networks GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0.1; GML, version 3.2.1&quot;,&quot;D2.8.I.7 INSPIRE Data Specification on Transport Networks - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>13</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7796,9 +8296,11 @@
+             <string>Protected Sites - Simple GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.1; GML, version 3.2.1&quot;,&quot;D2.8.I.9 INSPIRE Data Specification on Protected Sites - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>14</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7809,9 +8311,11 @@
+             <string>Protected Sites - Full GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.1; GML, version 3.2.1&quot;,&quot;D2.8.I.9 INSPIRE Data Specification on Protected Sites - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>15</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7822,9 +8326,11 @@
+             <string>Addresses GML application schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.1; GML, version 3.2.1&quot;,&quot;D2.8.I.5 INSPIRE Data Specification on Addresses - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>16</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7835,9 +8341,11 @@
+             <string>Administrative units GML application schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0; GML, version 3.2.1&quot;,&quot;D2.8.I.4 INSPIRE Data Specification on Administrative Units - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>17</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7848,9 +8356,11 @@
+             <string>Cadastral Parcels GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0; GML, version 3.2.1&quot;,&quot;D2.8.I.6 INSPIRE Data Specification on Cadastral Parcels - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
+       <de.ingrid.codelists.model.CodeListEntry>
+         <id>18</id>
++        <description></description>
+         <localisations>
+           <entry>
+             <string>de</string>
+@@ -7861,9 +8371,371 @@
+             <string>Geographical names GML Application Schema</string>
+           </entry>
+         </localisations>
++        <data>&quot;version 3.0; GML, version 3.2.1&quot;,&quot;D2.8.I.3 INSPIRE Data Specification on Geographical names - Guidelines&quot;</data>
+       </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>19</id>
++        <description>Angabe für Version abweichend von Datenspezifikation (der Wert &apos;3.0&apos; ist in fast allen anderen Datenspezifikationen üblich)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Elevation GML Application Schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Elevation GML Application Schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0(.3), GML, version 3.2.1&quot;,&quot;D2.8.II.1 Data Specification on Elevation – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>20</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Land Cover GML Application Schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Land Cover GML Application Schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.II.2 Data Specification on Land Cover – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>21</id>
++        <description>Angabe für Version abweichend von Datenspezifikation (der Wert &apos;3.0&apos; ist in fast allen anderen Datenspezifikationen üblich)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Orthoimagery GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Orthoimagery GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0, GML, version 3.2.1&quot;,&quot;D2.8.II.3 Data Specification on Orthoimagery – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>22</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Geology GML Application Schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Geology GML Application Schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.II.4 Data Specification on Geology – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>23</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Statistical Units GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Statistical Units GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.1 Data Specification on Statistical Units – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>24</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Buildings GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Buildings GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.2 Data Specification on Buildings – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>25</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Soil GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Soil GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.3 Data Specification on Soil – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>26</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Land Use GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Land Use GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.4 Data Specification on Land Use – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>27</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Human Health and Safety GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Human Health and Safety GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.5 Data Specification on Human Health and Safety – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>28</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Utility and Government Services GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Utility and Government Services GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.6 Data Specification on Utility and Governmental Services – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>29</id>
++        <description>in Datenspezifikation Template für GML Version, Datenspezifikation und Name nicht geändert. Daher hier typische Werte eingesetzt.</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Environmental Monitoring Facilities GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Environmental Monitoring Facilities GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.7 Data Specification on Environmental Monitoring Facilities – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>30</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Production and Industrial Facilities GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Production and Industrial Facilities GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.8 Data Specification on Production and Industrial Facilities – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>31</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Agricultural and Aquaculture Facilities GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Agricultural and Aquaculture Facilities GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.9 Data Specification on Agricultural and Aquaculture Facilities – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>32</id>
++        <description>in der Datenspezifikation steht für Version: &quot;see INSPIRE website.&quot;
++</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Population Distribution - GML Application Schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Population Distribution - GML Application Schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.10 Data Specification on Population Distribution – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>33</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Area Management/Restriction/Regulation Zones and Reporting Units GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Area Management/Restriction/Regulation Zones and Reporting Units GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.11 Data Specification on Area Management/Restriction/Regulation Zones and Reporting Units – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>34</id>
++        <description>Versionsangabe in Datenspezifikation noch als Release-Kandidat</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Natural Risk Zones GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Natural Risk Zones GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0rc3&quot;,&quot;D2.8.III.12 Data Specification on Natural Risk Zones – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>35</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Atmospheric Conditions and Meteorological Geographical Features GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Atmospheric Conditions and Meteorological Geographical Features GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.13-14 Data Specification on Atmospheric Conditions and Meteorological geographical features – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>36</id>
++        <description>Schreibweise des Titels weicht von anderen Datenspezifikationen ab, ebenso Versionsangabe</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Oceanographic geographical features GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Oceanographic geographical features GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0, GML, version 3.2.1&quot;,&quot;D2.8.III.15 Data Specification on Oceanographic geographical features – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>37</id>
++        <description>Versionsangabe von anderen Datenspezifikationen ab</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Sea Regions GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Sea Regions GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0, GML, version 3.2.1&quot;,&quot;D2.8.III.16 Data Specification on Sea Regions – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>38</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Bio-geographical Regions GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Bio-geographical Regions GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.17 Data Specification on Bio-geographical Regions – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>39</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Habitats and Biotopes GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Habitats and Biotopes GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.18 Data Specification on Habitats and Biotopes – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>40</id>
++        <description>Schema-Name in Datenspezifikation nicht genannt (SomeApplicationSchema)</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Species Distribution GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Species Distribution GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.19 Data Specification on Species Distribution – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>41</id>
++        <description></description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Energy Resources GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Energy Resources GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0&quot;,&quot;D2.8.III.20 Data Specification on Energy Resources – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
++      <de.ingrid.codelists.model.CodeListEntry>
++        <id>42</id>
++        <description>Versionsangabe in Datenspezifikation noch als Release-Kandidat</description>
++        <localisations>
++          <entry>
++            <string>de</string>
++            <string>Mineral Resources - GML application schema</string>
++          </entry>
++          <entry>
++            <string>en</string>
++            <string>Mineral Resources - GML application schema</string>
++          </entry>
++        </localisations>
++        <data>&quot;3.0rc3&quot;,&quot;D2.8.III.21 Data Specification on Mineral Resources – Technical Guidelines&quot;</data>
++      </de.ingrid.codelists.model.CodeListEntry>
+     </entries>
+-    <lastModified>0</lastModified>
++    <lastModified>1387189833012</lastModified>
+   </de.ingrid.codelists.model.CodeList>
+   <de.ingrid.codelists.model.CodeList>
+     <id>6400</id>
