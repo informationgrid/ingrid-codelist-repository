@@ -5,6 +5,18 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+        <release version="3.4.0" date="2014-02-25" description="Release InGrid 3.4.0">
+            <action type="add" dev="wemove" issue="INGRID-2334">
+                Mapping of string to codelist entry now possible without locale and finding of codelist more flexible.
+            </action>
+            <action type="update" dev="wemove" issue="INGRID-2337">
+                Update of Codelists and added new ones.
+            </action>
+            <action type="update" dev="wemove" issue="INGRID-2317">
+                Use ISO values before English values for mapping "Verweistyp".
+            </action>
+        </release>
+
         <release version="3.3.1" date="2013-11-06" description="Release InGrid 3.3.1">
             <action type="add" dev="wemove" issue="INGRID-2251">
                 Added data field to codelist-entry.
