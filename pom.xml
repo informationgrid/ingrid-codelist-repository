@@ -1,199 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <parent>
-        <groupId>de.ingrid</groupId>
-        <artifactId>ingrid-releases-pom</artifactId>
-        <version>3.4.0</version>
-    </parent>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>de.ingrid</groupId>
-    <artifactId>ingrid-codelist-repository</artifactId>
-    <version>3.5.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>InGrid CodeList Repository</name>
-    <scm>
-        <connection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/trunk</connection>
-        <developerConnection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/trunk</developerConnection>
-    </scm>
-    <build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.14</version>
-                <configuration>
-                    <!-- give more memory with 'export MAVEN_OPTS="-Xmx1024M"' before executing mvn jetty:run -->
-                    <contextPath>/</contextPath>
-                    <classesDirectory>target/classes</classesDirectory>
-                    <scanTargets>
-                        <file>target/classes</file>
-                    </scanTargets>
-                    <connectors>
-                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>8088</port>
-                            <maxIdleTime>60000</maxIdleTime>
-                        </connector>
-                    </connectors>
-                    <scanIntervalSeconds>2</scanIntervalSeconds>
-                    <reload>manual</reload>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.4</version>
-                <executions>
-                    <execution>
-                        <id>unpack</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.dojotoolkit</groupId>
-                                    <artifactId>dojo-war</artifactId>
-                                    <version>1.6.1</version>
-                                    <type>war</type>
-                                    <overWrite>false</overWrite>
-                                    <!-- <excludes>**/dojo/tests/,**dijit/demos/,**/dijit/bench/</excludes> -->
-                                    <outputDirectory>${project.build.directory}/js/dojo</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <!-- see ingrid-utils:de.ingrid.utils.metadata.IPlugType -->
-                            <iPlug-Type>CODELIST_REPOSITORY</iPlug-Type>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <ingridComponentType>CODELIST_REPOSITORY</ingridComponentType>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>de.ingrid</groupId>
+		<artifactId>ingrid-releases-pom</artifactId>
+		<version>3.5.0-SNAPSHOT-R304</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.ingrid</groupId>
+	<artifactId>ingrid-codelist-repository</artifactId>
+	<version>3.5.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>InGrid CodeList Repository</name>
+	<scm>
+		<connection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/trunk</connection>
+		<developerConnection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/trunk</developerConnection>
+	</scm>
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.14</version>
+				<configuration>
+					<!-- give more memory with 'export MAVEN_OPTS="-Xmx1024M"' before executing mvn jetty:run -->
+					<contextPath>/</contextPath>
+					<classesDirectory>target/classes</classesDirectory>
+					<scanTargets>
+						<file>target/classes</file>
+					</scanTargets>
+					<connectors>
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8088</port>
+							<maxIdleTime>60000</maxIdleTime>
+						</connector>
+					</connectors>
+					<scanIntervalSeconds>2</scanIntervalSeconds>
+					<reload>manual</reload>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>unpack</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>org.dojotoolkit</groupId>
+									<artifactId>dojo-war</artifactId>
+									<version>1.6.1</version>
+									<type>war</type>
+									<overWrite>false</overWrite>
+									<!-- <excludes>**/dojo/tests/,**dijit/demos/,**/dijit/bench/</excludes> -->
+									<outputDirectory>${project.build.directory}/js/dojo</outputDirectory>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<!-- see ingrid-utils:de.ingrid.utils.metadata.IPlugType -->
+							<iPlug-Type>CODELIST_REPOSITORY</iPlug-Type>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<ingridComponentType>CODELIST_REPOSITORY</ingridComponentType>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-    <!-- ==================== DEPENDENCY MANAGEMENT ==================== -->
-    <!-- ALWAYS USE DEPENDENCY MANAGEMENT WHEN OVERWRITING VERSIONS FROM ingrid-base-pom, SO ASSEMBLY PLUGIN WORKS !!!!!!!! -->
+	<!-- ==================== DEPENDENCY MANAGEMENT ==================== -->
+	<!-- ALWAYS USE DEPENDENCY MANAGEMENT WHEN OVERWRITING VERSIONS FROM ingrid-base-pom, SO ASSEMBLY PLUGIN WORKS !!!!!!!! -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>4.0.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>4.0.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>4.0.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>4.0.0.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>4.0.0.RELEASE</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-    <!-- ==================== DEPENDENCIES ==================== -->
-    <dependencies>
-        <dependency>
-            <groupId>de.ingrid</groupId>
-            <artifactId>ingrid-codelist-service</artifactId>
-            <exclusions>
-                <!-- no quartz jobs needed in this project -->
-                <exclusion>
-                    <groupId>opensymphony</groupId>
-                    <artifactId>quartz</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.thoughtworks.xstream</groupId>
-            <artifactId>xstream</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>1.8</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-json</artifactId>
-            <version>1.8</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.sun.xml.bind</groupId>
-                    <artifactId>jaxb-impl</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>stax</groupId>
-                    <artifactId>stax-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-server</artifactId>
-            <version>1.8</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>jsr311-api</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.jersey.contribs</groupId>
-            <artifactId>jersey-spring</artifactId>
-            <version>1.8</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-        </dependency>
-        <!-- The two following dependencies are needed for Jetty -->
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty</artifactId>
-        </dependency>
-        <!-- <dependency> -->
-        <!-- <groupId>org.mortbay.jetty</groupId> -->
-        <!-- <artifactId>jsp-2.1</artifactId> -->
-        <!-- </dependency> -->
-        <!-- End of Jetty - Dependencies -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.4</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>2.5.6</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+	<!-- ==================== DEPENDENCIES ==================== -->
+	<dependencies>
+		<dependency>
+			<groupId>de.ingrid</groupId>
+			<artifactId>ingrid-codelist-service</artifactId>
+			<exclusions>
+				<!-- no quartz jobs needed in this project -->
+				<exclusion>
+					<groupId>opensymphony</groupId>
+					<artifactId>quartz</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- <dependency> <groupId>javax.servlet</groupId> <artifactId>servlet-api</artifactId> <version>2.5-6.0.0beta6</version> 
+			<scope>provided</scope> </dependency> -->
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.18.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.18.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.xml.bind</groupId>
+					<artifactId>jaxb-impl</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>stax</groupId>
+					<artifactId>stax-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.18.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-spring</artifactId>
+			<version>1.18.2</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- The two following dependencies are needed for Jetty -->
+		<dependency>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>jetty</artifactId>
+			<version>6.1.26</version>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.mortbay.jetty</groupId> -->
+		<!-- <artifactId>jsp-2.1</artifactId> -->
+		<!-- </dependency> -->
+		<!-- End of Jetty - Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.0.0.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    <!-- ==================== REPOSITORIES ==================== -->
-    <repositories>
-        <repository>
-            <id>de.ingrid.all</id>
-            <name>InGrid Repo Maven</name>
-            <url>http://harrison.its-technidata.de/archiva/repository/ingrid-all</url>
-        </repository>
-    </repositories>
+	<!-- ==================== REPOSITORIES ==================== -->
+	<repositories>
+		<repository>
+			<id>de.ingrid.all</id>
+			<name>InGrid Repo Maven</name>
+			<url>http://harrison.its-technidata.de/archiva/repository/ingrid-all</url>
+		</repository>
+	</repositories>
 </project>
     
