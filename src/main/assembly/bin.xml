@@ -47,6 +47,7 @@
 	<fileSet>
       <directory>src/main/release/scripts</directory>
       <outputDirectory>${project.build.finalName}/</outputDirectory>
+      <lineEnding>unix</lineEnding>
     </fileSet>
     <fileSet>
       <directory>src/main/release/ant-installer</directory>
