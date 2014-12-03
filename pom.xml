@@ -13,8 +13,8 @@
     <packaging>jar</packaging>
     <name>InGrid CodeList Repository</name>
     <scm>
-        <connection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/trunk</connection>
-        <developerConnection>scm:svn:https://harrison.its-technidata.de/svn/ingrid/ingrid-codelist-repository/trunk</developerConnection>
+        <connection>scm:git:git@github.com:informationgrid/ingrid-codelist-repository.git</connection>
+        <developerConnection>scm:git:git@github.com:informationgrid/ingrid-codelist-repository.git</developerConnection>
     </scm>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
@@ -237,7 +237,7 @@
         <repository>
             <id>de.ingrid.all</id>
             <name>InGrid Repo Maven</name>
-            <url>http://harrison.its-technidata.de/archiva/repository/ingrid-all</url>
+            <url>https://dev.informationgrid.eu/archiva/repository/ingrid-all</url>
         </repository>
     </repositories>
 </project>
