@@ -8,13 +8,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.ingrid</groupId>
     <artifactId>ingrid-codelist-repository</artifactId>
-    <version>3.5.0</version>
+    <version>3.6.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>InGrid CodeList Repository</name>
     <scm>
         <connection>scm:git:git@github.com:informationgrid/ingrid-codelist-repository.git</connection>
         <developerConnection>scm:git:git@github.com:informationgrid/ingrid-codelist-repository.git</developerConnection>
-      <tag>ingrid-codelist-repository-3.5.0</tag>
+      <tag>HEAD</tag>
   </scm>
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
