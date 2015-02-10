@@ -1,7 +1,7 @@
 InGrid Codelist Repository
 ==========================
 
-The codelist repository maintains several codelists that are used by several InGrid components. The Codelists are used especially in conjunction with the InGrid Catalog (meta data).
+The codelist repository maintains codelists that are used by several InGrid components. The Codelists are used especially in conjunction with the InGrid Catalog (meta data).
 
 
 Requirements
