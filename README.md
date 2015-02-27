@@ -45,8 +45,10 @@ and import project into eclipse.
 
 ### Debug in eclipse
 
-TBD
-
+- execute ```mvn compile``` to extract the dojo-library
+- set up a java application Run Configuration with start class <br/>```de.ingrid.codelistHandler.JettyStarter```
+- add the VM argument ```-Djetty.webapp=src/main/webapp``` to the Run Configuration
+- the admin gui starts per default on port 8082, change this with VM argument ```-Djetty.port=8083```
 
 Support
 -------
