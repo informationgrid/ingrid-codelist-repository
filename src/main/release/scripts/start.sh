@@ -198,6 +198,8 @@ startIplug()
 	fi
 	if [[ "$JAVA_VERSION_PART_2" > "19" ]]; then
 		INGRID_OPTS="$INGRID_OPTS -XX:+UseStringDeduplication"
+	elif [[ "$JAVA_VERSION_PART_1" > "1.8.0" ]]; then
+		INGRID_OPTS="$INGRID_OPTS -XX:+UseStringDeduplication"
 	fi
   fi
   
