@@ -187,24 +187,17 @@ startIplug()
   CLASS=de.ingrid.codelistHandler.JettyStarter
 
   # check java version
-  if type -p java; then
-	_java=java
-  elif [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]];  then
-	_java="$JAVA_HOME/bin/java"
-  else
-	echo "no java"
-  fi
-
-  if [[ "$_java" ]]; then
-	version=$("$_java" -version 2>&1 | awk -F '"' '/version/ {print $2}')
-	if [[ "$version" == "1.8.0_20" ]]; then
-		echo "java use option -XX:+UseStringDeduplication"
+  JAVA_VERSION=`java -version 2>&1 |awk 'NR==1{ gsub(/"/,""); print $3 }'`
+  JAVA_VERSION_PART_0=`echo $JAVA_VERSION | awk '{split($0, array, "-")} END{print array[1]}'`
+  JAVA_VERSION_PART_1=`echo $JAVA_VERSION_PART_0 | awk '{split($0, array, "_")} END{print array[1]}'`
+  JAVA_VERSION_PART_2=`echo $JAVA_VERSION_PART_0 | awk '{split($0, array, "_")} END{print array[2]}'`
+  if [[ "$JAVA_VERSION_PART_1" > "1.7.0" ]]; then
+	LENGTH="${#JAVA_VERSION_PART_2}"
+	if [[ "$LENGTH" < "2" ]]; then
+		JAVA_VERSION_PART_2="0"$JAVA_VERSION_PART_2
+	fi
+	if [[ "$JAVA_VERSION_PART_2" > "19" ]]; then
 		INGRID_OPTS="$INGRID_OPTS -XX:+UseStringDeduplication"
-	elif [[ "$version" > "1.8.0_20" ]]; then
-		echo "java use option -XX:+UseStringDeduplication"
-		INGRID_OPTS="$INGRID_OPTS -XX:+UseStringDeduplication"
-	else        
-		echo "version is less than 1.8.0_20"
 	fi
   fi
   
