@@ -183,7 +183,7 @@ startIplug()
 
   # run it
   export CLASSPATH="$CLASSPATH"
-  INGRID_OPTS="$INGRID_OPTS -Dingrid_home=$INGRID_HOME -Dfile.encoding=UTF8 -XX:+UseG1GC -XX:NewRatio=3"
+  INGRID_OPTS="$INGRID_OPTS -Dingrid_home=$INGRID_HOME -Dfile.encoding=UTF8 -XX:+UseG1GC -XX:NewRatio=1"
   CLASS=de.ingrid.codelistHandler.JettyStarter
 
   # check java version
