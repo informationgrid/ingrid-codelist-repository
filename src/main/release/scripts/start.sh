@@ -183,9 +183,31 @@ startIplug()
 
   # run it
   export CLASSPATH="$CLASSPATH"
-  INGRID_OPTS="$INGRID_OPTS -Dingrid_home=$INGRID_HOME -Dfile.encoding=UTF8 -XX:+UseG1GC -XX:+UseStringDeduplication -XX:NewRatio=3"
+  INGRID_OPTS="$INGRID_OPTS -Dingrid_home=$INGRID_HOME -Dfile.encoding=UTF8 -XX:+UseG1GC -XX:NewRatio=3"
   CLASS=de.ingrid.codelistHandler.JettyStarter
 
+  # check java version
+  if type -p java; then
+	_java=java
+  elif [[ -n "$JAVA_HOME" ]] && [[ -x "$JAVA_HOME/bin/java" ]];  then
+	_java="$JAVA_HOME/bin/java"
+  else
+	echo "no java"
+  fi
+
+  if [[ "$_java" ]]; then
+	version=$("$_java" -version 2>&1 | awk -F '"' '/version/ {print $2}')
+	if [[ "$version" == "1.8.0_20" ]]; then
+		echo "java use option -XX:+UseStringDeduplication"
+		INGRID_OPTS="$INGRID_OPTS -XX:+UseStringDeduplication"
+	elif [[ "$version" > "1.8.0_20" ]]; then
+		echo "java use option -XX:+UseStringDeduplication"
+		INGRID_OPTS="$INGRID_OPTS -XX:+UseStringDeduplication"
+	else        
+		echo "version is less than 1.8.0_20"
+	fi
+  fi
+  
   exec nohup "$JAVA" $INGRID_OPTS $CLASS > console.log &
 
   echo "jetty ($INGRID_HOME) started."
