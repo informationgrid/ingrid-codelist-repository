@@ -26,6 +26,7 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,13 +35,18 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
 
+import de.ingrid.codelistHandler.model.CodeListEntryUpdate;
+import de.ingrid.codelistHandler.model.CodeListUpdate;
 import de.ingrid.codelists.CodeListService;
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
+import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 import de.ingrid.codelists.util.CodeListUtils;
 
 @Component
 public class CodeListManager {
+    
+    private static Logger log = Logger.getLogger( CodeListManager.class );
     
     @Autowired
     private CodeListService codeListService;
@@ -74,6 +80,16 @@ public class CodeListManager {
             writeCodeListsToFile();
         }
         return true;
+    }
+    
+    public CodeListEntry getCodeListEntry(String listId, String entryId) {
+        CodeList cl = getCodeList(listId);
+        if (cl == null) return null;
+        
+        for (CodeListEntry entry : cl.getEntries()) {
+            if (entry.getId().equals( entryId )) return entry;
+        }
+        return null;
     }
     
     public List<CodeList> getCodeLists() {
@@ -201,5 +217,51 @@ public class CodeListManager {
             }
         }
         return success;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public boolean updateCodelistsFromUpdateFile( String filePath ) {
+        XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<CodeListUpdate>();
+        xml.setPathToXml( filePath );
+        List<CodeListUpdate> updateCodelists = xml.read();
+        
+        for (CodeListUpdate codeList : updateCodelists) {
+            switch(codeList.getType()) {
+            case ADD:
+            case UPDATE:
+                codeListService.setCodelist( codeList.getId(), codeList.getCodelist() );
+                writeCodeListsToFile();
+                break;
+            case REMOVE:
+                removeCodeList( codeList.getId() );
+                break;
+            case ENTRYUPDATE:
+                CodeList cl = getCodeList( codeList.getId() );
+                for (CodeListEntryUpdate entry : (List<CodeListEntryUpdate>)(List<?>)codeList.getEntries()) {
+                    switch(entry.getType()) {
+                    case ADD:
+                        cl.addEntry( entry.getEntry() );
+                        break;
+                    case REMOVE:
+                        cl.removeEntry( entry.getId() );
+                        break;
+                    case UPDATE:
+                        cl.removeEntry( entry.getId() );
+                        cl.addEntry( entry.getEntry() );
+                        break;
+                    default:
+                        break;
+                    }
+                }
+                codeListService.setCodelist( cl.getId(), cl );
+                writeCodeListsToFile();
+                break;
+            default:
+                log.error( "Type not supported for updated codelist: " + codeList.getType() );
+                break;
+            }
+        }
+        
+        return true;
     }
 }

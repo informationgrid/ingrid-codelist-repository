@@ -1,0 +1,28 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>100</id>
+    <type>UPDATE</type>
+    <codelist>
+      <id>100</id>
+      <name>Raumbezugssystem</name>
+      <defaultEntry>1</defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1234</id>
+          <data>no data</data>
+          <description>updated entry</description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>München</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Munich</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
