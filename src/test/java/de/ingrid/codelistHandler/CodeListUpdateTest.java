@@ -23,6 +23,7 @@
 package de.ingrid.codelistHandler;
 
 //import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
@@ -50,6 +51,9 @@ public class CodeListUpdateTest {
     private String dataFileRemove = "src/test/resources/updates/codelist_remove.xml";
     private String dataFileUpdate = "src/test/resources/updates/codelist_update.xml";
     private String dataFileAddEntry = "src/test/resources/updates/codelist_add_entry.xml";
+    private String dataFileRemoveEntry = "src/test/resources/updates/codelist_remove_entry.xml";
+    private String dataFileUpdateEntry = "src/test/resources/updates/codelist_update_entry.xml";
+    private String dataFileMultiple = "src/test/resources/updates/codelist_multiple_changes.xml";
     
     @Autowired
     private CodeListManager manager;
@@ -72,7 +76,9 @@ public class CodeListUpdateTest {
         manager.getCodeLists().clear();
         
         // codelist "9876" should be available now
-        assertThat( "Updated codelist should be available now!",  manager.getCodeList( "9876" ), is( not( nullValue() ) ) );
+        CodeList codelist = manager.getCodeList( "9876" );
+        assertThat( "Updated codelist should be available now!",  codelist , is( not( nullValue() ) ) );
+        assertThat( "Updated codelist should be available now!",  codelist.getLastModified() , greaterThan( 10000l ) );
     }
     
     @Test
@@ -118,7 +124,7 @@ public class CodeListUpdateTest {
     
     @Test
     public void addCodelistEntry() {
-        // codelist "100" has no entry 1234 in the beginning
+        // codelist "100" has no entry "1234" in the beginning
         CodeList codeList100 = manager.getCodeList( "100" );
         assertThat( codeList100, is( not( nullValue() ) ) );
         assertThat( codeList100.getEntries().size(), is( 35 ) );
@@ -138,15 +144,86 @@ public class CodeListUpdateTest {
     }
     
     @Test
-    @Ignore
     public void removeCodelistEntry() {
+     // codelist "100" has an entry "3068" in the beginning
+        CodeList codeList100 = manager.getCodeList( "100" );
+        assertThat( codeList100, is( not( nullValue() ) ) );
+        assertThat( codeList100.getEntries().size(), is( 35 ) );
+        assertThat( manager.getCodeListEntry( "100", "3068" ), is( not( nullValue() ) ) );
         
+        // read update codelist file and apply
+        manager.updateCodelistsFromUpdateFile( dataFileRemoveEntry );
+        
+        // let's load the file again to see if everything was saved correctly
+        manager.getCodeLists().clear();
+        
+        // codelist "100" should have no entry "3068" now
+        codeList100 = manager.getCodeList( "100" );
+        assertThat( codeList100, is( not( nullValue() ) ) );
+        assertThat( codeList100.getEntries().size(), is( 34 ) );
+        assertThat( manager.getCodeListEntry( "100", "3068" ), is( nullValue() ) );
+    }
+    
+    @Test
+    public void updateCodelistEntry() {
+        // codelist "100" has an entry "3068" in the beginning
+        CodeList codeList100 = manager.getCodeList( "100" );
+        assertThat( codeList100, is( not( nullValue() ) ) );
+        assertThat( codeList100.getEntries().size(), is( 35 ) );
+        assertThat( manager.getCodeListEntry( "100", "3068" ), is( not( nullValue() ) ) );
+        
+        // read update codelist file and apply
+        manager.updateCodelistsFromUpdateFile( dataFileUpdateEntry );
+        
+        // let's load the file again to see if everything was saved correctly
+        manager.getCodeLists().clear();
+        
+        // codelist "100" should have entry 1234 now
+        codeList100 = manager.getCodeList( "100" );
+        assertThat( codeList100, is( not( nullValue() ) ) );
+        assertThat( codeList100.getEntries().size(), is( 35 ) );
+        CodeListEntry entry = manager.getCodeListEntry( "100", "3068" );
+        assertThat( entry, is( not( nullValue() ) ) );
+        assertThat( entry.getId(), is( "3068" ) );
+        assertThat( entry.getData(), is( "data for 3068" ) );
+        assertThat( entry.getDescription(), is( "description for 3068" ) );
+        assertThat( entry.getLocalisedEntry( "de" ), is( "Eintrag Nummer 3068" ) );
+        assertThat( entry.getLocalisedEntry( "en" ), is( "Entry number 3068" ) );
     }
     
     @Test
     @Ignore
-    public void updateCodelistEntry() {
+    public void multipleChanges() {
         
+        assertThat( manager.getCodeList( "98765" ), is( nullValue() ) );
+        assertThat( manager.getCodeList( "87654" ), is( nullValue() ) );
+        
+        // codelist "100" has an entry "3068" in the beginning
+//        CodeList codeList100 = manager.getCodeList( "100" );
+//        assertThat( codeList100, is( not( nullValue() ) ) );
+//        assertThat( codeList100.getEntries().size(), is( 35 ) );
+//        assertThat( manager.getCodeListEntry( "100", "3068" ), is( not( nullValue() ) ) );
+        
+        // read update codelist file and apply
+        manager.updateCodelistsFromUpdateFile( dataFileMultiple );
+        
+        // let's load the file again to see if everything was saved correctly
+        manager.getCodeLists().clear();
+        
+        assertThat( manager.getCodeList( "98765" ), is( not( nullValue() ) ) );
+        assertThat( manager.getCodeList( "87654" ), is( not( nullValue() ) ) );
+        
+        // codelist "100" should have entry 1234 now
+//        codeList100 = manager.getCodeList( "100" );
+//        assertThat( codeList100, is( not( nullValue() ) ) );
+//        assertThat( codeList100.getEntries().size(), is( 35 ) );
+//        CodeListEntry entry = manager.getCodeListEntry( "100", "3068" );
+//        assertThat( entry, is( not( nullValue() ) ) );
+//        assertThat( entry.getId(), is( "3068" ) );
+//        assertThat( entry.getData(), is( "data for 3068" ) );
+//        assertThat( entry.getDescription(), is( "description for 3068" ) );
+//        assertThat( entry.getLocalisedEntry( "de" ), is( "Eintrag Nummer 3068" ) );
+//        assertThat( entry.getLocalisedEntry( "en" ), is( "Entry number 3068" ) );
     }
     
     

@@ -34,13 +34,15 @@ import de.ingrid.codelists.model.CodeList;
  * @author André Wallat
  *
  */
-public class CodeListUpdate extends CodeList {
+public class CodeListUpdate {
     
     public static enum Type { UPDATE, REMOVE, ADD, ENTRYUPDATE };
     
+    private String id;
+    
     private Type type;
     
-    private List<CodeListEntryUpdate> updateEntries;
+    private List<CodeListEntryUpdate> entries;
     
     private CodeList codelist;
 
@@ -52,12 +54,12 @@ public class CodeListUpdate extends CodeList {
         this.type = type;
     }
 
-    public List<CodeListEntryUpdate> getUpdateEntries() {
-        return updateEntries;
+    public List<CodeListEntryUpdate> getEntries() {
+        return entries;
     }
 
-    public void setUpdateEntries(List<CodeListEntryUpdate> updateEntries) {
-        this.updateEntries = updateEntries;
+    public void setEntries(List<CodeListEntryUpdate> updateEntries) {
+        this.entries = updateEntries;
     }
 
     public CodeList getCodelist() {
@@ -66,6 +68,14 @@ public class CodeListUpdate extends CodeList {
 
     public void setCodelist(CodeList codelist) {
         this.codelist = codelist;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
     
 

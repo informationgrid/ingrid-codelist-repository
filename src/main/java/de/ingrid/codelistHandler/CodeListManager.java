@@ -219,7 +219,6 @@ public class CodeListManager {
         return success;
     }
     
-    @SuppressWarnings("unchecked")
     public boolean updateCodelistsFromUpdateFile( String filePath ) {
         XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<CodeListUpdate>();
         xml.setPathToXml( filePath );
@@ -237,16 +236,16 @@ public class CodeListManager {
                 break;
             case ENTRYUPDATE:
                 CodeList cl = getCodeList( codeList.getId() );
-                for (CodeListEntryUpdate entry : (List<CodeListEntryUpdate>)(List<?>)codeList.getEntries()) {
+                for (CodeListEntryUpdate entry : codeList.getEntries()) {
                     switch(entry.getType()) {
                     case ADD:
                         cl.addEntry( entry.getEntry() );
                         break;
                     case REMOVE:
-                        cl.removeEntry( entry.getId() );
+                        cl.removeEntry( entry.getEntry().getId() );
                         break;
                     case UPDATE:
-                        cl.removeEntry( entry.getId() );
+                        cl.removeEntry( entry.getEntry().getId() );
                         cl.addEntry( entry.getEntry() );
                         break;
                     default:

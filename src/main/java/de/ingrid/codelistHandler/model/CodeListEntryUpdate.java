@@ -32,7 +32,7 @@ import de.ingrid.codelists.model.CodeListEntry;
  * @author André Wallat
  *
  */
-public class CodeListEntryUpdate extends CodeListEntry {
+public class CodeListEntryUpdate {
     
     public static enum Type { UPDATE, REMOVE, ADD };
     
