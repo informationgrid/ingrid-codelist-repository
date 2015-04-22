@@ -59,6 +59,11 @@
       <outputDirectory>/</outputDirectory>
     </fileSet>
     <fileSet>
+      <directory>target/installer/resources/scripts</directory>
+      <outputDirectory>${project.artifactId}-${project.version}/</outputDirectory>
+      <lineEnding>unix</lineEnding>
+    </fileSet>
+    <fileSet>
       <directory>target/js/dojo</directory>
       <outputDirectory>${project.build.finalName}/webapp/js/dojo</outputDirectory>
     </fileSet>
