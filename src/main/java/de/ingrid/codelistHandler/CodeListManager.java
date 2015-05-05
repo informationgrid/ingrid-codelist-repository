@@ -22,12 +22,18 @@
  */
 package de.ingrid.codelistHandler;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
 import com.thoughtworks.xstream.XStream;
@@ -42,10 +48,13 @@ import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
 import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 import de.ingrid.codelists.util.CodeListUtils;
+import de.ingrid.codelists.util.VersionUtils;
 
 @Component
 public class CodeListManager {
     
+    private static String PATH_CODELIST_UPDATES = "classpath:changes/*.xml";
+
     private static Logger log = Logger.getLogger( CodeListManager.class );
     
     @Autowired
@@ -57,6 +66,11 @@ public class CodeListManager {
     public CodeListManager(CodeListService cls) {
         this.codeListService = cls;
         this.initialCodelists = this.codeListService.getInitialCodelists();
+        try {
+            checkForUpdates();
+        } catch (FileNotFoundException e) {
+            log.error( "Error when checking for updated codelist information", e );
+        }
     }
     
     public CodeList getCodeList(String id) {
@@ -263,4 +277,42 @@ public class CodeListManager {
         
         return true;
     }
+
+    public List<String> checkFilesForUpdate(String version) {
+        List<String> resList = new ArrayList<String>();
+        
+        ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
+        try {
+            Resource[] resources = resourceResolver.getResources(PATH_CODELIST_UPDATES);
+            for (Resource resource : resources) {
+                if (resource.exists()) {
+                    String filename = resource.getFilename();
+                    String fileVersion = filename.substring( 0, filename.indexOf( '_' ) );
+                    if (fileVersion.compareToIgnoreCase( version ) > 0 ) {
+                        resList.add( resource.getFile().getPath() );
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            log.warn( "No changes dir found in classpath, where codelist updates are searched: " + PATH_CODELIST_UPDATES );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return resList;
+    }
+    
+    public void checkForUpdates() throws FileNotFoundException {
+        List<String> filesForUpdate = checkFilesForUpdate( VersionUtils.getCurrentVersion() );
+        Collections.sort( filesForUpdate );
+        String newVersion = null;
+        for (String file : filesForUpdate) {
+            updateCodelistsFromUpdateFile( file );
+            newVersion = file.substring( file.lastIndexOf( '\\' ) + 1, file.indexOf( '_' ) );
+        }
+        
+        if (newVersion != null) {
+            VersionUtils.writeVersionInfo( newVersion );
+        }
+    }
+    
 }

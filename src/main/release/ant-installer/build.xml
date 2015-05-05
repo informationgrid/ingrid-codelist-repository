@@ -80,6 +80,8 @@
     	<echo>Aktualisierung des Zeitstempels</echo>
         <msec property="TIMESTAMP_MILLIS"/>
         <replace file="${installDir}/data/codelists.xml" token="&lt;lastModified>0&lt;/lastModified>" value="&lt;lastModified>${TIMESTAMP_MILLIS}&lt;/lastModified>"/>
+        <!-- write current version of the codelist repository -->
+        <echo file="${installDir}/data/version.info" append="false">0</echo>
     </target>
     
     <target name="extractUpdate">

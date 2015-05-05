@@ -24,10 +24,18 @@ package de.ingrid.codelistHandler.rest;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.hamcrest.Matchers.is;
+
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,28 +43,42 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import de.ingrid.codelistHandler.CodeListManager;
+import de.ingrid.codelists.CodeListService;
+import de.ingrid.codelists.model.CodeList;
+import de.ingrid.codelists.persistency.ICodeListPersistency;
+import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 import de.ingrid.codelists.util.CodeListUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:/application-context-rest-test.xml"})
 public class CodeListAccessResourceInitialTest {
 
+    private static String dataFile = "data/codelistsTests.xml";
+
     @Autowired
     private CodeListManager manager;
     
+    @BeforeClass
+    public static void cleanUp() throws Exception {
+//        CodeListService cls = new CodeListService();
+//        List<ICodeListPersistency> persistencies = new ArrayList<ICodeListPersistency>();
+//        XmlCodeListPersistency<CodeList> xmlCodeListPersistency = new XmlCodeListPersistency<CodeList>();
+//        xmlCodeListPersistency.setPathToXml( "data/codelistsTests.xml" );
+//        persistencies.add( xmlCodeListPersistency );
+//        cls.setPersistencies( persistencies );
+//        cls.setDefaultPersistency( 0 );
+//        manager = new CodeListManager( cls );
+    }
+    
     @Before
     public void setUp() throws Exception {
-//        CodeListService service = new CodeListService();
-//        //service.setComm(comm)
-//        List<ICodeListPersistency> persistencies = new ArrayList<ICodeListPersistency>();
-//        XmlCodeListPersistency p = new XmlCodeListPersistency();
-//        p.setPathToXml("/src/test/resources/codelists-test.xml");
-//        persistencies.add(p);
-//        service.setPersistencies(persistencies);
-//        
-//        cm = new CodeListManager();
-//        cm.setCodeListService(service);
+        // change private field
+//        Field field = CodeListManager.class.getDeclaredField( "PATH_CODELIST_UPDATES" );
+//        field.setAccessible( true );
+//        field.set( manager, "xxx" );
         
+        removeExisitingTestFile();
+        manager.getCodeLists().clear();
     }
     
     @Test
@@ -147,12 +169,23 @@ public class CodeListAccessResourceInitialTest {
     @Test
     public final void testGetCodeListsLastModifiedEarlier() throws JSONException {
         JSONArray list = new JSONArray((String)manager.getCodeListsAsJson("name", "1331741000000", CodeListUtils.SORT_INCREMENT));
-        assertTrue(list.length() == 1);
+        assertThat( list.length(), is( 1 ) );
         JSONObject o = (JSONObject) list.get(0);
         assertTrue("1000".equals(o.getString("id")));
     }
     
     public void setManager(CodeListManager manager) {
         this.manager = manager;
+    }
+    
+    private static void removeExisitingTestFile() {
+        File f = new File( dataFile );
+        if (f.exists() && f.isFile()) {
+            f.delete();
+        }
+        f = new File( "data/version.info" );
+        if (f.exists() && f.isFile()) {
+            f.delete();
+        }
     }
 }
