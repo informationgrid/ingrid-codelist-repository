@@ -1,0 +1,255 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5151</id>
+        <type>ADD</type>
+        <codelist>
+            <id>5151</id>
+            <name>Objektklasse 3 - Version des Dienstes - CSW</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:CSW 2.0.2</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:CSW 2.0.2</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:CSW 2.0.2</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5152</id>
+        <type>ADD</type>
+        <codelist>
+            <id>5152</id>
+            <name>Objektklasse 3 - Version des Dienstes - WMS</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:WMS 1.1.1</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:WMS 1.1.1</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:WMS 1.1.1</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>2</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:WMS 1.3.0</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:WMS 1.3.0</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:WMS 1.3.0</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5153</id>
+        <type>ADD</type>
+        <codelist>
+            <id>5153</id>
+            <name>Objektklasse 3 - Version des Dienstes - WFS</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:WFS 1.1.0</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:WFS 1.1.0</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:WFS 1.1.0</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>2</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:WFS 2.0</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:WFS 2.0</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:WFS 2.0</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5154</id>
+        <type>ADD</type>
+        <codelist>
+            <id>5154</id>
+            <name>Objektklasse 3 - Version des Dienstes - WCTS</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:CTS 1.0</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:CTS 1.0</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:CTS 1.0</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5105</id>
+        <type>UPDATE</type>
+        <codelist>
+            <id>5105</id>
+            <name>Objektklasse 3 - Name der Operation - CSW</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>GetCapabilities</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>GetCapabilities</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>2</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>GetRecords</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>GetRecords</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>3</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>GetRecordById</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>GetRecordById</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>4</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>DescribeRecord</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>DescribeRecord</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>5</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>GetDomain</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>GetDomain</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>6</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Transaction</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Transaction</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>7</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Harvest</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Harvest</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

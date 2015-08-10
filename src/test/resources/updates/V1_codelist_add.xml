@@ -1,0 +1,39 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>9876</id>
+    <type>ADD</type>
+    <codelist>
+      <id>9876</id>
+      <name>Neue Codelist durch Update</name>
+      <defaultEntry>1</defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Eintrag Nummer 1</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Entry number 1</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Eintrag Nummer 2</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Entry number 2</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

@@ -1,0 +1,24 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>1234</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Eintrag Nummer 1</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Entry number 1</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

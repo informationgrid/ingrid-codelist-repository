@@ -22,11 +22,18 @@
  */
 package de.ingrid.codelistHandler;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
 import com.thoughtworks.xstream.XStream;
@@ -34,13 +41,21 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
 
+import de.ingrid.codelistHandler.model.CodeListEntryUpdate;
+import de.ingrid.codelistHandler.model.CodeListUpdate;
 import de.ingrid.codelists.CodeListService;
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
+import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 import de.ingrid.codelists.util.CodeListUtils;
+import de.ingrid.codelists.util.VersionUtils;
 
 @Component
 public class CodeListManager {
+    
+    private static String PATH_CODELIST_UPDATES = "file:data/changes/*.xml";
+
+    private static Logger log = Logger.getLogger( CodeListManager.class );
     
     @Autowired
     private CodeListService codeListService;
@@ -51,6 +66,11 @@ public class CodeListManager {
     public CodeListManager(CodeListService cls) {
         this.codeListService = cls;
         this.initialCodelists = this.codeListService.getInitialCodelists();
+        try {
+            checkForUpdates();
+        } catch (FileNotFoundException e) {
+            log.error( "Error when checking for updated codelist information", e );
+        }
     }
     
     public CodeList getCodeList(String id) {
@@ -74,6 +94,16 @@ public class CodeListManager {
             writeCodeListsToFile();
         }
         return true;
+    }
+    
+    public CodeListEntry getCodeListEntry(String listId, String entryId) {
+        CodeList cl = getCodeList(listId);
+        if (cl == null) return null;
+        
+        for (CodeListEntry entry : cl.getEntries()) {
+            if (entry.getId().equals( entryId )) return entry;
+        }
+        return null;
     }
     
     public List<CodeList> getCodeLists() {
@@ -202,4 +232,92 @@ public class CodeListManager {
         }
         return success;
     }
+    
+    public boolean updateCodelistsFromUpdateFile( String filePath ) {
+        XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<CodeListUpdate>();
+        xml.setPathToXml( filePath );
+        List<CodeListUpdate> updateCodelists = xml.read();
+        
+        for (CodeListUpdate codeList : updateCodelists) {
+            switch(codeList.getType()) {
+            case ADD:
+            case UPDATE:
+                codeListService.setCodelist( codeList.getId(), codeList.getCodelist() );
+                writeCodeListsToFile();
+                log.info( "Added/Updated codelist: " + codeList.getId() );
+                break;
+            case REMOVE:
+                removeCodeList( codeList.getId() );
+                log.info( "Removed codelist: " + codeList.getId() );
+                break;
+            case ENTRYUPDATE:
+                CodeList cl = getCodeList( codeList.getId() );
+                for (CodeListEntryUpdate entry : codeList.getEntries()) {
+                    switch(entry.getType()) {
+                    case ADD:
+                        cl.addEntry( entry.getEntry() );
+                        log.info( "Added codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
+                        break;
+                    case REMOVE:
+                        cl.removeEntry( entry.getEntry().getId() );
+                        log.info( "Removed codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
+                        break;
+                    case UPDATE:
+                        cl.removeEntry( entry.getEntry().getId() );
+                        cl.addEntry( entry.getEntry() );
+                        log.info( "Updated codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
+                        break;
+                    default:
+                        break;
+                    }
+                }
+                codeListService.setCodelist( cl.getId(), cl );
+                writeCodeListsToFile();
+                break;
+            default:
+                log.error( "Type not supported for updated codelist: " + codeList.getType() );
+                break;
+            }
+        }
+        
+        return true;
+    }
+
+    public List<String> checkFilesForUpdate(String version) {
+        List<String> resList = new ArrayList<String>();
+        
+        ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
+        try {
+            Resource[] resources = resourceResolver.getResources(PATH_CODELIST_UPDATES);
+            for (Resource resource : resources) {
+                if (resource.exists()) {
+                    String filename = resource.getFilename();
+                    String fileVersion = filename.substring( 0, filename.indexOf( '_' ) );
+                    if (fileVersion.compareToIgnoreCase( version ) > 0 ) {
+                        resList.add( resource.getFile().getPath() );
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            log.warn( "No changes dir found in classpath, where codelist updates are searched: " + PATH_CODELIST_UPDATES );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return resList;
+    }
+    
+    public void checkForUpdates() throws FileNotFoundException {
+        List<String> filesForUpdate = checkFilesForUpdate( VersionUtils.getCurrentVersion() );
+        Collections.sort( filesForUpdate );
+        String newVersion = null;
+        for (String file : filesForUpdate) {
+            updateCodelistsFromUpdateFile( file );
+            newVersion = file.substring( file.lastIndexOf( '\\' ) + 1, file.indexOf( '_' ) );
+        }
+        
+        if (newVersion != null) {
+            VersionUtils.writeVersionInfo( newVersion );
+        }
+    }
+    
 }

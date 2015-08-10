@@ -1,0 +1,14 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>REMOVE</type>
+        <entry>
+          <id>4178</id>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
