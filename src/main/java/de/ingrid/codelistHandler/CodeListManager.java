@@ -244,9 +244,11 @@ public class CodeListManager {
             case UPDATE:
                 codeListService.setCodelist( codeList.getId(), codeList.getCodelist() );
                 writeCodeListsToFile();
+                log.info( "Added/Updated codelist: " + codeList.getId() );
                 break;
             case REMOVE:
                 removeCodeList( codeList.getId() );
+                log.info( "Removed codelist: " + codeList.getId() );
                 break;
             case ENTRYUPDATE:
                 CodeList cl = getCodeList( codeList.getId() );
@@ -254,13 +256,16 @@ public class CodeListManager {
                     switch(entry.getType()) {
                     case ADD:
                         cl.addEntry( entry.getEntry() );
+                        log.info( "Added codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
                         break;
                     case REMOVE:
                         cl.removeEntry( entry.getEntry().getId() );
+                        log.info( "Removed codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
                         break;
                     case UPDATE:
                         cl.removeEntry( entry.getEntry().getId() );
                         cl.addEntry( entry.getEntry() );
+                        log.info( "Updated codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
                         break;
                     default:
                         break;
