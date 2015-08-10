@@ -22,6 +22,7 @@
  */
 package de.ingrid.codelistHandler;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Writer;
@@ -312,7 +313,8 @@ public class CodeListManager {
         String newVersion = null;
         for (String file : filesForUpdate) {
             updateCodelistsFromUpdateFile( file );
-            newVersion = file.substring( file.lastIndexOf( '\\' ) + 1, file.indexOf( '_' ) );
+            String fileName = new File( file ).getName();
+            newVersion = fileName.substring( 0, fileName.indexOf( '_' ) );
         }
         
         if (newVersion != null) {
