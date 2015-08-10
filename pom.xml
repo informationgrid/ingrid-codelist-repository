@@ -128,6 +128,7 @@
   <!-- ALWAYS USE DEPENDENCY MANAGEMENT WHEN OVERWRITING VERSIONS FROM ingrid-base-pom, SO ASSEMBLY PLUGIN WORKS !!!!!!!! -->
   <dependencyManagement>
     <dependencies>
+      <!-- since jersey-spring depends on spring 3.0.0 we want to override this here -->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-core</artifactId>
@@ -153,13 +154,6 @@
         <artifactId>spring-aop</artifactId>
         <version>4.0.0.RELEASE</version>
       </dependency>
-      <dependency>
-        <groupId>de.ingrid</groupId>
-        <artifactId>ingrid-version-management-pom</artifactId>
-        <version>3.6.0-SNAPSHOT</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
     </dependencies>
   </dependencyManagement>
   <!-- ==================== DEPENDENCIES ==================== -->
@@ -167,7 +161,7 @@
     <dependency>
       <groupId>de.ingrid</groupId>
       <artifactId>ingrid-codelist-service</artifactId>
-      <version>3.6.0-SNAPSHOT</version>
+      <version>3.6.1-SNAPSHOT</version>
       <exclusions>
         <!-- no quartz jobs needed in this project -->
         <exclusion>

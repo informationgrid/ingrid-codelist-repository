@@ -22,14 +22,11 @@
  */
 package de.ingrid.codelistHandler.rest;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.hamcrest.Matchers.is;
 
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
@@ -43,10 +40,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import de.ingrid.codelistHandler.CodeListManager;
-import de.ingrid.codelists.CodeListService;
-import de.ingrid.codelists.model.CodeList;
-import de.ingrid.codelists.persistency.ICodeListPersistency;
-import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 import de.ingrid.codelists.util.CodeListUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)

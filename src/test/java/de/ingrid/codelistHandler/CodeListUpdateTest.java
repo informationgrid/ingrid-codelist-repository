@@ -338,7 +338,7 @@ public class CodeListUpdateTest {
     }
 
     public void setManager(CodeListManager manager) {
-        this.manager = manager;
+        CodeListUpdateTest.manager = manager;
     }
 
     public CodeListManager getManager() {

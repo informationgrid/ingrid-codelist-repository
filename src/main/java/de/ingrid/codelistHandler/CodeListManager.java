@@ -53,7 +53,7 @@ import de.ingrid.codelists.util.VersionUtils;
 @Component
 public class CodeListManager {
     
-    private static String PATH_CODELIST_UPDATES = "classpath:changes/*.xml";
+    private static String PATH_CODELIST_UPDATES = "file:data/changes/*.xml";
 
     private static Logger log = Logger.getLogger( CodeListManager.class );
     
