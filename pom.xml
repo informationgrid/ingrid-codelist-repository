@@ -3,12 +3,12 @@
   <parent>
     <groupId>de.ingrid</groupId>
     <artifactId>ingrid-releases-pom</artifactId>
-    <version>3.6.0-SNAPSHOT</version>
+    <version>3.6.0</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ingrid</groupId>
   <artifactId>ingrid-codelist-repository</artifactId>
-  <version>3.6.0-SNAPSHOT</version>
+  <version>3.6.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>InGrid CodeList Repository</name>
   <scm>

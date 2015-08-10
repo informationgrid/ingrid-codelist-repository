@@ -76,7 +76,7 @@
             <then>
                 <echo>Patching codelists.xml file in basedir: </echo>
                 <move toDir="${installDir}/data/changes">
-                    <fileset dir="patches/3.6.1/1_update.xml" />
+                    <fileset dir="patches/3.6.1" />
                 </move>
             </then>
         </if>
