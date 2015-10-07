@@ -28,6 +28,15 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+        <release version="3.6.1-SNAPSHOT" date="2015-xx-xx" description="Release InGrid 3.6.1">
+            <action type="add" dev="wemove" issue="REDMINE-15">
+                Removal of PortalU-references.
+            </action>
+            <action type="update" dev="wemove" issue="">
+                Improved update of codelist repository when installing a new version.
+            </action>
+        </release>
+        
         <release version="3.5.0" date="2015-01-29" description="Release InGrid 3.5.0">
             <action type="add" dev="wemove" issue="REDMINE-524">
                 Added license header to all source files for Open Source migration.

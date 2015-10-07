@@ -20,7 +20,7 @@
   limitations under the Licence.
   **************************************************#
   -->
-<project name="PortalU Installation" basedir=".">
+<project name="InGrid Codelist Repository Installation" basedir=".">
     <description>
         iBus Installation Script
     </description>
@@ -143,6 +143,8 @@ des Computers eingeben!
 Den Benutzernamen und das MD5-Passwort wird in der realms.properties
 verwaltet. Dies muss konfiguriert werden, um Zugriff zu der Administrationsseite
 zu erhalten.
+            
+Bitte lesen Sie bzgl. der Administration die Kapitel unter "http://www.ingrid-oss.eu".
         </echo>
     </target>
     
