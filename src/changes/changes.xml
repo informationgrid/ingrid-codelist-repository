@@ -32,6 +32,9 @@
             <action type="add" dev="wemove" issue="REDMINE-15">
                 Removal of PortalU-references.
             </action>
+            <action type="update" dev="wemove" issue="REDMINE-13">
+                Update of codelist 6500 (licenses), data contains now JSON format.
+            </action>
             <action type="update" dev="wemove" issue="">
                 Improved update of codelist repository when installing a new version.
             </action>
