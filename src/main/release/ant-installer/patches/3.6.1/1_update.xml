@@ -594,4 +594,64 @@
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
     </entries>
   </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>102</id>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Geographische Gittersysteme</string>
+	          </entry>
+	          <entry>
+	            <string>en</string>
+	            <string>Geographical Grid Systems</string>
+	          </entry>
+	        </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>106</id>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Flurstücke/Grundstücke</string>
+	          </entry>
+	          <entry>
+	            <string>en</string>
+	            <string>Cadastral Parcels</string>
+	          </entry>
+	        </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>313</id>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Atmosphärische Bedingungen / Meteorologisch-geografische Kennwerte</string>
+	          </entry>
+	          <entry>
+	            <string>en</string>
+	            <string>Atmospheric Conditions and Meteorological Geographical Features</string>
+	          </entry>
+	        </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>REMOVE</type>
+        <entry>
+          <id>314</id>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
 </list>

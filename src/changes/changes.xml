@@ -34,6 +34,7 @@
             </action>
             <action type="update" dev="wemove" issue="REDMINE-13">
                 Update of codelist 6500 (licenses), data contains now JSON format.
+                Update of codelist 6100 (INSPIRE Themen), adapted to GDI-DE.
             </action>
             <action type="update" dev="wemove" issue="">
                 Improved update of codelist repository when installing a new version.
