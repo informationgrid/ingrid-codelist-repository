@@ -20,7 +20,7 @@
   limitations under the Licence.
   **************************************************#
   -->
-<project name="PortalU Installation" basedir=".">
+<project name="InGrid Codelist Repository Installation" basedir=".">
     <description>
         iBus Installation Script
     </description>
@@ -80,6 +80,8 @@
     	<echo>Aktualisierung des Zeitstempels</echo>
         <msec property="TIMESTAMP_MILLIS"/>
         <replace file="${installDir}/data/codelists.xml" token="&lt;lastModified>0&lt;/lastModified>" value="&lt;lastModified>${TIMESTAMP_MILLIS}&lt;/lastModified>"/>
+        <!-- write current version of the codelist repository -->
+        <echo file="${installDir}/data/version.info" append="false">0</echo>
     </target>
     
     <target name="extractUpdate">
@@ -141,6 +143,8 @@ des Computers eingeben!
 Den Benutzernamen und das MD5-Passwort wird in der realms.properties
 verwaltet. Dies muss konfiguriert werden, um Zugriff zu der Administrationsseite
 zu erhalten.
+            
+Bitte lesen Sie bzgl. der Administration die Kapitel unter "http://www.ingrid-oss.eu".
         </echo>
     </target>
     

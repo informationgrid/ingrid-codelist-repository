@@ -1,0 +1,657 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5151</id>
+        <type>ADD</type>
+        <codelist>
+            <id>5151</id>
+            <name>Objektklasse 3 - Version des Dienstes - CSW</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:CSW 2.0.2</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:CSW 2.0.2</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:CSW 2.0.2</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5152</id>
+        <type>ADD</type>
+        <codelist>
+            <id>5152</id>
+            <name>Objektklasse 3 - Version des Dienstes - WMS</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:WMS 1.1.1</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:WMS 1.1.1</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:WMS 1.1.1</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>2</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:WMS 1.3.0</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:WMS 1.3.0</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:WMS 1.3.0</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5153</id>
+        <type>ADD</type>
+        <codelist>
+            <id>5153</id>
+            <name>Objektklasse 3 - Version des Dienstes - WFS</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:WFS 1.1.0</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:WFS 1.1.0</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:WFS 1.1.0</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>2</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:WFS 2.0</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:WFS 2.0</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:WFS 2.0</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5154</id>
+        <type>ADD</type>
+        <codelist>
+            <id>5154</id>
+            <name>Objektklasse 3 - Version des Dienstes - WCTS</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC:CTS 1.0</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC:CTS 1.0</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC:CTS 1.0</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5105</id>
+        <type>UPDATE</type>
+        <codelist>
+            <id>5105</id>
+            <name>Objektklasse 3 - Name der Operation - CSW</name>
+            <defaultEntry></defaultEntry>
+            <entries>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>1</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>GetCapabilities</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>GetCapabilities</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>2</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>GetRecords</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>GetRecords</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>3</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>GetRecordById</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>GetRecordById</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>4</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>DescribeRecord</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>DescribeRecord</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>5</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>GetDomain</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>GetDomain</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>6</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Transaction</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Transaction</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+                <de.ingrid.codelists.model.CodeListEntry>
+                    <id>7</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Harvest</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Harvest</string>
+                        </entry>
+                    </localisations>
+                </de.ingrid.codelists.model.CodeListEntry>
+            </entries>
+            <lastModified>0</lastModified>
+        </codelist>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6500</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>1</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Datenlizenz Deutschland Namensnennung</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"dl-de-by-1.0","name":"Datenlizenz Deutschland Namensnennung","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>2</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Amtliches Werk, lizenzfrei nach §5 UrhG</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"official-work","name":"Amtliches Werk, lizenzfrei nach §5 UrhG","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>3</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"geonutzv-de-2013-03-19","name":"Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>4</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Creative Commons Namensnennung (CC-BY)</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"cc-by","name":"Creative Commons Namensnennung (CC-BY)","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>5</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Creative Commons Zero</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"cc-zero","name":"Creative Commons Zero","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>6</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Creative Commons Attribution Weitergabe unter gleichen Bedingungen (CC-BY-SA)</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"cc-by-sa","name":"Creative Commons Attribution Weitergabe unter gleichen Bedingungen (CC-BY-SA)","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>7</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Open Data Commons Open Database License (ODbL)</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"odc-odbl","name":"Open Data Commons Open Database License (ODbL)","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>8</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Open Data Commons Namensnennung</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"odc-by","name":"Open Data Commons Namensnennung","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>9</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Open Data Commons Public Domain Dedication and Licence (PDDL)</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"odc-pddl","name":"Open Data Commons Public Domain Dedication and Licence (PDDL)","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>10</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Andere freie Lizenz</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"other-open","name":"Andere freie Lizenz","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>11</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Creative Commons Nicht-Kommerziell (CC-NC)</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"cc-nc","name":"Creative Commons Nicht-Kommerziell (CC-NC)","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>12</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Creative Commons Keine Bearbeitung (CC-BY-ND)</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"cc-by-nd","name":"Creative Commons Keine Bearbeitung (CC-BY-ND)","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>13</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Datenlizenz Deutschland Namensnennung nicht-kommerziell</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"dl-de-by-nc-1.0","name":"Datenlizenz Deutschland Namensnennung nicht-kommerziell","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>14</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Geolizenz Ia Namensnennung</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"geolizenz-i-a","name":"Geolizenz Ia Namensnennung","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>15</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>eingeschränkte Geolizenz</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"geolizenz-closed","name":"eingeschränkte Geolizenz","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>16</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Apache Lizenz</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"apache","name":"Apache Lizenz","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>17</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Andere kommerzielle Lizenz</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"app_commercial","name":"Andere kommerzielle Lizenz","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>18</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Andere kostenfreie Lizenz</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"app_freeware","name":"Andere kostenfreie Lizenz","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>19</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Andere Open Source Lizenz</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"app_opensource","name":"Andere Open Source Lizenz","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>20</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>BSD Lizenz</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"bsd-license","name":"BSD Lizenz","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>21</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>GNU Free Documentation License</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"gfdl","name":"GNU Free Documentation License","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>22</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>GNU General Public License version 3.0 (GPLv3)</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"gpl-3.0","name":"GNU General Public License version 3.0 (GPLv3)","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>23</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Mozilla Public License 1.0 (MPL)</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"mozilla","name":"Mozilla Public License 1.0 (MPL)","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>24</id>
+	        <description></description>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Andere eingeschränkte Lizenz</string>
+	          </entry>
+	        </localisations>
+	        <data>{"id":"other-closed","name":"Andere eingeschränkte Lizenz","url":"","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>102</id>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Geographische Gittersysteme</string>
+	          </entry>
+	          <entry>
+	            <string>en</string>
+	            <string>Geographical Grid Systems</string>
+	          </entry>
+	        </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>106</id>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Flurstücke/Grundstücke</string>
+	          </entry>
+	          <entry>
+	            <string>en</string>
+	            <string>Cadastral Parcels</string>
+	          </entry>
+	        </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+	        <id>313</id>
+	        <localisations>
+	          <entry>
+	            <string>de</string>
+	            <string>Atmosphärische Bedingungen / Meteorologisch-geografische Kennwerte</string>
+	          </entry>
+	          <entry>
+	            <string>en</string>
+	            <string>Atmospheric Conditions and Meteorological Geographical Features</string>
+	          </entry>
+	        </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>REMOVE</type>
+        <entry>
+          <id>314</id>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

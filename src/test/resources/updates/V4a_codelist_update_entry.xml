@@ -1,0 +1,26 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>3068</id>
+          <data>data for 3068</data>
+          <description>description for 3068</description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Eintrag Nummer 3068</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Entry number 3068</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
