@@ -28,7 +28,7 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
-        <release version="3.6.1-SNAPSHOT" date="2015-xx-xx" description="Release InGrid 3.6.1">
+        <release version="3.6.1" date="2015-11-18" description="Release InGrid 3.6.1">
             <action type="add" dev="wemove" issue="REDMINE-15">
                 Removal of PortalU-references.
             </action>
@@ -36,7 +36,7 @@
                 Update of codelist 6500 (licenses), data contains now JSON format.
                 Update of codelist 6100 (INSPIRE Themen), adapted to GDI-DE.
             </action>
-            <action type="update" dev="wemove" issue="">
+            <action type="update" dev="wemove">
                 Improved update of codelist repository when installing a new version.
             </action>
         </release>
