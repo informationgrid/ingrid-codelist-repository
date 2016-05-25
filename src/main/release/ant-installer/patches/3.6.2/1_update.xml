@@ -1,0 +1,190 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6005</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>4</id>
+            <localisations>
+              <entry>
+                <string>de</string>
+                <string>INSPIRE Data Specification on Geographical Names - Guidelines</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>INSPIRE Data Specification on Geographical Names - Guidelines</string>
+              </entry>
+            </localisations>
+            <data>2010-04-26</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>8</id>
+            <localisations>
+              <entry>
+                <string>de</string>
+                <string>INSPIRE Data Specification on Coordinate Reference Systems – Guidelines</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>INSPIRE Data Specification on Coordinate Reference Systems – Guidelines</string>
+              </entry>
+            </localisations>
+            <data>2010-04-26</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>9</id>
+            <localisations>
+              <entry>
+                <string>de</string>
+                <string>INSPIRE Data Specification on Geographical Grid Systems – Guidelines</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>INSPIRE Data Specification on Geographical Grid Systems – Guidelines</string>
+              </entry>
+            </localisations>
+            <data>2010-04-26</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>10</id>
+            <localisations>
+              <entry>
+                <string>iso</string>
+                <string>VERORDNUNG (EG) Nr. 976/2009 DER KOMMISSION vom 19. Oktober 2009 zur Durchführung der Richtlinie 2007/2/EG des Europäischen Parlaments und des Rates hinsichtlich der Netzdienste</string>
+              </entry>
+              <entry>
+                <string>de</string>
+                <string>VERORDNUNG (EG) Nr. 976/2009 - INSPIRE Durchführungsbestimmung Netzdienste</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>VERORDNUNG (EG) Nr. 976/2009 - INSPIRE Durchführungsbestimmung Netzdienste</string>
+              </entry>
+            </localisations>
+            <data>2009-10-20</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>11</id>
+            <localisations>
+              <entry>
+                <string>iso</string>
+                <string>VERORDNUNG (EG) Nr. 1205/2008 DER KOMMISSION vom 3. Dezember 2008 zur Durchführung der Richtlinie 2007/2/EG des Europäischen Parlaments und des Rates hinsichtlich Metadaten</string>
+              </entry>
+              <entry>
+                <string>de</string>
+                <string>VERORDNUNG (EG) Nr. 1205/2008 - INSPIRE Durchführungsbestimmung Metadaten</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>VERORDNUNG (EG) Nr. 1205/2008 - INSPIRE Durchführungsbestimmung Metadaten</string>
+              </entry>
+            </localisations>
+            <data>2009-12-15</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>12</id>
+            <localisations>
+              <entry>
+                <string>iso</string>
+                <string>VERORDNUNG (EG) Nr. 1089/2010 DER KOMMISSION vom 23. November 2010 zur Durchführung der Richtlinie 2007/2/EG des Europäischen Parlaments und des Rates hinsichtlich der Interoperabilität von Geodatensätzen und -diensten</string>
+              </entry>
+              <entry>
+                <string>de</string>
+                <string>VERORDNUNG (EG) Nr. 1089/2010 - INSPIRE Durchführungsbestimmung Interoperabilität von Geodatensätzen und -diensten</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>VERORDNUNG (EG) Nr. 1089/2010 - INSPIRE Durchführungsbestimmung Interoperabilität von Geodatensätzen und -diensten</string>
+              </entry>
+            </localisations>
+            <data>2010-12-08</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>18</id>
+            <localisations>
+              <entry>
+                <string>de</string>
+                <string>INSPIRE Data Specification on Statistical Units – Technical Guidelines</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>INSPIRE Data Specification on Statistical Units – Technical Guidelines</string>
+              </entry>
+            </localisations>
+            <data>2013-12-10</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>31</id>
+            <localisations>
+              <entry>
+                <string>de</string>
+                <string>INSPIRE Data Specification on Oceanographic Geographical Features – Technical Guidelines</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>INSPIRE Data Specification on Oceanographic Geographical Features – Technical Guidelines</string>
+              </entry>
+            </localisations>
+            <data>2013-12-10</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>32</id>
+            <localisations>
+              <entry>
+                <string>de</string>
+                <string>INSPIRE Data Specification on Sea Regions – Technical Guidelines</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>INSPIRE Data Specification on Sea Regions – Technical Guidelines</string>
+              </entry>
+            </localisations>
+            <data>2013-12-10</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+            <id>41</id>
+            <localisations>
+              <entry>
+                <string>de</string>
+                <string>Technical Guidance for the INSPIRE Schema Transformation Network Service</string>
+              </entry>
+              <entry>
+                <string>en</string>
+                <string>Technical Guidance for the INSPIRE Schema Transformation Network Service</string>
+              </entry>
+            </localisations>
+            <data>2010-07-12</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

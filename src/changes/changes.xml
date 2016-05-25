@@ -28,6 +28,15 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+        <release version="3.6.2" date="2016-05-25" description="Release 3.6.2">
+            <action type="update" dev="wemove">
+                Updated Logo to InGrid Logo.
+            </action>
+            <action type="update" dev="wemove" issue="REDMINE-86">
+                Update of codelist 6005 (conformity), adapted to GDI-DE.
+            </action>
+        </release>
+        
         <release version="3.6.1" date="2015-11-18" description="Release InGrid 3.6.1">
             <action type="add" dev="wemove" issue="REDMINE-15">
                 Removal of PortalU-references.
