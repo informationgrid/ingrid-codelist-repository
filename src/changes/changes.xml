@@ -28,6 +28,12 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+        <release version="4.0.0-SNAPSHOT" date="2016-xx-xx" description="Release 4.0.0">
+          <action type="fix" dev="wemove" issue="REDMINE-408">
+                Fixed wording of "letzte Änderung".
+            </action>
+        </release>
+        
         <release version="3.6.2" date="2016-05-25" description="Release 3.6.2">
             <action type="update" dev="wemove">
                 Updated Logo to InGrid Logo.
