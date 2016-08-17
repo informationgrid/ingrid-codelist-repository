@@ -170,7 +170,7 @@
     <dependency>
       <groupId>de.ingrid</groupId>
       <artifactId>ingrid-codelist-service</artifactId>
-      <version>3.6.2</version>
+      <version>3.6.3-SNAPSHOT</version>
       <exclusions>
         <!-- no quartz jobs needed in this project -->
         <exclusion>
