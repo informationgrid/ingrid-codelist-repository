@@ -28,7 +28,7 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
-        <release version="4.0.0-SNAPSHOT" date="2016-xx-xx" description="Release 4.0.0">
+        <release version="4.0.0-SNAPSHOT" date="2016-08-26" description="Release 4.0.0">
           <action type="fix" dev="wemove" issue="REDMINE-408">
                 Fixed wording of "letzte Änderung".
             </action>
