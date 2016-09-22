@@ -1,0 +1,40 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>313</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Atmosphärische Bedingungen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Atmospheric conditions</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>314</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Meteorologisch-geografische Kennwerte</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Meteorological geographical features</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
