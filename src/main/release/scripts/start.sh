@@ -172,6 +172,7 @@ startIplug()
   # cygwin path translation
   if expr `uname` : 'CYGWIN*' > /dev/null; then
     CLASSPATH=`cygpath -p -w "$CLASSPATH"`
+    INGRID_HOME=`cygpath -p -w "$INGRID_HOME"`
   fi
 
   # run it
