@@ -29,12 +29,15 @@
     </properties>
     <body>
     
-    <release version="4.0.0.2-SNAPSHOT" date="2016-xx-xx" description="Release 4.0.0.2">
+    <release version="4.0.1-SNAPSHOT" date="2016-xx-xx" description="Release 4.0.1">
       <action type="fix" dev="wemove" issue="REDMINE-465">
         Fixed wrong path to save data when using cygwin.
       </action>
       <action type="fix" dev="wemove" issue="REDMINE-442">
         Fixed codelist 6100.
+      </action>
+      <action type="update" dev="wemove" issue="REDMINE-311">
+        Added more CRS to codelist 100.
       </action>
     </release>
 
