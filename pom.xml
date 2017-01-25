@@ -3,7 +3,7 @@
   <parent>
     <groupId>de.ingrid</groupId>
     <artifactId>ingrid-releases-pom</artifactId>
-    <version>3.6.2</version>
+    <version>4.0.1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ingrid</groupId>
@@ -11,6 +11,7 @@
   <version>4.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>InGrid CodeList Repository</name>
+  <description>This is the repository where all codelists are organized.</description>
   <scm>
     <connection>scm:git:git@github.com:informationgrid/ingrid-codelist-repository.git</connection>
     <developerConnection>scm:git:git@github.com:informationgrid/ingrid-codelist-repository.git</developerConnection>
