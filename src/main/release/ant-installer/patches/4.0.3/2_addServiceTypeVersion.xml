@@ -1,0 +1,28 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>5153</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>predefined ATOM</string>
+            </entry>
+            <entry>
+              <string>iso</string>
+              <string>predefined ATOM</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>predefined ATOM</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
