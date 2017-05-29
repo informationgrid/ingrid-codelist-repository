@@ -72,6 +72,15 @@ public class CodeListManager {
         } catch (FileNotFoundException e) {
             log.error( "Error when checking for updated codelist information", e );
         }
+        
+        // set all codelists to the current timestamp to force an update of all clients
+        if ("true".equals( System.getenv("forceUpdateCodelists") )) {
+            List<CodeList> codeLists = getCodeLists();
+            for (CodeList codeList : codeLists) {
+                codeList.setLastModified( System.currentTimeMillis() );
+            }
+            writeCodeListsToFile();
+        }
     }
     
     public CodeList getCodeList(String id) {
