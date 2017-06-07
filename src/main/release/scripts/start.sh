@@ -82,6 +82,7 @@ stopIplug()
 				done
 				echo "process is still running. force kill -9."
 				kill -9 `cat $PID`
+				unlink $PID
 				exit 0
 			fi
 		else
@@ -124,6 +125,7 @@ stopNoExitIplug()
 				done
 				echo "process is still running. force kill -9."
 				kill -9 `cat $PID`
+                unlink $PID
 			fi
 		else
 			echo "process is not running. Exit."
