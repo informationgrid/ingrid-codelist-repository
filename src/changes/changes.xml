@@ -33,6 +33,9 @@
       <action type="add" dev="wemove" issue="REDMINE-533">
         Added service type version "predefined ATOM".
       </action>
+      <action type="add" dev="wemove" issue="REDMINE-467">
+        Added UVP specific codelists (UVP numbers).
+      </action>
       <action type="add" dev="wemove">
         Prepare for docker deployment.
       </action>
