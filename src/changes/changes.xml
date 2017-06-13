@@ -29,12 +29,12 @@
     </properties>
     <body>
     
-    <release version="4.0.3-SNAPSHOT" date="2017-xx-xx" description="Release 4.0.3">
+    <release version="4.0.3" date="2017-06-13" description="Release 4.0.3">
       <action type="add" dev="wemove" issue="REDMINE-533">
         Added service type version "predefined ATOM".
       </action>
       <action type="add" dev="wemove">
-        Create docker image for this project.
+        Prepare for docker deployment.
       </action>
     </release>
     
