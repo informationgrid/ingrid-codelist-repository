@@ -65,7 +65,7 @@
         <mkdir dir="${installDir}/webapp/WEB-INF/work"/>
     	
     	<echo>Extrahieren der initialen Codeliste</echo>
-        <unzip dest="${installDir}/data">
+        <unzip dest="${installDir}/data" encoding="UTF8">
             <fileset dir="${installDir}/lib">
                 <include name="ingrid-codelist-service-*.jar"/>
             </fileset>
@@ -79,7 +79,7 @@
 
     	<echo>Aktualisierung des Zeitstempels</echo>
         <msec property="TIMESTAMP_MILLIS"/>
-        <replace file="${installDir}/data/codelists.xml" token="&lt;lastModified>0&lt;/lastModified>" value="&lt;lastModified>${TIMESTAMP_MILLIS}&lt;/lastModified>"/>
+        <replace file="${installDir}/data/codelists.xml" encoding="UTF8" token="&lt;lastModified>0&lt;/lastModified>" value="&lt;lastModified>${TIMESTAMP_MILLIS}&lt;/lastModified>"/>
         <!-- write current version of the codelist repository -->
         <echo file="${installDir}/data/version.info" append="false">0</echo>
     </target>
