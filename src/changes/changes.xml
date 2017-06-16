@@ -29,6 +29,12 @@
     </properties>
     <body>
     
+    <release version="4.0.4" date="2017-xx-xx" description="Release 4.0.4">
+      <action type="update" dev="wemove" issue="367">
+        Updated codelist entries to show which CRS is INSPIRE.
+      </action>
+    </release>
+    
     <release version="4.0.3" date="2017-06-13" description="Release 4.0.3">
       <action type="add" dev="wemove" issue="REDMINE-533">
         Added service type version "predefined ATOM".

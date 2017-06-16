@@ -1,0 +1,88 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>4258</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 4258: ETRS89 / geographisch (INSPIRE)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 4258: ETRS89 / geographisch (INSPIRE)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>3044</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3044: ETRS89 / UTM Zone 32N (N-E) (INSPIRE)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3044: ETRS89 / UTM Zone 32N (N-E) (INSPIRE)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>3045</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3045: ETRS89 / UTM Zone 33N (N-E) (INSPIRE)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3045: ETRS89 / UTM Zone 33N (N-E) (INSPIRE)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>3034</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3034: ETRS89 / LCC Europa (INSPIRE)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3034: ETRS89 / LCC Europe (INSPIRE)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>3035</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3035: ETRS89 / LAEA Europa (INSPIRE)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3035: ETRS89 / LAEA Europe (INSPIRE)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
