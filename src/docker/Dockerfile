@@ -13,4 +13,4 @@ RUN unzip ingrid-*.jar -d /tmp \
 WORKDIR /opt/ingrid/ingrid-codelist-repository
 EXPOSE 9910
 
-CMD /bin/sh start.sh start && tail -f /dev/null
+CMD /bin/sh start.sh start
