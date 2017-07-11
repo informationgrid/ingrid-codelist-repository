@@ -26,6 +26,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -69,7 +72,7 @@ public class CodeListManager {
         this.initialCodelists = this.codeListService.getInitialCodelists();
         try {
             checkForUpdates();
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             log.error( "Error when checking for updated codelist information", e );
         }
         
@@ -316,7 +319,7 @@ public class CodeListManager {
         return resList;
     }
     
-    public void checkForUpdates() throws FileNotFoundException {
+    public void checkForUpdates() throws IOException {
         List<String> filesForUpdate = checkFilesForUpdate( VersionUtils.getCurrentVersion() );
         Collections.sort( filesForUpdate );
         String newVersion = null;
@@ -324,6 +327,9 @@ public class CodeListManager {
             updateCodelistsFromUpdateFile( file );
             String fileName = new File( file ).getName();
             newVersion = fileName.substring( 0, fileName.indexOf( '_' ) );
+            
+            // rename update file so that it's not executed again
+            Files.move( Paths.get( file ), Paths.get( file + ".bak" ), StandardCopyOption.REPLACE_EXISTING );
         }
         
         if (newVersion != null) {
