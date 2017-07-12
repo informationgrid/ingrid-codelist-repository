@@ -29,7 +29,10 @@
     </properties>
     <body>
     
-    <release version="4.1.0" date="2017-xx-xx" description="Release 4.1.0">
+    <release version="4.1.0-SNAPSHOT" date="2017-xx-xx" description="Release 4.1.0">
+      <action type="update" dev="wemove" issue="199">
+        Updated language codelist with new languages.
+      </action>
       <action type="update" dev="wemove" issue="367">
         Updated codelist entries to show which CRS is INSPIRE.
       </action>
