@@ -48,6 +48,9 @@
       <action type="fix" dev="wemove" issue="766">
         Remove updated codelist files once they were executed.
       </action>
+      <action type="fix" dev="wemove" issue="797">
+        Fixed notification when codelist could not be written. 
+      </action>
     </release>
     
     <release version="4.0.3" date="2017-06-13" description="Release 4.0.3">
