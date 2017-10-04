@@ -29,9 +29,12 @@
     </properties>
     <body>
     
-    <release version="4.1.0-SNAPSHOT" date="2017-xx-xx" description="Release 4.1.0">
+    <release version="4.1.0" date="2017-10-04" description="Release 4.1.0">
       <action type="add" dev="wemove" issue="563">
         Added syslist 6010 accessConstraints to codelist repo.
+      </action>
+      <action type="add" dev="wemove" issue="750">
+        Added syslists for BKG 10001-10006.
       </action>
       <action type="update" dev="wemove" issue="199">
         Updated language codelist with new languages.
