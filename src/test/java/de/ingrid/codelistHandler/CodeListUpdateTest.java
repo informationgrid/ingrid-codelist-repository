@@ -31,8 +31,12 @@ import static org.junit.Assert.assertThat;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,6 +71,7 @@ public class CodeListUpdateTest {
     @Before
     public void setUp() throws Exception {
         
+        
         CodeListService cls = new CodeListService();
         List<ICodeListPersistency> persistencies = new ArrayList<ICodeListPersistency>();
         XmlCodeListPersistency<CodeList> xmlCodeListPersistency = new XmlCodeListPersistency<CodeList>();
@@ -78,6 +83,24 @@ public class CodeListUpdateTest {
 
         removeExisitingTestFile();
         manager.getCodeLists().clear();
+        copyUpdateFiles();
+    }
+
+    private void copyUpdateFiles() {
+            try {
+                Files.list(Paths.get("src/test/resources/updates"))
+                .forEach( file -> {
+                    try {
+                        Files.copy( file, Paths.get( "target/test-classes/updates", file.getFileName().toString() ), StandardCopyOption.REPLACE_EXISTING );
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }        
+                });
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
     }
 
     @BeforeClass
