@@ -29,6 +29,33 @@
     </properties>
     <body>
     
+    <release version="4.1.0" date="2017-10-04" description="Release 4.1.0">
+      <action type="add" dev="wemove" issue="563">
+        Added syslist 6010 accessConstraints to codelist repo.
+      </action>
+      <action type="add" dev="wemove" issue="750">
+        Added syslists for BKG 10001-10006.
+      </action>
+      <action type="update" dev="wemove" issue="199">
+        Updated language codelist with new languages.
+      </action>
+      <action type="update" dev="wemove" issue="367">
+        Updated codelist entries to show which CRS is INSPIRE.
+      </action>
+      <action type="update" dev="wemove" issue="790">
+        Updated codelist 6005 (conformity).
+      </action>
+      <action type="fix" dev="wemove" issue="769">
+        Fixed german name of INSPIRE theme to "Geografische Gittersysteme".
+      </action>
+      <action type="fix" dev="wemove" issue="766">
+        Remove updated codelist files once they were executed.
+      </action>
+      <action type="fix" dev="wemove" issue="797">
+        Fixed notification when codelist could not be written. 
+      </action>
+    </release>
+    
     <release version="4.0.3" date="2017-06-13" description="Release 4.0.3">
       <action type="add" dev="wemove" issue="REDMINE-533">
         Added service type version "predefined ATOM".

@@ -3,11 +3,11 @@
   <parent>
     <groupId>de.ingrid</groupId>
     <artifactId>ingrid-releases-pom</artifactId>
-    <version>4.0.3</version>
+    <version>4.1.0</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ingrid-codelist-repository</artifactId>
-  <version>4.0.3</version>
+  <version>4.1.0</version>
   <packaging>jar</packaging>
   <name>InGrid CodeList Repository</name>
   <description>This is the repository where all codelists are organized.</description>
@@ -141,12 +141,6 @@
           <verbose>true</verbose>
         </configuration>
       </plugin> -->
-      
-      <!-- Activate docker image build and push integration (see parent-pom) -->
-      <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>docker-maven-plugin</artifactId>
-      </plugin>
     </plugins>
   </build>
   <!-- ==================== DEPENDENCY MANAGEMENT ==================== -->
@@ -186,7 +180,7 @@
     <dependency>
       <groupId>de.ingrid</groupId>
       <artifactId>ingrid-codelist-service</artifactId>
-      <version>4.0.3</version>
+      <version>4.1.0</version>
       <exclusions>
         <!-- no quartz jobs needed in this project -->
         <exclusion>
@@ -244,6 +238,11 @@
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.5</version>
     </dependency>
     <!-- The two following dependencies are needed for Jetty -->
     <dependency>

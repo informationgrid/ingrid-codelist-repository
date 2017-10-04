@@ -1,5 +1,6 @@
 FROM docker-registry.wemove.com/ingrid-java
 ENV INGRID_USER=root
+ENV RUN_DIRECTLY=true
 
 ADD ingrid-codelist-*-installer.jar /
 
@@ -13,4 +14,4 @@ RUN unzip ingrid-*.jar -d /tmp \
 WORKDIR /opt/ingrid/ingrid-codelist-repository
 EXPOSE 9910
 
-CMD /bin/sh start.sh start && tail -f /dev/null
+CMD /bin/sh start.sh start

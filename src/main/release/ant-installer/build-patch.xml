@@ -161,8 +161,28 @@
             </then>
         </if>
     </target>
+    
+    <target name="patchFromVersion4.0.3">
+        <echo>Only executed if file exists: ${installDir}/data/codelists.xml</echo>
+        <compareVersion value1="${oldVersion}" value2="4.0.3" prop="compResult"/>
+        <if>
+            <and>
+                <available file="${installDir}/data/codelists.xml" />
+                <length file="${installDir}/data/codelists.xml" when="greater" length="0" />
+                <not>
+                    <equals arg1="${compResult}" arg2="1" />
+                </not>
+            </and>
+            <then>
+                <echo>Patching codelists.xml file in basedir: </echo>
+                <move toDir="${installDir}/data/changes">
+                    <fileset dir="patches/4.0.4" />
+                </move>
+            </then>
+        </if>
+    </target>
 
-    <target name="patchFiles" depends="patchFromVersion3.3.0,patchFromVersion3.3.1,patchFromVersion3.5.0,patchFromVersion3.6.1,patchFromVersion3.6.2,patchFromVersion4.0.0,patchFromVersion4.0.2">
+    <target name="patchFiles" depends="patchFromVersion3.3.0,patchFromVersion3.3.1,patchFromVersion3.5.0,patchFromVersion3.6.1,patchFromVersion3.6.2,patchFromVersion4.0.0,patchFromVersion4.0.2,patchFromVersion4.0.3">
         <!-- patch order determined through depends-order -->
     </target>
 </project>
