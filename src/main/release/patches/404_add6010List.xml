@@ -1,0 +1,130 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6010</id>
+    <type>ADD</type>
+    <codelist>
+      <id>6010</id>
+      <name>Zugriffsbeschränkungen</name>
+      <defaultEntry>1</defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Es gelten keine Zugriffsbeschränkungen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>no limitations to public access</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund der Vertraulichkeit der Verfahren von Behörden</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the confidentiality of the proceedings of public authorities</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund internationaler Beziehungen, der öffentliche Sicherheit oder der Landesverteidigung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>international relations, public security or national defence</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>4</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund laufender Gerichtsverfahren</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the course of justice</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>5</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund der Vertraulichkeit von Geschäfts- oder Betriebsinformationen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the confidentiality of commercial or industrial information</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>6</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund der Rechte des geistigen Eigentums</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>intellectual property rights</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>7</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund der Vertraulichkeit personenbezogener Daten</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the confidentiality of personal data and/or files</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>8</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund des Schutzes einer Person</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the interests or protection of any person</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>9</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund des Schutzes von Umweltbereichen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the protection of the environment</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
