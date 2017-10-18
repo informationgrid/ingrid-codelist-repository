@@ -1,0 +1,254 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>313</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Atmosphärische Bedingungen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Atmospheric conditions</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>314</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Meteorologisch-geografische Kennwerte</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Meteorological geographical features</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>84</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>CRS 84: CRS 84 / mathematisch</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>CRS 84: CRS 84 / mathematisch</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>3857</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3857: WGS 84 / Pseudo-Mercator</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3857: WGS 84 / Pseudo-Mercator</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>3044</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3044: ETRS89 / UTM Zone 32N (N-E)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3044: ETRS89 / UTM Zone 32N (N-E)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>3045</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3045: ETRS89 / UTM Zone 33N (N-E)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3045: ETRS89 / UTM Zone 33N (N-E)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>4647</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 4647: ETRS89 / UTM Zone 32N (zE-N)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 4647: ETRS89 / UTM Zone 32N (zE-N)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>5650</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 5650: ETRS89 / UTM Zone 33N (zE-N)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 5650: ETRS89 / UTM Zone 33N (zE-N)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>3034</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3034: ETRS89 / LCC Europa</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3034: ETRS89 / LCC Europe</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>4839</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 4839: ETRS89 / LCC Deutschland (N-E)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 4839: ETRS89 / LCC Germany (N-E)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>3035</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 3035: ETRS89 / LAEA Europa</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 3035: ETRS89 / LAEA Europe</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>5676</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 5676: DHDN / Gauss-Krüger Zone 2 (E-N)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 5676: DHDN / Gauss-Krüger Zone 2 (E-N)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>5677</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 5677: DHDN / Gauss-Krüger Zone 3 (E-N)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 5677: DHDN / Gauss-Krüger Zone 3 (E-N)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>5678</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 5678: DHDN / Gauss-Krüger Zone 4 (E-N)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 5678: DHDN / Gauss-Krüger Zone 4 (E-N)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>5679</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 5679: DHDN / Gauss-Krüger Zone 5 (E-N)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 5679: DHDN / Gauss-Krüger Zone 5 (E-N)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

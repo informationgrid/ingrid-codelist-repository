@@ -1,0 +1,24 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>102</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Geografische Gittersysteme</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Geographical grid systems</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
