@@ -46,7 +46,7 @@ import de.ingrid.codelists.util.CodeListUtils;
 @ContextConfiguration(locations = {"classpath:/application-context-rest-test.xml"})
 public class CodeListAccessResourceInitialTest {
 
-    private static String dataFile = "data/codelistsTests.xml";
+    private static String dataFile = "data/codelistsTests";
 
     @Autowired
     private CodeListManager manager;

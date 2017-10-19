@@ -35,17 +35,19 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import de.ingrid.codelistHandler.migrate.Migrator;
 import de.ingrid.codelists.CodeListService;
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
@@ -53,10 +55,8 @@ import de.ingrid.codelists.persistency.ICodeListPersistency;
 import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 import de.ingrid.codelists.util.VersionUtils;
 
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(locations = { "classpath:/application-context-test.xml" })
 public class CodeListUpdateTest {
-    private static String dataFile = "data/codelistsTests.xml";
+    private static String dataFile = "data/codelistsTests";
     private String dataFileAdd = "src/test/resources/updates/V1_codelist_add.xml";
     private String dataFileRemove = "src/test/resources/updates/V2_codelist_remove.xml";
     private String dataFileUpdate = "src/test/resources/updates/V3_codelist_update.xml";
@@ -65,25 +65,25 @@ public class CodeListUpdateTest {
     private String dataFileUpdateEntry = "src/test/resources/updates/V4a_codelist_update_entry.xml";
     private String dataFileMultiple = "src/test/resources/updates/V4b_codelist_multiple_changes.xml";
 
-    // @Autowired
     private static CodeListManager manager;
+    
+    private static int counter = 0;
 
     @Before
     public void setUp() throws Exception {
         
-        
         CodeListService cls = new CodeListService();
         List<ICodeListPersistency> persistencies = new ArrayList<ICodeListPersistency>();
         XmlCodeListPersistency<CodeList> xmlCodeListPersistency = new XmlCodeListPersistency<CodeList>();
-        xmlCodeListPersistency.setPathToXml( "data/codelistsTests.xml" );
+        xmlCodeListPersistency.setPathToXml( "data/codelistsTests" + (counter++) );
         persistencies.add( xmlCodeListPersistency );
         cls.setPersistencies( persistencies );
         cls.setDefaultPersistency( 0 );
-        manager = new CodeListManager( cls );
-
         removeExisitingTestFile();
+        
+        manager = new CodeListManager( cls, new Migrator() );
         manager.getCodeLists().clear();
-        copyUpdateFiles();
+        // copyUpdateFiles();
     }
 
     private void copyUpdateFiles() {
@@ -103,17 +103,12 @@ public class CodeListUpdateTest {
             }
     }
 
-    @BeforeClass
-    public static void cleanUp() throws Exception {
-        removeExisitingTestFile();
-    }
-    
-    @AfterClass
-    public static void reset() throws Exception {
+    @After
+    public void reset() throws Exception {
         // reset private field
         Field field = CodeListManager.class.getDeclaredField( "PATH_CODELIST_UPDATES" );
         field.setAccessible( true );
-        field.set( manager, "classpath:changes/*.xml" );
+        field.set( manager, "classpath:patches/*.xml" );
     }
 
     @Test
@@ -298,6 +293,8 @@ public class CodeListUpdateTest {
         Field field = CodeListManager.class.getDeclaredField( "PATH_CODELIST_UPDATES" );
         field.setAccessible( true );
         field.set( manager, "classpath:updates/*.xml" );
+        
+        copyUpdateFiles();
 
         List<String> files = manager.checkFilesForUpdate( "0" );
         assertThat( files.size(), is( 7 ) );
@@ -323,6 +320,8 @@ public class CodeListUpdateTest {
         field.set( manager, "classpath:updates/*.xml" );
         
         removeExisitingTestFile();
+        
+        copyUpdateFiles();
         
         assertThat( VersionUtils.getCurrentVersion(), is( "0" ) );
         
@@ -350,13 +349,16 @@ public class CodeListUpdateTest {
     }
 
     private static void removeExisitingTestFile() {
-        File f = new File( dataFile );
-        if (f.exists() && f.isFile()) {
-            f.delete();
-        }
-        f = new File( "data/version.info" );
-        if (f.exists() && f.isFile()) {
-            f.delete();
+        Path rootPath = Paths.get("data");
+        if (!rootPath.toFile().exists()) return;
+        
+        try {
+            Files.walk(rootPath)
+                .sorted(Comparator.reverseOrder())
+                .map(Path::toFile)
+                .forEach(File::delete);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

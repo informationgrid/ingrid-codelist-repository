@@ -64,24 +64,15 @@
 
         <mkdir dir="${installDir}/webapp/WEB-INF/work"/>
     	
-    	<echo>Extrahieren der initialen Codeliste</echo>
-        <unzip dest="${installDir}/data" encoding="UTF8">
-            <fileset dir="${installDir}/lib">
-                <include name="ingrid-codelist-service-*.jar"/>
-            </fileset>
-            <patternset>
-                <include name="codelists_initial.xml"/>
-            </patternset>
-        </unzip>
-
-    	<echo>Verschiebe Codeliste in data-Verzeichnis!</echo>
-        <move file="${installDir}/data/codelists_initial.xml" tofile="${installDir}/data/codelists.xml"/>
-
-    	<echo>Aktualisierung des Zeitstempels</echo>
-        <msec property="TIMESTAMP_MILLIS"/>
-        <replace file="${installDir}/data/codelists.xml" encoding="UTF8" token="&lt;lastModified>0&lt;/lastModified>" value="&lt;lastModified>${TIMESTAMP_MILLIS}&lt;/lastModified>"/>
+    	<!-- create a file to force an update of all codelists on startup, so that they get latest timestamp
+    	     and so they will be fetched from all clients -->
+        <touch file="${installDir}/data/forceUpdateOnStartOnce" />
+        
         <!-- write current version of the codelist repository -->
-        <echo file="${installDir}/data/version.info" append="false">0</echo>
+        <echo file="${installDir}/data/version.info" append="false">420</echo>
+        
+        <!-- create empty override config -->
+        <touch file="${installDir}/conf/config.override.properties" />
     </target>
     
     <target name="extractUpdate">

@@ -40,7 +40,7 @@ import de.ingrid.codelists.model.CodeListEntry;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:/application-context-test.xml"})
 public class CodeListManagerTest {
-    private String dataFile = "data/codelistsTests.xml";
+    private String dataFile = "data/codelistsTests";
     
     @Autowired
     private CodeListManager manager;
