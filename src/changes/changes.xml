@@ -33,6 +33,9 @@
       <action type="add" dev="wemove" issue="870">
         Added syslist 9014 (UVP-Baden-Wurttemberg) to codelist repo.
       </action>
+      <action type="update" dev="wemove" issue="">
+        Changed handling of patch files.
+      </action>
     </release>
 
     <release version="4.1.0" date="2017-10-04" description="Release 4.1.0">
