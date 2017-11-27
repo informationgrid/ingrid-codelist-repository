@@ -263,6 +263,9 @@ public class CodeListManager {
                 break;
             case ENTRYUPDATE:
                 CodeList cl = getCodeList( codeList.getId() );
+                if (cl == null) {
+                	throw new RuntimeException("Codelist could not be found for update: " + codeList.getId());
+                }
                 for (CodeListEntryUpdate entry : codeList.getEntries()) {
                     switch(entry.getType()) {
                     case ADD:

@@ -28,13 +28,17 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+
+    <release version="4.1.4" date="2017-11-27" description="Release 4.1.4">
+      <action type="fix" dev="wemove" issue="928">
+        Fixed missing codelist during patch process.
+      </action>
+    </release>
     
     <release version="4.1.1" date="2017-10-23" description="Release 4.1.1">
       <action type="add" dev="wemove" issue="870">
         Added syslist 9014 (UVP-Baden-Wurttemberg) to codelist repo.
-      </action>
-      <action type="update" dev="wemove" issue="">
-        Changed handling of patch files.
+
       </action>
     </release>
 
