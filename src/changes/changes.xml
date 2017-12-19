@@ -29,7 +29,10 @@
     </properties>
     <body>
 
-    <release version="4.1.6" date="2017-xx-xx" description="Release 4.1.6">
+    <release version="4.1.6" date="2017-12-19" description="Release 4.1.6">
+      <action type="fix" dev="wemove" issue="930">
+        Fixed UVP Numbers to make them sortable.
+      </action>
     </release>
 
     <release version="4.1.5" date="2017-11-30" description="Release 4.1.5">
@@ -46,7 +49,7 @@
         Fixed missing codelist during patch process.
       </action>
     </release>
-    
+
     <release version="4.1.1" date="2017-10-23" description="Release 4.1.1">
       <action type="add" dev="wemove" issue="870">
         Added syslist 9014 (UVP-Baden-Wurttemberg) to codelist repo.
@@ -76,10 +79,10 @@
         Remove updated codelist files once they were executed.
       </action>
       <action type="fix" dev="wemove" issue="797">
-        Fixed notification when codelist could not be written. 
+        Fixed notification when codelist could not be written.
       </action>
     </release>
-    
+
     <release version="4.0.3" date="2017-06-13" description="Release 4.0.3">
       <action type="add" dev="wemove" issue="REDMINE-533">
         Added service type version "predefined ATOM".
@@ -91,7 +94,7 @@
         Prepare for docker deployment.
       </action>
     </release>
-    
+
     <release version="4.0.1" date="2016-02-01" description="Release 4.0.1">
       <action type="fix" dev="wemove" issue="REDMINE-465">
         Fixed wrong path to save data when using cygwin.
@@ -109,7 +112,7 @@
             Fixed wording of "letzte Änderung".
           </action>
         </release>
-        
+
         <release version="3.6.2" date="2016-05-25" description="Release 3.6.2">
             <action type="update" dev="wemove">
                 Updated Logo to InGrid Logo.
@@ -118,7 +121,7 @@
                 Update of codelist 6005 (conformity), adapted to GDI-DE.
             </action>
         </release>
-        
+
         <release version="3.6.1" date="2015-11-18" description="Release InGrid 3.6.1">
             <action type="add" dev="wemove" issue="REDMINE-15">
                 Removal of PortalU-references.
@@ -131,7 +134,7 @@
                 Improved update of codelist repository when installing a new version.
             </action>
         </release>
-        
+
         <release version="3.5.0" date="2015-01-29" description="Release InGrid 3.5.0">
             <action type="add" dev="wemove" issue="REDMINE-524">
                 Added license header to all source files for Open Source migration.
