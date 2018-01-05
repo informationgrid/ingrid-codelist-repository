@@ -28,7 +28,19 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
-    
+
+    <release version="4.2.0" date="2018-01-05" description="Release 4.2.0">
+      <action type="add" dev="wemove" issue="925">
+        Add UVP Nummern of NRW.
+      </action>
+      <action type="add" dev="wemove" issue="870">
+        Add UVP Nummern of BW.
+      </action>
+      <action type="fix" dev="wemove" issue="928">
+        Fixed missing German codelist entries during patch process.
+      </action>
+    </release>
+
     <release version="4.1.0" date="2017-10-04" description="Release 4.1.0">
       <action type="add" dev="wemove" issue="563">
         Added syslist 6010 accessConstraints to codelist repo.

@@ -75,7 +75,7 @@
             </and>
             <then>
                 <echo>Patching codelists.xml file in basedir: </echo>
-                <move toDir="${installDir}/data/changes">
+                <move toDir="${installDir}/data/patches">
                     <fileset dir="patches/3.6.1" />
                 </move>
             </then>
@@ -95,7 +95,7 @@
             </and>
             <then>
                 <echo>Patching codelists.xml file in basedir: </echo>
-                <move toDir="${installDir}/data/changes">
+                <move toDir="${installDir}/data/patches">
                     <fileset dir="patches/3.6.2" />
                 </move>
             </then>
@@ -115,7 +115,7 @@
             </and>
             <then>
                 <echo>Patching codelists.xml file in basedir: </echo>
-                <move toDir="${installDir}/data/changes">
+                <move toDir="${installDir}/data/patches">
                     <fileset dir="patches/4.0.0" />
                 </move>
             </then>
@@ -135,7 +135,7 @@
             </and>
             <then>
                 <echo>Patching codelists.xml file in basedir: </echo>
-                <move toDir="${installDir}/data/changes">
+                <move toDir="${installDir}/data/patches">
                     <fileset dir="patches/4.0.1" />
                 </move>
             </then>
@@ -155,7 +155,7 @@
             </and>
             <then>
                 <echo>Patching codelists.xml file in basedir: </echo>
-                <move toDir="${installDir}/data/changes">
+                <move toDir="${installDir}/data/patches">
                     <fileset dir="patches/4.0.3" />
                 </move>
             </then>
@@ -175,7 +175,7 @@
             </and>
             <then>
                 <echo>Patching codelists.xml file in basedir: </echo>
-                <move toDir="${installDir}/data/changes">
+                <move toDir="${installDir}/data/patches">
                     <fileset dir="patches/4.0.4" />
                 </move>
             </then>

@@ -2,7 +2,7 @@
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
- * Copyright (C) 2014 - 2017 wemove digital solutions GmbH
+ * Copyright (C) 2014 - 2018 wemove digital solutions GmbH
  * ==================================================
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
@@ -57,7 +57,7 @@ import de.ingrid.codelists.util.VersionUtils;
 @Component
 public class CodeListManager {
     
-    private static String PATH_CODELIST_UPDATES = "file:data/changes/*.xml";
+    private static String PATH_CODELIST_UPDATES = "file:data/patches/*.xml";
 
     private static Logger log = Logger.getLogger( CodeListManager.class );
     
@@ -263,6 +263,9 @@ public class CodeListManager {
                 break;
             case ENTRYUPDATE:
                 CodeList cl = getCodeList( codeList.getId() );
+                if (cl == null) {
+                	throw new RuntimeException("Codelist could not be found for update: " + codeList.getId());
+                }
                 for (CodeListEntryUpdate entry : codeList.getEntries()) {
                     switch(entry.getType()) {
                     case ADD:

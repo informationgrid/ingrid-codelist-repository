@@ -41,6 +41,10 @@
       <outputDirectory>${project.build.finalName}/conf</outputDirectory>
     </fileSet>
     <fileSet>
+      <directory>src/main/release/patches</directory>
+      <outputDirectory>${project.build.finalName}/data/patches</outputDirectory>
+    </fileSet>
+    <fileSet>
       <directory>src/main/release/jetty</directory>
       <outputDirectory>${project.build.finalName}/webapp/WEB-INF</outputDirectory>
     </fileSet>
