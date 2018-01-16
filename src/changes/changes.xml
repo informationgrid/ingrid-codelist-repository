@@ -30,6 +30,9 @@
     <body>
 
     <release version="4.1.7" date="2017-xx-xx" description="Release 4.1.7">
+      <action type="fix" dev="wemove" issue="955">
+        Ignore entry update patch if codelist does not exists.
+      </action>
     </release>
 
     <release version="4.1.6" date="2017-12-19" description="Release 4.1.6">
