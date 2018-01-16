@@ -264,29 +264,30 @@ public class CodeListManager {
             case ENTRYUPDATE:
                 CodeList cl = getCodeList( codeList.getId() );
                 if (cl == null) {
-                	throw new RuntimeException("Codelist could not be found for update: " + codeList.getId());
-                }
-                for (CodeListEntryUpdate entry : codeList.getEntries()) {
-                    switch(entry.getType()) {
-                    case ADD:
-                        cl.addEntry( entry.getEntry() );
-                        log.info( "Added codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
-                        break;
-                    case REMOVE:
-                        cl.removeEntry( entry.getEntry().getId() );
-                        log.info( "Removed codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
-                        break;
-                    case UPDATE:
-                        cl.removeEntry( entry.getEntry().getId() );
-                        cl.addEntry( entry.getEntry() );
-                        log.info( "Updated codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
-                        break;
-                    default:
-                        break;
+                    log.warn("Codelist could not be found for update: " + codeList.getId() + ". Ignoring this patch. Maybe the codelist does not exist in this profile?");
+                } else {
+                    for (CodeListEntryUpdate entry : codeList.getEntries()) {
+                        switch(entry.getType()) {
+                        case ADD:
+                            cl.addEntry( entry.getEntry() );
+                            log.info( "Added codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
+                            break;
+                        case REMOVE:
+                            cl.removeEntry( entry.getEntry().getId() );
+                            log.info( "Removed codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
+                            break;
+                        case UPDATE:
+                            cl.removeEntry( entry.getEntry().getId() );
+                            cl.addEntry( entry.getEntry() );
+                            log.info( "Updated codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
+                            break;
+                        default:
+                            break;
+                        }
                     }
+                    codeListService.setCodelist( cl.getId(), cl );
+                    writeCodeListsToFile();
                 }
-                codeListService.setCodelist( cl.getId(), cl );
-                writeCodeListsToFile();
                 break;
             default:
                 log.error( "Type not supported for updated codelist: " + codeList.getType() );
