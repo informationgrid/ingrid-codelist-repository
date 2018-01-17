@@ -123,24 +123,6 @@
           <noDeploy>true</noDeploy>
         </configuration>
       </plugin>
-      <!-- <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>dockerfile-maven-plugin</artifactId>
-        <version>1.2.2</version>
-        <executions>
-          <execution>
-            <id>default</id>
-            <goals>
-              <goal>build</goal>
-              <goal>push</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <repository>docker-registry.wemove.com/ingrid-codelist-repository</repository>
-          <verbose>true</verbose>
-        </configuration>
-      </plugin> -->
     </plugins>
   </build>
   <!-- ==================== DEPENDENCY MANAGEMENT ==================== -->
@@ -277,9 +259,9 @@
   <!-- ==================== REPOSITORIES ==================== -->
   <repositories>
     <repository>
-      <id>de.ingrid.all</id>
-      <name>InGrid Repo Maven</name>
-      <url>https://dev.informationgrid.eu/archiva/repository/ingrid-all</url>
+      <id>nexus</id>
+      <name>Nexus Repo</name>
+      <url>https://nexus.informationgrid.eu/repository/maven-public</url>
     </repository>
   </repositories>
 </project>
