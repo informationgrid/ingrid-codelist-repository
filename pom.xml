@@ -3,11 +3,11 @@
   <parent>
     <groupId>de.ingrid</groupId>
     <artifactId>ingrid-releases-pom</artifactId>
-    <version>4.1.4</version>
+    <version>4.2.2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ingrid-codelist-repository</artifactId>
-  <version>4.1.7-SNAPSHOT</version>
+  <version>4.1.7</version>
   <packaging>jar</packaging>
   <name>InGrid CodeList Repository</name>
   <description>This is the repository where all codelists are organized.</description>
@@ -19,6 +19,7 @@
   <properties>
     <version.jersey>1.19</version.jersey>
   </properties>
+  
   <build>
     <finalName>${project.artifactId}-${project.version}</finalName>
     <plugins>
@@ -123,24 +124,6 @@
           <noDeploy>true</noDeploy>
         </configuration>
       </plugin>
-      <!-- <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>dockerfile-maven-plugin</artifactId>
-        <version>1.2.2</version>
-        <executions>
-          <execution>
-            <id>default</id>
-            <goals>
-              <goal>build</goal>
-              <goal>push</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <repository>docker-registry.wemove.com/ingrid-codelist-repository</repository>
-          <verbose>true</verbose>
-        </configuration>
-      </plugin> -->
     </plugins>
   </build>
   <!-- ==================== DEPENDENCY MANAGEMENT ==================== -->
@@ -180,7 +163,7 @@
     <dependency>
       <groupId>de.ingrid</groupId>
       <artifactId>ingrid-codelist-service</artifactId>
-      <version>4.1.6</version>
+      <version>4.1.7</version>
       <exclusions>
         <!-- no quartz jobs needed in this project -->
         <exclusion>
@@ -277,9 +260,9 @@
   <!-- ==================== REPOSITORIES ==================== -->
   <repositories>
     <repository>
-      <id>de.ingrid.all</id>
-      <name>InGrid Repo Maven</name>
-      <url>https://dev.informationgrid.eu/archiva/repository/ingrid-all</url>
+      <id>nexus</id>
+      <name>Nexus Repo</name>
+      <url>https://nexus.informationgrid.eu/repository/maven-public</url>
     </repository>
   </repositories>
 </project>
