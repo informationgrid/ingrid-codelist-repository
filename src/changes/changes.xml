@@ -3,7 +3,7 @@
   **************************************************-
   InGrid CodeList Repository
   ==================================================
-  Copyright (C) 2014 - 2015 wemove digital solutions GmbH
+  Copyright (C) 2014 - 2018 wemove digital solutions GmbH
   ==================================================
   Licensed under the EUPL, Version 1.1 or – as soon they will be
   approved by the European Commission - subsequent versions of the
@@ -30,6 +30,12 @@
     <body>
 
     <release version="4.2.1-SNAPSHOT" date="2018-xx-xx" description="Release 4.2.1">
+      <action type="fix" dev="wemove" issue="963">
+        Some UVP numbers with special chars are not displayed correctly in the Editor.
+      </action>
+      <action type="fix" dev="wemove" issue="962">
+        Data sets could not be published because of wrong JSON Syntax in code list entries.
+      </action>
       <action type="fix" dev="wemove" issue="955">
         Ignore entry update patch if codelist does not exists.
       </action>
