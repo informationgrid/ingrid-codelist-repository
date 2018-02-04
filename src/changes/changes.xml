@@ -29,7 +29,7 @@
     </properties>
     <body>
 
-    <release version="4.1.7" date="2017-02-04" description="Release 4.1.7">
+    <release version="4.1.7" date="2018-02-04" description="Release 4.1.7">
       <action type="fix" dev="wemove" issue="963">
         Some UVP numbers with special chars are not displayed correctly in the Editor.
       </action>
