@@ -29,15 +29,19 @@
     </properties>
     <body>
 
-    <release version="4.3.0-SNAPSHOT" date="2018-xx-xx" description="Release 4.3.0">
+    <release version="4.3.0" date="2018-03-22" description="Release 4.3.0">
+      <action type="update" dev="wemove" issue="859">
+        Update name of codelist 6005 (conformity). Append `(INSPIRE)' to the name to differentiate it from free conformity entries list (6006).
+      </action>
       <action type="update" dev="wemove" issue="816">
         Remove 'Kein INSPIRE-Thema' from syslist 6100 (INSPIRE-Themen).
-      </action><action type="update" dev="wemove" issue="858">
+      </action>
+      <action type="update" dev="wemove" issue="858">
         Append new data formats to syslist 1320.
       </action>
     </release>
 
-    <release version="4.2.1-SNAPSHOT" date="2018-xx-xx" description="Release 4.2.1">
+    <release version="4.2.1" date="2018-02-12" description="Release 4.2.1">
       <action type="fix" dev="wemove" issue="963">
         Some UVP numbers with special chars are not displayed correctly in the Editor.
       </action>
