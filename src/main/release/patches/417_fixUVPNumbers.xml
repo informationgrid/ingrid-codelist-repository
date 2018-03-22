@@ -6,12 +6,12 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>396</id>
+          <id>345</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>HWG-13a.1.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-1a</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -19,12 +19,25 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>397</id>
+          <id>346</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>HWG-13a.1.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-1b</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-14", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>347</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2a</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -32,12 +45,12 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>398</id>
+          <id>348</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>HWG-13a.1.3</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2b</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -45,59 +58,79 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>399</id>
+          <id>349</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>HWG-13a.2.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2c</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-14", "type":"A"}</data>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>400</id>
+          <id>350</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>HWG-13a.2.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2d</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-14", "type":"A"}</data>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>401</id>
+          <id>351</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>HWG-13a.2.3</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2e</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-14", "type":"A"}</data>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-    </entries>
-  </de.ingrid.codelistHandler.model.CodeListUpdate>
-  <de.ingrid.codelistHandler.model.CodeListUpdate>
-    <id>9005</id>
-    <type>ENTRYUPDATE</type>
-    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>352</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2f</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>353</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2g</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>354</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG LSA-4</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2h</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-14", "type":"S"}</data>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
@@ -105,12 +138,12 @@
         <entry>
           <id>355</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG LSA-5</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-2i</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-14", "type":"S"}</data>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
@@ -118,12 +151,12 @@
         <entry>
           <id>356</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG LSA-6</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-3a</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-18", "type":"S"}</data>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
@@ -131,12 +164,116 @@
         <entry>
           <id>357</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG LSA-7</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-3b</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-17", "type":"S"}</data>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>358</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-4a</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>359</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-4b</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>360</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-4c</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>361</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-5a</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>362</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-5b</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>363</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-6</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-17", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>364</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-7</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-16", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>365</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>SächsUVPG-8</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-13", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
     </entries>
@@ -150,10 +287,10 @@
         <entry>
           <id>345</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-1.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-1.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-13", "type":"A"}</data>
         </entry>
@@ -163,10 +300,10 @@
         <entry>
           <id>346</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -176,10 +313,10 @@
         <entry>
           <id>347</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -189,10 +326,10 @@
         <entry>
           <id>348</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.3</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.3</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -202,10 +339,10 @@
         <entry>
           <id>349</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.4a</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.4a</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"S"}</data>
         </entry>
@@ -215,10 +352,10 @@
         <entry>
           <id>350</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.4b</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.4b</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"S"}</data>
         </entry>
@@ -228,10 +365,10 @@
         <entry>
           <id>351</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.4c</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.4c</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"S"}</data>
         </entry>
@@ -241,10 +378,10 @@
         <entry>
           <id>352</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.5a</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.5a</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"S"}</data>
         </entry>
@@ -254,10 +391,10 @@
         <entry>
           <id>353</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.5b</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.5b</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"S"}</data>
         </entry>
@@ -267,10 +404,10 @@
         <entry>
           <id>354</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.5c</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.5c</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"S"}</data>
         </entry>
@@ -280,10 +417,10 @@
         <entry>
           <id>355</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-2.6</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-2.6</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"A"}</data>
         </entry>
@@ -293,10 +430,10 @@
         <entry>
           <id>356</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-3.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-3.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-17", "type":"S"}</data>
         </entry>
@@ -306,10 +443,10 @@
         <entry>
           <id>357</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-3.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-3.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-17", "type":"A"}</data>
         </entry>
@@ -319,10 +456,10 @@
         <entry>
           <id>358</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-3.2.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-3.2.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-17", "type":"S"}</data>
         </entry>
@@ -332,10 +469,10 @@
         <entry>
           <id>359</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-4.1.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-4.1.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-15", "type":"X"}</data>
         </entry>
@@ -345,10 +482,10 @@
         <entry>
           <id>360</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-4.1.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-4.1.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-15", "type":"S"}</data>
         </entry>
@@ -358,10 +495,10 @@
         <entry>
           <id>361</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-5.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-5.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"A"}</data>
         </entry>
@@ -371,10 +508,10 @@
         <entry>
           <id>362</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-6.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-6.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-1", "type":"X"}</data>
         </entry>
@@ -384,10 +521,10 @@
         <entry>
           <id>363</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-6.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-6.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-1", "type":"A"}</data>
         </entry>
@@ -397,10 +534,10 @@
         <entry>
           <id>364</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-6.3</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-6.3</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-1", "type":"S"}</data>
         </entry>
@@ -410,10 +547,10 @@
         <entry>
           <id>365</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-7.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-7.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"X"}</data>
         </entry>
@@ -423,10 +560,10 @@
         <entry>
           <id>366</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-7.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-7.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"A"}</data>
         </entry>
@@ -436,10 +573,10 @@
         <entry>
           <id>367</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-8.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-8.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"X"}</data>
         </entry>
@@ -449,10 +586,10 @@
         <entry>
           <id>368</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-8.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-8.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"A"}</data>
         </entry>
@@ -462,10 +599,10 @@
         <entry>
           <id>369</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-9.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-9.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"X"}</data>
         </entry>
@@ -475,10 +612,10 @@
         <entry>
           <id>370</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-9.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-9.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"A"}</data>
         </entry>
@@ -488,10 +625,10 @@
         <entry>
           <id>371</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-10.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-10.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"X"}</data>
         </entry>
@@ -501,10 +638,10 @@
         <entry>
           <id>372</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-10.2</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-10.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-18", "type":"A"}</data>
         </entry>
@@ -514,31 +651,34 @@
         <entry>
           <id>373</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>LUVPG SH-11.1</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG SH-11.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-16", "type":"A"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
     </entries>
   </de.ingrid.codelistHandler.model.CodeListUpdate>
+
   <de.ingrid.codelistHandler.model.CodeListUpdate>
-    <id>9007</id>
+    <id>9002</id>
     <type>ENTRYUPDATE</type>
     <entries>
+
+
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>345</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>BbgUVPG-18</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-1.1</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-14", "type":"X"}</data>
+          <data>{"cat":"UVPG-7", "type":"A"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
@@ -546,68 +686,10 @@
         <entry>
           <id>346</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>BbgUVPG-19</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-14", "type":"X"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>347</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BbgUVPG-20</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-14", "type":"X"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>353</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BbgUVPG-25</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-18", "type":"A"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>354</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BbgUVPG-26</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-18", "type":"A"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-    </entries>
-  </de.ingrid.codelistHandler.model.CodeListUpdate>
-  <de.ingrid.codelistHandler.model.CodeListUpdate>
-    <id>9012</id>
-    <type>ENTRYUPDATE</type>
-    <entries>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>345</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-1.a</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-2.1.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-15", "type":"X"}</data>
         </entry>
@@ -615,38 +697,12 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>346</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-1.b</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-15", "type":"S"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
           <id>347</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-2.a</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-15", "type":"X"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>348</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-2.b</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-2.1.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-15", "type":"A"}</data>
         </entry>
@@ -654,14 +710,27 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
+          <id>348</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-2.2.1</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-15", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
           <id>349</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-3.a</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-2.2.2</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-17", "type":"A"}</data>
+          <data>{"cat":"UVPG-15", "type":"A"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
@@ -669,83 +738,10 @@
         <entry>
           <id>350</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-3.b</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-17", "type":"S"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>356</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-s.1.1</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"", "type":""}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>357</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-s.2.1</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"", "type":""}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>358</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>BremUVPG-s.2.3</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"", "type":""}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-    </entries>
-  </de.ingrid.codelistHandler.model.CodeListUpdate>
-  <de.ingrid.codelistHandler.model.CodeListUpdate>
-    <id>9015</id>
-    <type>ENTRYUPDATE</type>
-    <entries>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>345</id>
-          <description></description>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-4</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-16", "type":"A"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>346</id>
-          <description></description>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-5</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-3.1</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -753,13 +749,12 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>347</id>
-          <description></description>
+          <id>351</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-6</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-3.2</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -767,13 +762,12 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>348</id>
-          <description></description>
+          <id>352</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-7</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-3.3</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"X"}</data>
         </entry>
@@ -781,13 +775,25 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>349</id>
-          <description></description>
+          <id>353</id>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-8</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-3.4</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVPG-14", "type":"S"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>354</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-3.5</string>
+              </entry>
           </localisations>
           <data>{"cat":"UVPG-14", "type":"A"}</data>
         </entry>
@@ -795,199 +801,265 @@
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
-          <id>350</id>
-          <description></description>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-9</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-18", "type":"A"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>351</id>
-          <description></description>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-10</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-18", "type":"A"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>352</id>
-          <description></description>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-11.a</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-18", "type":"X"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>353</id>
-          <description></description>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-11.b</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-18", "type":"A"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>354</id>
-          <description></description>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-11.c</string>
-            </entry>
-          </localisations>
-          <data>{"cat":"UVPG-18", "type":"S"}</data>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
           <id>355</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-12.a</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-3.6</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-1", "type":"X"}</data>
+          <data>{"cat":"UVPG-14", "type":"A"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>356</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-12.b</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-4.1.1</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-1", "type":"A"}</data>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>357</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-13.a</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-4.2.1</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-1", "type":"X"}</data>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>358</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-13.b</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-4.2.2</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-1", "type":"A"}</data>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>359</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-13.c</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-4.2.3</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-1", "type":"S"}</data>
+          <data>{"cat":"UVP-18", "type":"S"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>360</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-13.d</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-4.2.4</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-1", "type":"S"}</data>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>361</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-14.a</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-4.3.1</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-1", "type":"A"}</data>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>362</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-14.b</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-4.3.2</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-1", "type":"S"}</data>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>363</id>
-          <description></description>
           <localisations>
-            <entry>
-              <string>de</string>
-              <string>UVPG NW-15</string>
-            </entry>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.1.1</string>
+              </entry>
           </localisations>
-          <data>{"cat":"UVPG-18", "type":"A"}</data>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>364</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.1.2</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>365</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.2.1</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>366</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.2.2</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>367</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.3.1</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>368</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.3.2</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>369</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.4.1</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>370</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.2.2</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>371</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.5.1</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>372</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.5.2</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>373</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.6.1</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>374</id>
+          <localisations>
+              <entry>
+                  <string>de</string>
+                  <string>LUVPG RP-5.6.2</string>
+              </entry>
+          </localisations>
+          <data>{"cat":"UVP-18", "type":"A"}</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
     </entries>
   </de.ingrid.codelistHandler.model.CodeListUpdate>
+
+
 </list>

@@ -3,7 +3,7 @@
   **************************************************-
   InGrid CodeList Repository
   ==================================================
-  Copyright (C) 2014 - 2015 wemove digital solutions GmbH
+  Copyright (C) 2014 - 2018 wemove digital solutions GmbH
   ==================================================
   Licensed under the EUPL, Version 1.1 or – as soon they will be
   approved by the European Commission - subsequent versions of the
@@ -28,6 +28,30 @@
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+
+    <release version="4.3.0" date="2018-03-22" description="Release 4.3.0">
+      <action type="update" dev="wemove" issue="859">
+        Update name of codelist 6005 (conformity). Append `(INSPIRE)' to the name to differentiate it from free conformity entries list (6006).
+      </action>
+      <action type="update" dev="wemove" issue="816">
+        Remove 'Kein INSPIRE-Thema' from syslist 6100 (INSPIRE-Themen).
+      </action>
+      <action type="update" dev="wemove" issue="858">
+        Append new data formats to syslist 1320.
+      </action>
+    </release>
+
+    <release version="4.2.1" date="2018-02-12" description="Release 4.2.1">
+      <action type="fix" dev="wemove" issue="963">
+        Some UVP numbers with special chars are not displayed correctly in the Editor.
+      </action>
+      <action type="fix" dev="wemove" issue="962">
+        Data sets could not be published because of wrong JSON Syntax in code list entries.
+      </action>
+      <action type="fix" dev="wemove" issue="955">
+        Ignore entry update patch if codelist does not exists.
+      </action>
+    </release>
 
     <release version="4.2.0" date="2018-01-05" description="Release 4.2.0">
       <action type="add" dev="wemove" issue="925">
