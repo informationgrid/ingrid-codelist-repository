@@ -541,7 +541,7 @@
                     
                 var result = localisations[0][1];
                 dojo.forEach(localisations, function(local) {
-                    if (local[0] == "en") result = local[1];
+                    if (local[0] == "en" || local[0] == "name") result = local[1];
                 });
                 return result;
             };
@@ -719,11 +719,11 @@
 		                    <tr><td>Data:</td><td><input id="entryData" jsId="entryDataTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:100%;'"></td></tr>
 	                    </table>
 	                    <br />
-	                    <div class="tableCaption">Localisations:</div>
+	                    <div class="tableCaption">Fields:</div>
 	                    <table id="entryLocalisationGrid" jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true, singleClickEdit:true, toggleSplitterOpen:true, escapeHTMLInData:false ">
 	                        <thead>
 	                            <tr>
-	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.FilteringSelect" widgetProps="{ store:languageStore}" formatter="showLanguage">Locale</th>
+	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.ComboBox" widgetProps="{ store:languageStore, searchAttr:'value' }">Key</th>
 	                                <th field="value" width="auto" editable="true">Value</th>
 	                                <th field="btnDelete">&nbsp;</th>
 	                            </tr>
@@ -731,7 +731,7 @@
 	                    </table>
 	                    <div class="buttonLayer">
 	                        <!--<span id="remLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>-->
-	                        <span id="addLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Locale</span>
+	                        <span id="addLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Field</span>
 	                    </div>
 	                </div>
                 </div>
