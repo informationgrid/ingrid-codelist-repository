@@ -45,6 +45,7 @@ import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
 
+import de.ingrid.codelistHandler.migrate.Migrator;
 import de.ingrid.codelistHandler.model.CodeListEntryUpdate;
 import de.ingrid.codelistHandler.model.CodeListUpdate;
 import de.ingrid.codelists.CodeListService;
@@ -67,7 +68,11 @@ public class CodeListManager {
     private List<CodeList> initialCodelists;
     
     @Autowired
-    public CodeListManager(CodeListService cls) {
+    public CodeListManager(CodeListService cls, Migrator migrator) {
+        
+        // run any necessary migrations
+        migrator.run();
+        
         this.codeListService = cls;
         this.initialCodelists = this.codeListService.getInitialCodelists();
         try {
@@ -76,13 +81,21 @@ public class CodeListManager {
             log.error( "Error when checking for updated codelist information", e );
         }
         
+        // check for a file created during installation to force initial update
+        File forceUpdateFile = new File("data/forceUpdateOnStartOnce");
+        
         // set all codelists to the current timestamp to force an update of all clients
-        if ("true".equals( System.getenv("forceUpdateCodelists") )) {
+        if ("true".equals( System.getenv("forceUpdateCodelists")) || forceUpdateFile.exists() ) {
             List<CodeList> codeLists = getCodeLists();
             for (CodeList codeList : codeLists) {
                 codeList.setLastModified( System.currentTimeMillis() );
             }
             writeCodeListsToFile();
+            
+            // clean up file
+            if (forceUpdateFile.exists()) {
+                forceUpdateFile.delete();
+            }
         }
     }
     
@@ -92,8 +105,10 @@ public class CodeListManager {
     
     public boolean updateCodeList(String id, String data) {
         
-        codeListService.setCodelist(id, data);
-        return writeCodeListsToFile();
+        CodeList codelist = codeListService.setCodelist(id, data);
+        List<CodeList> list = new ArrayList<CodeList>();
+        list.add( codelist );
+        return writeTheseCodeListsToFile( list );
     }
     
     public boolean removeCodeList(String id) {
@@ -102,7 +117,7 @@ public class CodeListManager {
             return false;
         } else {
             getCodeLists().remove(cl);
-            writeCodeListsToFile();
+            codeListService.removeCodelist( id );
         }
         return true;
     }
@@ -123,6 +138,10 @@ public class CodeListManager {
 
     public boolean writeCodeListsToFile() {
         return codeListService.persistToAll();
+    }
+    
+    public boolean writeTheseCodeListsToFile(List<CodeList> codelists) {
+        return codeListService.persistToAll(codelists);
     }
 
     public Object getCodeListAsJson(String id) {
@@ -269,17 +288,14 @@ public class CodeListManager {
                     for (CodeListEntryUpdate entry : codeList.getEntries()) {
                         switch(entry.getType()) {
                         case ADD:
+                        case UPDATE:
+                            cl.removeEntry( entry.getEntry().getId() );
                             cl.addEntry( entry.getEntry() );
-                            log.info( "Added codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
+                            log.info( "Added/Updated codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
                             break;
                         case REMOVE:
                             cl.removeEntry( entry.getEntry().getId() );
                             log.info( "Removed codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
-                            break;
-                        case UPDATE:
-                            cl.removeEntry( entry.getEntry().getId() );
-                            cl.addEntry( entry.getEntry() );
-                            log.info( "Updated codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
                             break;
                         default:
                             break;
@@ -331,7 +347,8 @@ public class CodeListManager {
             newVersion = fileName.substring( 0, fileName.indexOf( '_' ) );
             
             // rename update file so that it's not executed again
-            Files.move( Paths.get( file ), Paths.get( file + ".bak" ), StandardCopyOption.REPLACE_EXISTING );
+            // not necessary, since we check version
+            // Files.move( Paths.get( file ), Paths.get( file + ".bak" ), StandardCopyOption.REPLACE_EXISTING );
         }
         
         if (newVersion != null) {

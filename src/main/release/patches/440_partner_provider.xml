@@ -1,0 +1,2180 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>110</id>
+    <type>ADD</type>
+    <codelist>
+      <id>110</id>
+      <name>Partner</name>
+      <defaultEntry></defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bund</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Federation</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bund" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Baden-Wurttemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bayern</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bavaria</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>4</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Berlin</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Berlin</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "be" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>5</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Brandenburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Brandenburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bb" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>6</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bremen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bremen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hb" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>7</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Hamburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Hamburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hh" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>8</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Hessen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Hesse</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "he" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>9</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Mecklenburg-Vorpommern</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Mecklenburg-Vorpommern    </string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>10</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersachsen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Lower Saxony</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>11</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nordrhein-Westfalen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>North Rhine-Westphalia</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "nw" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>12</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Rheinland-Pfalz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Rheinland-Pfalz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "rp" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>13</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Saarland</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Saarland</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sl" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>14</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Sachsen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Saxony</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sn" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>15</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Sachsen-Anhalt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Saxony-Anhalt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "st" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>16</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Schleswig-Holstein</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Schleswig-Holstein</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sh" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>17</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Thüringen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Thuringia</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "th" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>111</id>
+    <type>ADD</type>
+    <codelist>
+      <id>111</id>
+      <name>Anbieter</name>
+      <defaultEntry></defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesministerium für Umwelt, Naturschutz und Reaktorsicherheit</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesministerium für Umwelt, Naturschutz und Reaktorsicherheit</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bmu", "url": "http://www.bmu.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Umweltbundesamt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Umweltbundesamt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_uba", "url": "http://www.umweltbundesamt.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesamt für Naturschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesamt für Naturschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bfn", "url": "http://www.bfn.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>4</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesamt für Strahlenschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesamt für Strahlenschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bfs", "url": "http://www.bfs.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>5</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesministerium der Finanzen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesministerium der Finanzen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bmf", "url": "http://www.bundesfinanzministerium.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>6</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesministerium für Bildung und Forschung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesministerium für Bildung und Forschung</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bmbf", "url": "http://www.bmbf.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>7</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesministerium für Ernährung, Landwirtschaft und Verbraucherschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesministerium für Ernährung, Landwirtschaft und Verbraucherschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bmelv", "url": "http://www.bmelv.de/cln_044/DE/00-Home/__Homepage__node.html__nnn=true" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>8</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bmz", "url": "http://www.bmz.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>9</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Auswärtiges Amt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Auswärtiges Amt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_aa", "url": "http://www.auswaertiges-amt.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>10</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesamt für Seeschifffahrt und Hydrographie</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesamt für Seeschifffahrt und Hydrographie</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bsh", "url": "http://www.bsh.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>11</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesamt für Verbraucherschutz und Lebensmittelsicherheit</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesamt für Verbraucherschutz und Lebensmittelsicherheit</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bvl", "url": "http://www.bvl.bund.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>12</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesanstalt für Geowissenschaften und Rohstoffe</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesanstalt für Geowissenschaften und Rohstoffe</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bgr", "url": "http://www.bgr.bund.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>13</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesanstalt für Gewässerkunde</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesanstalt für Gewässerkunde</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bfg", "url": "http://www.bafg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>14</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesanstalt für Wasserbau - Dienststelle Hamburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesanstalt für Wasserbau - Dienststelle Hamburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_nokis", "url": "http://www.hamburg.baw.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>15</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesinstitut für Risikobewertung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesinstitut für Risikobewertung</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bfr", "url": "http://www.bfr.bund.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>16</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundeskriminalamt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundeskriminalamt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bka", "url": "http://www.bka.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>17</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Robert-Koch-Institut</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Robert-Koch-Institut</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_rki", "url": "http://www.rki.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>18</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Statistisches Bundesamt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Statistisches Bundesamt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_stba", "url": "http://www.destatis.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>19</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundesanstalt für Landwirtschaft und Ernährung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundesanstalt für Landwirtschaft und Ernährung</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_ble", "url": "http://www.ble.de" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>20</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bundeszentrale für politische Bildung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bundeszentrale für politische Bildung</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bpb", "url": "http://www.bpb.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>21</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Deutsche Gesellschaft für Technische Zusammenarbeit (GTZ) GmbH</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Deutsche Gesellschaft für Technische Zusammenarbeit (GTZ) GmbH</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_gtz", "url": "http://www.gtz.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>22</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Deutscher Wetterdienst</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Deutscher Wetterdienst</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_dwd", "url": "http://www.dwd.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>23</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Deutsches Zentrum für Luft- und Raumfahrt DLR e.V.</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Deutsches Zentrum für Luft- und Raumfahrt DLR e.V.</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_dlr", "url": "http://www.dlr.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>24</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Koordinierungsstelle PortalU</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Koordinierungsstelle PortalU</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_kug", "url": "http://www.kst.portalu.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>25</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Länderarbeitsgemeinschaft Boden LABO</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Länderarbeitsgemeinschaft Boden LABO</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_labo", "url": "http://www.labo-deutschland.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>26</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Länderarbeitsgemeinschaft Wasser</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Länderarbeitsgemeinschaft Wasser</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_lawa", "url": "http://www.lawa.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>27</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Leitstelle des Bundes für Abwassertechnik, Boden- und Grundwasserschutz, Kampfmittelräumung und das Liegenschaftsinformationssystem Außenanlagen LISA</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Leitstelle des Bundes für Abwassertechnik, Boden- und Grundwasserschutz, Kampfmittelräumung und das Liegenschaftsinformationssystem Außenanlagen LISA</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_laofdh", "url": "http://www.ofd-hannover.de/la/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>28</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Presse- und Informationsamt der Bundesregierung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Presse- und Informationsamt der Bundesregierung</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_bpa", "url": "http://www.bundesregierung.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>29</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>RAL/Umweltbundesamt Umweltzeichen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>RAL/Umweltbundesamt Umweltzeichen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_blauerengel", "url": "http://www.blauer-engel.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>30</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Rat von Sachverständigen für Umweltfragen (SRU)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Rat von Sachverständigen für Umweltfragen (SRU)</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_sru", "url": "http://www.umweltrat.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>31</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Strahlenschutzkommission</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Strahlenschutzkommission</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_ssk", "url": "http://www.ssk.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>32</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Umweltministerkonferenz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Umweltministerkonferenz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_umk", "url": "http://www.umweltministerkonferenz.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>33</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Wissenschaftlicher Beirat der Bundesregierung Globale Umweltveränderungen - WBGU</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Wissenschaftlicher Beirat der Bundesregierung Globale Umweltveränderungen - WBGU</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_wbgu", "url": "http://www.wbgu.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>34</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Agenda-Transfer. Agentur für Nachhaltigkeit GmbH</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Agenda-Transfer. Agentur für Nachhaltigkeit GmbH</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_agenda", "url": "http://www.agenda-transfer.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>35</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Umweltgutachterausschuss (UGA)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Umweltgutachterausschuss (UGA)</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_uga", "url": "http://www.uga.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>36</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>co2online gGmbH Klimaschutzkampagne</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>co2online gGmbH Klimaschutzkampagne</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_co2", "url": "http://www.co2online.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>37</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Weltdekade ?Bildung für nachhaltige Entwicklung?</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Weltdekade ?Bildung für nachhaltige Entwicklung?</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bu_dekade", "url": "http://www.dekade.org/index.htm" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>38</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Umweltministerium Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Umweltministerium Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_um", "url": "http://www.um.baden-wuerttemberg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>39</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Innenministerium Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Innenministerium Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_mi", "url": "http://www.innenministerium.baden-wuerttemberg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>40</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Ministerium für Ernährung und Ländlichen Raum Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Ministerium für Ernährung und Ländlichen Raum Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_mlr", "url": "http://www.mlr.baden-wuerttemberg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>41</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Wirtschaftsministerium Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Wirtschaftsministerium Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_mw", "url": "http://www.wm.baden-wuerttemberg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>42</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesanstalt für Umwelt, Messungen und Naturschutz Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesanstalt für Umwelt, Messungen und Naturschutz Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_lu", "url": "http://www.lubw.baden-wuerttemberg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>43</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Regierungspräsidium Freiburg - Abt. 9 Landesamt für Geologie, Rohstoffe und Boden</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Regierungspräsidium Freiburg - Abt. 9 Landesamt für Geologie, Rohstoffe und Boden</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_lgrb", "url": "http://www.lgrb.uni-freiburg.de/lgrb/home/index_html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>44</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesvermessungsamt Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesvermessungsamt Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_lvm", "url": "http://www.lv-bw.de/lvshop2/index.htm" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>45</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Informationsdienst der Landwirtschaftsverwaltung Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Informationsdienst der Landwirtschaftsverwaltung Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_lel", "url": "http://www.landwirtschaft-mlr.baden-wuerttemberg.de/servlet/PB/-s/153h2f7ajcsu0yhrl7ib9karcotj9kv/menu/1034707_l1/index.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>46</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Gewerbeaufsicht Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Gewerbeaufsicht Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_gaa", "url": "http://www.gewerbeaufsicht.baden-wuerttemberg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>47</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Statistisches Landesamt Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Statistisches Landesamt Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_stla", "url": "http://www.statistik-bw.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>48</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Forschungszentrum Karlsruhe GmbH</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Forschungszentrum Karlsruhe GmbH</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_fzk", "url": "http://www.fzk.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>49</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bayerisches Staatsministerium für Umwelt, Gesundheit und Verbraucherschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bayerisches Staatsministerium für Umwelt, Gesundheit und Verbraucherschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by_sugv", "url": "http://www.stmugv.bayern.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>50</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bayerisches Geologisches Landesamt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bayerisches Geologisches Landesamt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by_gla", "url": "http://www.geologie.bayern.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>51</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bayerisches Landesamt für Statistik und Datenverarbeitung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bayerisches Landesamt für Statistik und Datenverarbeitung</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by_lfstad", "url": "http://www.statistik.bayern.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>52</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bayerisches Landesamt für Umweltschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bayerisches Landesamt für Umweltschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by_lfu", "url": "http://www.bayern.de/lfu/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>53</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bayerisches Landesamt für Wasserwirtschaft</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bayerisches Landesamt für Wasserwirtschaft</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by_lfw", "url": "http://www.bayern.de/lfw" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>54</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Biosphärenreservat Rhön</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Biosphärenreservat Rhön</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by_brrhoen", "url": "http://www.biosphaerenreservat-rhoen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>55</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nationalpark Bayerischer Wald</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Nationalpark Bayerischer Wald</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by_npbayw", "url": "http://www.nationalpark-bayerischer-wald.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>56</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nationalpark Berchtesgaden</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Nationalpark Berchtesgaden</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "by_npbg", "url": "http://www.nationalpark-berchtesgaden.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>57</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Senatsverwaltung für Stadtentwicklung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Senatsverwaltung für Stadtentwicklung</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "be_senst", "url": "http://www.stadtentwicklung.berlin.de/umwelt/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>58</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Stiftung Naturschutz Berlin</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Stiftung Naturschutz Berlin</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "be_snb", "url": "http://www.stiftung-naturschutz.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>59</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Amt für Umwelt, Natur und Verkehr Charlottenburg-Wilmersdorf</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Amt für Umwelt, Natur und Verkehr Charlottenburg-Wilmersdorf</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "be_uacw", "url": "http://www.charlottenburg-wilmersdorf.de/umweltamt" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>60</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Ministerium für Ländliche Entwicklung, Umwelt und Verbraucherschutz des Landes Brandenburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Ministerium für Ländliche Entwicklung, Umwelt und Verbraucherschutz des Landes Brandenburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bb_mluv", "url": "http://www.mluv.brandenburg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>61</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Senator für Bau und Umwelt Bremen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Senator für Bau und Umwelt Bremen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hb_sbu", "url": "http://www.umwelt.bremen.de/buisy/scripts/buisy.asp" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>62</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Behörde für Stadtentwicklung und Umwelt Hamburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Behörde für Stadtentwicklung und Umwelt Hamburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hh_su", "url": "http://fhh.hamburg.de/stadt/Aktuell/behoerden/stadtentwicklung-umwelt/start.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>63</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Behörde für Wirtschaft und Arbeit Hamburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Behörde für Wirtschaft und Arbeit Hamburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hh_wa", "url": "http://fhh.hamburg.de/stadt/Aktuell/behoerden/wirtschaft-arbeit/start.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>64</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Behörde für Soziales, Familie, Gesundheit und Verbraucherschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Behörde für Soziales, Familie, Gesundheit und Verbraucherschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hh_bsg", "url": "http://fhh.hamburg.de/stadt/Aktuell/behoerden/bsg/start.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>65</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesbetrieb Geoinformation und Vermessung Hamburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesbetrieb Geoinformation und Vermessung Hamburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hh_lgv", "url": "http://fhh.hamburg.de/stadt/Aktuell/weitere-einrichtungen/landesbetrieb-geoinformation-und-vermessung" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>66</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nationalpark Hamburgisches Wattenmeer</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Nationalpark Hamburgisches Wattenmeer</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hh_npwatt", "url": "http://fhh1.hamburg.de/Behoerden/Umweltbehoerde/nphw/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>67</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Arbeitsgemeinschaft für die Reinhaltung der Elbe</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Arbeitsgemeinschaft für die Reinhaltung der Elbe</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hh_argeelbe", "url": "http://www.arge-elbe.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>68</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Statistisches Amt für Hamburg und Schleswig-Holstein</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Statistisches Amt für Hamburg und Schleswig-Holstein</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "hh_sth", "url": "http://www.statistik-nord.de/index.php?id=32" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>69</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Hessisches Ministerium für Umwelt, ländlichen Raum und Verbraucherschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Hessisches Ministerium für Umwelt, ländlichen Raum und Verbraucherschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "he_hmulv", "url": "http://www.hmulv.hessen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>70</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Hessisches Landesamt für Umwelt und Geologie</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Hessisches Landesamt für Umwelt und Geologie</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "he_hlug", "url": "http://www.hlug.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>71</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Umweltatlas Hessen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Umweltatlas Hessen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "he_umwelt", "url": "http://atlas.umwelt.hessen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>72</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Umweltministerium Mecklenburg-Vorpommern</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Umweltministerium Mecklenburg-Vorpommern</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_um", "url": "http://www.um.mv-regierung.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>73</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Sozialministerium Mecklenburg-Vorpommern</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Sozialministerium Mecklenburg-Vorpommern</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_sm", "url": "http://www.sozial-mv.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>74</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesamt für Umwelt, Naturschutz und Geologie Mecklenburg-Vorpommern (LUNG)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesamt für Umwelt, Naturschutz und Geologie Mecklenburg-Vorpommern (LUNG)</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_lung", "url": "http://www.lung.mv-regierung.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>75</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesforst Mecklenburg-Vorpommern AöR</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesforst Mecklenburg-Vorpommern AöR</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_lfmv", "url": "http://www.wald-mv.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>76</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Amt für das Biosphärenreservat Schaalsee</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Amt für das Biosphärenreservat Schaalsee</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_schaalsee", "url": "http://www.schaalsee.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>77</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nationalparkamt Müritz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Nationalparkamt Müritz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_npmueritz", "url": "http://www.nationalpark-mueritz.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>78</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nationalparkamt Vorpommersche Boddenlandschaft</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Nationalparkamt Vorpommersche Boddenlandschaft</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_nvblmv", "url": "http://www.nationalpark-vorpommersche-bodde/nlandschaft.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>79</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Fachhochschule Stralsund</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Fachhochschule Stralsund</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_fhstr", "url": "http://www.fh-stralsund.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>80</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Hochschule Neubrandenburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Hochschule Neubrandenburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_fhnb", "url": "http://www.fh-nb.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>81</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Hochschule Wismar</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Hochschule Wismar</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_hswi", "url": "http://www.hs-wismar.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>82</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Institut für Ostseeforschung Warnemünde</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Institut für Ostseeforschung Warnemünde</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_iow", "url": "http://www.io-warnemuende/.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>83</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Universität Greifswald</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Universität Greifswald</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_unigr", "url": "http://www.uni-greifswald.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>84</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Universität Rostock</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Universität Rostock</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "mv_uniro", "url": "http://www.uni-rostock.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>85</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsisches Umweltministerium</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsisches Umweltministerium</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_mu", "url": "http://www.mu.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>86</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsisches Ministerium für Wirtschaft, Arbeit und Verkehr</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsisches Ministerium für Wirtschaft, Arbeit und Verkehr</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_mw", "url": "http://www.mw.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>87</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsisches Ministerium für Soziales, Frauen, Familie und Gesundheit</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsisches Ministerium für Soziales, Frauen, Familie und Gesundheit</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_ms", "url": "http://www.ms.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>88</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsisches Ministerium für Inneres und Sport</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsisches Ministerium für Inneres und Sport</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_mi", "url": "http://www.mi.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>89</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsisches Ministerium für den ländlichen Raum, Ernährung, Landwirtschaft und Verbraucherschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsisches Ministerium für den ländlichen Raum, Ernährung, Landwirtschaft und Verbraucherschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_ml", "url": "http://www.ml.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>90</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsischer Landesbetrieb für Wasserwirtschaft, Küsten- und Naturschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsischer Landesbetrieb für Wasserwirtschaft, Küsten- und Naturschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_nlwkn", "url": "http://www.nlwkn.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>91</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesamt für Bergbau, Energie und Geologie</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesamt für Bergbau, Energie und Geologie</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_lbeg", "url": "http://www.lbeg.niedersachsen.de/master/C17456312_L20_D0.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>92</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsisches Landesamt für Statistik</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsisches Landesamt für Statistik</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_nls", "url": "http://www.nls.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>93</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsisches Landesamt für Verbraucherschutz und Lebensmittelsicherheit</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsisches Landesamt für Verbraucherschutz und Lebensmittelsicherheit</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_laves", "url": "http://www.laves.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>94</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsisches Landesgesundheitsamt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsisches Landesgesundheitsamt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_lga", "url": "http://www.nlga.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>95</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsische Landesbehörde für Straßenbau und Verkehr</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsische Landesbehörde für Straßenbau und Verkehr</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_sbv", "url": "http://www.strassenbau.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>96</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Alfred Toepfer Akademie für Naturschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Alfred Toepfer Akademie für Naturschutz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_nna", "url": "http://www.nna.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>97</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Behörden für Geoinformation, Landentwicklung und Liegenschaften Niedersachsen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Behörden für Geoinformation, Landentwicklung und Liegenschaften Niedersachsen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_gll", "url": "http://www.gll.niedersachsen.de" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>98</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Institut für Geowissenschaftliche Gemeinschaftsaufgaben </string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Institut für Geowissenschaftliche Gemeinschaftsaufgaben </string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_gga", "url": "http://www.gga-hannover.de" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>99</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesvermessung und Geobasisinformation Niedersachsen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesvermessung und Geobasisinformation Niedersachsen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_lgn", "url": "http://www.lgn.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>100</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landwirtschaftskammer Hannover</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landwirtschaftskammer Hannover</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_lwkh", "url": "http://www.lwk-hannover.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>101</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nationalpark Wattenmeer</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Nationalpark Wattenmeer</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_npwatt", "url": "http://www.nationalpark-wattenmeer.niedersachsen.de/master/C5912120_L20_D0.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>102</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nationalparkverwaltung Harz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Nationalparkverwaltung Harz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_npharz", "url": "http://www.nationalpark-harz.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>103</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Niedersächsische Gewerbeaufsicht</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Niedersächsische Gewerbeaufsicht</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_gaa", "url": "http://www.gewerbeaufsicht.niedersachsen.de/master/C1717445_N1717446_L20_D0_I1717444.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>104</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Biosphärenreservat Elbtalaue</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Biosphärenreservat Elbtalaue</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_elbtal", "url": "http://www.elbtalaue.niedersachsen.de/master/C6933729_L20_D0.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>105</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Ministerium für Umwelt und Naturschutz, Landwirtschaft und Verbraucherschutz des Landes Nordrhein-Westfalen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Ministerium für Umwelt und Naturschutz, Landwirtschaft und Verbraucherschutz des Landes Nordrhein-Westfalen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "nw_munlv", "url": "http://www.munlv.nrw.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>106</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesumweltamt Nordrhein-Westfalen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesumweltamt Nordrhein-Westfalen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "nw_lua", "url": "http://www.lua.nrw.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>107</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesanstalt für Ökologie, Bodenordnung und Forsten des Landes Nordrhein-Westfalen (LÖBF)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesanstalt für Ökologie, Bodenordnung und Forsten des Landes Nordrhein-Westfalen (LÖBF)</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "nw_loebf", "url": "http://www.loebf.nrw.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>108</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Geologischer Dienst Nordrhein-Westfalen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Geologischer Dienst Nordrhein-Westfalen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "nw_gd", "url": "http://www.gd.nrw.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>109</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Staatliches Umweltamt Hagen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Staatliches Umweltamt Hagen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "nw_stuaha", "url": "http://www.stua-ha.nrw.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>110</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Staatliches Umweltamt Lippstadt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Staatliches Umweltamt Lippstadt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "nw_stualp", "url": "http://www.stua-lp.nrw.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>111</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesamt für Datenverarbeitung und Statistik Nordrhein-Westfalen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesamt für Datenverarbeitung und Statistik Nordrhein-Westfalen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "nw_ldvst", "url": "http://www.ugrdl.de/index.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>112</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Ministerium für Umwelt, Forsten und Verbraucherschutz Rheinland-Pfalz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Ministerium für Umwelt, Forsten und Verbraucherschutz Rheinland-Pfalz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "rp_mufv", "url": "http://www.mufv.rlp.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>115</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesforsten Rheinland-Pfalz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesforsten Rheinland-Pfalz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "rp_forst", "url": "http://www.wald-rlp.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>116</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landeszentrale für Umweltaufklärung Rheinland-Pfalz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landeszentrale für Umweltaufklärung Rheinland-Pfalz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "rp_lzu", "url": "http://www.umdenken.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>117</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Ministerium für Umwelt Saarland</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Ministerium für Umwelt Saarland</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sl_mfu", "url": "http://www.umwelt.saarland.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>118</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesamt für Umwelt- und Arbeitsschutz Saarland</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesamt für Umwelt- und Arbeitsschutz Saarland</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sl_lua", "url": "http://www.lua.saarland.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>119</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Sächsisches Staatsministerium für Umwelt und Landwirtschaft</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Sächsisches Staatsministerium für Umwelt und Landwirtschaft</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sn_smul", "url": "http://www.umwelt.sachsen.de/de/wu/umwelt/index.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>120</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Sächsisches Landesamt für Umwelt und Geologie</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Sächsisches Landesamt für Umwelt und Geologie</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sn_lfug", "url": "http://www.umwelt.sachsen.de/lfug/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>121</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Sächsische Landesstiftung Natur und Umwelt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Sächsische Landesstiftung Natur und Umwelt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sn_lanu", "url": "http://www.lanu.de/templates/intro.php" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>122</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Ministerium für Landwirtschaft und Umwelt Sachsen-Anhalt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Ministerium für Landwirtschaft und Umwelt Sachsen-Anhalt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "st_mlu", "url": "http://www.sachsen-anhalt.de/rcs/LSA/pub/Ch1/fld8311011390180834/mainfldmtgpollxof/pgnotsi64lb6/index.jsp" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>123</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesamt für Umweltschutz Sachsen-Anhalt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesamt für Umweltschutz Sachsen-Anhalt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "st_lau", "url": "http://www.mu.sachsen-anhalt.de/lau/de/fault.htm" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>124</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Luftüberwachungssystem Sachsen-Anhalt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Luftüberwachungssystem Sachsen-Anhalt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "st_lue", "url": "http://www.mu.sachsen-anhalt.de/lau/luesa/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>125</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Otto-von-Guericke Universität Magdeburg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Otto-von-Guericke Universität Magdeburg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "st_unimd", "url": "http://www.uni-magde/burg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>126</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Ministerium für Landwirtschaft, Umwelt und ländliche Räume des Landes Schleswig-Holstein</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Ministerium für Landwirtschaft, Umwelt und ländliche Räume des Landes Schleswig-Holstein</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sh_munl", "url": "http://www.umwelt.schleswig-holstein.de/servlet/is/154/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>127</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesamt für Natur und Umwelt Schleswig-Holstein</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesamt für Natur und Umwelt Schleswig-Holstein</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sh_lanu", "url": "http://www.lanu.landsh.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>128</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Lufthygienische Überwachung Schleswig-Holstein</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Lufthygienische Überwachung Schleswig-Holstein</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sh_luesh", "url": "http://www.umwelt.schleswig-holstein.de/?196" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>129</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Kernreaktorfernüberwachung Schleswig-Holstein</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Kernreaktorfernüberwachung Schleswig-Holstein</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sh_kfue", "url": "http://www.kfue-sh.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>130</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Akademie für Natur und Umwelt des Landes Schleswig-Holstein</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Akademie für Natur und Umwelt des Landes Schleswig-Holstein</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sh_umweltaka", "url": "http://www.umweltakademie-sh.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>131</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nationalpark Schleswig-Holsteinisches Wattenmeer</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Nationalpark Schleswig-Holsteinisches Wattenmeer</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "sh_npa", "url": "http://www.wattenmeer-nationalpark.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>132</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Thüringer Ministerium für Landwirtschaft, Naturschutz und Umwelt</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Thüringer Ministerium für Landwirtschaft, Naturschutz und Umwelt</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "th_tmlnu", "url": "http://www.thueringen.de/de/tmlnu/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>133</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Thüringer Landesanstalt für Umwelt und Geologie</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Thüringer Landesanstalt für Umwelt und Geologie</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "th_tlug", "url": "http://www.tlug-jena.de/index.html" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>134</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>geoMDK Niedersachsen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>geoMDK Niedersachsen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "ni_geomdk", "url": "http://www.geomdk.niedersachsen.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>137</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesamt für Umwelt, Wasserwirtschaft und Gewerbeaufsicht Rheinland-Pfalz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesamt für Umwelt, Wasserwirtschaft und Gewerbeaufsicht Rheinland-Pfalz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "rp_luwg", "url": "http://www.luwg.rlp.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>138</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Landesuntersuchungsamt Rheinland-Pfalz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Landesuntersuchungsamt Rheinland-Pfalz</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "rp_lua", "url": "http://www.lua.rlp.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>139</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>SAA Sonderabfallagentur</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>SAA Sonderabfallagentur</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_saa", "url": "http://www.saa.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>140</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Regierungspräsidien Baden-Württemberg</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Regierungspräsidien Baden-Württemberg</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_rp", "url": "http://www.rp.baden-wuerttemberg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>141</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Regierungspräsidium Stuttgart</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Regierungspräsidium Stuttgart</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "bw_rps", "url": "http://www.landentwicklung-mlr.baden-wuerttemberg.de/" }</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
