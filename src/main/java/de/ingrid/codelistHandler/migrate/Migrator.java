@@ -37,9 +37,13 @@ public class Migrator {
                 List<CodeList> oldCodelists = (List<CodeList>) xStream.fromXML( codelistReader );
                 codeListService.persistToAll( oldCodelists );
                 codelistReader.close();
-                
-                oldCodelistsFile.delete();
-                log.info( "Successfully migrated old codelists" );
+
+                log.info( "Successfully migrated old codelists");
+
+                boolean deleteSuccess = oldCodelistsFile.delete();
+                if (!deleteSuccess) {
+                    log.warn("Couldn't delete file: " + oldCodelistsFile.getName());
+                }
                 
             } catch (FileNotFoundException e) {
                 log.error( "Could not migrate old codelists", e );
