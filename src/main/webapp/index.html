@@ -528,8 +528,12 @@
             function prepareCodelistEntryLocalisation(entry) {
                 var data = [];
                 dojo.forEach(entry.localisations, function(local, index) {
-                    //var b = new dijit.form.Button({ label: "delete"});
-                    var locEntry = {id: index, lang: local[0], value: local[1], btnDelete: createButton(index)};
+                    var language = local[0];
+                    var languageItem = languageStore._getItemsArray().filter(function(item) { return item.value == language; })[0];
+                    if (languageItem) {
+                        language = languageItem.name;
+                    }
+                    var locEntry = {id: index, lang: language, value: local[1], btnDelete: createButton(index)};
                     data.push(locEntry);
                 });
                 return data;
@@ -585,7 +589,12 @@
                 data.localisations = [];
                 entryLocalisationGrid.store.fetch({
                     onItem: function(item) {
-                        data.localisations.push([item.lang+"", item.value+""]);
+                        var lang = item.lang[0] + "";
+                        var languageItem = languageStore._getItemsArray().filter(function(item) { return item.name == lang; })[0];
+                        if (languageItem) {
+                            lang = languageItem.value + "";
+                        }
+                        data.localisations.push([lang, item.value+""]);
                     }
                 });
             }
@@ -636,19 +645,7 @@
                     nextEntryButton.set("disabled", "");
                 }
             }
-            
 
-            /* FORMATTERS */
-            function showLanguage(value, rowIndex, widget) {
-                var res = "?";
-                widget.getWidgetProps().store.fetchItemByIdentity({
-                    identity: value, 
-                    onItem: function(item) {res = item ? item.name : "?";},
-                    onError: function() { res = "???";}
-                });
-                return res;
-            }
-            
         </script>
     </head>
     <body class="claro">
@@ -723,7 +720,7 @@
 	                    <table id="entryLocalisationGrid" jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true, singleClickEdit:true, toggleSplitterOpen:true, escapeHTMLInData:false ">
 	                        <thead>
 	                            <tr>
-	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.ComboBox" widgetProps="{ store:languageStore, searchAttr:'value' }">Key</th>
+	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.ComboBox" widgetProps="{ store:languageStore, searchAttr:'name' }">Key</th>
 	                                <th field="value" width="auto" editable="true">Value</th>
 	                                <th field="btnDelete">&nbsp;</th>
 	                            </tr>
