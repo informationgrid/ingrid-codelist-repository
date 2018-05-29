@@ -2,7 +2,7 @@
   <de.ingrid.codelistHandler.model.CodeListUpdate>
     <id>9016</id>
     <type>ADD</type>
-    <de.ingrid.codelists.model.CodeList>
+    <codelist>
       <id>9016</id>
       <name>UVP-Kategorien Bayern</name>
       <defaultEntry>-1</defaultEntry>
@@ -2450,6 +2450,6 @@
           <data>{"cat":"UVPG-17", "type":"X"}</data>
         </de.ingrid.codelists.model.CodeListEntry>
       </entries>
-    </de.ingrid.codelists.model.CodeList>
+    </codelist>
   </de.ingrid.codelistHandler.model.CodeListUpdate>
 </list>
