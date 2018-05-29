@@ -29,6 +29,12 @@
     </properties>
     <body>
 
+    <release version="4.3.1" date="2018-05-29" description="Release 4.3.1">
+      <action type="add" dev="wemove" issue="1097">
+        Add UVP Nummern of Bayern.
+      </action>
+    </release>
+
     <release version="4.3.0" date="2018-03-22" description="Release 4.3.0">
       <action type="update" dev="wemove" issue="859">
         Update name of codelist 6005 (conformity). Append `(INSPIRE)' to the name to differentiate it from free conformity entries list (6006).
