@@ -29,6 +29,12 @@
     </properties>
     <body>
 
+    <release version="4.3.2" date="2018-06-05" description="Release 4.3.2">
+      <action type="fix" dev="wemove" issue="1088">
+        Fix encoding of AdV-Produktgruppe.
+      </action>
+    </release>
+
     <release version="4.3.1" date="2018-05-29" description="Release 4.3.1">
       <action type="add" dev="wemove" issue="1097">
         Add UVP Nummern of Bayern.
