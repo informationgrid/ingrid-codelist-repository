@@ -22,29 +22,10 @@
  */
 package de.ingrid.codelistHandler;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.ResourcePatternResolver;
-import org.springframework.stereotype.Component;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
-
 import de.ingrid.codelistHandler.migrate.Migrator;
 import de.ingrid.codelistHandler.model.CodeListEntryUpdate;
 import de.ingrid.codelistHandler.model.CodeListUpdate;
@@ -54,6 +35,20 @@ import de.ingrid.codelists.model.CodeListEntry;
 import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 import de.ingrid.codelists.util.CodeListUtils;
 import de.ingrid.codelists.util.VersionUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.stereotype.Component;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Component
 public class CodeListManager {
@@ -106,7 +101,7 @@ public class CodeListManager {
     public boolean updateCodeList(String id, String data) {
         
         CodeList codelist = codeListService.setCodelist(id, data);
-        List<CodeList> list = new ArrayList<CodeList>();
+        List<CodeList> list = new ArrayList<>();
         list.add( codelist );
         return writeTheseCodeListsToFile( list );
     }
@@ -149,7 +144,7 @@ public class CodeListManager {
     }    
     
     public Object getCodeListsAsJson(String sortField, String lastModified, String sortMethod) {
-        List<CodeList> cls = null;
+        List<CodeList> cls;
         
         // only get those codelists that have changed after lastModified
         if (lastModified != null) {
@@ -178,7 +173,7 @@ public class CodeListManager {
     public Object getFilteredCodeListsAsJson(String name) {
         String search = name.substring(0, name.length()-1).toLowerCase();
         
-        List<CodeList> filteredCLs = new ArrayList<CodeList>();
+        List<CodeList> filteredCLs = new ArrayList<>();
         
         for (CodeList cl : getCodeLists()) {
             if (cl.getName() != null && cl.getName().toLowerCase().startsWith(search))
@@ -218,7 +213,7 @@ public class CodeListManager {
 
     
     public Object findEntry(String name) {
-        List<String[]> result = new ArrayList<String[]>();
+        List<String[]> result = new ArrayList<>();
         for (CodeList cl : getCodeLists()) {
             for (CodeListEntry entry : cl.getEntries()) {
                 for (String lang : entry.getLocalisations().keySet()) {
@@ -264,7 +259,7 @@ public class CodeListManager {
     }
     
     public boolean updateCodelistsFromUpdateFile( String filePath ) {
-        XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<CodeListUpdate>();
+        XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<>();
         xml.setPathToXml( filePath );
         List<CodeListUpdate> updateCodelists = xml.read();
         
@@ -315,7 +310,7 @@ public class CodeListManager {
     }
 
     public List<String> checkFilesForUpdate(String version) {
-        List<String> resList = new ArrayList<String>();
+        List<String> resList = new ArrayList<>();
         
         ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
         try {
@@ -330,7 +325,7 @@ public class CodeListManager {
                 }
             }
         } catch (FileNotFoundException e) {
-            log.warn( "No changes dir found in classpath, where codelist updates are searched: " + PATH_CODELIST_UPDATES );
+            log.warn( "No patches-dir found in classpath, where codelist updates are searched: " + PATH_CODELIST_UPDATES );
         } catch (IOException e) {
             e.printStackTrace();
         }
