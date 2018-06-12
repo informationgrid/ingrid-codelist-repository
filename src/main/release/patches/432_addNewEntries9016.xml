@@ -3,7 +3,7 @@
     <id>9016</id>
     <type>ENTRYUPDATE</type>
     <entries>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>282</id>
@@ -15,8 +15,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>283</id>
@@ -28,8 +28,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>284</id>
@@ -41,8 +41,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>285</id>
@@ -54,8 +54,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>286</id>
@@ -67,8 +67,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>287</id>
@@ -80,8 +80,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>288</id>
@@ -93,8 +93,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>289</id>
@@ -106,8 +106,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>290</id>
@@ -119,8 +119,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>291</id>
@@ -132,8 +132,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>292</id>
@@ -145,8 +145,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>293</id>
@@ -158,8 +158,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>294</id>
@@ -171,8 +171,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>295</id>
@@ -184,8 +184,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>296</id>
@@ -197,8 +197,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>297</id>
@@ -210,8 +210,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>298</id>
@@ -223,8 +223,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>299</id>
@@ -236,8 +236,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>300</id>
@@ -249,8 +249,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>301</id>
@@ -262,8 +262,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>302</id>
@@ -275,8 +275,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>303</id>
@@ -288,8 +288,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>304</id>
@@ -301,8 +301,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>305</id>
@@ -314,8 +314,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>306</id>
@@ -327,8 +327,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>307</id>
@@ -340,8 +340,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>308</id>
@@ -353,8 +353,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>309</id>
@@ -366,8 +366,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>310</id>
@@ -379,8 +379,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>311</id>
@@ -392,8 +392,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>312</id>
@@ -405,8 +405,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>313</id>
@@ -418,8 +418,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>314</id>
@@ -431,8 +431,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"A"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>315</id>
@@ -444,8 +444,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"S"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>316</id>
@@ -457,8 +457,8 @@
           </localisations>
           <data>{"cat":"UVPG-19", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
-      <de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>ADD</type>
         <entry>
           <id>347</id>
@@ -470,7 +470,7 @@
           </localisations>
           <data>{"cat":"UVPG-17", "type":"X"}</data>
         </entry>
-      </de.ingrid.codelists.model.CodeListEntryUpdate>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
     </entries>
   </de.ingrid.codelistHandler.model.CodeListUpdate>
 </list>
