@@ -29,7 +29,7 @@ public class Migrator {
         // since v4.4.0 we separated the codelists so that we need to read the codelist.xml file and store it
         // in separate files under a new directory
         File oldCodelistsFile = new File("data/codelists.xml");
-        if (oldCodelistsFile.exists()) {
+        if (oldCodelistsFile.exists() && oldCodelistsFile.isFile()) {
             FileReader codelistReader;
             try {
                 codelistReader = new FileReader(oldCodelistsFile);

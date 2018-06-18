@@ -41,6 +41,8 @@
           </connectors>
           <scanIntervalSeconds>2</scanIntervalSeconds>
           <reload>manual</reload>
+          <stopKey/>
+          <stopPort/>
         </configuration>
       </plugin>
       <plugin>

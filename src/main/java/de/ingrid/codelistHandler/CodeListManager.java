@@ -148,7 +148,7 @@ public class CodeListManager {
         
         // only get those codelists that have changed after lastModified
         if (lastModified != null) {
-            cls = new ArrayList<CodeList>();
+            cls = new ArrayList<>();
             for (CodeList codeList : getCodeLists()) {
                 if (codeList.getLastModified() > Long.valueOf(lastModified)) {
                     cls.add(codeList);
@@ -216,8 +216,8 @@ public class CodeListManager {
         List<String[]> result = new ArrayList<>();
         for (CodeList cl : getCodeLists()) {
             for (CodeListEntry entry : cl.getEntries()) {
-                for (String lang : entry.getLocalisations().keySet()) {
-                    if (entry.getLocalisations().get(lang).toLowerCase().contains(name)) {
+                for (String lang : entry.getFields().keySet()) {
+                    if (entry.getFields().get(lang).toLowerCase().contains(name)) {
                         String[] value = {cl.getId(), entry.getId(), lang};
                         result.add(value);
                     }

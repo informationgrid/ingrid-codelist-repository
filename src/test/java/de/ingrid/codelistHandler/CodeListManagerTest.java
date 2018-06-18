@@ -22,11 +22,8 @@
  */
 package de.ingrid.codelistHandler;
 
-import static org.junit.Assert.*;
-
-import java.io.File;
-import java.util.List;
-
+import de.ingrid.codelists.model.CodeList;
+import de.ingrid.codelists.model.CodeListEntry;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,8 +31,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import de.ingrid.codelists.model.CodeList;
-import de.ingrid.codelists.model.CodeListEntry;
+import java.io.File;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:/application-context-test.xml"})
@@ -46,7 +46,7 @@ public class CodeListManagerTest {
     private CodeListManager manager;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         removeExisitingTestFile();
     }
     
@@ -71,21 +71,21 @@ public class CodeListManagerTest {
         
         CodeList cl = manager.getCodeList("1");
         assertEquals("INSPIRE-Topics", cl.getName());
-        assertEquals("Abfall", cl.getEntries().get(0).getLocalisedEntry("de"));
-        assertEquals("Trash", cl.getEntries().get(0).getLocalisedEntry("en"));
+        assertEquals("Abfall", cl.getEntries().get(0).getField("de"));
+        assertEquals("Trash", cl.getEntries().get(0).getField("en"));
         assertEquals("meine daten", cl.getEntries().get(0).getData());
         assertEquals("1", cl.getEntries().get(0).getId());
         
-        assertEquals("Geodaten", cl.getEntries().get(1).getLocalisedEntry("de"));
-        assertEquals("Geodata", cl.getEntries().get(1).getLocalisedEntry("en"));
+        assertEquals("Geodaten", cl.getEntries().get(1).getField("de"));
+        assertEquals("Geodata", cl.getEntries().get(1).getField("en"));
         assertEquals("meine anderen daten", cl.getEntries().get(1).getData());
         assertEquals("2", cl.getEntries().get(1).getId());
         
         
         cl = manager.getCodeList("2");
         assertEquals("Address-Type", cl.getName());
-        assertEquals("Telefon", cl.getEntries().get(0).getLocalisedEntry("de"));
-        assertEquals("Phone", cl.getEntries().get(0).getLocalisedEntry("en"));
+        assertEquals("Telefon", cl.getEntries().get(0).getField("de"));
+        assertEquals("Phone", cl.getEntries().get(0).getField("en"));
         assertEquals("weitere daten", cl.getEntries().get(0).getData());
         assertEquals("2", cl.getEntries().get(0).getId());
     }
@@ -107,14 +107,14 @@ public class CodeListManagerTest {
         
         CodeListEntry entry1 = new CodeListEntry();
         entry1.setId("1");
-        entry1.setLocalisedEntry("de", "Abfall");
-        entry1.setLocalisedEntry("en", "Trash");
+        entry1.setField("de", "Abfall");
+        entry1.setField("en", "Trash");
         entry1.setData("meine daten");
         
         CodeListEntry entry2 = new CodeListEntry();
         entry2.setId("2");
-        entry2.setLocalisedEntry("de", "Geodaten");
-        entry2.setLocalisedEntry("en", "Geodata");
+        entry2.setField("de", "Geodaten");
+        entry2.setField("en", "Geodata");
         entry2.setData("meine anderen daten");
         
         cl1.addEntry(entry1);
@@ -127,8 +127,8 @@ public class CodeListManagerTest {
         
         CodeListEntry entry_2_1 = new CodeListEntry();
         entry_2_1.setId("2");
-        entry_2_1.setLocalisedEntry("de", "Telefon");
-        entry_2_1.setLocalisedEntry("en", "Phone");
+        entry_2_1.setField("de", "Telefon");
+        entry_2_1.setField("en", "Phone");
         entry_2_1.setData("weitere daten");
         
         cl2.addEntry(entry_2_1);

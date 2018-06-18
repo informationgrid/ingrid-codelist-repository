@@ -164,8 +164,8 @@ public class CodeListUpdateTest {
         assertThat( entries.get( 0 ).getId(), is( "1234" ) );
         assertThat( entries.get( 0 ).getData(), is( "no data" ) );
         assertThat( entries.get( 0 ).getDescription(), is( "updated entry" ) );
-        assertThat( entries.get( 0 ).getLocalisations().get( "de" ), is( "München" ) );
-        assertThat( entries.get( 0 ).getLocalisations().get( "en" ), is( "Munich" ) );
+        assertThat( entries.get( 0 ).getFields().get( "de" ), is( "München" ) );
+        assertThat( entries.get( 0 ).getFields().get( "en" ), is( "Munich" ) );
 
     }
 
@@ -234,8 +234,8 @@ public class CodeListUpdateTest {
         assertThat( entry.getId(), is( "3068" ) );
         assertThat( entry.getData(), is( "data for 3068" ) );
         assertThat( entry.getDescription(), is( "description for 3068" ) );
-        assertThat( entry.getLocalisedEntry( "de" ), is( "Eintrag Nummer 3068" ) );
-        assertThat( entry.getLocalisedEntry( "en" ), is( "Entry number 3068" ) );
+        assertThat( entry.getField( "de" ), is( "Eintrag Nummer 3068" ) );
+        assertThat( entry.getField( "en" ), is( "Entry number 3068" ) );
     }
 
     @Test
@@ -270,9 +270,9 @@ public class CodeListUpdateTest {
         // assertThat( entry.getId(), is( "3068" ) );
         // assertThat( entry.getData(), is( "data for 3068" ) );
         // assertThat( entry.getDescription(), is( "description for 3068" ) );
-        // assertThat( entry.getLocalisedEntry( "de" ), is( "Eintrag Nummer
+        // assertThat( entry.getField( "de" ), is( "Eintrag Nummer
         // 3068" ) );
-        // assertThat( entry.getLocalisedEntry( "en" ), is( "Entry number 3068"
+        // assertThat( entry.getField( "en" ), is( "Entry number 3068"
         // ) );
     }
 
