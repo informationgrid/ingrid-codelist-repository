@@ -30,7 +30,7 @@
           <localisations>
             <entry>
               <string>de</string>
-              <string>Digitale GelÃ¤ndemodelle</string>
+              <string>Digitale Geländemodelle</string>
             </entry>
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>
@@ -48,7 +48,7 @@
           <localisations>
             <entry>
               <string>de</string>
-              <string>3D-GebÃ¤udemodelle</string>
+              <string>3D-Gebäudemodelle</string>
             </entry>
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>

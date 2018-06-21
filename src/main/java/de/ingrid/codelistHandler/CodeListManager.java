@@ -22,29 +22,11 @@
  */
 package de.ingrid.codelistHandler;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.core.io.support.ResourcePatternResolver;
-import org.springframework.stereotype.Component;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
-
+import de.ingrid.codelistHandler.migrate.Migrator;
 import de.ingrid.codelistHandler.model.CodeListEntryUpdate;
 import de.ingrid.codelistHandler.model.CodeListUpdate;
 import de.ingrid.codelists.CodeListService;
@@ -53,6 +35,20 @@ import de.ingrid.codelists.model.CodeListEntry;
 import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 import de.ingrid.codelists.util.CodeListUtils;
 import de.ingrid.codelists.util.VersionUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.stereotype.Component;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @Component
 public class CodeListManager {
@@ -67,7 +63,11 @@ public class CodeListManager {
     private List<CodeList> initialCodelists;
     
     @Autowired
-    public CodeListManager(CodeListService cls) {
+    public CodeListManager(CodeListService cls, Migrator migrator) {
+        
+        // run any necessary migrations
+        migrator.run();
+        
         this.codeListService = cls;
         this.initialCodelists = this.codeListService.getInitialCodelists();
         try {
@@ -76,13 +76,21 @@ public class CodeListManager {
             log.error( "Error when checking for updated codelist information", e );
         }
         
+        // check for a file created during installation to force initial update
+        File forceUpdateFile = new File("data/forceUpdateOnStartOnce");
+        
         // set all codelists to the current timestamp to force an update of all clients
-        if ("true".equals( System.getenv("forceUpdateCodelists") )) {
+        if ("true".equals( System.getenv("forceUpdateCodelists")) || forceUpdateFile.exists() ) {
             List<CodeList> codeLists = getCodeLists();
             for (CodeList codeList : codeLists) {
                 codeList.setLastModified( System.currentTimeMillis() );
             }
             writeCodeListsToFile();
+            
+            // clean up file
+            if (forceUpdateFile.exists()) {
+                forceUpdateFile.delete();
+            }
         }
     }
     
@@ -92,8 +100,10 @@ public class CodeListManager {
     
     public boolean updateCodeList(String id, String data) {
         
-        codeListService.setCodelist(id, data);
-        return writeCodeListsToFile();
+        CodeList codelist = codeListService.setCodelist(id, data);
+        List<CodeList> list = new ArrayList<>();
+        list.add( codelist );
+        return writeTheseCodeListsToFile( list );
     }
     
     public boolean removeCodeList(String id) {
@@ -102,7 +112,7 @@ public class CodeListManager {
             return false;
         } else {
             getCodeLists().remove(cl);
-            writeCodeListsToFile();
+            codeListService.removeCodelist( id );
         }
         return true;
     }
@@ -124,17 +134,21 @@ public class CodeListManager {
     public boolean writeCodeListsToFile() {
         return codeListService.persistToAll();
     }
+    
+    public boolean writeTheseCodeListsToFile(List<CodeList> codelists) {
+        return codeListService.persistToAll(codelists);
+    }
 
     public Object getCodeListAsJson(String id) {
         return createJSON(getCodeList(id));
     }    
     
     public Object getCodeListsAsJson(String sortField, String lastModified, String sortMethod) {
-        List<CodeList> cls = null;
+        List<CodeList> cls;
         
         // only get those codelists that have changed after lastModified
         if (lastModified != null) {
-            cls = new ArrayList<CodeList>();
+            cls = new ArrayList<>();
             for (CodeList codeList : getCodeLists()) {
                 if (codeList.getLastModified() > Long.valueOf(lastModified)) {
                     cls.add(codeList);
@@ -159,7 +173,7 @@ public class CodeListManager {
     public Object getFilteredCodeListsAsJson(String name) {
         String search = name.substring(0, name.length()-1).toLowerCase();
         
-        List<CodeList> filteredCLs = new ArrayList<CodeList>();
+        List<CodeList> filteredCLs = new ArrayList<>();
         
         for (CodeList cl : getCodeLists()) {
             if (cl.getName() != null && cl.getName().toLowerCase().startsWith(search))
@@ -199,11 +213,11 @@ public class CodeListManager {
 
     
     public Object findEntry(String name) {
-        List<String[]> result = new ArrayList<String[]>();
+        List<String[]> result = new ArrayList<>();
         for (CodeList cl : getCodeLists()) {
             for (CodeListEntry entry : cl.getEntries()) {
-                for (String lang : entry.getLocalisations().keySet()) {
-                    if (entry.getLocalisations().get(lang).toLowerCase().contains(name)) {
+                for (String lang : entry.getFields().keySet()) {
+                    if (entry.getFields().get(lang).toLowerCase().contains(name)) {
                         String[] value = {cl.getId(), entry.getId(), lang};
                         result.add(value);
                     }
@@ -245,7 +259,7 @@ public class CodeListManager {
     }
     
     public boolean updateCodelistsFromUpdateFile( String filePath ) {
-        XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<CodeListUpdate>();
+        XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<>();
         xml.setPathToXml( filePath );
         List<CodeListUpdate> updateCodelists = xml.read();
         
@@ -269,17 +283,14 @@ public class CodeListManager {
                     for (CodeListEntryUpdate entry : codeList.getEntries()) {
                         switch(entry.getType()) {
                         case ADD:
+                        case UPDATE:
+                            cl.removeEntry( entry.getEntry().getId() );
                             cl.addEntry( entry.getEntry() );
-                            log.info( "Added codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
+                            log.info( "Added/Updated codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
                             break;
                         case REMOVE:
                             cl.removeEntry( entry.getEntry().getId() );
                             log.info( "Removed codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
-                            break;
-                        case UPDATE:
-                            cl.removeEntry( entry.getEntry().getId() );
-                            cl.addEntry( entry.getEntry() );
-                            log.info( "Updated codelist entry: " + entry.getEntry().getId() + " from list: " + codeList.getId() );
                             break;
                         default:
                             break;
@@ -299,7 +310,7 @@ public class CodeListManager {
     }
 
     public List<String> checkFilesForUpdate(String version) {
-        List<String> resList = new ArrayList<String>();
+        List<String> resList = new ArrayList<>();
         
         ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
         try {
@@ -314,7 +325,7 @@ public class CodeListManager {
                 }
             }
         } catch (FileNotFoundException e) {
-            log.warn( "No changes dir found in classpath, where codelist updates are searched: " + PATH_CODELIST_UPDATES );
+            log.warn( "No patches-dir found in classpath, where codelist updates are searched: " + PATH_CODELIST_UPDATES );
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -331,7 +342,8 @@ public class CodeListManager {
             newVersion = fileName.substring( 0, fileName.indexOf( '_' ) );
             
             // rename update file so that it's not executed again
-            Files.move( Paths.get( file ), Paths.get( file + ".bak" ), StandardCopyOption.REPLACE_EXISTING );
+            // not necessary, since we check version
+            // Files.move( Paths.get( file ), Paths.get( file + ".bak" ), StandardCopyOption.REPLACE_EXISTING );
         }
         
         if (newVersion != null) {

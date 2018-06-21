@@ -528,8 +528,12 @@
             function prepareCodelistEntryLocalisation(entry) {
                 var data = [];
                 dojo.forEach(entry.localisations, function(local, index) {
-                    //var b = new dijit.form.Button({ label: "delete"});
-                    var locEntry = {id: index, lang: local[0], value: local[1], btnDelete: createButton(index)};
+                    var language = local[0];
+                    var languageItem = languageStore._getItemsArray().filter(function(item) { return item.value == language; })[0];
+                    if (languageItem) {
+                        language = languageItem.name;
+                    }
+                    var locEntry = {id: index, lang: language, value: local[1], btnDelete: createButton(index)};
                     data.push(locEntry);
                 });
                 return data;
@@ -541,7 +545,7 @@
                     
                 var result = localisations[0][1];
                 dojo.forEach(localisations, function(local) {
-                    if (local[0] == "en") result = local[1];
+                    if (local[0] == "en" || local[0] == "name") result = local[1];
                 });
                 return result;
             };
@@ -585,7 +589,12 @@
                 data.localisations = [];
                 entryLocalisationGrid.store.fetch({
                     onItem: function(item) {
-                        data.localisations.push([item.lang+"", item.value+""]);
+                        var lang = item.lang[0] + "";
+                        var languageItem = languageStore._getItemsArray().filter(function(item) { return item.name == lang; })[0];
+                        if (languageItem) {
+                            lang = languageItem.value + "";
+                        }
+                        data.localisations.push([lang, item.value+""]);
                     }
                 });
             }
@@ -636,19 +645,7 @@
                     nextEntryButton.set("disabled", "");
                 }
             }
-            
 
-            /* FORMATTERS */
-            function showLanguage(value, rowIndex, widget) {
-                var res = "?";
-                widget.getWidgetProps().store.fetchItemByIdentity({
-                    identity: value, 
-                    onItem: function(item) {res = item ? item.name : "?";},
-                    onError: function() { res = "???";}
-                });
-                return res;
-            }
-            
         </script>
     </head>
     <body class="claro">
@@ -719,11 +716,11 @@
 		                    <tr><td>Data:</td><td><input id="entryData" jsId="entryDataTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:100%;'"></td></tr>
 	                    </table>
 	                    <br />
-	                    <div class="tableCaption">Localisations:</div>
+	                    <div class="tableCaption">Fields:</div>
 	                    <table id="entryLocalisationGrid" jsId="entryLocalisationGrid" data-dojo-type="dojox.grid.DataGrid" data-dojo-props="autoHeight:true, singleClickEdit:true, toggleSplitterOpen:true, escapeHTMLInData:false ">
 	                        <thead>
 	                            <tr>
-	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.FilteringSelect" widgetProps="{ store:languageStore}" formatter="showLanguage">Locale</th>
+	                                <th field="lang" width="100px" editable="true" cellType="dojox.grid.cells._Widget" widgetClass="dijit.form.ComboBox" widgetProps="{ store:languageStore, searchAttr:'name' }">Key</th>
 	                                <th field="value" width="auto" editable="true">Value</th>
 	                                <th field="btnDelete">&nbsp;</th>
 	                            </tr>
@@ -731,7 +728,7 @@
 	                    </table>
 	                    <div class="buttonLayer">
 	                        <!--<span id="remLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeLocalisedEntry">Remove Locale</span>-->
-	                        <span id="addLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Locale</span>
+	                        <span id="addLocale" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addLocalisedEntry">Add Field</span>
 	                    </div>
 	                </div>
                 </div>
