@@ -1,0 +1,288 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6500</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Datenlizenz Deutschland – Namensnennung – Version 2.0</string>
+            </entry>
+          </localisations>
+          <data>{"id":"dl-de-by-2.0","name":"Datenlizenz Deutschland - Namensnennung – Version 2.0","url":"https://www.govdata.de/dl-de/by-2-0","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Amtliches Werk, lizenzfrei nach §5 UrhG</string>
+            </entry>
+          </localisations>
+          <data>{"id":"official-work","name":"Amtliches Werk, lizenzfrei nach §5 UrhG","url":"https://www.gesetze-im-internet.de/urhg/__5.html","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes</string>
+            </entry>
+          </localisations>
+          <data>{"id":"geonutzv-de-2013-03-19","name":"Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes","url":"https://www.geodatenzentrum.de/docpdf/geonutzv.pdf","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>4</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Creative Commons Namensnennung (CC-BY)</string>
+            </entry>
+          </localisations>
+          <data>{"id":"cc-by","name":"Creative Commons Namensnennung (CC-BY)","url":"https://www.opendefinition.org/licenses/cc-by","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>5</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Creative Commons Zero</string>
+            </entry>
+          </localisations>
+          <data>{"id":"cc-zero","name":"Creative Commons Zero","url":"https://www.opendefinition.org/licenses/cc-zero","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>6</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Creative Commons Attribution Weitergabe unter gleichen Bedingungen (CC-BY-SA)</string>
+            </entry>
+          </localisations>
+          <data>{"id":"cc-by-sa","name":"Creative Commons Attribution Weitergabe unter gleichen Bedingungen (CC-BY-SA)","url":"https://www.opendefinition.org/licenses/cc-by-sa","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>7</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Open Data Commons Open Database License (ODbL)</string>
+            </entry>
+          </localisations>
+          <data>{"id":"odc-odbl","name":"Open Data Commons Open Database License (ODbL)","url":"https://www.opendefinition.org/licenses/odc-odbl","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>8</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Open Data Commons Namensnennung</string>
+            </entry>
+          </localisations>
+          <data>{"id":"odc-by","name":"Open Data Commons Namensnennung","url":"https://www.opendefinition.org/licenses/odc-by","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>9</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Open Data Commons Public Domain Dedication and Licence (PDDL)</string>
+            </entry>
+          </localisations>
+          <data>{"id":"odc-pddl","name":"Open Data Commons Public Domain Dedication and Licence (PDDL)","url":"https://www.opendefinition.org/licenses/odc-pddl","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>11</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Creative Commons Nicht-Kommerziell (CC-NC)</string>
+            </entry>
+          </localisations>
+          <data>{"id":"cc-nc","name":"Creative Commons Nicht-Kommerziell (CC-NC)","url":"https://creativecommons.org/licenses/by-nc/2.0/","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>12</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Creative Commons Keine Bearbeitung (CC-BY-ND)</string>
+            </entry>
+          </localisations>
+          <data>{"id":"cc-by-nd","name":"Creative Commons Keine Bearbeitung (CC-BY-ND)","url":"https://creativecommons.org/licenses/by-nd/3.0/","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>13</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Datenlizenz Deutschland Namensnennung nicht-kommerziell</string>
+            </entry>
+          </localisations>
+          <data>{"id":"dl-de-by-nc-1.0","name":"Datenlizenz Deutschland Namensnennung nicht-kommerziell","url":"https://www.govdata.de/dl-de/by-nc-1-0","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>14</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Geolizenz Ia Namensnennung</string>
+            </entry>
+          </localisations>
+          <data>{"id":"geolizenz-i-a","name":"Geolizenz Ia Namensnennung","url":"https://www.geolizenz.org","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>15</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>eingeschränkte Geolizenz</string>
+            </entry>
+          </localisations>
+          <data>{"id":"geolizenz-closed","name":"eingeschränkte Geolizenz","url":"https://www.geolizenz.org","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>16</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Apache Lizenz</string>
+            </entry>
+          </localisations>
+          <data>{"id":"apache","name":"Apache Lizenz","url":"https://www.apache.org/licenses","quelle":""}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>20</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>BSD Lizenz</string>
+            </entry>
+          </localisations>
+          <data>{"id":"bsd-license","name":"BSD Lizenz","url":"http://www.opensource.org/licenses/bsd-license.php","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>21</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>GNU Free Documentation License</string>
+            </entry>
+          </localisations>
+          <data>{"id":"gfdl","name":"GNU Free Documentation License","url":"https://www.opendefinition.org/licenses/gfdl","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>22</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>GNU General Public License version 3.0 (GPLv3)</string>
+            </entry>
+          </localisations>
+          <data>{"id":"gpl-3.0","name":"GNU General Public License version 3.0 (GPLv3)","url":"https://www.opensource.org/licenses/gpl-3.0.html","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>23</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Mozilla Public License 1.0 (MPL)</string>
+            </entry>
+          </localisations>
+          <data>{"id":"mozilla","name":"Mozilla Public License 1.0 (MPL)","url":"https://www.mozilla.org/MPL","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>25</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Datenlizenz Deutschland – Zero – Version 2.0</string>
+            </entry>
+          </localisations>
+          <data>{"id":"dl-de-by-2.0","name":"Datenlizenz Deutschland – Zero – Version 2.0","url":"https://www.govdata.de/dl-de/zero-2-0","quelle":""}
+          </data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
