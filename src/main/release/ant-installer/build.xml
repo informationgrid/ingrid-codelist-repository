@@ -92,6 +92,12 @@
         <delete>
             <fileset dir="${installDir}/webapp/WEB-INF/work" includes="**/*"/>
         </delete>
+
+        <!-- make backup of previous data directory in case modified codelists are overwritten #1187 -->
+        <tstamp>
+            <format property="TODAY" pattern="yyyyMMd"/>
+        </tstamp>
+        <copydir src="${installDir}/data" dest="${installDir}/backup/data_${TODAY}" />
         
         <move toDir="${installDir}">
             <fileset dir="./${componentName}"/>
