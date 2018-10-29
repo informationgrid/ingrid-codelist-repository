@@ -55,12 +55,12 @@
     </fileSet>
     <fileSet>
       <directory>src/main/release/ant-installer</directory>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory/>
       <filtered>true</filtered>
     </fileSet>
     <fileSet>
       <directory>target/installer</directory>
-      <outputDirectory>/</outputDirectory>
+      <outputDirectory/>
     </fileSet>
     <fileSet>
       <directory>target/installer/resources/scripts</directory>
