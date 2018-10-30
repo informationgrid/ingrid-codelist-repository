@@ -1,0 +1,36 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>111</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>570</id>
+          <localisations>
+	        <entry>
+	          <string>sortkey</string>
+	          <string>0</string>
+	        </entry>
+	        <entry>
+	          <string>sortkey_partner</string>
+	          <string>1</string>
+	        </entry>
+	        <entry>
+	          <string>ident</string>
+	          <string>bu_bkg</string>
+	        </entry>
+	        <entry>
+	          <string>name</string>
+	          <string>Bundesamt für Kartographie und Geodäsie</string>
+	        </entry>
+	        <entry>
+	          <string>url</string>
+	          <string>https://www.bkg.bund.de/</string>
+	        </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
