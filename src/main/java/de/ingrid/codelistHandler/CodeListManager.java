@@ -53,7 +53,7 @@ import java.util.List;
 @Component
 public class CodeListManager {
     
-    private static String PATH_CODELIST_UPDATES = "file:data/patches/*.xml";
+    private static String PATH_CODELIST_UPDATES = "file:patches/*.xml";
 
     private static Logger log = Logger.getLogger( CodeListManager.class );
     
