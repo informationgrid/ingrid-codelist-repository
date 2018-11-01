@@ -518,9 +518,12 @@
                 dojo.forEach(cl.entries, function(item) {
                     var entry = {id: item.id};
                     entry.localisedName = getLocalisedEntryName(item.localisations);
-                    entry["default"] = (cl.defaultEntry == item.id) ? true : false
+                    entry["default"] = (cl.defaultEntry == item.id)
                     entry.data = item;
                     data.push(entry);
+                });
+                data.sort(function(a,b) {
+                    return +a.id < +b.id ? -1 : +a.id === +b.id ? 0 : 1;
                 });
                 return data;
             }
