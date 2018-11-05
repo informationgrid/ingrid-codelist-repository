@@ -29,6 +29,24 @@
     </properties>
     <body>
 
+    <release version="4.6.0-SNAPSHOT" date="????-??-??" description="??">
+      <action type="fix" dev="wemove" issue="1206">
+        Sort codelist entries numericaly by their ID.
+      </action>
+      <action type="fix" dev="wemove" issue="1208">
+        Move patches to root directory to be applied in docker images when data directory is mapped.
+      </action>
+    </release>
+
+    <release version="4.5.2" date="2018-10-30" description="Release 4.5.2">
+      <action type="update" dev="wemove" issue="1207">
+        Add BKG to provider list.
+      </action>
+      <action type="fix" dev="wemove" issue="1193">
+        Fix codelists (1320, 6005, 6100), data was lost when codelists were separated into different files.
+      </action>
+    </release>
+
     <release version="4.5.0" date="2018-10-08" description="Release 4.5.0">
       <action type="update" dev="wemove" issue="1187">
         Backup codelists when updating codelist repo.

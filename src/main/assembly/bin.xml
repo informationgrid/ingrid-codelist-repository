@@ -42,7 +42,7 @@
     </fileSet>
     <fileSet>
       <directory>src/main/release/patches</directory>
-      <outputDirectory>${project.build.finalName}/data/patches</outputDirectory>
+      <outputDirectory>${project.build.finalName}/patches</outputDirectory>
     </fileSet>
     <fileSet>
       <directory>src/main/release/jetty</directory>
