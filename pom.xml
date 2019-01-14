@@ -7,7 +7,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ingrid-codelist-repository</artifactId>
-  <version>4.7.0-SNAPSHOT</version>
+  <version>4.6.0</version>
   <packaging>jar</packaging>
   <name>InGrid CodeList Repository</name>
   <description>This is the repository where all codelists are organized.</description>
