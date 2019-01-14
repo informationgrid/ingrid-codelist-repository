@@ -29,7 +29,7 @@
     </properties>
     <body>
 
-    <release version="4.6.0-SNAPSHOT" date="????-??-??" description="??">
+    <release version="4.6.0" date="2019-01-14" description="Release 4.6.0">
       <action type="fix" dev="wemove" issue="1206">
         Sort codelist entries numericaly by their ID.
       </action>
