@@ -2,7 +2,7 @@
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
- * Copyright (C) 2014 - 2018 wemove digital solutions GmbH
+ * Copyright (C) 2014 - 2019 wemove digital solutions GmbH
  * ==================================================
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
@@ -53,7 +53,7 @@ import java.util.List;
 @Component
 public class CodeListManager {
     
-    private static String PATH_CODELIST_UPDATES = "file:data/patches/*.xml";
+    private static String PATH_CODELIST_UPDATES = "file:patches/*.xml";
 
     private static Logger log = Logger.getLogger( CodeListManager.class );
     

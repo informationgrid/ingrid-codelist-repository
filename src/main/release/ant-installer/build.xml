@@ -63,14 +63,15 @@
         </move>
 
         <mkdir dir="${installDir}/webapp/WEB-INF/work"/>
-    	
-    	<!-- create a file to force an update of all codelists on startup, so that they get latest timestamp
+
+    	  <!-- create a file to force an update of all codelists on startup, so that they get latest timestamp
     	     and so they will be fetched from all clients -->
+        <mkdir dir="${installDir}/data"/>
         <touch file="${installDir}/data/forceUpdateOnStartOnce" />
         
         
-    	<!-- write current version of the codelist repository -->
-        <echo file="${installDir}/data/version.info" append="false">440</echo>
+    	  <!-- write current version of the codelist repository -->
+        <echo file="${installDir}/data/version.info" append="false">460</echo>
         
         <!-- create empty override config -->
         <touch file="${installDir}/conf/config.override.properties" />

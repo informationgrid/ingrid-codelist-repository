@@ -29,6 +29,15 @@
     </properties>
     <body>
 
+    <release version="4.6.0" date="2019-01-14" description="Release 4.6.0">
+      <action type="fix" dev="wemove" issue="1206">
+        Sort codelist entries numericaly by their ID.
+      </action>
+      <action type="fix" dev="wemove" issue="1208">
+        Move patches to root directory to be applied in docker images when data directory is mapped.
+      </action>
+    </release>
+
     <release version="4.5.2" date="2018-10-30" description="Release 4.5.2">
       <action type="update" dev="wemove" issue="1207">
         Add BKG to provider list.
