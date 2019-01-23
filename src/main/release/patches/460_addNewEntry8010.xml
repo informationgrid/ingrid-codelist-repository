@@ -1,0 +1,20 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>8010</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>14</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Sonstige Produkte Geotopographie</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
