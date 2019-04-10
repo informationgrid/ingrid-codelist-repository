@@ -48,7 +48,7 @@
   		<Set name="UserRealm">
       		<New class="org.mortbay.jetty.security.HashUserRealm">
             	<Set name="name">default</Set>
-            	<Set name="config">./src/test/resources/realm.properties</Set>
+            	<Set name="config">./src/develop/resources/realm.properties</Set>
       		</New>
     	</Set>
 	</Get> 
