@@ -71,7 +71,7 @@
         
         
     	  <!-- write current version of the codelist repository -->
-        <echo file="${installDir}/data/version.info" append="false">460</echo>
+        <echo file="${installDir}/data/version.info" append="false">500</echo>
         
         <!-- create empty override config -->
         <touch file="${installDir}/conf/config.override.properties" />

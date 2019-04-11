@@ -29,6 +29,18 @@
     </properties>
     <body>
 
+    <release version="5.0.0" date="2019-04-11" description="Release 5.0.0">
+      <action type="add" dev="wemove" issue="1087">
+        Add new entry to AdV-Produktgruppe.
+      </action>
+      <action type="add" dev="wemove" issue="513">
+        Add new entries for WMTS operation.
+      </action>
+      <action type="update" dev="wemove" issue="1196">
+        Update libraries to fix security issues and adapt to log4j2.
+      </action>
+    </release>
+
     <release version="4.6.0" date="2019-01-14" description="Release 4.6.0">
       <action type="fix" dev="wemove" issue="1206">
         Sort codelist entries numericaly by their ID.

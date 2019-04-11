@@ -9,6 +9,7 @@ RUN unzip ingrid-*.jar -d /tmp \
     && cp -R /tmp/ingrid-codelist-repository-*/* /opt/ingrid/ingrid-codelist-repository/ \
     && sed -i 's/@SERVER_PORT@/80/' /opt/ingrid/ingrid-codelist-repository/start.sh \
     && rm -Rf /tmp/* \
+    && sed -i -r 's/(<AppenderRef.*\/>)/\1<AppenderRef ref="Console" \/>/g' /opt/ingrid/ingrid-codelist-repository/conf/log4j2.xml \
     && rm ingrid-*.jar
 
 WORKDIR /opt/ingrid/ingrid-codelist-repository
