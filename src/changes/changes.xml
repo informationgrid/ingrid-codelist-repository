@@ -29,6 +29,13 @@
     </properties>
     <body>
 
+    <release version="5.0.1-SNAPSHOT" date="2019-xx-xx" description="Release 5.0.1">
+      <action type="update" dev="wemove" issue="1378">
+        Update UVP numbers of Saarland, codelist 9010.
+      </action>
+    </release>
+
+
     <release version="5.0.0" date="2019-04-11" description="Release 5.0.0">
       <action type="add" dev="wemove" issue="1087">
         Add new entry to AdV-Produktgruppe.
