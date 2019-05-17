@@ -1,0 +1,139 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6010</id>
+    <type>UPDATE</type>
+    <codelist>
+      <id>6010</id>
+      <name>Zugriffsbeschränkungen</name>
+      <defaultEntry>1</defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Es gelten keine Zugriffsbeschränkungen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>no limitations to public access</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations","de":"Es gelten keine Zugriffsbeschränkungen"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund der Vertraulichkeit der Verfahren von Behörden</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the confidentiality of the proceedings of public authorities</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1a","de":"Öffentlicher Zugriff beschränkt entsprechend Artikel 13(1)(a) der INSPIRE-Richtlinie: a) aufgrund nachteiliger Auswirkungen auf die Vertraulichkeit der Verfahren von Behörden"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund internationaler Beziehungen, der öffentliche Sicherheit oder der Landesverteidigung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>international relations, public security or national defence</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1b","de":"Öffentlicher Zugriff beschränkt entsprechend Artikel 13(1)(b) der INSPIRE-Richtlinie: b) aufgrund nachteiliger Auswirkungen auf internationale Beziehungen, die öffentliche Sicherheit oder die Landesverteidigung"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>4</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund laufender Gerichtsverfahren</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the course of justice</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1c","de":"Öffentlicher Zugriff beschränkt entsprechend Artikel 13(1)(c) der INSPIRE-Richtlinie: c) aufgrund nachteiliger Auswirkungen auf laufende Gerichtsverfahren"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>5</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund der Vertraulichkeit von Geschäfts- oder Betriebsinformationen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the confidentiality of commercial or industrial information</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1d","de":"Öffentlicher Zugriff beschränkt entsprechend Artikel 13(1)(d) der INSPIRE Richtlinie: d) aufgrund nachteiliger Auswirkungen auf die Vertraulichkeit von Geschäfts- oder Betriebsinformationen"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>6</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund der Rechte des geistigen Eigentums</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>intellectual property rights</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1e","de":"Öffentlicher Zugriff beschränkt entsprechend Artikel 13(1)(e) der INSPIRE Richtlinie: e) aufgrund nachteiliger Auswirkungen auf die Rechte des geistigen Eigentums"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>7</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund der Vertraulichkeit personenbezogener Daten</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the confidentiality of personal data and/or files</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1f","de":"Öffentlicher Zugriff beschränkt entsprechend Artikel 13(1)(f) der INSPIRE Richtlinie: f) aufgrund nachteiliger Auswirkungen auf die Vertraulichkeit personenbezogener Daten"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>8</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund des Schutzes einer Person</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the interests or protection of any person</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1g","de":"Öffentlicher Zugriff beschränkt entsprechend Artikel 13(1)(g) der INSPIRE Richtlinie: g) aufgrund nachteiliger Auswirkungen auf den Schutz einer Person"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>9</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>aufgrund des Schutzes von Umweltbereichen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>the protection of the environment</string>
+            </entry>
+          </localisations>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/INSPIRE_Directive_Article13_1h","de":"Öffentlicher Zugriff beschränkt entsprechend Artikel 13(1)(h) der INSPIRE Richtlinie: h) aufgrund nachteiliger Auswirkungen auf den Schutz von Umweltbereichen"}</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
