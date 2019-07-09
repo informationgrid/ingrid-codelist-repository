@@ -29,6 +29,21 @@
     </properties>
     <body>
 
+    <release version="5.1.0" date="2019-07-09" description="Release 5.1.0">
+      <action type="update" dev="wemove" issue="1378">
+        Update UVP numbers of Saarland, codelist 9010.
+      </action>
+      <action type="update" dev="wemove" issue="1366">
+        Update BKG specific codelists 10003, 10004.
+      </action>
+      <action type="update" dev="wemove" issue="1219">
+        Update codelist 6010.
+      </action>
+      <action type="update" dev="wemove" issue="1218">
+        Add codelist entry to list 6500.
+      </action>
+    </release>
+
     <release version="5.0.0" date="2019-04-11" description="Release 5.0.0">
       <action type="add" dev="wemove" issue="1087">
         Add new entry to AdV-Produktgruppe.
