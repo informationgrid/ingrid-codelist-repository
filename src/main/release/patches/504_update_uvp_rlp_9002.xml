@@ -1,0 +1,255 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>9002</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>356</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-4.1.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>357</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-4.2.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>358</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-4.2.2</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>359</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-4.2.3</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"S"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>360</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-4.2.4</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>361</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-4.3.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>362</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-4.3.2</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>363</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.1.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>364</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.1.2</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>365</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.2.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>366</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.2.2</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>367</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.3.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>368</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.3.2</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>369</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.4.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>370</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.2.2</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>371</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.5.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>372</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.5.2</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>373</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.6.1</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>374</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>LUVPG RP-5.6.2</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-18", "type":"A"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
