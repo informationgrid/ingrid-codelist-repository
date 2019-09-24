@@ -29,12 +29,11 @@
     </properties>
     <body>
 
-    <release version="5.0.1-SNAPSHOT" date="2019-xx-xx" description="Release 5.0.1">
-      <action type="update" dev="wemove" issue="1378">
-        Update UVP numbers of Saarland, codelist 9010.
+    <release version="5.0.4-SNAPSHOT" date="2019-xx-xx" description="Release 5.0.4">
+      <action type="update" dev="wemove" issue="1473">
+          Wrong reference to UVP-18 instead of UVPG-18, resulting in display problems in the portal.
       </action>
     </release>
-
 
     <release version="5.0.0" date="2019-04-11" description="Release 5.0.0">
       <action type="add" dev="wemove" issue="1087">
