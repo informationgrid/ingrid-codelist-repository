@@ -1,0 +1,56 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>100</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>5243</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 5243: ETRS89 / LCC Deutschland (E-N)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 5243: ETRS89 / LCC Germany (E-N)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>4937</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>EPSG 4937: ETRS89 / geographisch 3D</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>EPSG 4937: ETRS89 / geographic 3D</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>9000014</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>WGS84 / LCC Deutschland (E-N)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>WGS84 / LCC Germany (E-N)</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
