@@ -29,9 +29,27 @@
     </properties>
     <body>
 
-    <release version="5.2.0" date="2019-xx-xx" description="Release 5.2.0">
+    <release version="5.2.0" date="2019-10-18" description="Release 5.2.0">
         <action type="update" dev="wemove" issue="1473">
             Wrong reference to UVP-18 instead of UVPG-18, resulting in display problems in the portal.
+        </action>
+        <action type="add" dev="wemove" issue="1405">
+          Add codelist entry to list 101.
+        </action>
+        <action type="add" dev="wemove" issue="1432">
+          Add new codelist entries to list 100.
+        </action>
+        <action type="add" dev="wemove" issue="1363">
+          BKG: Update Codelists for use constraints.
+        </action>
+        <action type="add" dev="wemove" issue="1222">
+          Remove INSPIRE suffix from codelist 100.
+        </action>
+        <action type="add" dev="wemove" issue="1409">
+          Remove BKG codelists.
+        </action>
+        <action type="add" dev="wemove" issue="1274">
+          Update codelist 6005.
         </action>
     </release>
 
