@@ -3,7 +3,7 @@
   **************************************************-
   InGrid CodeList Repository
   ==================================================
-  Copyright (C) 2014 - 2018 wemove digital solutions GmbH
+  Copyright (C) 2014 - 2019 wemove digital solutions GmbH
   ==================================================
   Licensed under the EUPL, Version 1.1 or – as soon they will be
   approved by the European Commission - subsequent versions of the
@@ -29,7 +29,7 @@
     </properties>
     <body>
 
-    <release version="5.1.1" date="2019-xx-xx" description="Release 5.1.1">
+    <release version="5.1.1" date="2019-11-01" description="Release 5.1.1">
         <action type="update" dev="wemove" issue="1473">
             Wrong reference to UVP-18 instead of UVPG-18, resulting in display problems in the portal.
         </action>
