@@ -29,6 +29,12 @@
     </properties>
     <body>
 
+    <release version="5.2.1-SNAPSHOT" date="2019-xx-xx" description="Release 5.2.1">
+      <action type="add" dev="wemove" issue="1516">
+        Add a job to synchronize external list to codelist 6350 (Priority Dataset)
+      </action>
+    </release>
+
     <release version="5.2.0" date="2019-10-18" description="Release 5.2.0">
         <action type="update" dev="wemove" issue="1473">
             Wrong reference to UVP-18 instead of UVPG-18, resulting in display problems in the portal.

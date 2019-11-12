@@ -57,7 +57,6 @@ public class CodeListManager {
 
     private static Logger log = Logger.getLogger( CodeListManager.class );
     
-    @Autowired
     private CodeListService codeListService;
     
     private List<CodeList> initialCodelists;
