@@ -6,6 +6,7 @@ import de.ingrid.codelistHandler.importer.priorityDataset.model.PriorityDatasetM
 import de.ingrid.codelists.CodeListService;
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
+import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,11 @@ import java.util.List;
 @Service
 public class PriorityDatasetImporter implements Importer {
 
+    private static Logger log = Logger.getLogger(PriorityDatasetImporter.class);
+
     public static final String CODELIST_ID = "6350";
-    private static String DATA_URL = "http://inspire.ec.europa.eu/metadata-codelist/PriorityDataset/PriorityDataset.de.json";
+    private static String DATA_URL_DE = "http://inspire.ec.europa.eu/metadata-codelist/PriorityDataset/PriorityDataset.de.json";
+    private static String DATA_URL_EN = "http://inspire.ec.europa.eu/metadata-codelist/PriorityDataset/PriorityDataset.en.json";
 
     @Autowired
     CodeListService codeListService;
@@ -32,11 +36,14 @@ public class PriorityDatasetImporter implements Importer {
     public void start() {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
-            URL url = new URI(DATA_URL).toURL();
+            URL url = new URI(DATA_URL_DE).toURL();
+            URL urlEn = new URI(DATA_URL_EN).toURL();
             PriorityDatasetModel priorityDataset = objectMapper.readValue(url, PriorityDatasetModel.class);
+            PriorityDatasetModel priorityDatasetEn = objectMapper.readValue(urlEn, PriorityDatasetModel.class);
 
             List<Item> items = priorityDataset.getItems();
             CodeList codelist = mapToCodelist(items);
+            addEnglishVersion(codelist, priorityDatasetEn.getItems());
 
             this.codeListService.setCodelist(CODELIST_ID, codelist);
             this.codeListService.persistToAll();
@@ -64,8 +71,6 @@ public class PriorityDatasetImporter implements Importer {
         for (Item item : items) {
             CodeListEntry entry = new CodeListEntry();
             entry.setId(convertIdToNumber(item.value.id));
-            entry.setField(item.value.label.lang, item.value.label.text);
-            // since no german translation yet, use the English version
             entry.setField("de", item.value.label.text);
             entry.setData("{\"url\":\"" + item.value.id + "\"}");
             entries.add(entry);
@@ -73,6 +78,19 @@ public class PriorityDatasetImporter implements Importer {
         codeList.setEntries(entries);
 
         return codeList;
+    }
+
+
+    private void addEnglishVersion(CodeList codelist, List<Item> items) {
+        for (Item item : items) {
+            String id = convertIdToNumber(item.value.id);
+            CodeListEntry entry = codelist.getEntries().stream().filter(c -> c.getId().equals(id)).findAny().orElseGet(null);
+            if (entry == null) {
+                log.error("No Codelist entry found for English version");
+            } else {
+                entry.setField("en", item.value.label.text);
+            }
+        }
     }
 
     private String convertIdToNumber(String id) {
