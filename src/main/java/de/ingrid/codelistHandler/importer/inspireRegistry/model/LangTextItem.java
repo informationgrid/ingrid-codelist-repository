@@ -1,4 +1,4 @@
-package de.ingrid.codelistHandler.importer.priorityDataset.model;
+package de.ingrid.codelistHandler.importer.inspireRegistry.model;
 
 public class LangTextItem {
 
