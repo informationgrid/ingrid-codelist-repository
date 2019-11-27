@@ -130,7 +130,7 @@
                             <string>Creative Commons Namensnennung - Nicht kommerziell (CC BY-NC)</string>
                         </entry>
                     </localisations>
-                    <data>{"id":"cc-by-nc","name":Creative Commons Namensnennung - Nicht kommerziell (CC BY-NC)","url":"https://creativecommons.org/licenses/by-nc/","quelle":""}</data>
+                    <data>{"id":"cc-by-nc","name":"Creative Commons Namensnennung - Nicht kommerziell (CC BY-NC)","url":"https://creativecommons.org/licenses/by-nc/","quelle":""}</data>
                 </entry>
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
