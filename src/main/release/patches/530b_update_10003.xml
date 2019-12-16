@@ -1,0 +1,44 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10003</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>1</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(01) Open Data des Bundes</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "geoNutz/20130319", "name": "Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes", "url": "https://sg.geodatenzentrum.de/web_public/gdz/lizenz/geonutzv.pdf", "quelle": "© GeoBasis-DE / BKG (Jahr des letzten Datenbezugs)" }</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>3</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(03) Datenlizenz Deutschland Namensnennung 2.0</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "dl-by-de/2.0", "name": "Datenlizenz Deutschland Namensnennung 2.0", "url": "https://www.govdata.de/dl-de/by-2-0", "quelle": "© Bundesamt für Kartographie und Geodäsie (Jahr des letzten Datenbezugs), Datenquellen: " }</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10005</id>
+    <type>REMOVE</type>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10006</id>
+    <type>REMOVE</type>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
