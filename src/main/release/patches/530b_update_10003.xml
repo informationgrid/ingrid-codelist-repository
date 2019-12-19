@@ -14,7 +14,7 @@
               <string>(01) Open Data des Bundes</string>
             </entry>
           </localisations>
-          <data>{ "id": "geoNutz/20130319", "name": "Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes", "url": "https://sg.geodatenzentrum.de/web_public/gdz/lizenz/geonutzv.pdf", "quelle": "© GeoBasis-DE / BKG (Jahr des letzten Datenbezugs)" }</data>
+          <data>{ "id": "geoNutz/20130319", "name": "Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes", "url": "https://sg.geodatenzentrum.de/web_public/gdz/lizenz/geonutzv.pdf", "quelle": "" }</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
       <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
@@ -28,7 +28,7 @@
               <string>(03) Datenlizenz Deutschland Namensnennung 2.0</string>
             </entry>
           </localisations>
-          <data>{ "id": "dl-by-de/2.0", "name": "Datenlizenz Deutschland Namensnennung 2.0", "url": "https://www.govdata.de/dl-de/by-2-0", "quelle": "© Bundesamt für Kartographie und Geodäsie (Jahr des letzten Datenbezugs), Datenquellen: " }</data>
+          <data>{ "id": "dl-by-de/2.0", "name": "Datenlizenz Deutschland Namensnennung 2.0", "url": "https://www.govdata.de/dl-de/by-2-0", "quelle": "" }</data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
     </entries>
