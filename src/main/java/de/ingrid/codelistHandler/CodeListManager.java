@@ -2,7 +2,7 @@
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
- * Copyright (C) 2014 - 2019 wemove digital solutions GmbH
+ * Copyright (C) 2014 - 2020 wemove digital solutions GmbH
  * ==================================================
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
@@ -57,7 +57,6 @@ public class CodeListManager {
 
     private static Logger log = Logger.getLogger( CodeListManager.class );
     
-    @Autowired
     private CodeListService codeListService;
     
     private List<CodeList> initialCodelists;

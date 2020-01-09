@@ -52,5 +52,27 @@
         </property>
         <property name="defaultPersistency" value="0" />
     </bean>
+
+    <!--  Scheduler for external codelist synchronisation  -->
+    <bean name="updatePriorityDatasetJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="de.ingrid.codelistHandler.jobs.UpdatePriorityDatasetJob" />
+    </bean>
+
+    <bean id="simpleTriggerPriorityDataset" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+        <property name="jobDetail" ref="updatePriorityDatasetJobDetail" />
+<!--        <property name="startDelay" value="5000" />-->
+        <property name="repeatInterval" value="86400000" /> <!-- once a day -->
+    </bean>
+
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="simpleTriggerPriorityDataset" />
+            </list>
+        </property>
+        <property name="applicationContextSchedulerContextKey">
+            <value>applicationContext</value>
+        </property>
+    </bean>
     
 </beans>

@@ -1,6 +1,6 @@
-/*
+/*-
  * **************************************************-
- * InGrid CodeList Service
+ * InGrid CodeList Repository
  * ==================================================
  * Copyright (C) 2014 - 2020 wemove digital solutions GmbH
  * ==================================================
@@ -20,39 +20,20 @@
  * limitations under the Licence.
  * **************************************************#
  */
-package de.ingrid.codelistHandler.model;
+package de.ingrid.codelistHandler.importer.inspireRegistry.model;
 
-import de.ingrid.codelists.model.CodeListEntry;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.annotate.JsonProperty;
 
-/**
- * The model for a CodeList, which is used for updated codelists.
- * It introduces a new field which tells the update process what
- * to do with this codelist.
- * 
- * @author André Wallat
- *
- */
-public class CodeListEntryUpdate {
-    
-    public static enum Type { UPDATE, REMOVE, ADD };
-    
-    private Type type;
-    
-    private CodeListEntry entry;
+import java.util.List;
 
-    public Type getType() {
-        return type;
-    }
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PriorityDatasetModel {
 
-    public void setType(Type type) {
-        this.type = type;
-    }
+    @JsonProperty("metadata-codelist")
+    public MetadataCodelist metadataCodelist;
 
-    public CodeListEntry getEntry() {
-        return entry;
-    }
-
-    public void setEntry(CodeListEntry entry) {
-        this.entry = entry;
+    public List<Item> getItems() {
+        return this.metadataCodelist.containeditems;
     }
 }

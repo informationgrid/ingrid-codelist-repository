@@ -29,6 +29,24 @@
     </properties>
     <body>
 
+    <release version="5.3.0" date="2019-01-09" description="Release 5.3.0">
+        <action type="add" dev="wemove" issue="1516">
+            Add a job to synchronize external list to codelist 6350 (Priority Dataset)
+        </action>
+        <action type="add" dev="wemove" issue="1517">
+            Add importer for spatial scope from INSPIRE-registry
+        </action>
+        <action type="update" dev="wemove" issue="1561">
+            Update Codelist 6100: add "Katasterparzellen" to List-ID 106, swap hyphen (-) for a em dash (—) in List-ID 310
+        </action>
+        <action type="update" dev="wemove" issue="1534">
+            Update Codelist 6500: add/update opendata licenses (GovData)
+        </action>
+        <action type="update" dev="wemove" issue="971,1410">
+            Adapt BKG codelists
+        </action>
+    </release>
+
     <release version="5.2.0" date="2019-10-18" description="Release 5.2.0">
         <action type="update" dev="wemove" issue="1473">
             Wrong reference to UVP-18 instead of UVPG-18, resulting in display problems in the portal.

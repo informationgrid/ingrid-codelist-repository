@@ -1,0 +1,37 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>6100</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>106</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Flurstücke/Grundstücke (Katasterparzellen)</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>310</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Verteilung der Bevölkerung — Demografie</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Population distribution — demography</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
