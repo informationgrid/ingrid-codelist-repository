@@ -29,6 +29,12 @@
     </properties>
     <body>
 
+    <release version="5.4.0-SNAPSHOT" date="2020-xx-xx" description="Release 5.4.0">
+        <action type="fix" dev="wemove" issue="1698">
+            Fix codelist 6010: Bindestrich einfügen in "INSPIRE Richtlinie".
+        </action>
+    </release>
+
     <release version="5.3.1" date="2019-xx-xx" description="Release 5.3.1">
         <action type="fix" dev="wemove" issue="1274">
             Fix codelist 6005 and recover lost entries
