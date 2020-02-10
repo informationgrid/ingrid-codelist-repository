@@ -30,6 +30,9 @@
     <body>
 
     <release version="5.4.0-SNAPSHOT" date="2020-xx-xx" description="Release 5.4.0">
+        <action type="fix" dev="wemove" issue="1702">
+            IGE: Spezifikationsdatum bei Spezifikation der Konformität soll "2010-12-08" bei "VERORDNUNG (EG) Nr. 1089/2010..." lauten.
+        </action>
         <action type="fix" dev="wemove" issue="1698">
             Fix codelist 6010: Bindestrich einfügen in "INSPIRE Richtlinie".
         </action>
