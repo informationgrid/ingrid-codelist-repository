@@ -1,0 +1,104 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>2000</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>5302</id>
+                    <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen
+                        und dürfen NICHT gelöscht werden.
+                    </description>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Information</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Information</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>information</string>
+                        </entry>
+                    </localisations>
+                    <data>0,1,2,3,4,5,6</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>5303</id>
+                    <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen
+                        und dürfen NICHT gelöscht werden.
+                    </description>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Offline-Zugang</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Offline Access</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>offlineAccess</string>
+                        </entry>
+                    </localisations>
+                    <data>0,1,2,3,4,5,6</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>5304</id>
+                    <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen
+                        und dürfen NICHT gelöscht werden.
+                    </description>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Bestellung</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Order</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>order</string>
+                        </entry>
+                    </localisations>
+                    <data>0,1,2,3,4,5,6</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>5305</id>
+                    <description>ACHTUNG: Eventuell gleichlautende Einträge sind für unterschiedliche Klassen vorgesehen
+                        und dürfen NICHT gelöscht werden.
+                    </description>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Suche</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Search</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>search</string>
+                        </entry>
+                    </localisations>
+                    <data>0,1,2,3,4,5,6</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
