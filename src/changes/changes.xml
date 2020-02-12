@@ -29,16 +29,19 @@
     </properties>
     <body>
 
-    <release version="5.4.0-SNAPSHOT" date="2020-xx-xx" description="Release 5.4.0">
+    <release version="5.3.4" date="2020-02-10" description="Release 5.3.4">
         <action type="fix" dev="wemove" issue="1702">
             IGE: Spezifikationsdatum bei Spezifikation der Konformität soll "2010-12-08" bei "VERORDNUNG (EG) Nr. 1089/2010..." lauten.
         </action>
+    </release>
+
+    <release version="5.3.3" date="2020-02-03" description="Release 5.3.3">
         <action type="fix" dev="wemove" issue="1698">
             Fix codelist 6010: Bindestrich einfügen in "INSPIRE Richtlinie".
         </action>
     </release>
 
-    <release version="5.3.1" date="2019-xx-xx" description="Release 5.3.1">
+    <release version="5.3.1" date="2020-01-23" description="Release 5.3.1">
         <action type="fix" dev="wemove" issue="1274">
             Fix codelist 6005 and recover lost entries
         </action>
