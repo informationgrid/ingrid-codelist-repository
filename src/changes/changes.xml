@@ -33,6 +33,9 @@
         <action type="fix" dev="wemove" issue="1701">
             Update Codelist 9016: add UVPG-15 and UVPVB numbers.
         </action>
+        <action type="update" dev="wemove" issue="1745">
+            Update Codelist 111: update provider name in entry 112 (MUEEF)
+        </action>
     </release>
 
     <release version="5.3.4" date="2020-02-10" description="Release 5.3.4">
