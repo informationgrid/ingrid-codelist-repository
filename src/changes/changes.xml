@@ -29,6 +29,12 @@
     </properties>
     <body>
 
+    <release version="5.3.5-SNAPSHOT" date="2020-xx-xx" description="Release 5.4.0">
+        <action type="fix" dev="wemove" issue="1701">
+            Update Codelist 9016: add UVPG-15 and UVPVB numbers.
+        </action>
+    </release>
+
     <release version="5.3.4" date="2020-02-10" description="Release 5.3.4">
         <action type="fix" dev="wemove" issue="1702">
             IGE: Spezifikationsdatum bei Spezifikation der Konformität soll "2010-12-08" bei "VERORDNUNG (EG) Nr. 1089/2010..." lauten.
