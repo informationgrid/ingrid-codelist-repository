@@ -30,6 +30,9 @@
     <body>
 
     <release version="5.4.0-SNAPSHOT" date="2020-xx-xx" description="Release 5.4.0">
+        <action type="add" dev="wemove" issue="1767">
+            Add metadata point of contact address type.
+        </action>
         <action type="fix" dev="wemove" issue="1701">
             Update Codelist 9016: add UVPG-15 and UVPVB numbers.
         </action>
