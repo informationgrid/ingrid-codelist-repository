@@ -1,10 +1,10 @@
 <list>
   <de.ingrid.codelistHandler.model.CodeListUpdate>
-    <id>529</id>
+    <id>514</id>
     <type>ADD</type>
     <codelist>
-      <id>529</id>
-      <name>Bezeichnung der Dimension</name>
+      <id>514</id>
+      <name>Bezeichnung der Dimension (B.5.14 MD_DimensionNameTypeCode)</name>
       <defaultEntry></defaultEntry>
       <entries>
         <de.ingrid.codelists.model.CodeListEntry>
