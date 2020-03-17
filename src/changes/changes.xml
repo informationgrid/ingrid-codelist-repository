@@ -39,6 +39,9 @@
         <action type="update" dev="wemove" issue="1745">
             Update Codelist 111: update provider name in entry 112 (MUEEF)
         </action>
+        <action type="update" dev="wemove" issue="1602">
+            Add status information to INSPIRE registry items
+        </action>
     </release>
 
     <release version="5.3.4" date="2020-02-10" description="Release 5.3.4">

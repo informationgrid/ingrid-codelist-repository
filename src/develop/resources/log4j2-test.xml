@@ -12,6 +12,9 @@
         <Logger name="org.springframework" level="info" additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
+        <Logger name="org.mortbay" level="warn" additivity="false">
+            <AppenderRef ref="Console" />
+        </Logger>
         <Logger name="com" level="info" additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
