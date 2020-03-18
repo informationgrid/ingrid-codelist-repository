@@ -42,6 +42,9 @@
         <action type="update" dev="wemove" issue="1602">
             Add status information to INSPIRE registry items
         </action>
+        <action type="update" dev="wemove" issue="1780">
+            Update Codelist 9006: update LUVPG SH UVP numbers.
+        </action>
     </release>
 
     <release version="5.3.4" date="2020-02-10" description="Release 5.3.4">

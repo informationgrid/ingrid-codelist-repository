@@ -1,0 +1,121 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>9006</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>3490</id>
+                    <localisations>
+                      <entry>
+                        <string>de</string>
+                        <string>LUVPG SH-2.4</string>
+                      </entry>
+                    </localisations>
+                    <data>{"cat":"UVPG-14", "type":"A"}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>3550</id>
+                    <localisations>
+                      <entry>
+                        <string>de</string>
+                        <string>LUVPG SH-2.6 a)</string>
+                      </entry>
+                    </localisations>
+                    <data>{"cat":"UVPG-14", "type":"S"}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>3551</id>
+                    <localisations>
+                      <entry>
+                        <string>de</string>
+                        <string>LUVPG SH-2.6 b)</string>
+                      </entry>
+                    </localisations>
+                    <data>{"cat":"UVPG-14", "type":"S"}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>3552</id>
+                    <localisations>
+                      <entry>
+                        <string>de</string>
+                        <string>LUVPG SH-2.6 c)</string>
+                      </entry>
+                    </localisations>
+                    <data>{"cat":"UVPG-14", "type":"S"}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>371</id>
+                    <localisations>
+                      <entry>
+                        <string>de</string>
+                        <string>LUVPG SH-10.1</string>
+                      </entry>
+                    </localisations>
+                    <data>{"cat":"UVPG-18", "type":"A"}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>349</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>350</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>351</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>355</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>357</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>364</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>372</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>373</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
