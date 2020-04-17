@@ -1,27 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  **************************************************-
-  InGrid CodeList Repository
-  ==================================================
-  Copyright (C) 2014 - 2018 wemove digital solutions GmbH
-  ==================================================
-  Licensed under the EUPL, Version 1.1 or – as soon they will be
-  approved by the European Commission - subsequent versions of the
-  EUPL (the "Licence");
-
-  You may not use this work except in compliance with the Licence.
-  You may obtain a copy of the Licence at:
-
-  http://ec.europa.eu/idabc/eupl5
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the Licence is distributed on an "AS IS" basis,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the Licence for the specific language governing permissions and
-  limitations under the Licence.
-  **************************************************#
-  -->
-
 <document>
     <properties>
         <title>History Ingrid Codelist Repository</title>
@@ -29,7 +6,7 @@
     </properties>
     <body>
 
-    <release version="5.4.0-SNAPSHOT" date="2020-xx-xx" description="Release 5.4.0">
+    <release version="5.4.0-SNAPSHOT" date="2020-04-17" description="Release 5.4.0">
         <action type="add" dev="wemove" issue="1267">
             Improve MD_GridSpatialRepresentation support.
         </action>
