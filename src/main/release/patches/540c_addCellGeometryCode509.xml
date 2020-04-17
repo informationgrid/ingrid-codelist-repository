@@ -1,0 +1,47 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>509</id>
+    <type>ADD</type>
+    <de.ingrid.codelists.model.CodeList>
+      <id>509</id>
+      <name>Zellengeometrie (B.5.9 MD_CellGeometryCode)</name>
+      <description></description>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Punkt</string>
+            </entry>
+            <entry>
+              <string>iso</string>
+              <string>point</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Point</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Fläche</string>
+            </entry>
+            <entry>
+              <string>iso</string>
+              <string>area</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Area</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+    </de.ingrid.codelists.model.CodeList>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

@@ -51,6 +51,7 @@ public class PriorityDatasetImporter implements Importer {
 
     @Override
     public void start() {
+        CodeList oldCodelist = this.codeListService.getCodeList(CODELIST_ID);
 
         try {
             URL url = new URI(DATA_URL_DE).toURL();
@@ -60,8 +61,15 @@ public class PriorityDatasetImporter implements Importer {
             codelist.setName("Priority Dataset");
             codelist.setId(CODELIST_ID);
 
-            this.codeListService.setCodelist(CODELIST_ID, codelist);
-            this.codeListService.persistToAll();
+            boolean hasChanged = !codelist.equals(oldCodelist);
+
+            if (hasChanged) {
+                log.info("Priority Dataset has changed and is updated");
+                this.codeListService.setCodelist(CODELIST_ID, codelist);
+                this.codeListService.persistToAll();
+            } else {
+                log.debug("Priority Dataset has not been changed and is not updated");
+            }
 
         } catch (URISyntaxException | IOException e) {
             log.error("Problem synchronizing priority dataset from INSPIRE registry", e);

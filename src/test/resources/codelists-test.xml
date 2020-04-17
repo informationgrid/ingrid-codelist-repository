@@ -4789,7 +4789,7 @@
   </de.ingrid.codelists.model.CodeList>
   <de.ingrid.codelists.model.CodeList>
     <id>5180</id>
-    <name>Objektklasse 3 - Operation - Unterstützte Platformen</name>
+    <name>Objektklasse 3 - Operation - Unterstützte Plattformen</name>
     <defaultEntry></defaultEntry>
     <entries>
       <de.ingrid.codelists.model.CodeListEntry>

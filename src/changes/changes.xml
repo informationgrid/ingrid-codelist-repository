@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  **************************************************-
-  InGrid CodeList Repository
-  ==================================================
-  Copyright (C) 2014 - 2018 wemove digital solutions GmbH
-  ==================================================
-  Licensed under the EUPL, Version 1.1 or – as soon they will be
-  approved by the European Commission - subsequent versions of the
-  EUPL (the "Licence");
-
-  You may not use this work except in compliance with the Licence.
-  You may obtain a copy of the Licence at:
-
-  http://ec.europa.eu/idabc/eupl5
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the Licence is distributed on an "AS IS" basis,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the Licence for the specific language governing permissions and
-  limitations under the Licence.
-  **************************************************#
-  -->
-
 <document>
     <properties>
         <title>History Ingrid Codelist Repository</title>
         <author email="andre.wallat@wemove.com">André Wallat</author>
     </properties>
     <body>
+
+    <release version="5.4.0" date="2020-04-17" description="Release 5.4.0">
+        <action type="add" dev="wemove" issue="1267">
+            Improve MD_GridSpatialRepresentation support.
+        </action>
+        <action type="add" dev="wemove" issue="1767">
+            Add metadata point of contact address type.
+        </action>
+        <action type="fix" dev="wemove" issue="1701">
+            Update Codelist 9016: add UVPG-15 and UVPVB numbers.
+        </action>
+        <action type="update" dev="wemove" issue="1745">
+            Update Codelist 111: update provider name in entry 112 (MUEEF)
+        </action>
+        <action type="update" dev="wemove" issue="1602">
+            Add status information to INSPIRE registry items
+        </action>
+        <action type="update" dev="wemove" issue="1780">
+            Update Codelist 9006: update LUVPG SH UVP numbers.
+        </action>
+    </release>
+
+    <release version="5.3.4" date="2020-02-10" description="Release 5.3.4">
+        <action type="fix" dev="wemove" issue="1702">
+            IGE: Spezifikationsdatum bei Spezifikation der Konformität soll "2010-12-08" bei "VERORDNUNG (EG) Nr. 1089/2010..." lauten.
+        </action>
+    </release>
+
+    <release version="5.3.3" date="2020-02-03" description="Release 5.3.3">
+        <action type="fix" dev="wemove" issue="1698">
+            Fix codelist 6010: Bindestrich einfügen in "INSPIRE Richtlinie".
+        </action>
+    </release>
+
+    <release version="5.3.1" date="2020-01-23" description="Release 5.3.1">
+        <action type="fix" dev="wemove" issue="1274">
+            Fix codelist 6005 and recover lost entries
+        </action>
+    </release>
 
     <release version="5.3.0" date="2019-01-09" description="Release 5.3.0">
         <action type="add" dev="wemove" issue="1516">

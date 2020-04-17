@@ -26,6 +26,7 @@ import de.ingrid.codelistHandler.importer.inspireRegistry.model.Item;
 import de.ingrid.codelistHandler.importer.inspireRegistry.model.PriorityDatasetModel;
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
+import de.ingrid.codelists.model.CodeListEntryStatus;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Service;
@@ -68,12 +69,27 @@ public class InspireRegistryUtil {
         return codeList;
     }
 
+    private CodeListEntryStatus getStatusFromField(String statusId) {
+
+        switch (statusId) {
+            case "http://inspire.ec.europa.eu/registry/status/submitted": return CodeListEntryStatus.SUBMITTED;
+            case "http://inspire.ec.europa.eu/registry/status/superseded": return CodeListEntryStatus.SUPERCEDED;
+            case "http://inspire.ec.europa.eu/registry/status/valid": return CodeListEntryStatus.VALID;
+            case "http://inspire.ec.europa.eu/registry/status/invalid": return CodeListEntryStatus.INVALID;
+            case "http://inspire.ec.europa.eu/registry/status/retired": return CodeListEntryStatus.RETIRED;
+            default:
+                log.warn("Unknown status-id: " + statusId);
+                return null;
+        }
+    }
+
     private String createDataField(Item item) {
         //language=JSON
         return "{\"url\":\"" + item.value.id + "\"," +
                 " \"thesaurusTitle\": \"" + item.value.metadataCodelist.label.text + "\"," +
-                " \"thesaurusId\": \"" + item.value.metadataCodelist.id + "\" " +
+                " \"thesaurusId\": \"" + item.value.metadataCodelist.id + "\"," +
 //                "  \"date\": \"" + item.value.date + "\"\n" +
+                "  \"status\": \"" + getStatusFromField(item.value.status.id) + "\"" +
                 "}";
     }
 

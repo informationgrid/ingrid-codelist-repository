@@ -26,13 +26,8 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ItemValueWrapper {
+public class ItemStatusWrapper {
     public String id;
 
     public LangTextItem label;
-
-    public ItemStatusWrapper status;
-
-    @JsonProperty("metadata-codelist")
-    public ItemValueWrapper metadataCodelist;
 }
