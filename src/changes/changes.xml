@@ -6,7 +6,13 @@
     </properties>
     <body>
 
-    <release version="5.4.0" date="2020-04-17" description="Release 5.4.0">
+        <release version="5.4.3" date="2020-04-06" description="Release 5.4.3">
+            <action type="fix" dev="wemove" issue="1907">
+                Fix problem accessing INSPIRE registry.
+            </action>
+        </release>
+
+        <release version="5.4.0" date="2020-04-17" description="Release 5.4.0">
         <action type="add" dev="wemove" issue="1267">
             Improve MD_GridSpatialRepresentation support.
         </action>
