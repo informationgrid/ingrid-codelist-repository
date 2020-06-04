@@ -28,7 +28,6 @@ import de.ingrid.codelists.model.CodeList;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.stereotype.Service;
 
 import java.net.URI;
@@ -40,9 +39,6 @@ public class SpatialScopeImporter implements Importer {
     private static Logger log = Logger.getLogger(SpatialScopeImporter.class);
 
     public static final String CODELIST_ID = "6360";
-
-    @Autowired
-    PropertyPlaceholderConfigurer config;
 
     @Autowired
     CodeListService codeListService;
