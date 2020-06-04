@@ -7,6 +7,9 @@
     <body>
 
     <release version="5.5.0-SNAPSHOT" date="2020-xx-xx" description="Release 5.5.0">
+        <action type="fix" dev="wemove" issue="1907">
+            Fix problem accessing INSPIRE registry.
+        </action>
         <action type="add" dev="wemove" issue="1407">
             Add new entry 'Mittelwasser' to Codelist 101.
         </action>
