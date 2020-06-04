@@ -31,7 +31,6 @@ import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,10 +40,22 @@ public class InspireRegistryUtil {
 
     private static Logger log = Logger.getLogger(InspireRegistryUtil.class);
 
-    public CodeList importFromRegistry(URL urlGerman, URL urlEnglish) throws IOException {
+    public CodeList importFromRegistry(URL urlGerman, URL urlEnglish) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-        PriorityDatasetModel priorityDataset = objectMapper.readValue(urlGerman, PriorityDatasetModel.class);
-        PriorityDatasetModel priorityDatasetEn = objectMapper.readValue(urlEnglish, PriorityDatasetModel.class);
+        PriorityDatasetModel priorityDataset = null;
+        PriorityDatasetModel priorityDatasetEn = null;
+        try {
+            priorityDataset = objectMapper.readValue(urlGerman, PriorityDatasetModel.class);
+        } catch (Exception e) {
+            log.error("Error parsing JSON data from " + urlGerman, e);
+            throw e;
+        }
+        try {
+            priorityDatasetEn = objectMapper.readValue(urlEnglish, PriorityDatasetModel.class);
+        } catch (Exception e) {
+            log.error("Error parsing JSON data from " + urlEnglish, e);
+            throw e;
+        }
 
         List<Item> items = priorityDataset.getItems();
         CodeList codelist = mapToCodelist(items);
