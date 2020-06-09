@@ -65,6 +65,7 @@ public class PriorityDatasetImporter implements Importer {
             log.info("Source PriorityDataset (en): " + dataUrlEN);
 
             CodeList codelist = registry.importFromRegistry(url, urlEn);
+            log.info("Import successful.");
             codelist.setName("Priority Dataset");
             codelist.setId(CODELIST_ID);
 
