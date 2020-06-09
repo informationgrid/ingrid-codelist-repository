@@ -65,6 +65,7 @@ public class SpatialScopeImporter implements Importer {
             log.info("Source SpatialScope (en): " + dataUrlEN);
 
             CodeList codelist = registry.importFromRegistry(url, urlEn);
+            log.info("Import successful.");
             codelist.setName("Spatial Scope");
             codelist.setId(CODELIST_ID);
 

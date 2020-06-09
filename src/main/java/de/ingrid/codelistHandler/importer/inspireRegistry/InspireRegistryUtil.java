@@ -23,7 +23,7 @@
 package de.ingrid.codelistHandler.importer.inspireRegistry;
 
 import de.ingrid.codelistHandler.importer.inspireRegistry.model.Item;
-import de.ingrid.codelistHandler.importer.inspireRegistry.model.PriorityDatasetModel;
+import de.ingrid.codelistHandler.importer.inspireRegistry.model.InspireCodelistModel;
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
 import de.ingrid.codelists.model.CodeListEntryStatus;
@@ -42,24 +42,24 @@ public class InspireRegistryUtil {
 
     public CodeList importFromRegistry(URL urlGerman, URL urlEnglish) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-        PriorityDatasetModel priorityDataset = null;
-        PriorityDatasetModel priorityDatasetEn = null;
+        InspireCodelistModel inspireCodelist = null;
+        InspireCodelistModel inspireCodelistEn = null;
         try {
-            priorityDataset = objectMapper.readValue(urlGerman, PriorityDatasetModel.class);
+            inspireCodelist = objectMapper.readValue(urlGerman, InspireCodelistModel.class);
         } catch (Exception e) {
             log.error("Error parsing JSON data from " + urlGerman, e);
             throw e;
         }
         try {
-            priorityDatasetEn = objectMapper.readValue(urlEnglish, PriorityDatasetModel.class);
+            inspireCodelistEn = objectMapper.readValue(urlEnglish, InspireCodelistModel.class);
         } catch (Exception e) {
             log.error("Error parsing JSON data from " + urlEnglish, e);
             throw e;
         }
 
-        List<Item> items = priorityDataset.getItems();
+        List<Item> items = inspireCodelist.getItems();
         CodeList codelist = mapToCodelist(items);
-        addEnglishVersion(codelist, priorityDatasetEn.getItems());
+        addEnglishVersion(codelist, inspireCodelistEn.getItems());
 
         return codelist;
     }
