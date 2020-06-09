@@ -39,7 +39,7 @@ THIS_DIR=`dirname "$THIS"`
 INGRID_HOME=`cd "$THIS_DIR" ; pwd`
 PID=$INGRID_HOME/ingrid.pid
 
-INGRID_OPTS="-Djetty.port=@SERVER_PORT@ -Djetty.home=."
+INGRID_OPTS="-Djetty.port=@SERVER_PORT@ -Djetty.home=. $INGRID_OPTS $JAVA_OPTS"
 
 # include default options, i.e. debug, jmx and jvm options
 if [ -f $INGRID_HOME/env.user.sh ]; then
