@@ -6,6 +6,12 @@
     </properties>
     <body>
 
+        <release version="5.4.4-SNAPSHOT" date="2020-xx-xx" description="Release 5.4.4">
+            <action type="fix" dev="wemove" issue="1920">
+                Take ENV variable INGRID_OPTS into account.
+            </action>
+        </release>
+
         <release version="5.4.3" date="2020-04-06" description="Release 5.4.3">
             <action type="fix" dev="wemove" issue="1907">
                 Fix problem accessing INSPIRE registry.
