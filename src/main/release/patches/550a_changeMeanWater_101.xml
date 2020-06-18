@@ -1,0 +1,24 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>101</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>900011</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Mittelwasser</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Mean Sea Level</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
