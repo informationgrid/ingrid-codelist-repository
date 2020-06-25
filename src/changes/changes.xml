@@ -6,9 +6,9 @@
     </properties>
     <body>
 
-        <release version="5.4.4-SNAPSHOT" date="2020-xx-xx" description="Release 5.4.4">
+        <release version="5.4.4" date="2020-06-25" description="Release 5.4.4">
             <action type="fix" dev="wemove" issue="1920">
-                Take ENV variable INGRID_OPTS into account.
+                Take ENV variable INGRID_OPTS into account. This fixes problems injecting a proxy into the network configuration via ENV.
             </action>
         </release>
 
