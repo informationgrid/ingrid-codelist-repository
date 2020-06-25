@@ -6,6 +6,12 @@
     </properties>
     <body>
 
+        <release version="5.4.5" date="2020-06-25" description="Release 5.4.5">
+            <action type="fix" dev="wemove" issue="1936">
+                Update Codelist 9016: add UVPG-14, 16-18.
+            </action>
+        </release>
+
         <release version="5.4.4" date="2020-06-25" description="Release 5.4.4">
             <action type="fix" dev="wemove" issue="1920">
                 Take ENV variable INGRID_OPTS into account. This fixes problems injecting a proxy into the network configuration via ENV.
