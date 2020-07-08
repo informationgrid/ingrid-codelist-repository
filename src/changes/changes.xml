@@ -7,6 +7,9 @@
     <body>
 
     <release version="5.5.0-SNAPSHOT" date="2020-xx-xx" description="Release 5.5.0">
+        <action type="add" dev="wemove" issue="967">
+            Add English localisation for AdV-Produktgruppe (8010), Konformität (6005).
+        </action>
         <action type="add" dev="wemove" issue="1898">
             Change the docker container’s privilege to a non-root user.
         </action>
