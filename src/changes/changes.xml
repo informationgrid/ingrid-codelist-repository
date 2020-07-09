@@ -11,7 +11,7 @@
             Add MQTT protocol to operation types codelist (5180).
         </action>
         <action type="add" dev="wemove" issue="967">
-            Add English localisation for AdV-Produktgruppe (8010), Konformität (6005).
+            Add English localisation for AdV-Produktgruppe (8010), Konformität (6005), OpenData (OGDD) Categories (6400).
         </action>
         <action type="add" dev="wemove" issue="1898">
             Change the docker container’s privilege to a non-root user.
