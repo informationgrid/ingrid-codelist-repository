@@ -28,7 +28,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PriorityDatasetModel {
+public class InspireCodelistModel {
 
     @JsonProperty("metadata-codelist")
     public MetadataCodelist metadataCodelist;

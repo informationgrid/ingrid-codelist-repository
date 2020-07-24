@@ -6,6 +6,30 @@
     </properties>
     <body>
 
+    <release version="5.5.0" date="2020-07-24" description="Release 5.5.0">
+        <action type="add" dev="wemove" issue="1234">
+            Add MQTT protocol to operation types codelist (5180).
+        </action>
+        <action type="add" dev="wemove" issue="967">
+            Add English localisation for AdV-Produktgruppe (8010), Konformität (6005), OpenData (OGDD) Categories (6400).
+        </action>
+        <action type="add" dev="wemove" issue="1898">
+            Change the docker container’s privilege to a non-root user.
+        </action>
+        <action type="add" dev="wemove" issue="1936">
+            Update Codelist 9016: add UVPG-14, 16-18.
+        </action>
+        <action type="fix" dev="wemove" issue="1920">
+            Take ENV variable INGRID_OPTS into account.
+        </action>
+        <action type="fix" dev="wemove" issue="1907">
+            Fix problem accessing INSPIRE registry.
+        </action>
+        <action type="add" dev="wemove" issue="1407">
+            Add new entry 'Mittelwasser' to Codelist 101.
+        </action>
+    </release>
+
     <release version="5.4.0" date="2020-04-17" description="Release 5.4.0">
         <action type="add" dev="wemove" issue="1267">
             Improve MD_GridSpatialRepresentation support.

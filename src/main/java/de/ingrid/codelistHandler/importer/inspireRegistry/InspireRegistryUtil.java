@@ -23,7 +23,7 @@
 package de.ingrid.codelistHandler.importer.inspireRegistry;
 
 import de.ingrid.codelistHandler.importer.inspireRegistry.model.Item;
-import de.ingrid.codelistHandler.importer.inspireRegistry.model.PriorityDatasetModel;
+import de.ingrid.codelistHandler.importer.inspireRegistry.model.InspireCodelistModel;
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
 import de.ingrid.codelists.model.CodeListEntryStatus;
@@ -31,7 +31,6 @@ import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,14 +40,26 @@ public class InspireRegistryUtil {
 
     private static Logger log = Logger.getLogger(InspireRegistryUtil.class);
 
-    public CodeList importFromRegistry(URL urlGerman, URL urlEnglish) throws IOException {
+    public CodeList importFromRegistry(URL urlGerman, URL urlEnglish) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-        PriorityDatasetModel priorityDataset = objectMapper.readValue(urlGerman, PriorityDatasetModel.class);
-        PriorityDatasetModel priorityDatasetEn = objectMapper.readValue(urlEnglish, PriorityDatasetModel.class);
+        InspireCodelistModel inspireCodelist = null;
+        InspireCodelistModel inspireCodelistEn = null;
+        try {
+            inspireCodelist = objectMapper.readValue(urlGerman, InspireCodelistModel.class);
+        } catch (Exception e) {
+            log.error("Error parsing JSON data from " + urlGerman, e);
+            throw e;
+        }
+        try {
+            inspireCodelistEn = objectMapper.readValue(urlEnglish, InspireCodelistModel.class);
+        } catch (Exception e) {
+            log.error("Error parsing JSON data from " + urlEnglish, e);
+            throw e;
+        }
 
-        List<Item> items = priorityDataset.getItems();
+        List<Item> items = inspireCodelist.getItems();
         CodeList codelist = mapToCodelist(items);
-        addEnglishVersion(codelist, priorityDatasetEn.getItems());
+        addEnglishVersion(codelist, inspireCodelistEn.getItems());
 
         return codelist;
     }

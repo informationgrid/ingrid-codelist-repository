@@ -1,0 +1,209 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6400</id>
+    <type>UPDATE</type>
+    <codelist>
+      <id>6400</id>
+      <name>Kategorien (Open Data)</name>
+      <defaultEntry>-1</defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bevölkerung</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bevölkerung</string>
+            </entry>
+          </localisations>
+          <data>bevoelkerung</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Bildung und Wissenschaft</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Bildung und Wissenschaft</string>
+            </entry>
+          </localisations>
+          <data>bildung_wissenschaft</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Geographie, Geologie und Geobasisdaten</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Geographie, Geologie und Geobasisdaten</string>
+            </entry>
+          </localisations>
+          <data>geo</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>4</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Gesetze und Justiz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Gesetze und Justiz</string>
+            </entry>
+          </localisations>
+          <data>gesetze_justiz</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>5</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Gesundheit</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Gesundheit</string>
+            </entry>
+          </localisations>
+          <data>gesundheit</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>6</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Infrastruktur, Bauen und Wohnen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Infrastruktur, Bauen und Wohnen</string>
+            </entry>
+          </localisations>
+          <data>infrastruktur_bauen_wohnen</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>7</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Kultur, Freizeit, Sport und Tourismus</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Kultur, Freizeit, Sport und Tourismus</string>
+            </entry>
+          </localisations>
+          <data>kultur_freizeit_sport_tourismus</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>8</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Politik und Wahlen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Politik und Wahlen</string>
+            </entry>
+          </localisations>
+          <data>politik_wahlen</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>9</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Soziales</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Soziales</string>
+            </entry>
+          </localisations>
+          <data>soziales</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>10</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Transport und Verkehr</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Transport und Verkehr</string>
+            </entry>
+          </localisations>
+          <data>transport_verkehr</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>11</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Umwelt und Klima</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Umwelt und Klima</string>
+            </entry>
+          </localisations>
+          <data>umwelt_klima</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>12</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Verbraucherschutz</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Verbraucherschutz</string>
+            </entry>
+          </localisations>
+          <data>verbraucher</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>13</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Öffentliche Verwaltung, Haushalt und Steuern</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Öffentliche Verwaltung, Haushalt und Steuern</string>
+            </entry>
+          </localisations>
+          <data>verwaltung</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>14</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Wirtschaft und Arbeit</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Wirtschaft und Arbeit</string>
+            </entry>
+          </localisations>
+          <data>wirtschaft_arbeit</data>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

@@ -27,11 +27,10 @@ import de.ingrid.codelists.CodeListService;
 import de.ingrid.codelists.model.CodeList;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 @Service
@@ -40,8 +39,6 @@ public class SpatialScopeImporter implements Importer {
     private static Logger log = Logger.getLogger(SpatialScopeImporter.class);
 
     public static final String CODELIST_ID = "6360";
-    private static String DATA_URL_DE = "http://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.de.json";
-    private static String DATA_URL_EN = "http://inspire.ec.europa.eu/metadata-codelist/SpatialScope/SpatialScope.en.json";
 
     @Autowired
     CodeListService codeListService;
@@ -49,21 +46,33 @@ public class SpatialScopeImporter implements Importer {
     @Autowired
     InspireRegistryUtil registry;
 
+    @Value("${spatial.scope.de.resource.url}")
+    private String dataUrlDE;
+
+    @Value("${spatial.scope.de.resource.url}")
+    private String dataUrlEN;
+
     @Override
     public void start() {
 
         try {
-            URL url = new URI(DATA_URL_DE).toURL();
-            URL urlEn = new URI(DATA_URL_EN).toURL();
+
+            URL url = new URI(dataUrlDE).toURL();
+            URL urlEn = new URI(dataUrlEN).toURL();
+
+            log.info("Import SpatialScope code list " + CODELIST_ID + " from INSPIRE registry.");
+            log.info("Source SpatialScope (de): " + dataUrlDE);
+            log.info("Source SpatialScope (en): " + dataUrlEN);
 
             CodeList codelist = registry.importFromRegistry(url, urlEn);
+            log.info("Import successful.");
             codelist.setName("Spatial Scope");
             codelist.setId(CODELIST_ID);
 
             this.codeListService.setCodelist(CODELIST_ID, codelist);
             this.codeListService.persistToAll();
 
-        } catch (URISyntaxException | IOException e) {
+        } catch (Exception e) {
             log.error("Problem synchronizing priority dataset from INSPIRE registry", e);
         }
 

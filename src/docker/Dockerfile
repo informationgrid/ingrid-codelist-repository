@@ -1,18 +1,21 @@
-FROM docker-registry.wemove.com/ingrid-java
-ENV INGRID_USER=root
+FROM alpine AS builder
+
+COPY ingrid-codelist-*-installer.jar /
+RUN unzip ingrid-*-installer.jar -d /tmp \
+    && export INSTALL_DIR=`ls -d1 /tmp/ingrid-*` \
+    && sed -i 's/@SERVER_PORT@/8080/' $INSTALL_DIR/start.sh \
+    && sed -i -r 's/(<AppenderRef.*\/>)/\1<AppenderRef ref="Console" \/>/g' $INSTALL_DIR/conf/log4j2.xml
+
+FROM docker-registry.wemove.com/ingrid-java:jre-8-alpine
+ENV INGRID_USER=ingrid
 ENV RUN_DIRECTLY=true
 
-ADD ingrid-codelist-*-installer.jar /
+# user, group ingrid (1000:1000) is created in base image
+COPY --chown=1000:1000 --from=builder /tmp/ingrid-codelist* /opt/ingrid/ingrid-codelist-repository/
 
-RUN unzip ingrid-*.jar -d /tmp \
-    && mkdir -p /opt/ingrid/ingrid-codelist-repository \
-    && cp -R /tmp/ingrid-codelist-repository-*/* /opt/ingrid/ingrid-codelist-repository/ \
-    && sed -i 's/@SERVER_PORT@/80/' /opt/ingrid/ingrid-codelist-repository/start.sh \
-    && rm -Rf /tmp/* \
-    && sed -i -r 's/(<AppenderRef.*\/>)/\1<AppenderRef ref="Console" \/>/g' /opt/ingrid/ingrid-codelist-repository/conf/log4j2.xml \
-    && rm ingrid-*.jar
+USER ingrid
 
 WORKDIR /opt/ingrid/ingrid-codelist-repository
-EXPOSE 80
+EXPOSE 8080
 
 CMD /bin/sh start.sh start
