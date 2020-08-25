@@ -7,6 +7,9 @@
     <body>
 
     <release version="5.6.0-SNAPSHOT" date="2020-XX-XX" description="Release 5.6.0">
+        <action type="add" dev="wemove" issue="1783">
+            Add new codelist 7128: 'Datenqualität - Relative Positionsgenauigkeit - Art der Messung'.
+        </action>
         <action type="add" dev="wemove" issue="1840">
             Add new  entry 'Nutzung der Daten nur nach Rücksprache mit dem Dateneigentümer' to CodeList 6500.
         </action>
