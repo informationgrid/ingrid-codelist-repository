@@ -52,6 +52,10 @@ public class PatchCodelistSyntaxTest {
                 xml.setPathToXml( file );
                 List<CodeListUpdate> updateCodelists = xml.read();
 
+                if(updateCodelists.isEmpty()){
+                    Assert.fail( "Error validating Codelist patch: " + file );
+                }
+
                 for (CodeListUpdate codeList : updateCodelists) {
                     switch (codeList.getType()) {
                     case ADD:
