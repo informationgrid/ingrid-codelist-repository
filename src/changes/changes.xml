@@ -6,6 +6,11 @@
     </properties>
     <body>
 
+    <release version="5.5.1" date="2020-09-01" description="Release 5.5.1">
+        <action type="fix" dev="wemove" issue="">
+            Fix codelist patches and adapt test.
+        </action>
+    </release>
     <release version="5.5.0" date="2020-07-24" description="Release 5.5.0">
         <action type="add" dev="wemove" issue="1234">
             Add MQTT protocol to operation types codelist (5180).
