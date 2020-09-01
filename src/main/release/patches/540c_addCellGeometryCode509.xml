@@ -2,7 +2,7 @@
   <de.ingrid.codelistHandler.model.CodeListUpdate>
     <id>509</id>
     <type>ADD</type>
-    <de.ingrid.codelists.model.CodeList>
+    <codelist>
       <id>509</id>
       <name>Zellengeometrie (B.5.9 MD_CellGeometryCode)</name>
       <description></description>
@@ -42,6 +42,6 @@
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>
       </entries>
-    </de.ingrid.codelists.model.CodeList>
+    </codelist>
   </de.ingrid.codelistHandler.model.CodeListUpdate>
 </list>
