@@ -2,7 +2,7 @@
   <de.ingrid.codelistHandler.model.CodeListUpdate>
     <id>7128</id>
     <type>ADD</type>
-    <de.ingrid.codelists.model.CodeList>
+    <codelist>
       <id>7128</id>
       <name>Datenqualität - Relative Positionsgenauigkeit - Art der Messung</name>
       <defaultEntry></defaultEntry>
@@ -47,6 +47,6 @@
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>
       </entries>
-    </de.ingrid.codelists.model.CodeList>
+    </codelist>
   </de.ingrid.codelistHandler.model.CodeListUpdate>
 </list>
