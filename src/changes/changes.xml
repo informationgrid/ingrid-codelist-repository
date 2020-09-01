@@ -13,6 +13,9 @@
         <action type="add" dev="wemove" issue="1840">
             Add new  entry 'Nutzung der Daten nur nach Rücksprache mit dem Dateneigentümer' to CodeList 6500.
         </action>
+        <action type="fix" dev="wemove" issue="2099">
+            Fix codelist patches and adapt test.
+        </action>
     </release>
 
     <release version="5.5.0" date="2020-07-24" description="Release 5.5.0">
