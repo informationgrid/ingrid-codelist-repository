@@ -10,6 +10,9 @@
             <action type="add" dev="wemove" issue="1936">
                 Add MQTT protocol to operation types codelist (5180).
             </action>
+            <action type="fix" dev="wemove" issue="2099">
+                Fix codelist patches and adapt test.
+            </action>
         </release>
 
         <release version="5.4.5" date="2020-06-25" description="Release 5.4.5">
