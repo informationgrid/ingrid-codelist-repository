@@ -1,26 +1,22 @@
 <list>
   <de.ingrid.codelistHandler.model.CodeListUpdate>
-    <id>509</id>
+    <id>7128</id>
     <type>ADD</type>
     <codelist>
-      <id>509</id>
-      <name>Zellengeometrie (B.5.9 MD_CellGeometryCode)</name>
-      <description></description>
+      <id>7128</id>
+      <name>Datenqualität - Relative Positionsgenauigkeit - Art der Messung</name>
+      <defaultEntry></defaultEntry>
       <entries>
         <de.ingrid.codelists.model.CodeListEntry>
           <id>1</id>
           <localisations>
             <entry>
               <string>de</string>
-              <string>Punkt</string>
-            </entry>
-            <entry>
-              <string>iso</string>
-              <string>point</string>
+              <string>mean value of positional uncertainties (1D)</string>
             </entry>
             <entry>
               <string>en</string>
-              <string>Point</string>
+              <string>mean value of positional uncertainties (1D)</string>
             </entry>
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>
@@ -29,15 +25,24 @@
           <localisations>
             <entry>
               <string>de</string>
-              <string>Fläche</string>
-            </entry>
-            <entry>
-              <string>iso</string>
-              <string>area</string>
+              <string>mean value of positional uncertainties (2D)</string>
             </entry>
             <entry>
               <string>en</string>
-              <string>Area</string>
+              <string>mean value of positional uncertainties (2D)</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>mean value of positional uncertainties (3D)</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>mean value of positional uncertainties (3D)</string>
             </entry>
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>

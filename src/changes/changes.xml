@@ -6,6 +6,18 @@
     </properties>
     <body>
 
+    <release version="5.6.0" date="2020-10-15" description="Release 5.6.0">
+        <action type="add" dev="wemove" issue="1783">
+            Add new codelist 7128: 'Datenqualität - Relative Positionsgenauigkeit - Art der Messung'.
+        </action>
+        <action type="add" dev="wemove" issue="1840">
+            Add new  entry 'Nutzung der Daten nur nach Rücksprache mit dem Dateneigentümer' to CodeList 6500.
+        </action>
+        <action type="fix" dev="wemove" issue="2099">
+            Fix codelist patches and adapt test.
+        </action>
+    </release>
+
     <release version="5.5.0" date="2020-07-24" description="Release 5.5.0">
         <action type="add" dev="wemove" issue="1234">
             Add MQTT protocol to operation types codelist (5180).

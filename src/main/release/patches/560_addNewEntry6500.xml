@@ -1,0 +1,20 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>6500</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>33</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Nutzung der Daten nur nach Rücksprache mit dem Dateneigentümer</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
