@@ -1,0 +1,28 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>5200</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>206</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Dienst für den Zugriff auf Objektarten</string>
+            </entry>
+            <entry>
+              <string>iso</string>
+              <string>infoFeatureTypeService</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>Feature type service</string>
+            </entry>
+          </localisations>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
