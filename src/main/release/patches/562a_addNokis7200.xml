@@ -1,9 +1,9 @@
 <list>
     <de.ingrid.codelistHandler.model.CodeListUpdate>
-        <id>20000</id>
+        <id>7200</id>
         <type>ADD</type>
         <codelist>
-            <id>20000</id>
+            <id>7200</id>
             <name>NOKIS: Wortliste</name>
             <defaultEntry>-1</defaultEntry>
             <entries>
@@ -3752,6 +3752,7 @@
                     </localisations>
                 </de.ingrid.codelists.model.CodeListEntry>
             </entries>
+            <lastModified>1605179119247</lastModified>
         </codelist>
     </de.ingrid.codelistHandler.model.CodeListUpdate>
 </list>
