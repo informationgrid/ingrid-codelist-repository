@@ -16,6 +16,9 @@
         <action type="add" dev="wemove" issue="2210">
             Nokis: Add codelist 7200 for thesaurus.
         </action>
+        <action type="update" dev="wemove" issue="2229">
+            Update codelist 111: update entries.
+        </action>
     </release>
 
     <release version="5.6.0" date="2020-10-15" description="Release 5.6.0">
