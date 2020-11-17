@@ -16,6 +16,9 @@
         <action type="add" dev="wemove" issue="2210">
             Nokis: Add codelist 7200 for thesaurus.
         </action>
+        <action type="add" dev="wemove" issue="967">
+            Add codelists 600 and 601 for localisations.
+        </action>
         <action type="update" dev="wemove" issue="2229">
             Update codelist 111: update entries.
         </action>
