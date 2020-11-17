@@ -8,7 +8,7 @@
       <defaultEntry></defaultEntry>
       <entries>
         <de.ingrid.codelists.model.CodeListEntry>
-          <id>1</id>
+          <id>0</id>
           <localisations>
               <entry>
               <string>de</string>
@@ -21,7 +21,7 @@
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>
         <de.ingrid.codelists.model.CodeListEntry>
-          <id>2</id>
+          <id>1</id>
           <localisations>
               <entry>
               <string>de</string>
