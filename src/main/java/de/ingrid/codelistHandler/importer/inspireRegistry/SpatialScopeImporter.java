@@ -49,7 +49,7 @@ public class SpatialScopeImporter implements Importer {
     @Value("${spatial.scope.de.resource.url}")
     private String dataUrlDE;
 
-    @Value("${spatial.scope.de.resource.url}")
+    @Value("${spatial.scope.en.resource.url}")
     private String dataUrlEN;
 
     @Override
