@@ -8,7 +8,7 @@
 
     <release version="5.7.0" date="2020-xx-xx" description="Release 5.7.0">
         <action type="fix" dev="wemove" issue="1524">
-            Add english translations to codelist 10004
+            Add english translations to codelist 10003 and 10004
         </action>
         <action type="fix" dev="wemove" issue="2093">
             Fix wrong iso in codelist 5200
