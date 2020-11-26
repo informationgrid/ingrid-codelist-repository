@@ -14,11 +14,11 @@
           <localisations>
             <entry>
               <string>de</string>
-              <string>(01) Open Data des Bundes</string>
+              <string>(01) GeoNutzV</string>
             </entry>
             <entry>
               <string>en</string>
-              <string>(01) Open Data des Bundes</string>
+              <string>(01) GeoNutzV</string>
             </entry>
           </localisations>
           <data>{ "id": "geoNutz/20130319", "name": "Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes", "url": "https://sg.geodatenzentrum.de/web_public/gdz/lizenz/geonutzv.pdf", "quelle": "" }</data>
