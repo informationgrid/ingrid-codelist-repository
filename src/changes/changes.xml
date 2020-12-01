@@ -7,6 +7,9 @@
     <body>
 
     <release version="5.7.0" date="2020-xx-xx" description="Release 5.7.0">
+        <action type="fix" dev="wemove" issue="2254">
+            Fix wrong number in UVP RP Codelist 9002
+        </action>
         <action type="update" dev="wemove" issue="2240">
             Update wording in codelist 10003 and 10004
         </action>
