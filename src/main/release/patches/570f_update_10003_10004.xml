@@ -1,0 +1,50 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10003</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>17</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(12) Legal Notice Sentinel Data</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>(12) Legal Notice Sentinel Data</string>
+            </entry>
+          </localisations>
+          <data>{"id":"other-open", "name":"Legal Notice Sentinel Data", "url":"https://sg.geodatenzentrum.de/web_public/Sentinel_Data_Legal_Notice_deu.pdf", "quelle":"© Europäische Union, enthält Copernicus Sentinel-2 Daten [Jahr], verarbeitet durch das Bundesamt für Kartographie und Geodäsie (BKG)"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10004</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>17</id>
+          <description/>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Die Daten sind urheberrechtlich geschützt. Der Datensatz wird entgeltfrei unter folgenden Nutzungsbedingungen zur Verfügung gestellt: Legal notice on the use of Copernicus Sentinel Data and Service Information (https://sg.geodatenzentrum.de/web_public/Sentinel_Data_Legal_Notice_deu.pdf). Der Quellenvermerk ist zu beachten.</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>The data are protected by copyright. The data set is made available free of charge under the following terms of use: Legal notice on the use of Copernicus Sentinel Data and Service Information (https://sg.geodatenzentrum.de/web_public/Sentinel_Data_Legal_Notice_deu.pdf). The source note must be observed.</string>
+            </entry>
+          </localisations>
+          <data/>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
