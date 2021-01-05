@@ -7,6 +7,12 @@
     <body>
 
     <release version="5.7.0" date="2020-xx-xx" description="Release 5.7.0">
+        <action type="update" dev="wemove" issue="1524">
+            Add english localisations to codelist 6010
+        </action>
+        <action type="update" dev="wemove" issue="2278">
+            Add new entry to bkg codelists 10003 and 10004
+        </action>
         <action type="fix" dev="wemove" issue="2254">
             Fix wrong number in UVP RP Codelist 9002
         </action>
