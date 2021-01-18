@@ -1,0 +1,21 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>9002</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>370</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>LUVPG RP-5.4.2</string>
+                        </entry>
+                    </localisations>
+                    <data>{"cat":"UVPG-18", "type":"A"}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

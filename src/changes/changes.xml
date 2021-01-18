@@ -6,6 +6,39 @@
     </properties>
     <body>
 
+    <release version="5.7.0" date="2020-01-18" description="Release 5.7.0">
+        <action type="update" dev="wemove" issue="1524">
+            Add english localisations to codelist 6010
+        </action>
+        <action type="update" dev="wemove" issue="2278">
+            Add new entry to bkg codelists 10003 and 10004
+        </action>
+        <action type="fix" dev="wemove" issue="2254">
+            Fix wrong number in UVP RP Codelist 9002
+        </action>
+        <action type="update" dev="wemove" issue="2240">
+            Update wording in codelist 10003 and 10004
+        </action>
+        <action type="add" dev="wemove" issue="1524">
+            Add english translations to codelist 10003 and 10004
+        </action>
+        <action type="fix" dev="wemove" issue="2093">
+            Fix wrong iso in codelist 5200
+        </action>
+        <action type="update" dev="wemove" issue="2167">
+            Update codelist 111: update some entries and add new ones.
+        </action>
+        <action type="add" dev="wemove" issue="2210">
+            Nokis: Add codelist 7200 for thesaurus.
+        </action>
+        <action type="add" dev="wemove" issue="967">
+            Add codelists 600 and 601 for localisations.
+        </action>
+        <action type="update" dev="wemove" issue="2229">
+            Update codelist 111: update entries.
+        </action>
+    </release>
+
     <release version="5.6.0" date="2020-10-15" description="Release 5.6.0">
         <action type="add" dev="wemove" issue="1783">
             Add new codelist 7128: 'Datenqualität - Relative Positionsgenauigkeit - Art der Messung'.
