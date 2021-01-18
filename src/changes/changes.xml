@@ -6,7 +6,7 @@
     </properties>
     <body>
 
-    <release version="5.7.0" date="2020-xx-xx" description="Release 5.7.0">
+    <release version="5.7.0" date="2020-01-18" description="Release 5.7.0">
         <action type="update" dev="wemove" issue="1524">
             Add english localisations to codelist 6010
         </action>
