@@ -7,6 +7,9 @@
     <body>
 
     <release version="5.7.2-SNAPSHOT" date="2021-xx-xx" description="Release 5.7.2-SNAPSHOT">
+        <action type="fix" dev="wemove" issue="2365">
+            Remove wrong entries from codelist 6001 and fix 6003
+        </action>
     </release>
 
     <release version="5.7.1" date="2021-02-08" description="Release 5.7.1">
