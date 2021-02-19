@@ -6,7 +6,7 @@
     </properties>
     <body>
 
-    <release version="5.5.6" date="2021-XX-XX" description="Release 5.5.6">
+    <release version="5.5.6" date="2021-02-19" description="Release 5.5.6">
         <action type="fix" dev="wemove" issue="2365">
             Remove wrong entries from codelist 6001 and fix 6003
         </action>
