@@ -6,7 +6,7 @@
     </properties>
     <body>
 
-    <release version="5.8.0" date="2021-XX-XX" description="Release 5.8.0">
+    <release version="5.8.0" date="2021-04-15" description="Release 5.8.0">
         <action type="fix" dev="wemove" issue="">
             Fix wrong entry in codelists 111 and 6005
         </action>
@@ -290,10 +290,10 @@
         Remove updated codelist files once they were executed.
       </action>
       <action type="fix" dev="wemove" issue="797">
-        Fixed notification when codelist could not be written. 
+        Fixed notification when codelist could not be written.
       </action>
     </release>
-    
+
     <release version="4.0.3" date="2017-06-13" description="Release 4.0.3">
       <action type="add" dev="wemove" issue="REDMINE-533">
         Added service type version "predefined ATOM".
@@ -305,7 +305,7 @@
         Prepare for docker deployment.
       </action>
     </release>
-    
+
     <release version="4.0.1" date="2016-02-01" description="Release 4.0.1">
       <action type="fix" dev="wemove" issue="REDMINE-465">
         Fixed wrong path to save data when using cygwin.
@@ -323,7 +323,7 @@
             Fixed wording of "letzte Änderung".
           </action>
         </release>
-        
+
         <release version="3.6.2" date="2016-05-25" description="Release 3.6.2">
             <action type="update" dev="wemove">
                 Updated Logo to InGrid Logo.
@@ -332,7 +332,7 @@
                 Update of codelist 6005 (conformity), adapted to GDI-DE.
             </action>
         </release>
-        
+
         <release version="3.6.1" date="2015-11-18" description="Release InGrid 3.6.1">
             <action type="add" dev="wemove" issue="REDMINE-15">
                 Removal of PortalU-references.
@@ -345,7 +345,7 @@
                 Improved update of codelist repository when installing a new version.
             </action>
         </release>
-        
+
         <release version="3.5.0" date="2015-01-29" description="Release InGrid 3.5.0">
             <action type="add" dev="wemove" issue="REDMINE-524">
                 Added license header to all source files for Open Source migration.
