@@ -6,6 +6,12 @@
     </properties>
     <body>
 
+    <release version="5.10.0-SNAPSHOT" date="xxxx-xx-xx" description="Release 5.10.0-SNAPSHOT">
+        <action type="fix" dev="wemove" issue="">
+            Rename codelist patches to avoid naming conflicts
+        </action>
+    </release>
+
     <release version="5.9.0" date="2021-07-16" description="Release 5.9.0">
         <action type="add" dev="wemove" issue="2376">
             Add new Entries to codelist 1320
