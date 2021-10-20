@@ -1,0 +1,21 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>6500</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>37</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Creative Commons Namensnennung 3.0 Deutschland</string>
+                        </entry>
+                    </localisations>
+                    <data>{"id":"CC BY 3.0 DE","name":"Creative Commons Namensnennung 3.0 Deutschland","url":"https://creativecommons.org/licenses/by/3.0/de/","quelle":""}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
