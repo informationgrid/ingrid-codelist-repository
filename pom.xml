@@ -7,7 +7,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ingrid-codelist-repository</artifactId>
-  <version>5.5.9-SNAPSHOT</version>
+  <version>5.5.10</version>
   <packaging>jar</packaging>
   <name>InGrid CodeList Repository</name>
   <description>This is the repository where all codelists are organized.</description>
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>de.ingrid</groupId>
       <artifactId>ingrid-codelist-service</artifactId>
-      <version>5.5.0</version>
+      <version>5.5.10</version>
       <exclusions>
         <!-- no quartz jobs needed in this project -->
         <exclusion>
