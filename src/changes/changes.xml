@@ -6,7 +6,7 @@
     </properties>
     <body>
 
-    <release version="5.10.1" date="2021-XX-XX" description="Release 5.10.1">
+    <release version="5.10.1" date="2021-11-23" description="Release 5.10.1">
         <action type="update" dev="wemove" issue="3100">
             Update codelist 9003 to match new UVPG Sachsen standard
         </action>
