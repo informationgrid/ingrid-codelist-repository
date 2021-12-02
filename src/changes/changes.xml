@@ -15,6 +15,9 @@
         <action type="update" dev="wemove" issue="3100">
             Update codelist 9003 to match new UVPG Sachsen standard
         </action>
+        <action type="add" dev="wemove" issue="2532">
+            Add EPSG 4327 to codelist 100
+        </action>
     </release>
 
     <release version="5.10.0" date="2021-10-20" description="Release 5.10.0">
