@@ -148,7 +148,7 @@ public class CodeListUpdateTest {
         // codelist "100" is available in the beginning
         CodeList codeList100 = manager.getCodeList( "100" );
         assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 51 ) );
+        assertThat( codeList100.getEntries().size(), is( 52 ) );
 
         // read update codelist file and apply
         manager.updateCodelistsFromUpdateFile( dataFileUpdate );
@@ -174,7 +174,7 @@ public class CodeListUpdateTest {
         // codelist "100" has no entry "1234" in the beginning
         CodeList codeList100 = manager.getCodeList( "100" );
         assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 51 ) );
+        assertThat( codeList100.getEntries().size(), is( 52 ) );
         assertThat( manager.getCodeListEntry( "100", "1234" ), is( nullValue() ) );
 
         // read update codelist file and apply
@@ -186,7 +186,7 @@ public class CodeListUpdateTest {
         // codelist "100" should have entry 1234 now
         codeList100 = manager.getCodeList( "100" );
         assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 52 ) );
+        assertThat( codeList100.getEntries().size(), is( 53 ) );
         assertThat( manager.getCodeListEntry( "100", "1234" ), is( not( nullValue() ) ) );
     }
 
@@ -195,7 +195,7 @@ public class CodeListUpdateTest {
         // codelist "100" has an entry "3068" in the beginning
         CodeList codeList100 = manager.getCodeList( "100" );
         assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 51 ) );
+        assertThat( codeList100.getEntries().size(), is( 52 ) );
         assertThat( manager.getCodeListEntry( "100", "4178" ), is( not( nullValue() ) ) );
 
         // read update codelist file and apply
@@ -207,7 +207,7 @@ public class CodeListUpdateTest {
         // codelist "100" should have no entry "3068" now
         codeList100 = manager.getCodeList( "100" );
         assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 50 ) );
+        assertThat( codeList100.getEntries().size(), is( 51 ) );
         assertThat( manager.getCodeListEntry( "100", "4178" ), is( nullValue() ) );
     }
 
@@ -216,7 +216,7 @@ public class CodeListUpdateTest {
         // codelist "100" has an entry "3068" in the beginning
         CodeList codeList100 = manager.getCodeList( "100" );
         assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 51 ) );
+        assertThat( codeList100.getEntries().size(), is( 52 ) );
         assertThat( manager.getCodeListEntry( "100", "3068" ), is( not( nullValue() ) ) );
 
         // read update codelist file and apply
@@ -228,7 +228,7 @@ public class CodeListUpdateTest {
         // codelist "100" should have entry 1234 now
         codeList100 = manager.getCodeList( "100" );
         assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 51 ) );
+        assertThat( codeList100.getEntries().size(), is( 52 ) );
         CodeListEntry entry = manager.getCodeListEntry( "100", "3068" );
         assertThat( entry, is( not( nullValue() ) ) );
         assertThat( entry.getId(), is( "3068" ) );
