@@ -6,6 +6,12 @@
     </properties>
     <body>
 
+    <release version="5.9.2.2" date="2021-12-13" description="Release 5.9.2.2">
+        <action type="fix" dev="wemove" issue="3292">
+            Kritische Sicherheitslücke Log4Shell in der weitverbreiteten Java-Logging-Bibliothek log4j
+        </action>
+    </release>
+
     <release version="5.9.0" date="2021-07-16" description="Release 5.9.0">
         <action type="add" dev="wemove" issue="2376">
             Add new Entries to codelist 1320
