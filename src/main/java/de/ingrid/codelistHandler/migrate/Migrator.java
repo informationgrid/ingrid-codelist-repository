@@ -2,7 +2,7 @@
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
- * Copyright (C) 2014 - 2021 wemove digital solutions GmbH
+ * Copyright (C) 2014 - 2022 wemove digital solutions GmbH
  * ==================================================
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
@@ -28,6 +28,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
+import com.thoughtworks.xstream.security.AnyTypePermission;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,7 @@ public class Migrator {
             try {
                 codelistReader = new FileReader(oldCodelistsFile);
                 XStream xStream = new XStream();
+                xStream.addPermission(AnyTypePermission.ANY);
                 List<CodeList> oldCodelists = (List<CodeList>) xStream.fromXML( codelistReader );
                 codeListService.persistToAll( oldCodelists );
                 codelistReader.close();
