@@ -28,6 +28,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
+import com.thoughtworks.xstream.security.AnyTypePermission;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,7 @@ public class Migrator {
             try {
                 codelistReader = new FileReader(oldCodelistsFile);
                 XStream xStream = new XStream();
+                xStream.addPermission(AnyTypePermission.ANY);
                 List<CodeList> oldCodelists = (List<CodeList>) xStream.fromXML( codelistReader );
                 codeListService.persistToAll( oldCodelists );
                 codelistReader.close();

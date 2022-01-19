@@ -26,6 +26,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
+import com.thoughtworks.xstream.security.AnyTypePermission;
 import de.ingrid.codelistHandler.migrate.Migrator;
 import de.ingrid.codelistHandler.model.CodeListEntryUpdate;
 import de.ingrid.codelistHandler.model.CodeListUpdate;
@@ -203,6 +204,7 @@ public class CodeListManager {
         
         //XStream xstream = new XStream(new JettisonMappedXmlDriver());
         //xstream.setMode(XStream.NO_REFERENCES);
+        xstream.addPermission(AnyTypePermission.ANY);
         return xstream.toXML(obj);
     }
 
