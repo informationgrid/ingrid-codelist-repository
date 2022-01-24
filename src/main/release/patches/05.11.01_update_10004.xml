@@ -20,6 +20,8 @@
           </localisations>
           <data></data>
         </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
         <type>UPDATE</type>
         <entry>
           <id>6</id>
