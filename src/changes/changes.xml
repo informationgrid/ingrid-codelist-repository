@@ -6,7 +6,7 @@
     </properties>
     <body>
 
-    <release version="5.11.1-SNAPSHOT" date="2021-xx-xx" description="Release 5.11.1-SNAPSHOT">
+    <release version="5.11.1" date="2021-01-28" description="Release 5.11.1">
         <action type="update" dev="wemove" issue="3315">
             Update URLs in Codelist 10004 from http:// to https://
         </action>
