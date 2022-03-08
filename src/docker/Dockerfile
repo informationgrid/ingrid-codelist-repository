@@ -6,7 +6,7 @@ RUN unzip ingrid-*-installer.jar -d /tmp \
     && sed -i 's/@SERVER_PORT@/8080/' $INSTALL_DIR/start.sh \
     && sed -i -r 's/(<AppenderRef.*\/>)/\1<AppenderRef ref="Console" \/>/g' $INSTALL_DIR/conf/log4j2.xml
 
-FROM docker-registry.wemove.com/ingrid-java:jre-8-alpine
+FROM docker-registry.wemove.com/ingrid-java:jre-8-slim
 ENV INGRID_USER=ingrid
 ENV RUN_DIRECTLY=true
 
