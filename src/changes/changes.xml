@@ -7,6 +7,9 @@
     <body>
 
     <release version="5.12.0-SNAPSHOT" date="2021-xx-xx" description="Release 5.12.0-SNAPSHOT">
+        <action type="fix" dev="wemove" issue="3596">
+            IT-Sicherheitsmängel in Docker Basis Images beseitigen
+        </action>
         <action type="update" dev="wemove" issue="3315">
             Update URLs in Codelist 10004 from http:// to https://
         </action>
