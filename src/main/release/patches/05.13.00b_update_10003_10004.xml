@@ -1,0 +1,140 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10003</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>18</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(13) TopPlusOpen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>(13) TopPlusOpen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "dl-by-de/2.0", "name": "Datenlizenz Deutschland Namensnennung 2.0", "url": "https://www.govdata.de/dl-de/by-2-0", "quelle": "" }</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>9</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(09) Bereitstellung nur für Bundesbehörden</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>(09) Bereitstellung nur für Bundesbehörden</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "other-closed", "name": "Andere geschlossene Lizenz", "url": "http://dcat-ap.de/def/licenses/other-closed", "quelle": "" }</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>16</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(11) Bereitstellung nur für Bundesbehörden und Landesvermessungseinrichtungen</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>(11) Bereitstellung nur für Bundesbehörden und Landesvermessungseinrichtungen</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "other-closed", "name": "Andere geschlossene Lizenz", "url": "http://dcat-ap.de/def/licenses/other-closed", "quelle": "" }</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10004</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>18</id>
+          <description/>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Die Daten sind urheberrechtlich geschützt. Die Kartendarstellung und Präsentationsgraphiken werden entgeltfrei mit der Datenlizenz Deutschland – Namensnennung – Version 2.0 (https://www.govdata.de/dl-de/by-2-0) zur Verfügung gestellt. Der Quellenvermerk ist zu beachten.</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>This data is protected by copyright. The map display and presentation graphics are made available without restrictions and free of charge under the license ‚Datenlizenz Deutschland – Namensnennung – Version 2.0’ (https://www.govdata.de/dl-de/by-2-0). Please include the required reference to the source when using the data.</string>
+            </entry>
+          </localisations>
+          <data/>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>3</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Die Daten sind urheberrechtlich geschützt. Der Datensatz wird entgeltfrei mit der Datenlizenz Deutschland Namensnennung 2.0 (https://www.govdata.de/dl-de/by-2-0) zur Verfügung gestellt. Ergänzung der „Datenlizenz Deutschland – Namensnennung – Version 2.0“ für die Nutzung von Daten der Behörden durch das OpenStreetMap Projekt (https://sg.geodatenzentrum.de/web_public/gdz/lizenz/deu/Datenlizenz_Deutschland_Erg%C3%A4nzungstext_Namensnennung.pdf). Der Quellenvermerk ist zu beachten.</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>This data is protected by copyright. The data set is made available without restrictions and free of charge under the license ‚Datenlizenz Deutschland – Namensnennung – Version 2.0’ (https://www.govdata.de/dl-de/by-2-0). Please include the required reference to the source when using the data.</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>9</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Die Daten sind urheberrechtlich geschützt. Diese Daten stehen allen Einrichtungen des Bundes inklusive Zuwendungsempfängern, soweit sie zu 50 v.H. oder mehr vom Bund gefördert werden, zur Verfügung. Bei Interesse wenden Sie sich bitte an das Dienstleistungszentrum (DLZ) des Bundesamt für Kartographie und Geodäsie: https://www.bkg.bund.de/DE/Service/Kontakt/kontakt.html. Der Quellenvermerk ist zu beachten.</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>This data is protected by copyright. This data is available to all German federal institutions including grant recipients, provided the share of the Federal Republic of Germany is fifty percent or greater. If you are interested, please contact the Service Center (DLZ) of the Federal Agency for Cartography and Geodesy: https://www.bkg.bund.de/EN/About-BKG/Service-Center/service-center.html. Please include the required reference to the source when using the data.</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>UPDATE</type>
+        <entry>
+          <id>16</id>
+          <description/>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Die Daten sind urheberrechtlich geschützt. Diese Daten stehen allen Einrichtungen des Bundes inklusive Zuwendungsempfängern, soweit sie zu 50 v.H. oder mehr vom Bund gefördert werden sowie Landesvermessungseinrichtungen, zur Verfügung. Bei Interesse wenden Sie sich bitte an das Dienstleistungszentrum (DLZ) des Bundesamt für Kartographie und Geodäsie: https://www.bkg.bund.de/DE/Service/Kontakt/kontakt.html. Der Quellenvermerk ist zu beachten.</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>This data is protected by copyright. This data is available to the surveying authorities of the Laender of the Federal Republic of Germany as well as to all German federal institutions including grant recipients, provided the share of the Federal Republic of Germany is fifty percent or greater. If you are interested, please contact the Service Center (DLZ) of the Federal Agency for Cartography and Geodesy: https://www.bkg.bund.de/EN/About-BKG/Service-Center/service-center.html. Please include the required reference to the source when using the data.</string>
+            </entry>
+          </localisations>
+          <data/>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
