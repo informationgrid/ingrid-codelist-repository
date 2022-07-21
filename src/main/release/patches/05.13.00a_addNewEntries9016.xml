@@ -1,0 +1,60 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>9016</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>348</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>BayStrWG-37</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>349</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>BayWaldG-39a</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-17", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>350</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>BayESG-13</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-14", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>351</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>BayAbgrG-8</string>
+            </entry>
+          </localisations>
+          <data>{"cat":"UVPG-2", "type":"X"}</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
