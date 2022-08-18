@@ -10,6 +10,9 @@
         <action type="update" dev="wemove" issue="4115">
             Update codelist 520 to add entry HDD
         </action>
+        <action type="update" dev="wemove" issue="4138">
+            Update codelist 111 entry 117 for metaver
+        </action>
     </release>
 
     <release version="5.13.0" date="2022-07-21" description="Release 5.13.0">
