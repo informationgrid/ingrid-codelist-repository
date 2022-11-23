@@ -1,0 +1,238 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>8010</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>7</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>15</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Adressen</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Adressen</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>16</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Flurstücke/Grundstücke</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Flurstücke/Grundstücke</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>17</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Geografische Bezeichnungen</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Geografische Bezeichnungen</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>18</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Gewässernetz</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Gewässernetz</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>19</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Verkehrsnetze</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Verkehrsnetze</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>20</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Verwaltungseinheiten</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Verwaltungseinheiten</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>21</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Bodenbedeckung</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Bodenbedeckung</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>22</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Höhe</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Höhe</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>23</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Orthofotographie</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Orthofotographie</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>24</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Boden</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Boden</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>25</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Bodennutzung</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Bodennutzung</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>26</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Gebäude 2D</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Gebäude 2D</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>27</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>INSPIRE Gebäude 3D</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>INSPIRE Gebäude 3D</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>28</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Fachübergreifende Anzeigesysteme</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Fachübergreifende Anzeigesysteme</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
