@@ -97,7 +97,7 @@ public class InspireRegistryUtil {
     private String createDataField(Item item) {
         //language=JSON
         return "{\"url\":\"" + item.value.id + "\"," +
-                " \"thesaurusTitle\": \"" + item.value.metadataCodelist.label.text + "\"," +
+                " \"thesaurusTitle\": \"" + item.value.metadataCodelist.label + "\"," +
                 " \"thesaurusId\": \"" + item.value.metadataCodelist.id + "\"," +
 //                "  \"date\": \"" + item.value.date + "\"\n" +
                 "  \"status\": \"" + getStatusFromField(item.value.status.id) + "\"" +
