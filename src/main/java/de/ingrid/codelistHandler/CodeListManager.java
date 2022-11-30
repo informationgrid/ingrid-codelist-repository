@@ -22,11 +22,6 @@
  */
 package de.ingrid.codelistHandler;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
-import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
-import com.thoughtworks.xstream.io.json.JsonWriter;
-import com.thoughtworks.xstream.security.AnyTypePermission;
 import de.ingrid.codelistHandler.migrate.Migrator;
 import de.ingrid.codelistHandler.model.CodeListEntryUpdate;
 import de.ingrid.codelistHandler.model.CodeListUpdate;
@@ -46,7 +41,6 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -139,11 +133,11 @@ public class CodeListManager {
         return codeListService.persistToAll(codelists);
     }
 
-    public Object getCodeListAsJson(String id) {
-        return createJSON(getCodeList(id));
+    public CodeList getCodeListAsJson(String id) {
+        return getCodeList(id);
     }    
     
-    public Object getCodeListsAsJson(String sortField, String lastModified, String sortMethod) {
+    public List<CodeList> getCodeListsAsJson(String sortField, String lastModified, String sortMethod) {
         List<CodeList> cls;
         
         // only get those codelists that have changed after lastModified
@@ -157,63 +151,38 @@ public class CodeListManager {
         } else {
             cls = getCodeLists();
         }
-        return createJSON(CodeListUtils.sortCodeList(cls, sortField, sortMethod));
+        return CodeListUtils.sortCodeList(cls, sortField, sortMethod);
     }
     
-    public Object getCodeListAsShortJson(String sortField, String sortMethod) {
-        String json = "[";
+    public List<ShortCodelist> getCodeListAsShortJson(String sortField, String sortMethod) {
+        List<ShortCodelist> result = new ArrayList<>();
         for (CodeList codelist : CodeListUtils.sortCodeList(getCodeLists(), sortField, sortMethod)) {
-            json += "{id:\""+codelist.getId()+"\",name:\""+codelist.getName()+"\"},";
+            result.add(new ShortCodelist(codelist.getId(), codelist.getName()));
         }
-        json = json.substring(0, json.length()-1) + "]";
-        return json;
+        return result;
     }
     
 
-    public Object getFilteredCodeListsAsJson(String name) {
+    public List<CodeList> getFilteredCodeListsAsJson(String name) {
         String search = name.substring(0, name.length()-1).toLowerCase();
         
-        List<CodeList> filteredCLs = new ArrayList<>();
-        
-        for (CodeList cl : getCodeLists()) {
-            if (cl.getName() != null && cl.getName().toLowerCase().startsWith(search))
-                filteredCLs.add(cl);
-        }
-        return createJSON(filteredCLs);
+        return getCodeLists()
+                .stream()
+                .filter(codelist -> codelist.getName().toLowerCase().startsWith(search))
+                .toList();
     }
     
-    public Object getFilteredCodeListsAsShortJson(String name) {
+    public List<ShortCodelist> getFilteredCodeListsAsShortJson(String name) {
         String search = name.substring(0, name.length()-1).toLowerCase();
-        String json = "[";
-        
-        for (CodeList codelist : getCodeLists()) {
-            if (codelist.getName() != null && codelist.getName().toLowerCase().startsWith(search))
-                json += "{id:\""+codelist.getId()+"\",name:\""+codelist.getName()+"\"},";
-        }
-        json = json.substring(0, json.length()-1) + "]";
-        return json;
+
+        return getCodeListAsShortJson("id", CodeListUtils.SORT_INCREMENT)
+                .stream()
+                .filter(codelist -> codelist.name().toLowerCase().startsWith(search))
+                .toList();
     }
     
-    private Object createJSON(Object obj) {
-        XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
-            @Override
-            public HierarchicalStreamWriter createWriter(Writer writer) {
-                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE);
-            }
-        });
-        
-        //XStream xstream = new XStream(new JettisonMappedXmlDriver());
-        //xstream.setMode(XStream.NO_REFERENCES);
-        xstream.addPermission(AnyTypePermission.ANY);
-        return xstream.toXML(obj);
-    }
-
-    public void setCodeListService(CodeListService codeListService) {
-        this.codeListService = codeListService;
-    }
-
     
-    public Object findEntry(String name) {
+    public List<String[]> findEntry(String name) {
         List<String[]> result = new ArrayList<>();
         for (CodeList cl : getCodeLists()) {
             for (CodeListEntry entry : cl.getEntries()) {
@@ -225,22 +194,19 @@ public class CodeListManager {
                 }
             }
         }
-        return createJSON(result);
+        return result;
     }
 
-    public Object checkChangedInitialCodelist() {
-        String json = "[{";
-        String missing = "";
+    public ChangedCodelistReport checkChangedInitialCodelist() {
+        List<ShortCodelist> missing = new ArrayList<>();
         List<CodeList> codelists = getCodeLists();
         
         for (CodeList codelist : this.initialCodelists) {
             if (!CodeListUtils.codelistExists(codelists, codelist.getId())) {
-                missing += "{id:\""+codelist.getId()+"\",name:\""+codelist.getName()+"\"},";
+                missing.add(new ShortCodelist(codelist.getId(), codelist.getName()));
             }
         }
-        if (!missing.equals("")) json += "missing:[" + missing.substring(0, missing.length()-1) + "]";
-        json += "}]";
-        return json;
+        return new ChangedCodelistReport(missing);
     }
 
     /**

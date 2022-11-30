@@ -133,10 +133,11 @@
             function checkForCodelistSynch() {
                 dojo.xhrGet({
                     url: "rest/getCodelists/checkChanges",
+                    handleAs: "json",
                     load: function(result) {
                         console.log("Differences are: ", result);
                         var node = dijit.byId('codelistDifference').domNode;
-                        if (result == "[{}]") {
+                        if (result.missing.length === 0) {
                             dojo.removeClass(node, "warning");
                             dojo.style(node, "display", "none");
                         } else {
@@ -226,7 +227,16 @@
             }
             
             function fetchCodelistData(id) {
-                return restStoreDetail.get(id);
+                return restStoreDetail.get(id).then(function(item) {
+                    dojo.forEach(item.entries, function(entry) {
+                        var locals = [];
+                        dojo.forEach(Object.keys(entry.localisations), function(localisationKey) {
+                            locals.push([localisationKey, entry.localisations[localisationKey]]);
+                        });
+                        entry.localisations = locals;
+                    });
+                    return item;
+                });
             }
             
             function showEntry(event) {

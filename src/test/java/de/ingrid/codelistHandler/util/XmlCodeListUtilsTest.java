@@ -22,9 +22,10 @@
  */
 package de.ingrid.codelistHandler.util;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.util.CodeListUtils;
@@ -32,7 +33,7 @@ import de.ingrid.codelists.util.CodeListUtils;
 public class XmlCodeListUtilsTest {
 
     @Test
-    public final void testGetCodeListFromJsonGeneric() {
+    final void testGetCodeListFromJsonGeneric() {
         String data = "{\"id\": \"100\",\"name\": \"TestList\",\"description\": \"Dies ist eine Testliste.\",\"entries\": [{\"id\": \"1\",\"localisations\": [[\"de\",\"eins\"],[\"en\",\"one\"]]}],\"lastModified\": 1329414705531}";
         CodeList cl = CodeListUtils.getCodeListFromJsonGeneric(data);
         assertNotNull(cl);
