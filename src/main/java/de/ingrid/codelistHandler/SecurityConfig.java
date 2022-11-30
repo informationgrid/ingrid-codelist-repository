@@ -22,6 +22,9 @@ public class SecurityConfig {
 
     @Value("${jetty.base.resources:public}")
     private String[] jettyBaseResources;
+    
+    @Value("${realm.properties.file:public}")
+    private String realmPropertiesFile;
 
     @Bean
     WebServerFactoryCustomizer embeddedServletContainerCustomizer(final JettyServerCustomizer jettyServerCustomizer) {
@@ -47,9 +50,8 @@ public class SecurityConfig {
     ConstraintSecurityHandler constraintSecurityHandler() {
         final ConstraintSecurityHandler securityHandler = new ConstraintSecurityHandler();
 
-        HashLoginService loginService = new HashLoginService("InGrid Realm", "./src/develop/resources/realm.properties");
+        HashLoginService loginService = new HashLoginService("InGrid Realm", realmPropertiesFile);
         securityHandler.setLoginService(loginService);
-
 
         Constraint constraint = new Constraint();
         constraint.setName(Constraint.__BASIC_AUTH);
