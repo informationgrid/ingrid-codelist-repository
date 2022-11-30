@@ -20,7 +20,7 @@ public class SecurityConfig {
 
     private Logger log = Logger.getLogger(SecurityConfig.class);
 
-    @Value("${jetty.base.resources:src/main/webapp,target}")
+    @Value("${jetty.base.resources:public}")
     private String[] jettyBaseResources;
 
     @Bean
