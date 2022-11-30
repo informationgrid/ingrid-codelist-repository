@@ -22,18 +22,9 @@
  */
 package de.ingrid.codelistHandler.importer.inspireRegistry.model;
 
+public class LabelIdItem {
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+    public String label;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class ItemValueWrapper {
     public String id;
-
-    public LangTextItem label;
-
-    public ItemStatusWrapper status;
-
-    @JsonProperty("metadata-codelist")
-    public LabelIdItem metadataCodelist;
 }
