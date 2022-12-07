@@ -1,0 +1,36 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>111</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>42</id>
+                    <localisations>
+                        <entry>
+                            <string>sortkey</string>
+                            <string>5</string>
+                        </entry>
+                        <entry>
+                            <string>sortkey_partner</string>
+                            <string>2</string>
+                        </entry>
+                        <entry>
+                            <string>ident</string>
+                            <string>bw_lu</string>
+                        </entry>
+                        <entry>
+                            <string>name</string>
+                            <string>Landesanstalt für Umwelt Baden-Württemberg</string>
+                        </entry>
+                        <entry>
+                            <string>url</string>
+                            <string>http://www.lubw.baden-wuerttemberg.de/</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
