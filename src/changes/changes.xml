@@ -6,6 +6,12 @@
     </properties>
     <body>
 
+    <release version="5.14.3-SNAPSHOT" date="2022-xx-xx" description="Release 5.14.3">
+        <action type="update" dev="wemove" issue="">
+            Update codelist 111 entry 42 for LUBW
+        </action>
+    </release>
+
     <release version="5.14.0" date="2022-10-04" description="Release 5.14.0">
         <action type="update" dev="wemove" issue="4115">
             Update codelist 520 to add entry HDD
