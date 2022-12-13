@@ -71,7 +71,7 @@
     </fileSet>
     <fileSet>
       <directory>target/js/dojo</directory>
-      <outputDirectory>${project.build.finalName}/webapp/js/dojo</outputDirectory>
+      <outputDirectory>${project.build.finalName}/public/js/dojo</outputDirectory>
     </fileSet>
     <fileSet>
       <directory>target/logs</directory>

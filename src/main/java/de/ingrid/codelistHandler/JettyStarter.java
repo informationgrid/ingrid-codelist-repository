@@ -30,10 +30,6 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource({"/application-context.xml"})
 @SpringBootApplication
 public class JettyStarter {
-    private static final Logger log = Logger.getLogger(JettyStarter.class);
-
-    private static int DEFAULT_JETTY_PORT = 8082;
-
     public static void main(String[] args) throws Exception {
         SpringApplication.run(JettyStarter.class, args);
     }
