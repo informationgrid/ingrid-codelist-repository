@@ -38,7 +38,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(path = "/rest/getCodelists/")
+@RequestMapping(path = "/rest/getCodelists")
 public class CodeListAccessResource {
     @Autowired
     private CodeListManager manager;
