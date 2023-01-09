@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  **************************************************-
+  InGrid CodeList Repository
+  ==================================================
+  Copyright (C) 2014 - 2015 wemove digital solutions GmbH
+  ==================================================
+  Licensed under the EUPL, Version 1.1 or – as soon they will be
+  approved by the European Commission - subsequent versions of the
+  EUPL (the "Licence");
+  
+  You may not use this work except in compliance with the Licence.
+  You may obtain a copy of the Licence at:
+  
+  http://ec.europa.eu/idabc/eupl5
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the Licence is distributed on an "AS IS" basis,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the Licence for the specific language governing permissions and
+  limitations under the Licence.
+  **************************************************#
+  -->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    <context:component-scan base-package="de.ingrid" />
+    
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="configuration">
+        <property name="ignoreResourceNotFound" value="true"></property>
+        <property name="locations">
+            <list>
+                <value>classpath:config.properties</value>
+                <value>classpath:config.override.properties</value>
+            </list>
+        </property>
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"/>
+    </bean>
+    
+    <bean id="xmlPersistency" class="de.ingrid.codelists.persistency.XmlCodeListPersistency">
+        <property name="pathToXml" value="${codelist.path}" />
+    </bean>
+    <bean id="codeListService" class="de.ingrid.codelists.CodeListService">
+        <property name="persistencies">
+            <list>
+                <ref bean="xmlPersistency" />
+            </list>
+        </property>
+        <property name="defaultPersistency" value="0" />
+    </bean>
+
+    <!--  Scheduler for external codelist synchronisation  -->
+    <bean name="updatePriorityDatasetJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="de.ingrid.codelistHandler.jobs.UpdatePriorityDatasetJob" />
+    </bean>
+
+    <bean id="simpleTriggerPriorityDataset" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+        <property name="jobDetail" ref="updatePriorityDatasetJobDetail" />
+<!--        <property name="startDelay" value="5000" />-->
+        <property name="repeatInterval" value="86400000" /> <!-- once a day -->
+    </bean>
+
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="simpleTriggerPriorityDataset" />
+            </list>
+        </property>
+        <property name="applicationContextSchedulerContextKey">
+            <value>applicationContext</value>
+        </property>
+    </bean>
+    
+</beans>

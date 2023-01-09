@@ -31,7 +31,7 @@
   <fileSets>
     <fileSet>
       <directory>src/main/webapp</directory>
-      <outputDirectory>${project.build.finalName}/webapp</outputDirectory>
+      <outputDirectory>${project.build.finalName}/public</outputDirectory>
       <excludes>
         <exclude>**/jetty-web.xml</exclude>
       </excludes>
@@ -49,10 +49,6 @@
     <fileSet>
       <directory>src/main/release/patches</directory>
       <outputDirectory>${project.build.finalName}/patches</outputDirectory>
-    </fileSet>
-    <fileSet>
-      <directory>src/main/release/jetty</directory>
-      <outputDirectory>${project.build.finalName}/webapp/WEB-INF</outputDirectory>
     </fileSet>
 	<fileSet>
       <directory>src/main/release/scripts</directory>
@@ -75,7 +71,7 @@
     </fileSet>
     <fileSet>
       <directory>target/js/dojo</directory>
-      <outputDirectory>${project.build.finalName}/webapp/js/dojo</outputDirectory>
+      <outputDirectory>${project.build.finalName}/public/js/dojo</outputDirectory>
     </fileSet>
     <fileSet>
       <directory>target/logs</directory>

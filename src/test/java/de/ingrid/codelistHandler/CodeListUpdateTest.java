@@ -23,12 +23,11 @@
 package de.ingrid.codelistHandler;
 
 //import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
-import static org.junit.Assert.assertThat;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -42,10 +41,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import de.ingrid.codelistHandler.migrate.Migrator;
 import de.ingrid.codelists.CodeListService;
@@ -69,7 +68,7 @@ public class CodeListUpdateTest {
     
     private static int counter = 0;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         
         CodeListService cls = new CodeListService();
@@ -103,7 +102,7 @@ public class CodeListUpdateTest {
             }
     }
 
-    @After
+    @AfterEach
     public void reset() throws Exception {
         // reset private field
         Field field = CodeListManager.class.getDeclaredField( "PATH_CODELIST_UPDATES" );
@@ -112,138 +111,138 @@ public class CodeListUpdateTest {
     }
 
     @Test
-    public void addCodelist() {
+    void addCodelist() {
         // codelist "9876" is missing in the beginning
-        assertThat( manager.getCodeList( "9876" ), is( nullValue() ) );
+        assertThat(manager.getCodeList("9876"), is(nullValue()));
 
         // read update codelist file and apply
-        manager.updateCodelistsFromUpdateFile( dataFileAdd );
+        manager.updateCodelistsFromUpdateFile(dataFileAdd);
 
         // let's load the file again to see if everything was saved correctly
         manager.getCodeLists().clear();
 
         // codelist "9876" should be available now
-        CodeList codelist = manager.getCodeList( "9876" );
-        assertThat( "Updated codelist should be available now!", codelist, is( not( nullValue() ) ) );
-        assertThat( "Updated codelist should be available now!", codelist.getLastModified(), greaterThan( 10000l ) );
+        CodeList codelist = manager.getCodeList("9876");
+        assertThat("Updated codelist should be available now!", codelist, is(not(nullValue())));
+        assertThat("Updated codelist should be available now!", codelist.getLastModified(), greaterThan(10000l));
     }
 
     @Test
-    public void removeCodelist() {
+    void removeCodelist() {
         // codelist "101" is available in the beginning
-        assertThat( manager.getCodeList( "101" ), is( not( nullValue() ) ) );
+        assertThat(manager.getCodeList("101"), is(not(nullValue())));
 
         // read update codelist file and apply
-        manager.updateCodelistsFromUpdateFile( dataFileRemove );
+        manager.updateCodelistsFromUpdateFile(dataFileRemove);
 
         // let's load the file again to see if everything was saved correctly
         manager.getCodeLists().clear();
 
         // codelist "101" should be removed now
-        assertThat( "Updated codelist should be removed now!", manager.getCodeList( "101" ), is( nullValue() ) );
+        assertThat("Updated codelist should be removed now!", manager.getCodeList("101"), is(nullValue()));
     }
 
     @Test
-    public void updateCodelist() {
+    void updateCodelist() {
         // codelist "100" is available in the beginning
-        CodeList codeList100 = manager.getCodeList( "100" );
-        assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 52 ) );
+        CodeList codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        assertThat(codeList100.getEntries().size(), is(52));
 
         // read update codelist file and apply
-        manager.updateCodelistsFromUpdateFile( dataFileUpdate );
+        manager.updateCodelistsFromUpdateFile(dataFileUpdate);
 
         // let's load the file again to see if everything was saved correctly
         manager.getCodeLists().clear();
 
         // codelist "100" should still be there
-        codeList100 = manager.getCodeList( "100" );
-        assertThat( codeList100, is( not( nullValue() ) ) );
+        codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
         List<CodeListEntry> entries = codeList100.getEntries();
-        assertThat( entries.size(), is( 1 ) );
-        assertThat( entries.get( 0 ).getId(), is( "1234" ) );
-        assertThat( entries.get( 0 ).getData(), is( "no data" ) );
-        assertThat( entries.get( 0 ).getDescription(), is( "updated entry" ) );
-        assertThat( entries.get( 0 ).getFields().get( "de" ), is( "München" ) );
-        assertThat( entries.get( 0 ).getFields().get( "en" ), is( "Munich" ) );
+        assertThat(entries.size(), is(1));
+        assertThat(entries.get(0).getId(), is("1234"));
+        assertThat(entries.get(0).getData(), is("no data"));
+        assertThat(entries.get(0).getDescription(), is("updated entry"));
+        assertThat(entries.get(0).getFields().get("de"), is("München"));
+        assertThat(entries.get(0).getFields().get("en"), is("Munich"));
 
     }
 
     @Test
-    public void addCodelistEntry() {
+    void addCodelistEntry() {
         // codelist "100" has no entry "1234" in the beginning
-        CodeList codeList100 = manager.getCodeList( "100" );
-        assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 52 ) );
-        assertThat( manager.getCodeListEntry( "100", "1234" ), is( nullValue() ) );
+        CodeList codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        assertThat(codeList100.getEntries().size(), is(52));
+        assertThat(manager.getCodeListEntry("100", "1234"), is(nullValue()));
 
         // read update codelist file and apply
-        manager.updateCodelistsFromUpdateFile( dataFileAddEntry );
+        manager.updateCodelistsFromUpdateFile(dataFileAddEntry);
 
         // let's load the file again to see if everything was saved correctly
         manager.getCodeLists().clear();
 
         // codelist "100" should have entry 1234 now
-        codeList100 = manager.getCodeList( "100" );
-        assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 53 ) );
-        assertThat( manager.getCodeListEntry( "100", "1234" ), is( not( nullValue() ) ) );
+        codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        assertThat(codeList100.getEntries().size(), is(53));
+        assertThat(manager.getCodeListEntry("100", "1234"), is(not(nullValue())));
     }
 
     @Test
-    public void removeCodelistEntry() {
+    void removeCodelistEntry() {
         // codelist "100" has an entry "3068" in the beginning
-        CodeList codeList100 = manager.getCodeList( "100" );
-        assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 52 ) );
-        assertThat( manager.getCodeListEntry( "100", "4178" ), is( not( nullValue() ) ) );
+        CodeList codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        assertThat(codeList100.getEntries().size(), is(52));
+        assertThat(manager.getCodeListEntry("100", "4178"), is(not(nullValue())));
 
         // read update codelist file and apply
-        manager.updateCodelistsFromUpdateFile( dataFileRemoveEntry );
+        manager.updateCodelistsFromUpdateFile(dataFileRemoveEntry);
 
         // let's load the file again to see if everything was saved correctly
         manager.getCodeLists().clear();
 
         // codelist "100" should have no entry "3068" now
-        codeList100 = manager.getCodeList( "100" );
-        assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 51 ) );
-        assertThat( manager.getCodeListEntry( "100", "4178" ), is( nullValue() ) );
+        codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        assertThat(codeList100.getEntries().size(), is(51));
+        assertThat(manager.getCodeListEntry("100", "4178"), is(nullValue()));
     }
 
     @Test
-    public void updateCodelistEntry() {
+    void updateCodelistEntry() {
         // codelist "100" has an entry "3068" in the beginning
-        CodeList codeList100 = manager.getCodeList( "100" );
-        assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 52 ) );
-        assertThat( manager.getCodeListEntry( "100", "3068" ), is( not( nullValue() ) ) );
+        CodeList codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        assertThat(codeList100.getEntries().size(), is(52));
+        assertThat(manager.getCodeListEntry("100", "3068"), is(not(nullValue())));
 
         // read update codelist file and apply
-        manager.updateCodelistsFromUpdateFile( dataFileUpdateEntry );
+        manager.updateCodelistsFromUpdateFile(dataFileUpdateEntry);
 
         // let's load the file again to see if everything was saved correctly
         manager.getCodeLists().clear();
 
         // codelist "100" should have entry 1234 now
-        codeList100 = manager.getCodeList( "100" );
-        assertThat( codeList100, is( not( nullValue() ) ) );
-        assertThat( codeList100.getEntries().size(), is( 52 ) );
-        CodeListEntry entry = manager.getCodeListEntry( "100", "3068" );
-        assertThat( entry, is( not( nullValue() ) ) );
-        assertThat( entry.getId(), is( "3068" ) );
-        assertThat( entry.getData(), is( "data for 3068" ) );
-        assertThat( entry.getDescription(), is( "description for 3068" ) );
-        assertThat( entry.getField( "de" ), is( "Eintrag Nummer 3068" ) );
-        assertThat( entry.getField( "en" ), is( "Entry number 3068" ) );
+        codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        assertThat(codeList100.getEntries().size(), is(52));
+        CodeListEntry entry = manager.getCodeListEntry("100", "3068");
+        assertThat(entry, is(not(nullValue())));
+        assertThat(entry.getId(), is("3068"));
+        assertThat(entry.getData(), is("data for 3068"));
+        assertThat(entry.getDescription(), is("description for 3068"));
+        assertThat(entry.getField("de"), is("Eintrag Nummer 3068"));
+        assertThat(entry.getField("en"), is("Entry number 3068"));
     }
 
     @Test
-    @Ignore
-    public void multipleChanges() {
+    @Disabled
+    void multipleChanges() {
 
-        assertThat( manager.getCodeList( "98765" ), is( nullValue() ) );
-        assertThat( manager.getCodeList( "87654" ), is( nullValue() ) );
+        assertThat(manager.getCodeList("98765"), is(nullValue()));
+        assertThat(manager.getCodeList("87654"), is(nullValue()));
 
         // codelist "100" has an entry "3068" in the beginning
         // CodeList codeList100 = manager.getCodeList( "100" );
@@ -253,13 +252,13 @@ public class CodeListUpdateTest {
         // nullValue() ) ) );
 
         // read update codelist file and apply
-        manager.updateCodelistsFromUpdateFile( dataFileMultiple );
+        manager.updateCodelistsFromUpdateFile(dataFileMultiple);
 
         // let's load the file again to see if everything was saved correctly
         manager.getCodeLists().clear();
 
-        assertThat( manager.getCodeList( "98765" ), is( not( nullValue() ) ) );
-        assertThat( manager.getCodeList( "87654" ), is( not( nullValue() ) ) );
+        assertThat(manager.getCodeList("98765"), is(not(nullValue())));
+        assertThat(manager.getCodeList("87654"), is(not(nullValue())));
 
         // codelist "100" should have entry 1234 now
         // codeList100 = manager.getCodeList( "100" );
@@ -277,69 +276,69 @@ public class CodeListUpdateTest {
     }
 
     @Test
-    public void getCurrentVersion() throws Exception {
+    void getCurrentVersion() throws Exception {
         File file = new File( "data/version.info" );
         file.delete();
-        assertThat( VersionUtils.getCurrentVersion(), is( "0" ) );
-        writeToFile( "1" );
-        assertThat( VersionUtils.getCurrentVersion(), is( "1" ) );
-        writeToFile( "1b" );
-        assertThat( VersionUtils.getCurrentVersion(), is( "1b" ) );
+        assertThat(VersionUtils.getCurrentVersion(), is("0"));
+        writeToFile("1");
+        assertThat(VersionUtils.getCurrentVersion(), is("1"));
+        writeToFile("1b");
+        assertThat(VersionUtils.getCurrentVersion(), is("1b"));
     }
 
     @Test
-    public void checkLatestVersion() throws Exception {
+    void checkLatestVersion() throws Exception {
         // change private field
-        Field field = CodeListManager.class.getDeclaredField( "PATH_CODELIST_UPDATES" );
-        field.setAccessible( true );
-        field.set( manager, "classpath:updates/*.xml" );
-        
+        Field field = CodeListManager.class.getDeclaredField("PATH_CODELIST_UPDATES");
+        field.setAccessible(true);
+        field.set(manager, "classpath:updates/*.xml");
+
         copyUpdateFiles();
 
-        List<String> files = manager.checkFilesForUpdate( "0" );
-        assertThat( files.size(), is( 7 ) );
+        List<String> files = manager.checkFilesForUpdate("0");
+        assertThat(files.size(), is(7));
 
-        files = manager.checkFilesForUpdate( "V1" );
-        assertThat( files.size(), is( 6 ) );
+        files = manager.checkFilesForUpdate("V1");
+        assertThat(files.size(), is(6));
 
-        files = manager.checkFilesForUpdate( "V4" );
-        assertThat( files.size(), is( 2 ) );
+        files = manager.checkFilesForUpdate("V4");
+        assertThat(files.size(), is(2));
 
-        files = manager.checkFilesForUpdate( "V4b" );
-        assertThat( files.size(), is( 0 ) );
+        files = manager.checkFilesForUpdate("V4b");
+        assertThat(files.size(), is(0));
 
-        files = manager.checkFilesForUpdate( "V6" );
-        assertThat( files.size(), is( 0 ) );
+        files = manager.checkFilesForUpdate("V6");
+        assertThat(files.size(), is(0));
     }
 
     @Test
-    public void updateCodelistsAutomatically() throws Exception {
+    void updateCodelistsAutomatically() throws Exception {
         // change private field
-        Field field = CodeListManager.class.getDeclaredField( "PATH_CODELIST_UPDATES" );
-        field.setAccessible( true );
-        field.set( manager, "classpath:updates/*.xml" );
-        
+        Field field = CodeListManager.class.getDeclaredField("PATH_CODELIST_UPDATES");
+        field.setAccessible(true);
+        field.set(manager, "classpath:updates/*.xml");
+
         removeExisitingTestFile();
-        
+
         copyUpdateFiles();
-        
-        assertThat( VersionUtils.getCurrentVersion(), is( "0" ) );
-        
+
+        assertThat(VersionUtils.getCurrentVersion(), is("0"));
+
         // TODO: check for preconditions
-        assertThat( manager.getCodeList( "9876" ), is( nullValue() ) );
-        assertThat( manager.getCodeListEntry( "100", "4178" ), is( not( nullValue() ) ) );
-        
+        assertThat(manager.getCodeList("9876"), is(nullValue()));
+        assertThat(manager.getCodeListEntry("100", "4178"), is(not(nullValue())));
+
         // do the update
         manager.checkForUpdates();
-        
+
         // let's load the file again to see if everything was saved correctly
         manager.getCodeLists().clear();
 
         // check for changes in codelists
-        assertThat( manager.getCodeList( "9876" ), not( is( nullValue() ) ) );
-        assertThat( manager.getCodeListEntry( "100", "4178" ), is( nullValue() ) );
-        
-        assertThat( VersionUtils.getCurrentVersion(), is( "V4b" ) );
+        assertThat(manager.getCodeList("9876"), not(is(nullValue())));
+        assertThat(manager.getCodeListEntry("100", "4178"), is(nullValue()));
+
+        assertThat(VersionUtils.getCurrentVersion(), is("V4b"));
     }
 
     private void writeToFile(String text) throws FileNotFoundException {

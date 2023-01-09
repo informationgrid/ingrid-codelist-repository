@@ -23,38 +23,14 @@
 package de.ingrid.codelistHandler;
 
 import org.apache.log4j.Logger;
-import org.mortbay.jetty.Server;
-import org.mortbay.jetty.security.HashUserRealm;
-import org.mortbay.jetty.webapp.WebAppContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
+@ImportResource({"/application-context.xml"})
+@SpringBootApplication
 public class JettyStarter {
-    private static final Logger log = Logger.getLogger(JettyStarter.class);
-    
-    private static String DEFAULT_WEBAPP_DIR    = "webapp";
-    
-    private static int    DEFAULT_JETTY_PORT    = 8082;
-    
-
     public static void main(String[] args) throws Exception {
-        if (!System.getProperties().containsKey("jetty.webapp"))
-            log.warn("Property 'jetty.webapp' not defined! Using default webapp directory, which is '"+DEFAULT_WEBAPP_DIR+"'.");
-        if (!System.getProperties().containsKey("jetty.port"))
-            log.warn("Property 'jetty.port' not defined! Using default port, which is '"+DEFAULT_JETTY_PORT+"'.");
-        
-        init();
-    }
-    
-    private static void init() throws Exception {
-        WebAppContext webAppContext = new WebAppContext(System.getProperty("jetty.webapp", DEFAULT_WEBAPP_DIR), "/");
-
-        int port = Integer.getInteger("jetty.port", DEFAULT_JETTY_PORT);
-        log.info("Start server at port: " + port);
-        
-        Server server = new Server(port);
-        HashUserRealm userRealm = new HashUserRealm("UserRealm");
-        webAppContext.getSecurityHandler().setUserRealm(userRealm);
-        
-        server.setHandler(webAppContext);
-        server.start();
+        SpringApplication.run(JettyStarter.class, args);
     }
 }

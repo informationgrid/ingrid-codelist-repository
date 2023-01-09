@@ -22,8 +22,8 @@
  */
 package de.ingrid.codelistHandler.importer.inspireRegistry.model;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemStatusWrapper {

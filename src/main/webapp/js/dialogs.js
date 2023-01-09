@@ -96,10 +96,9 @@ clDialogs.showAskDialog = function(content) {
 
 clDialogs.showDifferencesDialog = function(content) {
     var def = new dojo.Deferred();
-    var jsonObject = eval(content)[0];
     
     var content = "<h2>Missing Codelists:</h2><ul>";
-    dojo.forEach(jsonObject.missing, function(item) {
+    dojo.forEach(content.missing, function(item) {
         content += "<li><button onclick=\"addFromInitialCodelist("+item.id+", this)\">Add</button>" + item.id + ": " + item.name + "</li>";
     });
     

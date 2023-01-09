@@ -22,13 +22,13 @@
  */
 package de.ingrid.codelistHandler.importer.inspireRegistry;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import de.ingrid.codelistHandler.importer.inspireRegistry.model.Item;
 import de.ingrid.codelistHandler.importer.inspireRegistry.model.InspireCodelistModel;
 import de.ingrid.codelists.model.CodeList;
 import de.ingrid.codelists.model.CodeListEntry;
 import de.ingrid.codelists.model.CodeListEntryStatus;
 import org.apache.log4j.Logger;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Service;
 
 import java.net.URL;
@@ -38,7 +38,7 @@ import java.util.List;
 @Service
 public class InspireRegistryUtil {
 
-    private static Logger log = Logger.getLogger(InspireRegistryUtil.class);
+    private static final Logger log = Logger.getLogger(InspireRegistryUtil.class);
 
     public CodeList importFromRegistry(URL urlGerman, URL urlEnglish) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -97,7 +97,7 @@ public class InspireRegistryUtil {
     private String createDataField(Item item) {
         //language=JSON
         return "{\"url\":\"" + item.value.id + "\"," +
-                " \"thesaurusTitle\": \"" + item.value.metadataCodelist.label.text + "\"," +
+                " \"thesaurusTitle\": \"" + item.value.metadataCodelist.label + "\"," +
                 " \"thesaurusId\": \"" + item.value.metadataCodelist.id + "\"," +
 //                "  \"date\": \"" + item.value.date + "\"\n" +
                 "  \"status\": \"" + getStatusFromField(item.value.status.id) + "\"" +
