@@ -2,7 +2,7 @@
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
- * Copyright (C) 2014 - 2022 wemove digital solutions GmbH
+ * Copyright (C) 2014 - 2023 wemove digital solutions GmbH
  * ==================================================
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
@@ -22,119 +22,98 @@
  */
 package de.ingrid.codelistHandler.rest;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import de.ingrid.codelistHandler.ChangedCodelistReport;
+import de.ingrid.codelistHandler.CodeListManager;
+import de.ingrid.codelistHandler.ShortCodelist;
+import de.ingrid.codelists.model.CodeList;
+import de.ingrid.codelists.util.CodeListUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
+import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import de.ingrid.codelistHandler.CodeListManager;
-import de.ingrid.codelists.util.CodeListUtils;
-
-@Component
-@Path("/getCodelists/")
+@RestController
+@RequestMapping(path = "/rest/getCodelists")
 public class CodeListAccessResource {
     @Autowired
     private CodeListManager manager;
 
     // and implement the following GET method 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public Response getCodeLists( @QueryParam("lastModifiedDate") String lastModifiedDate, @QueryParam("name") String name ) {
+    @GetMapping(produces = MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public ResponseEntity<List<CodeList>> getCodeLists(@QueryParam("lastModifiedDate") String lastModifiedDate, @QueryParam("name") String name) {
 
         if (name == null || "".equals(name) || "*".equals(name)) {
-            return Response.ok(manager.getCodeListsAsJson("id", lastModifiedDate, CodeListUtils.SORT_INCREMENT)).build();
+            return ResponseEntity.ok(manager.getCodeListsAsJson("id", lastModifiedDate, CodeListUtils.SORT_INCREMENT));
         } else {
-            return Response.ok(manager.getFilteredCodeListsAsJson(name)).build();
+            return ResponseEntity.ok(manager.getFilteredCodeListsAsJson(name));
         }
     }
-    
+
     // return only data needed for codelist information (selectbox for administration page)
-    @GET
-    @Path("short")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getCodeListsShort( @QueryParam("lastModifiedDate") String lastModifiedDate, @QueryParam("name") String name ) {
+    @GetMapping(value = "short", produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<List<ShortCodelist>> getCodeListsShort(@QueryParam("lastModifiedDate") String lastModifiedDate, @QueryParam("name") String name) {
         if (name == null || "".equals(name) || "*".equals(name)) {
-            return Response.ok(manager.getCodeListAsShortJson("id", CodeListUtils.SORT_INCREMENT)).build();
+            return ResponseEntity.ok(manager.getCodeListAsShortJson("id", CodeListUtils.SORT_INCREMENT));
         } else {
-            return Response.ok(manager.getFilteredCodeListsAsShortJson(name)).build();
-        }
-    }
-    
-    @GET
-    @Path("short/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getCodeListShort(@PathParam("id") String id) {
-        return Response.ok(manager.getCodeListAsJson(id)).build();
-    }
-    
-    @GET
-    @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getCodelist(@PathParam("id") String id) {
-        return Response.ok(manager.getCodeListAsJson(id)).build();
-    }
-    
-    @PUT
-    @Path("{id}")
-    @Consumes(MediaType.APPLICATION_JSON) 
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response updateCodelists(@PathParam("id") String id, String body) {
-        boolean success = manager.updateCodeList(id, body);
-        
-        if (success)
-            return Response.ok().build();
-        
-        return Response.status(Status.INTERNAL_SERVER_ERROR).build();
-        
-    }
-    
-    @DELETE
-    @Path("{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response removeCodelist(@PathParam("id") String id) {
-        if (manager.removeCodeList(id)) {
-            return Response.ok().build();
-        } else {
-            return Response.status(123).build();
+            return ResponseEntity.ok(manager.getFilteredCodeListsAsShortJson(name));
         }
     }
 
-    @GET
-    @Path("findEntry/{name}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response findEntry(@PathParam("name") String name) {
-        return Response.ok(manager.findEntry(name.toLowerCase())).build();
+    @GetMapping(value = "short/{id}", produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<CodeList> getCodeListShort(@PathVariable("id") String id) {
+        return ResponseEntity.ok(manager.getCodeListAsJson(id));
     }
-    
-    @GET
-    @Path("checkChanges")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response checkForChanges() {
-        return Response.ok(manager.checkChangedInitialCodelist()).build();
+
+    @GetMapping(value = "{id}", produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<CodeList> getCodelist(@PathVariable("id") String id) {
+        return ResponseEntity.ok(manager.getCodeListAsJson(id));
     }
-    
-    @PUT
-    @Path("addInitialCodelist/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response addInitialCodelist(@PathParam("id") String id) {
+
+    @PutMapping(value = "{id}", produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<Void> updateCodelists(@PathVariable("id") String id, @RequestBody String body) {
+        boolean success = manager.updateCodeList(id, body);
+
+        if (success)
+            return ResponseEntity.ok().build();
+
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+
+    }
+
+    @DeleteMapping(value = "{id}", produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<Void> removeCodelist(@PathVariable("id") String id) {
+        if (manager.removeCodeList(id)) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.status(123).build();
+        }
+    }
+
+    @GetMapping(value = "findEntry/{name}", produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<List<String[]>> findEntry(@PathVariable("name") String name) {
+        return ResponseEntity.ok(manager.findEntry(name.toLowerCase()));
+    }
+
+    @GetMapping(value = "checkChanges", produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<ChangedCodelistReport> checkForChanges() {
+        return ResponseEntity.ok(manager.checkChangedInitialCodelist());
+    }
+
+    @PutMapping(value = "addInitialCodelist/{id}", produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<Void> addInitialCodelist(@PathVariable("id") String id) {
         boolean success = manager.addCodelistFromInitial(id);
         if (success)
-            return Response.ok().build();
+            return ResponseEntity.ok().build();
         else
-            return Response.status(500).build();            
+            return ResponseEntity.status(500).build();
     }
-    
-    
+
+
     public void setManager(CodeListManager manager) {
         this.manager = manager;
     }

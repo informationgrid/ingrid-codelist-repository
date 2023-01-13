@@ -2,7 +2,7 @@
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
- * Copyright (C) 2014 - 2022 wemove digital solutions GmbH
+ * Copyright (C) 2014 - 2023 wemove digital solutions GmbH
  * ==================================================
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
@@ -22,8 +22,9 @@
  */
 package de.ingrid.codelistHandler.importer.inspireRegistry.model;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.codehaus.jackson.annotate.JsonProperty;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemValueWrapper {
@@ -34,5 +35,5 @@ public class ItemValueWrapper {
     public ItemStatusWrapper status;
 
     @JsonProperty("metadata-codelist")
-    public ItemValueWrapper metadataCodelist;
+    public LabelIdItem metadataCodelist;
 }

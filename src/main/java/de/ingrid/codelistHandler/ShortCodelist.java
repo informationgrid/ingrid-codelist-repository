@@ -20,21 +20,10 @@
  * limitations under the Licence.
  * **************************************************#
  */
-package de.ingrid.codelistHandler.importer.inspireRegistry.model;
-
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+package de.ingrid.codelistHandler;
 
 import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class InspireCodelistModel {
-
-    @JsonProperty("metadata-codelist")
-    public MetadataCodelist metadataCodelist;
-
-    public List<Item> getItems() {
-        return this.metadataCodelist.containeditems;
-    }
+public record ShortCodelist(String id, String name) {
 }
+

@@ -2,7 +2,7 @@
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
- * Copyright (C) 2014 - 2022 wemove digital solutions GmbH
+ * Copyright (C) 2014 - 2023 wemove digital solutions GmbH
  * ==================================================
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
@@ -27,8 +27,8 @@ import java.util.List;
 
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -41,69 +41,69 @@ import de.ingrid.codelists.persistency.XmlCodeListPersistency;
 public class PatchCodelistSyntaxTest {
 
     @Test
-    public void test() {
+    void test() {
 
         try {
 
             List<String> filesForUpdate = getPatchFiles();
 
             for (String file : filesForUpdate) {
-                XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<CodeListUpdate>();
-                xml.setPathToXml( file );
+                XmlCodeListPersistency<CodeListUpdate> xml = new XmlCodeListPersistency<>();
+                xml.setPathToXml(file);
                 List<CodeListUpdate> updateCodelists = xml.read();
 
-                if(updateCodelists.isEmpty()){
-                    Assert.fail( "Error validating Codelist patch: " + file );
+                if (updateCodelists.isEmpty()) {
+                    Assertions.fail("Error validating Codelist patch: " + file);
                 }
 
                 for (CodeListUpdate codeList : updateCodelists) {
                     switch (codeList.getType()) {
-                    case ADD:
-                    case UPDATE:
-                        for (CodeListEntry cle : codeList.getCodelist().getEntries()) {
-                            String data = cle.getData();
-                            if (data != null && data.startsWith( "{" ) && data.endsWith( "}" )) {
-                                try {
-                                    new JSONObject( data );
-                                } catch (JSONException e) {
-                                    Assert.fail( "Error in '" + file + "'JSON data field: " + data );
-                                }
-                            }
-                        }
-                        break;
-                    case ENTRYUPDATE:
-
-                        String data;
-                        for (CodeListEntryUpdate entry : codeList.getEntries()) {
-                            switch (entry.getType()) {
-                            case ADD:
-                            case UPDATE:
-                                data = entry.getEntry().getData();
-                                if (data != null && data.startsWith( "{" ) && data.endsWith( "}" )) {
+                        case ADD:
+                        case UPDATE:
+                            for (CodeListEntry cle : codeList.getCodelist().getEntries()) {
+                                String data = cle.getData();
+                                if (data != null && data.startsWith("{") && data.endsWith("}")) {
                                     try {
                                         new JSONObject( data );
                                     } catch (JSONException e) {
-                                        Assert.fail( "Error in '" + file + "'JSON data field: " + data );
+                                        Assertions.fail("Error in '" + file + "'JSON data field: " + data);
                                     }
                                 }
-                                break;
-                            default:
-                                break;
                             }
-                        }
-                    default:
-                        break;
+                            break;
+                        case ENTRYUPDATE:
+
+                            String data;
+                            for (CodeListEntryUpdate entry : codeList.getEntries()) {
+                                switch (entry.getType()) {
+                                    case ADD:
+                                    case UPDATE:
+                                        data = entry.getEntry().getData();
+                                        if (data != null && data.startsWith("{") && data.endsWith("}")) {
+                                            try {
+                                                new JSONObject( data );
+                                            } catch (JSONException e) {
+                                                Assertions.fail("Error in '" + file + "'JSON data field: " + data);
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        default:
+                            break;
                     }
                 }
             }
         } catch (Exception e) {
-            Assert.fail( "Error validating Codelist patches: " + e );
+            Assertions.fail("Error validating Codelist patches: " + e);
         }
 
     }
 
     private List<String> getPatchFiles() throws Exception {
-        List<String> resList = new ArrayList<String>();
+        List<String> resList = new ArrayList<>();
 
         ResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
         Resource[] resources = resourceResolver.getResources( "file:src/main/release/patches/*.xml" );

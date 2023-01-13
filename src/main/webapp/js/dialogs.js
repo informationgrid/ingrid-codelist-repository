@@ -2,7 +2,7 @@
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
- * Copyright (C) 2014 - 2022 wemove digital solutions GmbH
+ * Copyright (C) 2014 - 2023 wemove digital solutions GmbH
  * ==================================================
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
@@ -96,10 +96,9 @@ clDialogs.showAskDialog = function(content) {
 
 clDialogs.showDifferencesDialog = function(content) {
     var def = new dojo.Deferred();
-    var jsonObject = eval(content)[0];
     
     var content = "<h2>Missing Codelists:</h2><ul>";
-    dojo.forEach(jsonObject.missing, function(item) {
+    dojo.forEach(content.missing, function(item) {
         content += "<li><button onclick=\"addFromInitialCodelist("+item.id+", this)\">Add</button>" + item.id + ": " + item.name + "</li>";
     });
     

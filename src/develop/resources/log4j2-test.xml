@@ -12,13 +12,13 @@
         <Logger name="org.springframework" level="info" additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
-        <Logger name="org.mortbay" level="warn" additivity="false">
+        <Logger name="org" level="info" additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
         <Logger name="com" level="info" additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
-        <Root level="error">
+        <Root level="warn">
             <AppenderRef ref="Console" />
         </Root>
     </Loggers>

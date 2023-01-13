@@ -22,19 +22,9 @@
  */
 package de.ingrid.codelistHandler.importer.inspireRegistry.model;
 
+public class LabelIdItem {
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+    public String label;
 
-import java.util.List;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class InspireCodelistModel {
-
-    @JsonProperty("metadata-codelist")
-    public MetadataCodelist metadataCodelist;
-
-    public List<Item> getItems() {
-        return this.metadataCodelist.containeditems;
-    }
+    public String id;
 }

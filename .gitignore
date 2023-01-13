@@ -6,3 +6,4 @@ data/
 /bin/
 /patches/
 logs
+*.iml
