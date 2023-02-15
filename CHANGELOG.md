@@ -1,4 +1,15 @@
 
+## 6.0.1 (15.02.2023)
+
+### Features
+
+* Zentrale Codelist anpassen (#4699)
+* Codelist-Repo: Codeliste 10003 und 10004 editieren (#4201)
+
+
+
+
+    
 ## 6.0.0 (13.01.2023)
 
 ### Features
