@@ -82,6 +82,7 @@
             .attention .dijitButtonNode {background-color: #bd0d00 !important; color: white;}
             .warning .dijitButtonNode {background-color: #eeaD00 !important; color:white;}
             input[type="button"].table {min-width: 0px;padding: 0;}
+            .dijitTextBoxDisabled input {color: #888888 !important;}
         </style>
         
         <script type="text/javascript">
@@ -183,6 +184,7 @@
             }
             
             function showCodeList(event) {
+                listIdTextbox.set("disabled", true);
                 if (selectWasResetted) {
                     selectWasResetted = false;
                     return;
@@ -228,6 +230,7 @@
             
             function fetchCodelistData(id) {
                 return restStoreDetail.get(id).then(function(item) {
+                    if (!item) return {};
                     dojo.forEach(item.entries, function(entry) {
                         var locals = [];
                         dojo.forEach(Object.keys(entry.localisations), function(localisationKey) {
@@ -368,6 +371,7 @@
                 showCodelistDiv();
                 // remove initial validation error
                 listIdTextbox.reset();
+                listIdTextbox.set("disabled", false);
                 listNameTextbox.reset();
                 listDescrTextbox.reset();
                 var newStore = new dojo.data.ItemFileWriteStore(
@@ -379,13 +383,13 @@
             }
             
             function removeCodelist() {
-                var def = clDialogs.showAskDialog(clDialogs.MSG_DELETE_LIST);
-                def.then(function() {
-                    restStoreDetail.remove(currentCodelist);
-                    clSelect.reset();
-                }, function() {
-                    console.debug("Deletion aborted!");
-                });
+                return clDialogs.showAskDialog(clDialogs.MSG_DELETE_LIST)
+                    .then(function () {
+                        restStoreDetail.remove(currentCodelist);
+                        clSelect.reset();
+                    }, function () {
+                        console.debug("Deletion aborted!");
+                    });
             }
             
             function cancelEdit() {
