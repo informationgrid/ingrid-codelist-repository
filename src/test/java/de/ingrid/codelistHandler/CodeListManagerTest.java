@@ -7,12 +7,12 @@
  * Licensed under the EUPL, Version 1.1 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
  * EUPL (the "Licence");
- * 
+ *
  * You may not use this work except in compliance with the Licence.
  * You may obtain a copy of the Licence at:
- * 
+ *
  * http://ec.europa.eu/idabc/eupl5
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the Licence is distributed on an "AS IS" basis,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,6 +32,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Comparator;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,7 +51,7 @@ public class CodeListManagerTest {
         CodeListService codeListService = new CodeListService();
         codeListService.setComm(new HttpCLCommunication());
         XmlCodeListPersistency xmlCodeListPersistency = new XmlCodeListPersistency();
-        xmlCodeListPersistency.setPathToXml("src/test/resources/codelists");
+        xmlCodeListPersistency.setPathToXml("data/codelistsTests");
         codeListService.setPersistencies(List.of(xmlCodeListPersistency));
         manager = new CodeListManager(codeListService, new Migrator());
     }
@@ -98,9 +103,16 @@ public class CodeListManagerTest {
 
 
     private void removeExisitingTestFile() {
-        File f = new File(dataFile);
-        if (f.exists() && f.isFile()) {
-            f.delete();
+        Path rootPath = Paths.get("data");
+        if (!rootPath.toFile().exists()) return;
+
+        try {
+            Files.walk(rootPath)
+                    .sorted(Comparator.reverseOrder())
+                    .map(Path::toFile)
+                    .forEach(File::delete);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
