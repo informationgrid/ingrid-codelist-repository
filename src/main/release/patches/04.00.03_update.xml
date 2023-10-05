@@ -3,6 +3,7 @@
     <id>8010</id>
     <type>ADD</type>
     <codelist>
+      <id>8010</id>
       <name>AdV-Produktgruppe</name>
       <description></description>
       <defaultEntry>-1</defaultEntry>
