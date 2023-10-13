@@ -18,7 +18,7 @@
               <string>(15) CC BY 4.0</string>
             </entry>
           </localisations>
-          <data>{ "id": "cc-by/4.0", "name": "Creative Commons Namensnennung – 4.0 International (CC BY 4.0)", "url": "https://creativecommons.org/licenses/by/4.0/", "quelle": "" }</data>
+          <data></data>
         </entry>
       </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
     </entries>
