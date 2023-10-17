@@ -1,0 +1,50 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10003</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>20</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(15) CC BY 4.0</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>(15) CC BY 4.0</string>
+            </entry>
+          </localisations>
+          <data>{ "id": "cc-by/4.0", "name": "Creative Commons Namensnennung – 4.0 International (CC BY 4.0)", "url": "https://creativecommons.org/licenses/by/4.0/", "quelle": "" }</data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10004</id>
+    <type>ENTRYUPDATE</type>
+    <entries>
+      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        <type>ADD</type>
+        <entry>
+          <id>20</id>
+          <description></description>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Die Geodaten sind urheberrechtlich geschützt und werden entgeltfrei gemäß der Creative Commons Namensnennung 4.0 International Lizenz (https://creativecommons.org/licenses/by/4.0/) zur Verfügung gestellt. Geodaten, die unter der Lizenz CC BY 4.0 stehen, dürfen unter einer Namensnennung geteilt, vervielfältigt und bearbeitet werden. Die Namensnennung ist im Quellenvermerk enthalten. Der Quellenvermerk ist zu beachten.</string>
+            </entry>
+            <entry>
+              <string>en</string>
+              <string>The data are protected by copyright and are made available free of charge in accordance with the licence Creative Commons Atrribution 4.0 International (https://creativecommons.org/licenses/by/4.0/). Data licenced under Creative Commons Atrribution 4.0 International may be shared, reproduced and modified under the condition of attribution. The attribution is included in the source note. The source note must be observed.</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </entry>
+      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+    </entries>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

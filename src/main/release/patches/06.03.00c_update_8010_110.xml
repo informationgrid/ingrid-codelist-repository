@@ -1,0 +1,41 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>8010</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>REMOVE</type>
+                <entry>
+                    <id>29</id>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>110</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>18</id>
+                    <localisations>
+                        <entry>
+                            <string>sortkey</string>
+                            <string>18</string>
+                        </entry>
+                        <entry>
+                            <string>ident</string>
+                            <string>zs</string>
+                        </entry>
+                        <entry>
+                            <string>name</string>
+                            <string>Zentrale Stellen</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+
+</list>

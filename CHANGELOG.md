@@ -1,4 +1,17 @@
 
+## 6.3.0 (17.10.2023)
+
+### Features
+
+* IGE: Auswahlliste Datenformat ergänzen (#5569)
+* IGE: Anpassung der Liste "Verwaltungsgebiet" (#5477)
+* Codelist-Repo: Codeliste 10003 und 10004 editieren (#5200)
+
+### Bugfixes
+
+* Codelist 8010 erscheint doppelt  (#5566)
+* Anzeige gelöschter Codelisten im Codelist-Repo  (#5354)
+    
 ## 6.2.0 (10.07.2023)
 
 ### Features
