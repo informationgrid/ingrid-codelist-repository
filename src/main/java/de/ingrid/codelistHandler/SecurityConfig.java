@@ -26,9 +26,11 @@ import org.apache.log4j.Logger;
 import org.eclipse.jetty.security.ConstraintMapping;
 import org.eclipse.jetty.security.ConstraintSecurityHandler;
 import org.eclipse.jetty.security.HashLoginService;
+import org.eclipse.jetty.security.UserStore;
 import org.eclipse.jetty.security.authentication.BasicAuthenticator;
 import org.eclipse.jetty.util.resource.ResourceCollection;
 import org.eclipse.jetty.util.security.Constraint;
+import org.eclipse.jetty.util.security.Credential;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.embedded.jetty.JettyServerCustomizer;
@@ -36,6 +38,8 @@ import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
 
 @Configuration
 public class SecurityConfig {
@@ -45,8 +49,11 @@ public class SecurityConfig {
     @Value("${jetty.base.resources:public}")
     private String[] jettyBaseResources;
     
-    @Value("${realm.properties.file:public}")
-    private String realmPropertiesFile;
+    @Value("${credentials.admin:}")
+    private List<String> adminUsers;
+    
+    @Value("${credentials.user:}")
+    private List<String> simpleUsers;
 
     @Bean
     WebServerFactoryCustomizer embeddedServletContainerCustomizer(final JettyServerCustomizer jettyServerCustomizer) {
@@ -72,7 +79,13 @@ public class SecurityConfig {
     ConstraintSecurityHandler constraintSecurityHandler() {
         final ConstraintSecurityHandler securityHandler = new ConstraintSecurityHandler();
 
-        HashLoginService loginService = new HashLoginService("InGrid Realm", realmPropertiesFile);
+        HashLoginService loginService = new HashLoginService("InGrid Realm");
+        
+        UserStore userStore = new UserStore();
+        addUsersToStore(userStore, adminUsers, "admin");
+        addUsersToStore(userStore, simpleUsers, "user");
+
+        loginService.setUserStore(userStore);
         securityHandler.setLoginService(loginService);
 
         Constraint constraint = new Constraint();
@@ -101,6 +114,13 @@ public class SecurityConfig {
         securityHandler.setAuthenticator(authenticator);
 
         return securityHandler;
+    }
+
+    private void addUsersToStore(UserStore userStore, List<String> users, String role) {
+        for (String user : users) {
+            String[] split = user.split("=>");
+            userStore.addUser(split[0], Credential.getCredential(split[1]), new String[]{role});
+        }
     }
 
 }

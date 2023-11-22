@@ -31,8 +31,8 @@
   <!-- ==================== PROPERTIES ==================== -->
   <properties>
     <iplug.type>CODELIST_REPOSITORY</iplug.type>
-    <spring.version>2.7.14</spring.version>
-    <log4j2.version>2.19.0</log4j2.version>
+    <spring.version>2.7.17</spring.version>
+    <log4j2.version>2.22.0</log4j2.version>
     <maven.compiler.release>17</maven.compiler.release>
   </properties>
 
