@@ -7,3 +7,4 @@ data/
 /patches/
 logs
 *.iml
+/.idea/

@@ -59,11 +59,7 @@
             displayText	="Einstellungen fuer das Codelist Repository"
             target		="clRepo">
 
-			<comment displayText="" explanatoryText="Der Benutzername zu diesem Passwort ist 'admin'. Weitere Benutzer können über die Datei 'conf/realm.properties' hinzugefügt werden, wobei Nutzer
-            mit der Rolle 'admin' kompletten Zugriff haben und Nutzer mit der Rolle 'user' haben nur Zugriff, um die Codelisten abzufragen." />            
             <text property="serverPort" displayText="Repository Admin-Port:" defaultValue="8190"/>
-            <text property="serverPassword" displayText="Repository Admin-Passwort:" defaultValue=""/>
-            <text property="clientPassword" displayText="Repository User-Passwort:" defaultValue=""/>
     </page>
 
     <!--  type="input" shows a list of editable options for the installer -->

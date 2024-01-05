@@ -40,9 +40,6 @@
       <directory>src/main/resources</directory>
       <outputDirectory>${project.build.finalName}/conf</outputDirectory>
       <includes>
-        <include>passwordSource.txt</include>
-        <include>realm.properties</include>
-        <include>ingrid.auth</include>
         <include>log4j2.xml</include>
       </includes>
     </fileSet>

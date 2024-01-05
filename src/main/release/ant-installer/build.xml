@@ -27,8 +27,6 @@
     <!-- set global properties for this build -->
     <property name="componentName" value="${project.build.finalName}"/>
     <property name="start-script" value="${installDir}/start.sh"/>
-    <property name="password-file" value="${installDir}/conf/passwordSource.txt"/>
-    <property name="realm-file" value="${installDir}/conf/realm.properties"/>
 
 
     <!-- THIS PORPERTIES ARE NECESSARY FOR UPDATES -->
@@ -83,7 +81,6 @@
         <unzip src="${antinstaller.jar}" dest=".">
             <patternset>
                 <include name="**/*.*"/>
-                <exclude name="${componentName}/conf/passwordSource.txt" />
                 <exclude name="${componentName}/conf/realm.properties" />
                 <exclude name="${componentName}/start.sh" />
             </patternset>
@@ -110,21 +107,6 @@
     <target name="clRepo" description="Set configuration correctly for the iBus.">
         <echo>Schreibe den Admin-Port in das Startskript</echo>
         <replace file="${start-script}" token="@SERVER_PORT@" value="${serverPort}"/>
-        
-        <echo>Schreibe Admin-Passwort</echo>
-        <replace file="${password-file}" token="@PASSWORD@" value="${serverPassword}"/>
-        <checksum file="${password-file}" property="passwordMD5"/>
-        <replace file="${realm-file}" token="@PASSWORD@" value="${passwordMD5}"/>
-        
-        <echo>Schreibe User-Passwort</echo>
-        <replace file="${password-file}" token="${serverPassword}" value="${clientPassword}"/>
-        <checksum file="${password-file}" property="passwordMD5Client"/>
-        <replace file="${realm-file}" token="@PASSWORD_CLIENT@" value="${passwordMD5Client}"/>
-        
-        <delete file="${password-file}"/>
-        
-        <!-- only the owner has access to the security file! -->
-        <chmod dir="${installDir}/conf" perm="600" includes="realm.properties"/>
     </target>
     
     <target name="startComponent">
