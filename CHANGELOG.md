@@ -1,4 +1,16 @@
 
+## 7.0.0 (05.01.2024)
+
+### Features
+
+* Admin Passwort aus realm.properties (#5637)
+* IGE: Anpassung der Liste "Verwaltungsgebiet" (#5477)
+* Umstellung Lizenz auf EUPL Version 1.2 (#1585)
+
+### Bugfixes
+
+* Aktualisierung sicherheitskritischer Libraries (#5724)
+    
 ## 6.3.0 (17.10.2023)
 
 ### Features
