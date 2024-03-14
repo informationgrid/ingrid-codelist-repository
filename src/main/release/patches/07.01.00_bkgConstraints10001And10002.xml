@@ -1,0 +1,153 @@
+<list>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10001</id>
+    <type>ADD</type>
+    <codelist>
+      <id>10001</id>
+      <name>BKG-Access constraints</name>
+      <description>test</description>
+      <defaultEntry>-1</defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(1) Daten/Dienste ohne Zugriffsbeschränkung</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(2) Daten/Dienste mit lizenzpflichtigem Zugang</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(3) Daten/Dienste nur für Bundesbehörden und Zuwendungsempfänger des Bundes</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>4</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>(4) Daten/Dienste nur für ausgewählte Bundesbehörden</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>5</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Template für copyright</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>6</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Template für license</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>7</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Template für copyright und license</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>8</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Template für intellectualPropertyRights</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>9</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Template für restricted</string>
+            </entry>
+          </localisations>
+          <data></data>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+      <lastModified>1498729844690</lastModified>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+  <de.ingrid.codelistHandler.model.CodeListUpdate>
+    <id>10002</id>
+    <type>ADD</type>
+    <codelist>
+      <id>10002</id>
+      <name>BKG-Access constraints - long</name>
+      <defaultEntry></defaultEntry>
+      <entries>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>1</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Es gelten keine Zugriffsbeschränkungen</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>2</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Die Daten sind lizenzpflichtig.</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>3</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Diese Daten oder dieser Dienst stehen/steht ausschließlich Bundesbehörden und Nutzungsberechtigten im Sinne des § 3 VGeoBund zur Verfügung. Siehe Vertrag über die kontinuierliche Übermittlung von amtlichen digitalen Geobasisdaten der Länder zur Nutzung im Bundesbereich vom 28.12.2015 (VGeoBund), siehe GMBl. 2016, Nr. 25, S. 481.</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+        <de.ingrid.codelists.model.CodeListEntry>
+          <id>4</id>
+          <localisations>
+            <entry>
+              <string>de</string>
+              <string>Diese Daten oder dieser Dienst stehen/steht nur ausgewählten Bundesbehörden zur Verfügung.</string>
+            </entry>
+          </localisations>
+        </de.ingrid.codelists.model.CodeListEntry>
+      </entries>
+      <lastModified>1498582072144</lastModified>
+    </codelist>
+  </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
