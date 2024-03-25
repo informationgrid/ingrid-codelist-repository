@@ -13,37 +13,17 @@
           <localisations>
             <entry>
               <string>de</string>
-              <string>(1) Daten/Dienste ohne Zugriffsbeschränkung</string>
+              <string>(1) Es gelten keine Zugriffsbeschränkungen</string>
             </entry>
           </localisations>
-          <data></data>
+          <data>{"url":"http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations","de":"Es gelten keine Zugriffsbeschränkungen", "en":"no limitations to public access"}</data>
         </de.ingrid.codelists.model.CodeListEntry>
         <de.ingrid.codelists.model.CodeListEntry>
           <id>2</id>
           <localisations>
             <entry>
               <string>de</string>
-              <string>(2) Daten/Dienste mit lizenzpflichtigem Zugang</string>
-            </entry>
-          </localisations>
-          <data></data>
-        </de.ingrid.codelists.model.CodeListEntry>
-        <de.ingrid.codelists.model.CodeListEntry>
-          <id>3</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>(3) Daten/Dienste nur für Bundesbehörden und Zuwendungsempfänger des Bundes</string>
-            </entry>
-          </localisations>
-          <data></data>
-        </de.ingrid.codelists.model.CodeListEntry>
-        <de.ingrid.codelists.model.CodeListEntry>
-          <id>4</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>(4) Daten/Dienste nur für ausgewählte Bundesbehörden</string>
+              <string>(2) Zugriffsbeschränkung - Kontakt ZSGT / DLZ</string>
             </entry>
           </localisations>
           <data></data>
@@ -117,6 +97,10 @@
               <string>de</string>
               <string>Es gelten keine Zugriffsbeschränkungen</string>
             </entry>
+            <entry>
+              <string>en</string>
+              <string>no limitations to public access</string>
+            </entry>
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>
         <de.ingrid.codelists.model.CodeListEntry>
@@ -124,25 +108,11 @@
           <localisations>
             <entry>
               <string>de</string>
-              <string>Die Daten sind lizenzpflichtig.</string>
+              <string>Es gelten Zugriffsbeschränkungen. Für den Erwerb von Nutzungsrechten wenden Sie sich deshalb bitte an die Zentrale Stelle Geotopographie der AdV (ZSGT) / Dienstleistungszentrum (DLZ) des Bundesamtes für Kartographie und Geodäsie: https://www.bkg.bund.de/DE/Service/Kontakt/kontakt.html.</string>
             </entry>
-          </localisations>
-        </de.ingrid.codelists.model.CodeListEntry>
-        <de.ingrid.codelists.model.CodeListEntry>
-          <id>3</id>
-          <localisations>
             <entry>
-              <string>de</string>
-              <string>Diese Daten oder dieser Dienst stehen/steht ausschließlich Bundesbehörden und Nutzungsberechtigten im Sinne des § 3 VGeoBund zur Verfügung. Siehe Vertrag über die kontinuierliche Übermittlung von amtlichen digitalen Geobasisdaten der Länder zur Nutzung im Bundesbereich vom 28.12.2015 (VGeoBund), siehe GMBl. 2016, Nr. 25, S. 481.</string>
-            </entry>
-          </localisations>
-        </de.ingrid.codelists.model.CodeListEntry>
-        <de.ingrid.codelists.model.CodeListEntry>
-          <id>4</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>Diese Daten oder dieser Dienst stehen/steht nur ausgewählten Bundesbehörden zur Verfügung.</string>
+              <string>en</string>
+              <string>Access restrictions apply. In order to obtain the rights of use please contact the Central Office for Geotopography of the AdV (ZSGT) / Service Centre (DLZ) of the Federal Agency for Cartography and Geodesy: https://www.bkg.bund.de/DE/Service/Kontakt/kontakt.html.</string>
             </entry>
           </localisations>
         </de.ingrid.codelists.model.CodeListEntry>
