@@ -1,4 +1,11 @@
 
+## 7.1.0 (27.03.2024)
+
+### Features
+
+* IGE: BKG-MIS - Feld "Zugriffsbeschränkungen" wieder herstellen (#5481)
+
+    
 ## 7.0.0 (05.01.2024)
 
 ### Features
