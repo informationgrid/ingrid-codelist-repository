@@ -1,85 +1,101 @@
 <list>
-  <de.ingrid.codelistHandler.model.CodeListUpdate>
-    <id>5200</id>
-    <type>ENTRYUPDATE</type>
-    <entries>
-      <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-        <type>UPDATE</type>
-        <entry>
-          <id>101</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>Katalogdienst - Viewer</string>
-            </entry>
-          </localisations>
-        </entry>
-        <entry>
-          <id>201</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>Dienst für den Zugriff auf Objekte (WFS, ATOM, API Features etc.)</string>
-            </entry>
-            <entry>
-              <string>en</string>
-              <string>Feature access service (WFS, ATOM, API Features etc.)</string>
-            </entry>
-          </localisations>
-        </entry>
-        <entry>
-          <id>202</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>Dienst für den Zugriff auf grafische Darstellungen (WMS, WMTS, API Maps etc.)</string>
-            </entry>
-            <entry>
-              <string>en</string>
-              <string>Map access service (WMS, WMTS, API Maps etc.)</string>
-            </entry>
-          </localisations>
-        </entry>
-        <entry>
-          <id>203</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>Dienst für den Zugriff auf Rasterdaten (WCS, API Coverages etc.)</string>
-            </entry>
-            <entry>
-              <string>en</string>
-              <string>Coverage access service (WCS, API Coverages etc.)</string>
-            </entry>
-          </localisations>
-        </entry>
-        <entry>
-          <id>207</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>Katalogdienst - Service (CSW, API Records etc.)</string>
-            </entry>
-            <entry>
-              <string>en</string>
-              <string>Catalogue service (CSW, API Records etc.)</string>
-            </entry>
-          </localisations>
-        </entry>
-        <entry>
-          <id>402</id>
-          <localisations>
-            <entry>
-              <string>de</string>
-              <string>Dienst für die Transformation von Koordinaten (WCTS etc.)</string>
-            </entry>
-            <entry>
-              <string>en</string>
-              <string>Coordinate transformation service (WCTS etc.)</string>
-            </entry>
-          </localisations>
-        </entry>
-      </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
-    </entries>
-  </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5200</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>101</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Katalogdienst - Viewer</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>201</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Dienst für den Zugriff auf Objekte (WFS, ATOM, API Features etc.)</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Feature access service (WFS, ATOM, API Features etc.)</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>202</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Dienst für den Zugriff auf grafische Darstellungen (WMS, WMTS, API Maps etc.)
+                            </string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Map access service (WMS, WMTS, API Maps etc.)</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>203</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Dienst für den Zugriff auf Rasterdaten (WCS, API Coverages etc.)</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Coverage access service (WCS, API Coverages etc.)</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>207</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Katalogdienst - Service (CSW, API Records etc.)</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Catalogue service (CSW, API Records etc.)</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>402</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Dienst für die Transformation von Koordinaten (WCTS etc.)</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>Coordinate transformation service (WCTS etc.)</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
 </list>
