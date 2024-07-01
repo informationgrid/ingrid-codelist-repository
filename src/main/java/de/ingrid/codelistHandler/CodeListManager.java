@@ -63,6 +63,9 @@ public class CodeListManager {
     public CodeListManager(CodeListService cls, Migrator migrator, @Value("${codelists.ignore:}") List<String> ignoreCodelists) {
 
         this.ignoreCodelists = ignoreCodelists;
+        if (!ignoreCodelists.isEmpty()) {
+            log.info("The following codelists are being ignored from updates: " + String.join(", ", ignoreCodelists));
+        }
 
         // run any necessary migrations
         migrator.run();
