@@ -1,4 +1,15 @@
 
+## 7.2.0 (08.07.2024)
+
+### Features
+
+* Codelist-Repo: definierter Ausschluss von Aktualisierungen (#6430)
+* Anbieter Codeliste (id 111): BASt ergänzen (#6341)
+* Regelmäßiges Update der Docker Images (#6300)
+* IGE: Anpassung der Liste "AdV-Produktgruppe" (#6019)
+* Klassifikation des Dienstes - Ergänzung angezeigte Dienstklassifizierung (#5760)
+
+    
 ## 7.1.0 (27.03.2024)
 
 ### Features

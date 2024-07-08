@@ -7,12 +7,12 @@
  * Licensed under the EUPL, Version 1.2 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
  * EUPL (the "Licence");
- * 
+ *
  * You may not use this work except in compliance with the Licence.
  * You may obtain a copy of the Licence at:
- * 
+ *
  * https://joinup.ec.europa.eu/software/page/eupl
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the Licence is distributed on an "AS IS" basis,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -65,22 +65,24 @@ public class CodeListUpdateTest {
     private String dataFileMultiple = "src/test/resources/updates/V4b_codelist_multiple_changes.xml";
 
     private static CodeListManager manager;
-    
+
     private static int counter = 0;
 
+    private CodeListService cls;
+
     @BeforeEach
-    public void setUp() throws Exception {
-        
-        CodeListService cls = new CodeListService();
-        List<ICodeListPersistency> persistencies = new ArrayList<ICodeListPersistency>();
-        XmlCodeListPersistency<CodeList> xmlCodeListPersistency = new XmlCodeListPersistency<CodeList>();
+    public void setUp() {
+
+        cls = new CodeListService();
+        List<ICodeListPersistency> persistencies = new ArrayList<>();
+        XmlCodeListPersistency<CodeList> xmlCodeListPersistency = new XmlCodeListPersistency<>();
         xmlCodeListPersistency.setPathToXml( "data/codelistsTests" + (counter++) );
         persistencies.add( xmlCodeListPersistency );
         cls.setPersistencies( persistencies );
         cls.setDefaultPersistency( 0 );
         removeExisitingTestFile();
-        
-        manager = new CodeListManager( cls, new Migrator() );
+
+        manager = new CodeListManager( cls, new Migrator(), new ArrayList<>() );
         manager.getCodeLists().clear();
         // copyUpdateFiles();
     }
@@ -92,12 +94,10 @@ public class CodeListUpdateTest {
                     try {
                         Files.copy( file, Paths.get( "target/test-classes/updates", file.getFileName().toString() ), StandardCopyOption.REPLACE_EXISTING );
                     } catch (IOException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
-                    }        
+                    }
                 });
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
     }
@@ -124,7 +124,7 @@ public class CodeListUpdateTest {
         // codelist "9876" should be available now
         CodeList codelist = manager.getCodeList("9876");
         assertThat("Updated codelist should be available now!", codelist, is(not(nullValue())));
-        assertThat("Updated codelist should be available now!", codelist.getLastModified(), greaterThan(10000l));
+        assertThat("Updated codelist should be available now!", codelist.getLastModified(), greaterThan(10000L));
     }
 
     @Test
@@ -341,6 +341,29 @@ public class CodeListUpdateTest {
         assertThat(VersionUtils.getCurrentVersion(), is("V4b"));
     }
 
+    @Test
+    void doNotUpdateIgnoredCodelists() throws Exception {
+        manager = new CodeListManager( cls, new Migrator(), List.of("100"));
+        manager.getCodeLists().clear();
+
+        // codelist "100" is available in the beginning
+        CodeList codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        assertThat(codeList100.getEntries().size(), is(52));
+
+        // read update codelist file and apply
+        manager.updateCodelistsFromUpdateFile(dataFileUpdate);
+
+        // let's load the file again to see if everything was saved correctly
+        manager.getCodeLists().clear();
+
+        // codelist "100" should still be there unchanged
+        codeList100 = manager.getCodeList("100");
+        assertThat(codeList100, is(not(nullValue())));
+        List<CodeListEntry> entries = codeList100.getEntries();
+        assertThat(entries.size(), is(52));
+    }
+
     private void writeToFile(String text) throws FileNotFoundException {
         PrintWriter out = new PrintWriter( "data/version.info" );
         out.print( text );
@@ -350,7 +373,7 @@ public class CodeListUpdateTest {
     private static void removeExisitingTestFile() {
         Path rootPath = Paths.get("data");
         if (!rootPath.toFile().exists()) return;
-        
+
         try {
             Files.walk(rootPath)
                 .sorted(Comparator.reverseOrder())
