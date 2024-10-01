@@ -1,4 +1,14 @@
 
+## 7.3.0 (01.10.2024)
+
+### Features
+
+* Release > 6.1.1 für BKG-MIS (#6127)
+
+### Bugfixes
+
+* Codelist Repository (5200) ISO Einträge fehlen (#6607)
+    
 ## 7.2.0 (08.07.2024)
 
 ### Features
