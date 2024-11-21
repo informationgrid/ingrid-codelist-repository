@@ -1,4 +1,10 @@
 
+## 7.4.0 (XX.XX.2024)
+
+### Features
+
+* HVD Kategorien als Codeliste aufnehmen (#6494)
+
 ## 7.3.0 (01.10.2024)
 
 ### Features
@@ -84,4 +90,3 @@
 
 
 
-    
