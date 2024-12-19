@@ -1,0 +1,86 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>6500</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>27</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Creative Commons Namensnennung 4.0 International</string>
+                        </entry>
+                    </localisations>
+                    <data>{"id":"cc-by/4.0","name":"Creative Commons Namensnennung 4.0 International","url":"https://creativecommons.org/licenses/by/4.0/deed.de","quelle":""}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>28</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Creative Commons Namensnennung - Nicht kommerziell 4.0 International</string>
+                        </entry>
+                    </localisations>
+                    <data>{"id":"cc-by-nc/4.0","name":"Creative Commons Namensnennung - Nicht kommerziell 4.0 International","url":"https://creativecommons.org/licenses/by-nc/4.0/deed.de","quelle":""}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>29</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Creative Commons Namensnennung - Keine Bearbeitungen 4.0 International</string>
+                        </entry>
+                    </localisations>
+                    <data>{"id":"cc-by-nd/4.0","name":"Creative Commons Namensnennung - Keine Bearbeitungen 4.0 International","url":"https://creativecommons.org/licenses/by-nd/4.0/deed.de","quelle":""}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>30</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International</string>
+                        </entry>
+                    </localisations>
+                    <data>{"id":"cc-by-sa/4.0","name":"Creative Commons Namensnennung - Weitergabe unter gleichen Bedingungen 4.0 International","url":"https://creativecommons.org/licenses/by-sa/4.0/deed.de","quelle":""}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>35</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Creative Commons Namensnennung - Nicht kommerziell - Keine Bearbeitungen 4.0 International</string>
+                        </entry>
+                    </localisations>
+                    <data>{"id":"CC BY-NC-ND 4.0","name":"Creative Commons Namensnennung - Nicht kommerziell - Keine Bearbeitungen 4.0 International","url":"https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de"}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>37</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Creative Commons Namensnennung 3.0 Deutschland</string>
+                        </entry>
+                    </localisations>
+                    <data>{"id":"cc-by-de/3.0","name":"Creative Commons Namensnennung 3.0 Deutschland","url":"https://creativecommons.org/licenses/by/3.0/de/","quelle":""}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
