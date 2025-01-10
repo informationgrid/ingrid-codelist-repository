@@ -1,4 +1,15 @@
 
+## 7.4.0 (10.01.2025)
+
+### Features
+
+* Erweiterung Liste der UVPG-Nummern (#7187)
+* HVD Kategorien als Codeliste aufnehmen (#6494)
+
+### Bugfixes
+
+* ID bei CreativeCommons-Lizenz CC BY 4.0 im JSON-Array ist nicht korrekt wieder gegeben und kann nicht interpretiert werden (#6667)
+    
 ## 7.3.0 (01.10.2024)
 
 ### Features
@@ -84,4 +95,3 @@
 
 
 
-    

@@ -2,7 +2,7 @@
   **************************************************-
   InGrid CodeList Repository
   ==================================================
-  Copyright (C) 2014 - 2024 wemove digital solutions GmbH
+  Copyright (C) 2014 - 2025 wemove digital solutions GmbH
   ==================================================
   Licensed under the EUPL, Version 1.2 or – as soon they will be
   approved by the European Commission - subsequent versions of the
@@ -124,8 +124,8 @@
                 
                 entryIdTextbox.validator = function(val) {if (idExists(val)) return false; else return true;};
                 listIdTextbox.validator = listIdValidator;
-                entryIdTextbox.invalidMessage = "Entry-ID already exists or is not a number!"
-                listIdTextbox.invalidMessage = "List-ID already exists or is not a number!"
+                entryIdTextbox.invalidMessage = "Entry-ID already exists!"
+                listIdTextbox.invalidMessage = "List-ID already exists!"
                 
                 initialObserver();
                 
@@ -250,7 +250,7 @@
                 showEntryDiv();
                 
                 var item = currentEntryClicked.data[0];//entriesGrid.getItem(currentEntryClicked).data[0];
-                entryIdTextbox.attr("value", item.id, false);
+                entryIdTextbox.attr("value", item.id ? item.id+"" : "", false);
                 entryDescrTextbox.attr("value", item.description ? item.description+"" : "", false);
                 entryDataTextbox.attr("value", item.data ? item.data+"" : "", false);
                 
@@ -692,7 +692,7 @@
                     <h2>Codelist Overview</h2>
                     <table id="entriesTop" cellspacing="5" style="width: 100%; display:none; padding-right:3px;">
                         <tbody>
-	                        <tr><td width="30px;">List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="intermediateChanges:true, required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
+	                        <tr><td width="30px;">List-ID:</td><td><input id="listId" jsId="listIdTextbox" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="intermediateChanges:true, required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
 	                        <tr><td>List-Name:</td><td><input id="listName" jsId="listNameTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:100%;'"></td></tr>
 	                        <tr><td>Description:</td><td><input id="listDescr" jsId="listDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="rows:4,style:'width:100%;'"></td></tr>
 	                        <tr><td>&nbsp;</td></tr>
@@ -728,7 +728,7 @@
                 <div id="entryContent" data-dojo-type="dijit.layout.ContentPane" style="display:none;">
                     <div class="">
 	                    <table style="width:100%;">
-		                    <tr><td width="30px;">Entry-ID:</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.NumberTextBox" data-dojo-props="required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
+		                    <tr><td width="30px;">Entry-ID:</td><td><input id="entryId" jsId="entryIdTextbox" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props="required:true, style:'width:100%;', constraints:{places:0, pattern:'#'}"></td></tr>
 		                    <tr><td>Description:</td><td><input id="entryDescr" jsId="entryDescrTextbox" data-dojo-type="dijit.form.SimpleTextarea" data-dojo-props="style:'width:100%;'"></td></tr>
 		                    <tr><td>Data:</td><td><input id="entryData" jsId="entryDataTextbox" data-dojo-type="dijit.form.TextBox" data-dojo-props="style:'width:100%;'"></td></tr>
 	                    </table>
