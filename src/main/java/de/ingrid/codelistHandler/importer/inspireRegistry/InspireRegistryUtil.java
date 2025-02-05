@@ -7,12 +7,12 @@
  * Licensed under the EUPL, Version 1.2 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
  * EUPL (the "Licence");
- * 
+ *
  * You may not use this work except in compliance with the Licence.
  * You may obtain a copy of the Licence at:
- * 
+ *
  * https://joinup.ec.europa.eu/software/page/eupl
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the Licence is distributed on an "AS IS" basis,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -42,8 +42,8 @@ public class InspireRegistryUtil {
 
     public CodeList importFromRegistry(URL urlGerman, URL urlEnglish) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-        InspireCodelistModel inspireCodelist = null;
-        InspireCodelistModel inspireCodelistEn = null;
+        InspireCodelistModel inspireCodelist;
+        InspireCodelistModel inspireCodelistEn;
         try {
             inspireCodelist = objectMapper.readValue(urlGerman, InspireCodelistModel.class);
         } catch (Exception e) {
@@ -82,16 +82,17 @@ public class InspireRegistryUtil {
 
     private CodeListEntryStatus getStatusFromField(String statusId) {
 
-        switch (statusId) {
-            case "http://inspire.ec.europa.eu/registry/status/submitted": return CodeListEntryStatus.SUBMITTED;
-            case "http://inspire.ec.europa.eu/registry/status/superseded": return CodeListEntryStatus.SUPERCEDED;
-            case "http://inspire.ec.europa.eu/registry/status/valid": return CodeListEntryStatus.VALID;
-            case "http://inspire.ec.europa.eu/registry/status/invalid": return CodeListEntryStatus.INVALID;
-            case "http://inspire.ec.europa.eu/registry/status/retired": return CodeListEntryStatus.RETIRED;
-            default:
+        return switch (statusId) {
+            case "http://inspire.ec.europa.eu/registry/status/submitted" -> CodeListEntryStatus.SUBMITTED;
+            case "http://inspire.ec.europa.eu/registry/status/superseded" -> CodeListEntryStatus.SUPERCEDED;
+            case "http://inspire.ec.europa.eu/registry/status/valid" -> CodeListEntryStatus.VALID;
+            case "http://inspire.ec.europa.eu/registry/status/invalid" -> CodeListEntryStatus.INVALID;
+            case "http://inspire.ec.europa.eu/registry/status/retired" -> CodeListEntryStatus.RETIRED;
+            default -> {
                 log.warn("Unknown status-id: " + statusId);
-                return null;
-        }
+                yield null;
+            }
+        };
     }
 
     private String createDataField(Item item) {
@@ -103,13 +104,12 @@ public class InspireRegistryUtil {
                 "  \"status\": \"" + getStatusFromField(item.value.status.id) + "\"" +
                 "}";
     }
-
     private void addEnglishVersion(CodeList codelist, List<Item> items) {
         for (Item item : items) {
             String id = convertIdToNumber(item.value.id);
-            CodeListEntry entry = codelist.getEntries().stream().filter(c -> c.getId().equals(id)).findAny().orElseGet(null);
+            CodeListEntry entry = codelist.getEntries().stream().filter(c -> c.getId().equals(id)).findAny().orElse(null);
             if (entry == null) {
-                log.error("No Codelist entry found for English version");
+                log.error("No Codelist entry found for English version of: " + item.value.id + "(" + id + ")");
             } else {
                 entry.setField("en", item.value.label.text);
                 entry.setData(createDataField(item));
