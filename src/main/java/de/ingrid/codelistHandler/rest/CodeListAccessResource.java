@@ -44,9 +44,9 @@ public class CodeListAccessResource {
 
     // and implement the following GET method
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<CodeList>> getCodeLists(@RequestParam("lastModifiedDate") String lastModifiedDate, @RequestParam("name") String name) {
+    public ResponseEntity<List<CodeList>> getCodeLists(@RequestParam("lastModifiedDate") String lastModifiedDate, @RequestParam(value = "name", required = false) String name) {
 
-        if (name == null || "".equals(name) || "*".equals(name)) {
+        if (name == null || name.isEmpty() || "*".equals(name)) {
             return ResponseEntity.ok(manager.getCodeListsAsJson("id", lastModifiedDate, CodeListUtils.SORT_INCREMENT));
         } else {
             return ResponseEntity.ok(manager.getFilteredCodeListsAsJson(name));
@@ -56,7 +56,7 @@ public class CodeListAccessResource {
     // return only data needed for codelist information (selectbox for administration page)
     @GetMapping(value = "short", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ShortCodelist>> getCodeListsShort(@RequestParam("name") String name) {
-        if (name == null || "".equals(name) || "*".equals(name)) {
+        if (name == null || name.isEmpty() || "*".equals(name)) {
             return ResponseEntity.ok(manager.getCodeListAsShortJson("id", CodeListUtils.SORT_INCREMENT));
         } else {
             return ResponseEntity.ok(manager.getFilteredCodeListsAsShortJson(name));
