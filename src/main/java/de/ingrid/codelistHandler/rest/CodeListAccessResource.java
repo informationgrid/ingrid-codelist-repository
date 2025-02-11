@@ -44,7 +44,7 @@ public class CodeListAccessResource {
 
     // and implement the following GET method
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<CodeList>> getCodeLists(@RequestParam("lastModifiedDate") String lastModifiedDate, @RequestParam(value = "name", required = false) String name) {
+    public ResponseEntity<List<CodeList>> getCodeLists(@RequestParam(value = "lastModifiedDate", required = false) String lastModifiedDate, @RequestParam(value = "name", required = false) String name) {
 
         if (name == null || name.isEmpty() || "*".equals(name)) {
             return ResponseEntity.ok(manager.getCodeListsAsJson("id", lastModifiedDate, CodeListUtils.SORT_INCREMENT));
