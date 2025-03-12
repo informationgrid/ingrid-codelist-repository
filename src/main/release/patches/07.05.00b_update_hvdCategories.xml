@@ -1,0 +1,22 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>hvdCategories</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>c_ac64a52d</id>
+                    <description></description>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Erdbeobachtung und Umwelt</string>
+                        </entry>
+                    </localisations>
+                    <data></data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>
