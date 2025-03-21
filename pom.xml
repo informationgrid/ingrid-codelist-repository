@@ -7,7 +7,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ingrid-codelist-repository</artifactId>
-  <version>7.4.0</version>
+  <version>7.5.0</version>
   <packaging>jar</packaging>
   <name>InGrid CodeList Repository</name>
   <description>This is the repository where all codelists are organized.</description>
@@ -31,7 +31,7 @@
   <!-- ==================== PROPERTIES ==================== -->
   <properties>
     <iplug.type>CODELIST_REPOSITORY</iplug.type>
-    <spring.version>2.7.18</spring.version>
+    <spring.version>3.4.2</spring.version>
     <log4j2.version>2.22.1</log4j2.version>
     <maven.compiler.release>17</maven.compiler.release>
   </properties>
@@ -84,10 +84,10 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jetty</artifactId>
     </dependency>
-    <!--<dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>-->
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-log4j2</artifactId>
@@ -95,7 +95,7 @@
     <dependency>
       <groupId>de.ingrid</groupId>
       <artifactId>ingrid-codelist-service</artifactId>
-      <version>7.4.0</version>
+      <version>7.5.0</version>
       <exclusions>
         <!-- no quartz jobs needed in this project -->
         <exclusion>
@@ -111,7 +111,7 @@
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
       <artifactId>xstream</artifactId>
-      <version>1.4.20</version>
+      <version>1.4.21</version>
     </dependency>
 
     <dependency>

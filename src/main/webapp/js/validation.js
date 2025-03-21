@@ -7,12 +7,12 @@
  * Licensed under the EUPL, Version 1.2 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
  * EUPL (the "Licence");
- * 
+ *
  * You may not use this work except in compliance with the Licence.
  * You may obtain a copy of the Licence at:
- * 
+ *
  * https://joinup.ec.europa.eu/software/page/eupl
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the Licence is distributed on an "AS IS" basis,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,7 +27,7 @@ function isValid() {
     errorMessages = [];
     var def = new dojo.Deferred();
     var result = listIdTextbox.validate() && (dojo.style("entryContent", "display") == "none" || (entryIdTextbox.validate() && localisationsValid()));
-    dojo.when(listIdExists(listIdTextbox), function(isValid) {
+    dojo.when(listIdExists(listIdTextbox.value), function(isValid) {
         if (!isValid) {
             result = false;
             listIdTextbox.validate();
@@ -40,7 +40,7 @@ function isValid() {
 
 function localisationsValid() {
     var result = true;
-    
+
     entryLocalisationGrid.store.fetch({
         onItem: function(item) {
             if (item.lang == "" || item.lang == "?") { // || item.value == "?")
@@ -49,7 +49,7 @@ function localisationsValid() {
             }
         }
     });
-    
+
     return result;
 }
 

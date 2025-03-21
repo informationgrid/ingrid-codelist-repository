@@ -1,4 +1,16 @@
 
+## 7.5.0 (21.03.2025)
+
+### Features
+
+* Umbenennung Ministeriumsbezeichnung Brandenburg (#7353)
+
+### Bugfixes
+
+* HMDK/MetaVer: 1 HVD-Datenkategorie korrigieren (#7438)
+* Aktualisierung des Spring-Frameworks (#7313)
+* ID bei CreativeCommons-Lizenz CC BY 4.0 im JSON-Array ist nicht korrekt wieder gegeben und kann nicht interpretiert werden (#6667)
+    
 ## 7.4.0 (15.01.2025)
 
 ### Features

@@ -7,12 +7,12 @@
  * Licensed under the EUPL, Version 1.2 or – as soon they will be
  * approved by the European Commission - subsequent versions of the
  * EUPL (the "Licence");
- * 
+ *
  * You may not use this work except in compliance with the Licence.
  * You may obtain a copy of the Licence at:
- * 
+ *
  * https://joinup.ec.europa.eu/software/page/eupl
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the Licence is distributed on an "AS IS" basis,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -22,104 +22,101 @@
  */
 package de.ingrid.codelistHandler;
 
-import org.apache.log4j.Logger;
-import org.eclipse.jetty.security.ConstraintMapping;
-import org.eclipse.jetty.security.ConstraintSecurityHandler;
-import org.eclipse.jetty.security.HashLoginService;
-import org.eclipse.jetty.security.UserStore;
-import org.eclipse.jetty.security.authentication.BasicAuthenticator;
-import org.eclipse.jetty.util.resource.ResourceCollection;
-import org.eclipse.jetty.util.security.Constraint;
 import org.eclipse.jetty.util.security.Credential;
-import org.eclipse.jetty.webapp.WebAppContext;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.embedded.jetty.JettyServerCustomizer;
-import org.springframework.boot.web.embedded.jetty.JettyServletWebServerFactory;
-import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.DelegatingPasswordEncoder;
+import org.springframework.security.crypto.password.MessageDigestPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Configuration
 public class SecurityConfig {
 
-    private Logger log = Logger.getLogger(SecurityConfig.class);
-
-    @Value("${jetty.base.resources:public}")
-    private String[] jettyBaseResources;
-    
     @Value("${credentials.admin:}")
     private List<String> adminUsers;
-    
+
     @Value("${credentials.user:}")
     private List<String> simpleUsers;
 
     @Bean
-    WebServerFactoryCustomizer embeddedServletContainerCustomizer(final JettyServerCustomizer jettyServerCustomizer) {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(AbstractHttpConfigurer::disable)
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/rest/**").hasAnyRole("admin", "user")
+                        .requestMatchers("/**").hasAnyRole("admin")
+                        .anyRequest().authenticated()
+                )
+                .httpBasic(basic -> {
+                });
 
-        return container -> {
-            if (container instanceof JettyServletWebServerFactory) {
-                ((JettyServletWebServerFactory) container).addServerCustomizers(jettyServerCustomizer);
-            }
-        };
+        return http.build();
     }
 
     @Bean
-    JettyServerCustomizer jettyServerCustomizer(ConstraintSecurityHandler constraintSecurityHandler) {
+    public PasswordEncoder passwordEncoder() {
+        Map<String, PasswordEncoder> encoders = new HashMap<>();
+        encoders.put("bcrypt", new BCryptPasswordEncoder());
+        encoders.put("md5", new MessageDigestPasswordEncoder("MD5"));
+        encoders.put("noop", NoOpPasswordEncoder.getInstance());
 
+        return new DelegatingPasswordEncoder("noop", encoders);
 
-        return server -> {
-            ((WebAppContext) server.getHandler()).setBaseResource(new ResourceCollection(jettyBaseResources));
-            ((WebAppContext) server.getHandler()).setSecurityHandler(constraintSecurityHandler);
-        };
     }
 
     @Bean
-    ConstraintSecurityHandler constraintSecurityHandler() {
-        final ConstraintSecurityHandler securityHandler = new ConstraintSecurityHandler();
+    public UserDetailsService userDetailsService() {
+        List<UserDetails> admins = adminUsers.stream()
+                .map(user -> user.split("=>"))
+                .map(user -> {
+                    String password = Credential.getCredential(user[1]).toString();
+                    String type = detectPasswordType(password);
+                    return User.withUsername(user[0])
+                            .password(type + password)
+                            .roles("admin")
+                            .build();
+                }).toList();
 
-        HashLoginService loginService = new HashLoginService("InGrid Realm");
-        
-        UserStore userStore = new UserStore();
-        addUsersToStore(userStore, adminUsers, "admin");
-        addUsersToStore(userStore, simpleUsers, "user");
+        List<UserDetails> users = simpleUsers.stream()
+                .map(user -> user.split("=>"))
+                .map(user -> {
+                    String password = Credential.getCredential(user[1]).toString();
+                    String type = detectPasswordType(password);
+                    return User.withUsername(user[0])
+                            .password(type + password)
+                            .roles("user")
+                            .build();
+                }).toList();
 
-        loginService.setUserStore(userStore);
-        securityHandler.setLoginService(loginService);
 
-        Constraint constraint = new Constraint();
-        constraint.setName(Constraint.__BASIC_AUTH);
-        constraint.setRoles(new String[]{"admin"});
-        constraint.setAuthenticate(true);
-
-        ConstraintMapping constraintMapping = new ConstraintMapping();
-        constraintMapping.setConstraint(constraint);
-        constraintMapping.setPathSpec("/*");
-
-        Constraint constraintRest = new Constraint();
-        constraintRest.setName(Constraint.__BASIC_AUTH);
-        constraintRest.setRoles(new String[]{"admin", "user"});
-        constraintRest.setAuthenticate(true);
-        
-        ConstraintMapping constraintMappingRest = new ConstraintMapping();
-        constraintMappingRest.setConstraint(constraintRest);
-        constraintMappingRest.setPathSpec("/rest/*");
-
-        securityHandler.addConstraintMapping(constraintMapping);
-        securityHandler.addConstraintMapping(constraintMappingRest);
-        securityHandler.setLoginService(loginService);
-
-        BasicAuthenticator authenticator = new BasicAuthenticator();
-        securityHandler.setAuthenticator(authenticator);
-
-        return securityHandler;
+        return new InMemoryUserDetailsManager(Stream.concat(admins.stream(), users.stream()).collect(Collectors.toList()));
     }
 
-    private void addUsersToStore(UserStore userStore, List<String> users, String role) {
-        for (String user : users) {
-            String[] split = user.split("=>");
-            userStore.addUser(split[0], Credential.getCredential(split[1]), new String[]{role});
+    private static String detectPasswordType(String password) {
+        if (password.length() == 60 && (password.startsWith("$2a$") || password.startsWith("$2b$") || password.startsWith("$2y$"))) {
+            return "{bcrypt}";
+        } else if (password.matches("^[a-fA-F0-9]{32}$")) {
+            // MD5-Hash (32-chars hexadecimal)
+            return "{md5}";
+        } else {
+            // plain (for {noop})
+            return "{noop}";
         }
     }
 

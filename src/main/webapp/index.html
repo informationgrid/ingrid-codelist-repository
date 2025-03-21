@@ -7,12 +7,12 @@
   Licensed under the EUPL, Version 1.2 or – as soon they will be
   approved by the European Commission - subsequent versions of the
   EUPL (the "Licence");
-  
+
   You may not use this work except in compliance with the Licence.
   You may obtain a copy of the Licence at:
-  
+
   https://joinup.ec.europa.eu/software/page/eupl
-  
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the Licence is distributed on an "AS IS" basis,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -26,21 +26,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title>InGrid CodeLists Administration</title>
-        
+
 <!--         <script type="text/javascript" src="js/dojo/dojo-1.7.2/release/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad: true"></script> -->
         <script type="text/javascript" src="js/dojo/dojo/dojo.js" data-dojo-config="parseOnLoad: true, locale: 'en'"></script>
 <!--         <script type="text/javascript" src="js/dojo.js" data-dojo-config="parseOnLoad: true"></script> -->
 <!--         <script type="text/javascript" src="js/main.js"></script> -->
-        
+
         <link rel="stylesheet" href="js/dojo/dojo/resources/dojo.css">
         <link rel="stylesheet" href="js/dojo/dojox/grid/resources/Grid.css">
         <link rel="stylesheet" href="js/dojo/dijit/themes/claro/claro.css">
-        
+
         <script type="text/javascript" src="js/dojo/custom/layer.js"></script>
         <script type="text/javascript" src="js/dialogs.js"></script>
         <script type="text/javascript" src="js/validation.js"></script>
-        
-        
+
+
         <style type="text/css" media="screen">
             .dijitTextBox, .dijitSelect {
 			    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -77,14 +77,14 @@
             .standby div {cursor: not-allowed !important;}
             .standby img { display: none !important; }
             .shadowBox {box-shadow: 1px 1px 10px #666;padding: 6px;margin-bottom: 1px; -moz-box-shadow: 1px 1px 5px #666;}
-            .nothing { padding-left: 19px;} 
+            .nothing { padding-left: 19px;}
             .tableCaption { padding-left: 2px;}
             .attention .dijitButtonNode {background-color: #bd0d00 !important; color: white;}
             .warning .dijitButtonNode {background-color: #eeaD00 !important; color:white;}
             input[type="button"].table {min-width: 0px;padding: 0;}
             .dijitTextBoxDisabled input {color: #888888 !important;}
         </style>
-        
+
         <script type="text/javascript">
             var thereAreChanges     = false;
             var currentCodelist     = -1;
@@ -94,26 +94,26 @@
             var selectedCodeList = null;
             var searchResults = [];
             var showCounter = 0;
-            
+
             var languageMap         = {};
-                  
+
             var languageStore = new dojo.data.ItemFileReadStore({url:'data/languages.json'});
             languageStore.fetch();
-            
+
             // this store is used to get all information about a codelist
             // the select box only fetches ids and names of the codelists, otherwise
             // the requests will take too long and the box will open too slow
-            var restStoreDetail = new dojo.store.JsonRest({target:"rest/getCodelists/"});
-            
+            var restStoreDetail = new dojo.store.JsonRest({target:"rest/getCodelists"});
+
             checkForCodelistSynch();
-            
+
             dojo.ready(function() {
                 dojo.connect(clSelect,       "onChange",        showCodeList);
                 dojo.connect(entriesGrid,    "onSelected",      showEntry);
                 dojo.connect(entryIdTextbox, "onBlur",          updateEntryId);
                 dojo.connect(entriesGrid,    "onHeaderClick",   resetEntryDiv);
                 dojo.connect(searchEntryBox, "onKeyPress",      searchEntryEvent);
-                
+
                 window.onbeforeunload = function(event){
                     var event = event || window.event;
                     if (thereAreChanges) {
@@ -121,19 +121,19 @@
                         return clDialogs.MSG_CHANGES;
                     }
                 }
-                
+
                 entryIdTextbox.validator = function(val) {if (idExists(val)) return false; else return true;};
                 listIdTextbox.validator = listIdValidator;
                 entryIdTextbox.invalidMessage = "Entry-ID already exists!"
                 listIdTextbox.invalidMessage = "List-ID already exists!"
-                
+
                 initialObserver();
-                
+
             });
-            
+
             function checkForCodelistSynch() {
                 dojo.xhrGet({
-                    url: "rest/getCodelists/checkChanges",
+                    url: "/rest/getCodelists/checkChanges",
                     handleAs: "json",
                     load: function(result) {
                         console.log("Differences are: ", result);
@@ -149,14 +149,14 @@
                     }
                 });
             }
-            
+
             function showDifferences() {
                 clDialogs.showDifferencesDialog(clDifferences);
             }
-            
+
             function checkChanges() {
                 var def;
-                
+
                 if (thereAreChanges) {
                     // show info
                     if (currentCodelist != clSelect.get("value")) {
@@ -179,55 +179,55 @@
                     def = new dojo.Deferred();
                     def.callback();
                 }
-                
+
                 return def;
             }
-            
+
             function showCodeList(event) {
                 listIdTextbox.set("disabled", true);
                 if (selectWasResetted) {
                     selectWasResetted = false;
                     return;
                 }
-                
+
                 // any changes made?
                 console.debug(event);
-                
+
                 btnRemoveCodelist.set("disabled", false);
                 var def = checkChanges();
-                
+
                 def.addCallback(function() {
                     dojo.when(fetchCodelistData(clSelect.get("value")), function(activeCodelist) {
 	                    console.debug("show selected codelist");
 	                    selectedCodeList = activeCodelist;
 	                    currentCodelist = clSelect.get("value");
-	                    
+
 	                    showCodelistDiv();
 	                    resetEntryDiv();
-	                    
+
 	                    // fill components with code list data
 	                    listIdTextbox.set("value", activeCodelist.id);
 	                    listNameTextbox.set("value", activeCodelist.name ? activeCodelist.name : "");
 	                    listDescrTextbox.set("value", activeCodelist.description ? activeCodelist.description : "");
-	                    
+
 	                    var newStore = new dojo.data.ItemFileWriteStore(
 	                        {data: {items: prepareCodelistEntries(activeCodelist)}}
 	                    );
-	                     
+
 	                    entriesGrid.setStore(newStore);
 	                    // refresh layout when data is loaded
 	                    newStore.fetch({onComplete: function() {dijit.byId("codeListContent").resize();}});
-	                    
+
 	                    // special handling for checkboxes
 	                    checkboxHandling(newStore);
-	                    
+
 	                    watchStore(entriesGrid.store);
-	                    
+
 	                    setTimeout(resetDirtyFlag, 100);
 	                })
                 });
             }
-            
+
             function fetchCodelistData(id) {
                 return restStoreDetail.get(id).then(function(item) {
                     if (!item) return {};
@@ -241,27 +241,27 @@
                     return item;
                 });
             }
-            
+
             function showEntry(event) {
                 updateListEntryData();
-                
+
                 currentEntryClicked = entriesGrid.selection.getSelected()[0];//event.rowIndex;
-                
+
                 showEntryDiv();
-                
+
                 var item = currentEntryClicked.data[0];//entriesGrid.getItem(currentEntryClicked).data[0];
                 entryIdTextbox.attr("value", item.id ? item.id+"" : "", false);
                 entryDescrTextbox.attr("value", item.description ? item.description+"" : "", false);
                 entryDataTextbox.attr("value", item.data ? item.data+"" : "", false);
-                
+
                 var newStore = new dojo.data.ItemFileWriteStore(
                     {data: {items: prepareCodelistEntryLocalisation(item)}}
                 );
                 entryLocalisationGrid.setStore(newStore);
-                
+
                 watchStore(entryLocalisationGrid.store);
             }
-            
+
             function showCodelistDiv() {
                 dojo.style("noCodelistSelected", "display", "none");
                 dojo.style("entriesTop",     "display", "");
@@ -270,30 +270,30 @@
                 dijit.byId("codeListContent").resize();
                 //dijit.byId("codeListContent").resize();
             }
-            
+
             function showEntryDiv() {
                 dojo.style("noEntrySelected", "display", "none");
                 dojo.style("entryContent",    "display", "block");
             }
-            
+
             function resetEntryDiv() {
                 dojo.style("noEntrySelected", "display", "block");
                 dojo.style("entryContent",    "display", "none");
                 entriesGrid.selection.clear();
                 currentEntryClicked = null;
             }
-            
+
             function getNiceLabel(item, store) {
                 if (!item.name) item.name = "Unknown";
                 return item.id+" - " + item.name;
             }
-            
+
             function updateEntryId(value) {
                 console.debug("update entry: ");
-                // check if id already exists ... or better use validation text box!!! 
+                // check if id already exists ... or better use validation text box!!!
                 entriesGrid.getItem(entriesGrid.selection.selectedIndex).id = [entryIdTextbox.get("value")];
             }
-            
+
             function getNewId() {
                 var nextId = 1;
                 entriesGrid.store.fetch({
@@ -304,7 +304,7 @@
                 });
                 return nextId;
             }
-            
+
             function addEntry() {
                 var newId = getNewId();
                 var myNewItem = {id:newId, localisedName:"undefined", data:[{id:newId, localisations:[["",""]]}]};
@@ -315,7 +315,7 @@
                 showEntry({rowIndex: row});
                 entryIdTextbox.focus();
             }
-            
+
             function removeEntry() {
                 var selItem = entriesGrid.getItem(entriesGrid.selection.selectedIndex);
                 if (selItem) {
@@ -323,7 +323,7 @@
                     resetEntryDiv();
                 }
             }
-            
+
             function removeLocalisedEntry(id) {
                 var selItem = null;
                 entryLocalisationGrid.store.fetch({
@@ -342,7 +342,7 @@
                     console.debug("item could not be found to delete");
                 }
             }
-            
+
             function getNewLocalizedId() {
                 var newId = 0;
                 entryLocalisationGrid.store.fetch({
@@ -354,18 +354,18 @@
                 });
                 return newId;
             }
-            
+
             function createButton(id) {
                 return "<div class='dijitButton'><input type='button' class='dijitButtonNode' onclick='removeLocalisedEntry("+id+");' value='delete'></div>";
             }
-            
+
             function addLocalisedEntry() {
                 var index = getNewLocalizedId();
                 var myNewItem = {id: index, lang:"?", value:"?", 'default': false, btnDelete: createButton(index)};
                 /* Insert the new item into the store:*/
                 entryLocalisationGrid.store.newItem(myNewItem);
             }
-            
+
             function addCodelist() {
                 selectedCodeList = null;
                 showCodelistDiv();
@@ -381,7 +381,7 @@
                 dijit.byId("codeListContent").resize();
                 toggleCodelistSelection(true);
             }
-            
+
             function removeCodelist() {
                 return clDialogs.showAskDialog(clDialogs.MSG_DELETE_LIST)
                     .then(function () {
@@ -391,7 +391,7 @@
                         console.debug("Deletion aborted!");
                     });
             }
-            
+
             function cancelEdit() {
                 var id = clSelect.get("displayedValue");
                 resetDirtyFlag();
@@ -402,13 +402,13 @@
 //                codelistsStandby.hide();
                 toggleCodelistSelection(false)
             }
-            
+
             function searchEntryEvent(event, value) {
                 if (event.keyCode == dojo.keys.ENTER) {
                     searchEntry(value);
                 }
             }
-            
+
             function searchEntry(value) {
                 restStoreDetail.get("findEntry/" + searchEntryBox.get("value")).then(function(res) {
                     searchResults = res;
@@ -420,10 +420,10 @@
                         nextEntryButton.set("label", "not found");
                     }
                     showCounter = 0;
-                    
+
                 });
             }
-            
+
             function showNextFoundEntry() {
                 // get first found entry
                 showCounter = showCounter % searchResults.length;
@@ -446,14 +446,14 @@
                     }
                     showCounter++;
                 }, 300);
-                
+
                 // entry to the end of the list again
                 nextEntryButton.set("label", "Show "+(showCounter+1)+" of " + searchResults.length);
             }
-            
+
             function saveChanges() {
                 var def = isValid();
-                
+
                 def.then(function() {
                     if (selectedCodeList == null) {
                         selectedCodeList = {id: listIdTextbox.get('value')};
@@ -461,9 +461,9 @@
                     //var selectedCodeList = clSelect.item;
                     // initially set default entry to -1
                     selectedCodeList.defaultEntry = "-1";
-                    
+
                     updateListEntryData();
-                    
+
                     var newEntries = [];
                     entriesGrid.store.fetch({
                         onItem: function(item) {
@@ -473,20 +473,20 @@
                                	data: item.data[0].data ? item.data[0].data+"" : "",
                                 localisations: item.data[0].localisations
                             };
-                            
+
                             // set the default localisation
                             if (item["default"] == "true")
                                 selectedCodeList.defaultEntry = item.data[0].id+"";
-                            
+
                             newEntries.push(entry);
                         }
                     });
-                    
-                    
+
+
                     selectedCodeList.name        = listNameTextbox.get("value");
                     selectedCodeList.description = listDescrTextbox.get("value");
                     selectedCodeList.entries     = newEntries;
-                    
+
                     var def = restStoreDetail.put(selectedCodeList, {id: listIdTextbox.get('value')});
                     def.then(
                         function(result) {
@@ -511,21 +511,21 @@
                     clDialogs.showDialog(clDialogs.TYPE_ERROR, message);
                     return;
                 });
-                
+
             }
-            
+
             function addFromInitialCodelist(id, btn) {
                 console.log("Add codelist from initial one: ", id, btn);
                 dojo.attr(btn, "disabled", "disabled");
                 dojo.xhrPut({
-                    url: "rest/getCodelists/addInitialCodelist/"+id,
+                    url: "/rest/getCodelists/addInitialCodelist/"+id,
                     postData: id,
                     load: function(data) {
                         console.log("response:", data);
                     }
                 });
             }
-            
+
             /* DATA PREPARER */
             function prepareCodelistEntries(cl) {
                 var data = [];
@@ -541,7 +541,7 @@
                 });
                 return data;
             }
-            
+
             function prepareCodelistEntryLocalisation(entry) {
                 var data = [];
                 dojo.forEach(entry.localisations, function(local, index) {
@@ -555,23 +555,23 @@
                 });
                 return data;
             }
-            
+
             function getLocalisedEntryName(localisations) {
                 if (localisations.length === 0)
                     return "undefined";
-                    
+
                 var result = localisations[0][1];
                 dojo.forEach(localisations, function(local) {
                     if (local[0] == "en" || local[0] == "name") result = local[1];
                 });
                 return result;
             };
-            
+
             function getEntry(entries, id) {
                 return dojo.filter(entries, function(entry) { return entry.id == id ? true : false; })
             }
-            
-            
+
+
             /* EVENT NOTIFIERS */
             function initialObserver() {
                 //require(["dojo/on"], function(on) {
@@ -584,20 +584,20 @@
                 dojo.connect(entryDescrTextbox, "onChange", setDirtyFlag);
                 dojo.connect(entryDataTextbox,  "onChange", setDirtyFlag);
             }
-           
+
             function watchStore(store) {
                 dojo.connect(store, "onSet",    setDirtyFlag);
                 dojo.connect(store, "onNew",    setDirtyFlag);
                 dojo.connect(store, "onDelete", setDirtyFlag);
             }
-            
+
             function updateListEntryData() {
                 // if nothing has been selected before
                 if (currentEntryClicked === null)
                     return;
-                    
+
                 console.debug("updateListEntryData");
-                    
+
                 var origItem = currentEntryClicked;//entriesGrid.getItem(currentEntryClicked);
                 var data = origItem.data[0];
                 data.id = entryIdTextbox.get('value');
@@ -615,19 +615,19 @@
                     }
                 });
             }
-            
+
             function setDirtyFlag(arg1, arg2, arg3) {
                 thereAreChanges = true;
                 btnSave.set("disabled", false);
                 dojo.addClass(btnSave.domNode, "attention");
             }
-            
+
             function resetDirtyFlag() {
                 thereAreChanges = false;
                 btnSave.set("disabled", true);
                 dojo.removeClass(btnSave.domNode, "attention");
             }
-            
+
             function checkboxHandling(store) {
                 dojo.connect(store, "onSet", function(item, attribute, oldValue, newValue) {
                     if (attribute == "default" && newValue == true && oldValue == false) {
@@ -644,7 +644,7 @@
                     }
                 });
             }
-            
+
             function toggleCodelistSelection(show) {
                 if (show == true) {
                     //clSelect.set("disabled", "true");
@@ -674,7 +674,7 @@
                 </div>
                 <h2>Codelists Selection</h2>
                 <div id="codelistsArea">
-                    <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short/'"></div>
+                    <div data-dojo-type="dojo.store.JsonRest" data-dojo-id="restStore" data-dojo-props="target:'rest/getCodelists/short'"></div>
                     <div id="clSelect" data-dojo-id="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:dojo.data.ObjectStore({ objectStore: restStore}), required: false, searchAttr:'name', labelFunc:getNiceLabel, style:'align:center; width:300px;'"></div>
                     <span id="addCodelist" data-dojo-id="btnAddCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:addCodelist">Add</span>
                     <span id="remCodelist" data-dojo-id="btnRemoveCodelist" data-dojo-type="dijit.form.Button" data-dojo-props="onClick:removeCodelist, disabled:true">Remove</span>
@@ -754,7 +754,7 @@
                 </div>
             </div>
             <!--<div id="actionContent" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'bottom'" >
-                
+
             </div>-->
         </div>
         <div data-dojo-id="entriesGridStandby" data-dojo-type="dojox.widget.Standby" data-dojo-props="target:'codeListContent', color:'#EFEFEF', image:'', 'class':'standby'">

@@ -1,0 +1,21 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>6500</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>UPDATE</type>
+                <entry>
+                    <id>3</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes</string>
+                        </entry>
+                    </localisations>
+                    <data>{"id":"geoNutz/20130319","name":"Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes","url":"https://sg.geodatenzentrum.de/web_public/gdz/lizenz/geonutzv.pdf","quelle":""}</data>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+        </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

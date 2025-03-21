@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Codelist-Repository" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="CREDENTIALS_ADMIN" value="admin=&gt;$2a$10$O9IzuEQcSDwRzztcIvVmdut4LN2Ym4cF82aTiGJvbBblx/b7McJJu,admin3=&gt;admin3a" />
+      <env name="CREDENTIALS_USER" value="user1=&gt;user1a" />
+    </envs>
+    <module name="ingrid-codelist-repository" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="de.ingrid.codelistHandler.JettyStarter" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="de.ingrid.codelistHandler.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
