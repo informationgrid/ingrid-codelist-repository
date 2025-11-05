@@ -34,9 +34,11 @@ Configuration
 The following environment variables are supported:
 
 * CREDENTIALS_ADMIN => credentials for user who can access and manage the codelist repository
-  * e.g. "admin1=>password1,admin2=>MD5:2112323212as3...,admin3=>CRYPT:ad1k..."
+  * e.g. "admin1=>password1,admin2=>2112323212as3...,admin3=>ad1k..."
+  * supports plain text, MD5 and bcrypt hashes
 * CREDENTIALS_USER => credentials for user who can access the codelist repository API to fetch codelists
   * e.g. "username1=>password1,username2=>password2"
+  * supports plain text, MD5 and bcrypt hashes
 * CODELISTS_IGNORE => list of Codelist-IDs that should not be updated
   * e.g. "100,200"
 
