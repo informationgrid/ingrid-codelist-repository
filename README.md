@@ -1,8 +1,11 @@
-InGrid Codelist Repository
-==========================
+# InGrid Codelist Repository
 
-The codelist repository maintains codelists that are used by several InGrid components. The Codelists are used especially in conjunction with the InGrid Catalog (meta data).
+<img src="https://ingrid-oss.eu/8.2.0/assets/components/ingrid-plattform.png" alt="InformationGrid illustration" width="480" align="right">
 
+This repository is part of **[InGrid](https://ingrid-oss.eu)**, an open-source solution for building, managing, and exposing metadata-driven information systems. 
+
+**About InGrid Codelist Repository:**  
+A single place to manage shared value lists for InGrid. All components fetch updates regularly, so names and categories stay consistent across apps.
 
 Requirements
 -------------
