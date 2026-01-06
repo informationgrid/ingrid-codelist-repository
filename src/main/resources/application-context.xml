@@ -64,10 +64,21 @@
         <property name="repeatInterval" value="86400000" /> <!-- once a day -->
     </bean>
 
+    <!--  Scheduler for external codelist synchronisation  -->
+    <bean name="updateBawOrderInfoJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="de.ingrid.codelistHandler.jobs.UpdateBawOrderInfoJob" />
+    </bean>
+
+    <bean id="simpleTriggerBawOrderInfo" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+        <property name="jobDetail" ref="updateBawOrderInfoJobDetail" />
+        <property name="repeatInterval" value="604800000" /> <!-- once a week -->
+    </bean>
+
     <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
         <property name="triggers">
             <list>
                 <ref bean="simpleTriggerPriorityDataset" />
+                <ref bean="simpleTriggerBawOrderInfo" />
             </list>
         </property>
         <property name="applicationContextSchedulerContextKey">
