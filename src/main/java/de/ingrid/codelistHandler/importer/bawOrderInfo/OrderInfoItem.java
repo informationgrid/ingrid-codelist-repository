@@ -1,4 +1,4 @@
-/*
+/*-
  * **************************************************-
  * InGrid CodeList Repository
  * ==================================================
@@ -20,22 +20,32 @@
  * limitations under the Licence.
  * **************************************************#
  */
-package de.ingrid.codelistHandler.util;
+package de.ingrid.codelistHandler.importer.bawOrderInfo;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class OrderInfoItem {
 
-import org.junit.jupiter.api.Test;
+    @JsonProperty("order_id")
+    private Number orderId;
 
-import de.ingrid.codelists.model.CodeList;
-import de.ingrid.codelists.util.CodeListUtils;
+    @JsonProperty("ordernumber")
+    private String ordernumber;
 
-public class XmlCodeListUtilsTest {
+    @JsonProperty("job")
+    private String job;
 
-    @Test
-    final void testGetCodeListFromJsonGeneric() {
-        String data = "{\"id\": \"100\",\"name\": \"TestList\",\"description\": \"Dies ist eine Testliste.\",\"entries\": [{\"id\": \"1\",\"localisations\": [[\"de\",\"eins\"],[\"en\",\"one\"]]}],\"lastModified\": 1329414705531}";
-        CodeList cl = CodeListUtils.getCodeListFromJsonGeneric(data);
-        assertNotNull(cl);
+    public String getOrdernumber() {
+        return ordernumber;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public String getOrderId() {
+        return orderId.toString();
     }
 }

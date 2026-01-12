@@ -1,0 +1,50 @@
+<list>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5120</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>7</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>LandingPage</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>LandingPage</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+    <de.ingrid.codelistHandler.model.CodeListUpdate>
+        <id>5153</id>
+        <type>ENTRYUPDATE</type>
+        <entries>
+            <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+                <type>ADD</type>
+                <entry>
+                    <id>4</id>
+                    <localisations>
+                        <entry>
+                            <string>de</string>
+                            <string>OGC API-Feature</string>
+                        </entry>
+                        <entry>
+                            <string>iso</string>
+                            <string>OGC API-Feature</string>
+                        </entry>
+                        <entry>
+                            <string>en</string>
+                            <string>OGC API-Feature</string>
+                        </entry>
+                    </localisations>
+                </entry>
+            </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
+        </entries>
+    </de.ingrid.codelistHandler.model.CodeListUpdate>
+</list>

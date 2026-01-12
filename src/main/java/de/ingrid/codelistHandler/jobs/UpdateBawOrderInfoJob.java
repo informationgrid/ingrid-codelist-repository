@@ -23,6 +23,7 @@
 package de.ingrid.codelistHandler.jobs;
 
 import de.ingrid.codelistHandler.importer.Importer;
+import de.ingrid.codelistHandler.importer.bawOrderInfo.BawOrderInfoImporter;
 import de.ingrid.codelistHandler.importer.inspireRegistry.PriorityDatasetImporter;
 import de.ingrid.codelistHandler.importer.inspireRegistry.SpatialScopeImporter;
 import org.apache.logging.log4j.LogManager;
@@ -37,21 +38,21 @@ import org.springframework.scheduling.quartz.QuartzJobBean;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpdatePriorityDatasetJob extends QuartzJobBean {
+public class UpdateBawOrderInfoJob extends QuartzJobBean {
 
-    private final static Logger log = LogManager.getLogger(UpdatePriorityDatasetJob.class);
+    private final static Logger log = LogManager.getLogger(UpdateBawOrderInfoJob.class);
 
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         if (log.isDebugEnabled()) {
-            log.debug("Executing InspireRegistryJob...");
+            log.debug("Executing BawOrderInfoJob...");
         }
 
         List<Importer> importers = getImporterFromBean(jobExecutionContext);
         importers.forEach(Importer::start);
 
         if (log.isDebugEnabled()) {
-            log.debug("InspireRegistryJob finished");
+            log.debug("BawOrderInfoJob finished");
         }
     }
 
@@ -65,8 +66,7 @@ public class UpdatePriorityDatasetJob extends QuartzJobBean {
         ApplicationContext appContext = (ApplicationContext)schedulerContext.get("applicationContext");
 
         List<Importer> list = new ArrayList<>();
-        list.add((PriorityDatasetImporter) appContext.getBean("priorityDatasetImporter"));
-        list.add((SpatialScopeImporter) appContext.getBean("spatialScopeImporter"));
+        list.add((BawOrderInfoImporter) appContext.getBean("bawOrderInfoImporter"));
 
         return list;
     }
