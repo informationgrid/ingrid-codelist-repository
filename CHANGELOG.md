@@ -1,3 +1,9 @@
+## 8.3.0 (XX.XX.2026)
+
+### Features
+
+* BAW Spezifische Codelisten integriert (#8718)
+
 
 ## 8.2.0 (12.01.2026)
 
