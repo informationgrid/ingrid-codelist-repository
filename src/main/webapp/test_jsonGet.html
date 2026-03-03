@@ -36,7 +36,7 @@
 	     	// Dojo 1.7 (AMD)
 	        require(['dojo/_base/xhr'], function(xhr){
 	          /*xhr.get({
-	            url:"/rest/getCodelists", handleAs:"json",
+	            url:"rest/getCodelists", handleAs:"json",
 	            load: function(data){
 	              // data is a JavaScript object. The content of foo.php
 	              // was passed through dojo.fromJson
@@ -54,7 +54,7 @@
         
 	</head>
 	<body class="claro">
-			<div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'/rest/getCodelists'"></div>
+			<div data-dojo-type="dojo.store.JsonRest" data-dojo-id="myStore" data-dojo-props="target:'rest/getCodelists'"></div>
 			<div jsId="clSelect" data-dojo-type="dijit.form.FilteringSelect" data-dojo-props="store:myStore, value:'id', searchAttr:'name', labelFunc:getNiceLabel"></div>
 	</body>
 </html>
