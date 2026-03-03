@@ -99,7 +99,7 @@ clDialogs.showDifferencesDialog = function(diffs) {
     
     var content = "<h2>Missing Codelists:</h2><ul>";
     dojo.forEach(diffs.missing, function(item) {
-        content += "<li><button dojoType='dijit.form.Button' onclick=\"addFromInitialCodelist("+item.id+", this)\">Add</button>" + item.id + ": " + item.name + "</li>";
+        content += "<li><button dojoType='dijit.form.Button' onclick=\"addFromInitialCodelist('"+item.id+"', this)\">Add</button>" + item.id + ": " + item.name + "</li>";
     });
     
     
