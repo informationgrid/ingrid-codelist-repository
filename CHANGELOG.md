@@ -1,4 +1,15 @@
 
+## 8.3.0 (01.04.2026)
+
+### Features
+
+* Integration der Bauchtechnik Codelisten (#8718)
+
+    ## Features
+
+* BAW Spezifische Codelisten integriert (#8718)
+
+
 ## 8.2.0 (12.01.2026)
 
 ### Features

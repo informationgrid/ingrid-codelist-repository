@@ -130,7 +130,7 @@
 
             function checkForCodelistSynch() {
                 dojo.xhrGet({
-                    url: "/rest/getCodelists/checkChanges",
+                    url: "rest/getCodelists/checkChanges",
                     handleAs: "json",
                     load: function(result) {
                         console.log("Differences are: ", result);
@@ -515,7 +515,7 @@
                 console.log("Add codelist from initial one: ", id, btn);
                 dojo.attr(btn, "disabled", "disabled");
                 dojo.xhrPut({
-                    url: "/rest/getCodelists/addInitialCodelist/"+id,
+                    url: "rest/getCodelists/addInitialCodelist/"+id,
                     postData: id,
                     load: function(data) {
                         console.log("response:", data);
