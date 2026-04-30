@@ -33,159 +33,171 @@
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
                 <type>UPDATE</type>
-                <id>28002</id>
-                <localisations>
-                    <entry>
-                        <string>sortkey</string>
-                        <string>3</string>
-                    </entry>
-                    <entry>
-                        <string>sortkey_partner</string>
-                        <string>6</string>
-                    </entry>
-                    <entry>
-                        <string>ident</string>
-                        <string>hb_si</string>
-                    </entry>
-                    <entry>
-                        <string>name</string>
-                        <string>Die Senatorin für Inneres und Sport</string>
-                    </entry>
-                    <entry>
-                        <string>url</string>
-                        <string>https://www.inneres.bremen.de/</string>
-                    </entry>
-                </localisations>
+                <entry>
+                    <id>28002</id>
+                    <localisations>
+                        <entry>
+                            <string>sortkey</string>
+                            <string>3</string>
+                        </entry>
+                        <entry>
+                            <string>sortkey_partner</string>
+                            <string>6</string>
+                        </entry>
+                        <entry>
+                            <string>ident</string>
+                            <string>hb_si</string>
+                        </entry>
+                        <entry>
+                            <string>name</string>
+                            <string>Die Senatorin für Inneres und Sport</string>
+                        </entry>
+                        <entry>
+                            <string>url</string>
+                            <string>https://www.inneres.bremen.de/</string>
+                        </entry>
+                    </localisations>
+                </entry>
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
                 <type>UPDATE</type>
-                <id>28006</id>
-                <localisations>
-                    <entry>
-                        <string>sortkey</string>
-                        <string>7</string>
-                    </entry>
-                    <entry>
-                        <string>sortkey_partner</string>
-                        <string>6</string>
-                    </entry>
-                    <entry>
-                        <string>ident</string>
-                        <string>hb_skb</string>
-                    </entry>
-                    <entry>
-                        <string>name</string>
-                        <string>Der Senator für Kinder und Bildung</string>
-                    </entry>
-                    <entry>
-                        <string>url</string>
-                        <string>https://www.bildung.bremen.de/</string>
-                    </entry>
-                </localisations>
+                <entry>
+                    <id>28006</id>
+                    <localisations>
+                        <entry>
+                            <string>sortkey</string>
+                            <string>7</string>
+                        </entry>
+                        <entry>
+                            <string>sortkey_partner</string>
+                            <string>6</string>
+                        </entry>
+                        <entry>
+                            <string>ident</string>
+                            <string>hb_skb</string>
+                        </entry>
+                        <entry>
+                            <string>name</string>
+                            <string>Der Senator für Kinder und Bildung</string>
+                        </entry>
+                        <entry>
+                            <string>url</string>
+                            <string>https://www.bildung.bremen.de/</string>
+                        </entry>
+                    </localisations>
+                </entry>
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
                 <type>UPDATE</type>
-                <id>61</id>
-                <localisations>
-                    <entry>
-                        <string>sortkey</string>
-                        <string>1</string>
-                    </entry>
-                    <entry>
-                        <string>sortkey_partner</string>
-                        <string>6</string>
-                    </entry>
-                    <entry>
-                        <string>ident</string>
-                        <string>hb_sbu</string>
-                    </entry>
-                    <entry>
-                        <string>name</string>
-                        <string>Die Senatorin für Umwelt, Klima und Wissenschaft</string>
-                    </entry>
-                    <entry>
-                        <string>url</string>
-                        <string>https://www.bildung.bremen.de/</string>
-                    </entry>
-                </localisations>
+                <entry>
+                    <id>61</id>
+                    <localisations>
+                        <entry>
+                            <string>sortkey</string>
+                            <string>1</string>
+                        </entry>
+                        <entry>
+                            <string>sortkey_partner</string>
+                            <string>6</string>
+                        </entry>
+                        <entry>
+                            <string>ident</string>
+                            <string>hb_sbu</string>
+                        </entry>
+                        <entry>
+                            <string>name</string>
+                            <string>Die Senatorin für Umwelt, Klima und Wissenschaft</string>
+                        </entry>
+                        <entry>
+                            <string>url</string>
+                            <string>https://www.bildung.bremen.de/</string>
+                        </entry>
+                    </localisations>
+                </entry>
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
                 <type>UPDATE</type>
-                <id>28007</id>
-                <localisations>
-                    <entry>
-                        <string>sortkey</string>
-                        <string>1</string>
-                    </entry>
-                    <entry>
-                        <string>sortkey_partner</string>
-                        <string>8</string>
-                    </entry>
-                    <entry>
-                        <string>ident</string>
-                        <string>hb_ssjis</string>
-                    </entry>
-                    <entry>
-                        <string>name</string>
-                        <string>Die Senatorin für Arbeit, Soziales, Jugend und Integration</string>
-                    </entry>
-                    <entry>
-                        <string>url</string>
-                        <string>https://www.bildung.bremen.de/</string>
-                    </entry>
-                </localisations>
+                <entry>
+                    <id>28007</id>
+                    <localisations>
+                        <entry>
+                            <string>sortkey</string>
+                            <string>1</string>
+                        </entry>
+                        <entry>
+                            <string>sortkey_partner</string>
+                            <string>8</string>
+                        </entry>
+                        <entry>
+                            <string>ident</string>
+                            <string>hb_ssjis</string>
+                        </entry>
+                        <entry>
+                            <string>name</string>
+                            <string>Die Senatorin für Arbeit, Soziales, Jugend und Integration</string>
+                        </entry>
+                        <entry>
+                            <string>url</string>
+                            <string>https://www.bildung.bremen.de/</string>
+                        </entry>
+                    </localisations>
+                </entry>
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
                 <type>UPDATE</type>
-                <id>28008</id>
-                <localisations>
-                    <entry>
-                        <string>sortkey</string>
-                        <string>9</string>
-                    </entry>
-                    <entry>
-                        <string>sortkey_partner</string>
-                        <string>6</string>
-                    </entry>
-                    <entry>
-                        <string>ident</string>
-                        <string>hb_swae</string>
-                    </entry>
-                    <entry>
-                        <string>name</string>
-                        <string>Die Senatorin für Wirtschaft, Häfen und Transformation</string>
-                    </entry>
-                    <entry>
-                        <string>url</string>
-                        <string>https://www.wirtschaft.bremen.de/</string>
-                    </entry>
-                </localisations>
+                <entry>
+                    <id>28008</id>
+                    <localisations>
+                        <entry>
+                            <string>sortkey</string>
+                            <string>9</string>
+                        </entry>
+                        <entry>
+                            <string>sortkey_partner</string>
+                            <string>6</string>
+                        </entry>
+                        <entry>
+                            <string>ident</string>
+                            <string>hb_swae</string>
+                        </entry>
+                        <entry>
+                            <string>name</string>
+                            <string>Die Senatorin für Wirtschaft, Häfen und Transformation</string>
+                        </entry>
+                        <entry>
+                            <string>url</string>
+                            <string>https://www.wirtschaft.bremen.de/</string>
+                        </entry>
+                    </localisations>
+                </entry>
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
                 <type>UPDATE</type>
-                <id>28011</id>
-                <localisations>
-                    <entry>
-                        <string>sortkey</string>
-                        <string>12</string>
-                    </entry>
-                    <entry>
-                        <string>sortkey_partner</string>
-                        <string>6</string>
-                    </entry>
-                    <entry>
-                        <string>ident</string>
-                        <string>hb_ld</string>
-                    </entry>
-                    <entry>
-                        <string>name</string>
-                        <string>Landesamt für Denkmalpflege und Archäologie</string>
-                    </entry>
-                    <entry>
-                        <string>url</string>
-                        <string>https://www.denkmalpflege.bremen.de/</string>
-                    </entry>
-                </localisations>
+                <entry>
+                    <id>28011</id>
+                    <localisations>
+                        <entry>
+                            <string>sortkey</string>
+                            <string>12</string>
+                        </entry>
+                        <entry>
+                            <string>sortkey_partner</string>
+                            <string>6</string>
+                        </entry>
+                        <entry>
+                            <string>ident</string>
+                            <string>hb_ld</string>
+                        </entry>
+                        <entry>
+                            <string>name</string>
+                            <string>Landesamt für Denkmalpflege und Archäologie</string>
+                        </entry>
+                        <entry>
+                            <string>url</string>
+                            <string>https://www.denkmalpflege.bremen.de/</string>
+                        </entry>
+                    </localisations>
+                </entry>
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
                 <type>REMOVE</type>
