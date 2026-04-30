@@ -1,9 +1,3 @@
-## 8.3.1 (xx.xx.2026)
-
-### Features
-
-* Aktualisierung der Informationsanbieter (Codeliste 111) in MetaVer für HB (#8973)
-
 ## 8.3.0 (01.04.2026)
 
 ### Features
