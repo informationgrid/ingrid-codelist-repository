@@ -13,7 +13,7 @@
                             <string>9</string>
                         </entry>
                         <entry>
-                            <string>sortkey</string>
+                            <string>sortkey_partner</string>
                             <string>6</string>
                         </entry>
                         <entry>
@@ -163,7 +163,7 @@
             </de.ingrid.codelistHandler.model.CodeListEntryUpdate>
             <de.ingrid.codelistHandler.model.CodeListEntryUpdate>
                 <type>UPDATE</type>
-                <id>28008</id>
+                <id>28011</id>
                 <localisations>
                     <entry>
                         <string>sortkey</string>
