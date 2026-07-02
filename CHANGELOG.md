@@ -1,5 +1,13 @@
 
-## 8.3.0 (01.04.2026)
+## 8.4.0 (02.07.2026)
+
+### Features
+
+* Aktualisierung der Ministerien (Codeliste 111) für Rheinland Pfalz (#9133)
+* Editor: zu CFD-Simulationen "Weitere Simulationsdaten" eingeben können (#8975)
+* Entfernen DAG energiebilanz_import_db (#8793)
+
+    ## 8.3.0 (01.04.2026)
 
 ### Features
 
