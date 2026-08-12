@@ -33,7 +33,7 @@
     <iplug.type>CODELIST_REPOSITORY</iplug.type>
     <spring.version>3.5.14</spring.version>
     <log4j2.version>2.22.1</log4j2.version>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>25</maven.compiler.release>
   </properties>
 
   <!-- ==================== DEPENDENCY MANAGEMENT ==================== -->
