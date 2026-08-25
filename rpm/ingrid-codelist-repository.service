@@ -1,0 +1,19 @@
+[Unit]
+Description=InGrid Codelist Repository
+After=network.target
+
+[Service]
+Environment=
+Type=simple
+User=ingrid
+Group=ingrid
+WorkingDirectory=/opt/ingrid/ingrid-codelist-repository
+ExecStart=/opt/ingrid/ingrid-codelist-repository/start.sh start
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=ingrid-codelist-repository
+
+[Install]
+WantedBy=multi-user.target
