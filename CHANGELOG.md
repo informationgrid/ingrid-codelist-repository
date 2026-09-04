@@ -1,4 +1,11 @@
 
+## 8.4.1 (04.09.2026)
+
+
+### Bugfixes
+
+* Code-Liste 2000 - Mapping für deutsche Verweis-Typen korrigieren (#8783)
+    
 ## 8.4.0 (02.07.2026)
 
 ### Features
