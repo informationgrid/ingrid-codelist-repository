@@ -1,4 +1,18 @@
 
+## 8.5.0 (06.10.2026)
+
+### Features
+
+* Erstellung von RPM Paketen für RHEL 10 für InGrid Komponenten (#9371)
+* Codelist: Feld "AdV-Produktgruppe" - Codelist-Wert "INSPIRE Boden" entfernen (#8935)
+* Schlagwörter für die Abgabe von MD an die Mobilithek angeben können (#8906)
+* Update Java 17 LTS auf Java 25 LTS (#8697)
+
+### Bugfixes
+
+* Korrekturen Simulationsdatenfelder Bautechnik (#9527)
+* Code-Liste 2000 - Mapping für deutsche Verweis-Typen korrigieren (#8783)
+    
 ## 8.4.0 (02.07.2026)
 
 ### Features
